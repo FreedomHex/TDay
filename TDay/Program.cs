@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace TDay
 {
@@ -13,16 +14,28 @@ namespace TDay
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Auth());
-            if (Auth.isLogon)
+            ErrorProvider.CheckLogDir();
+            using (var mutex = new Mutex(false, "TDay"))
             {
-                Application.Run(new MainFrame());
-            }
-            else
-            {
-                Application.Exit();
+                if (mutex.WaitOne(TimeSpan.FromSeconds(3)))
+                {
+                    Application.Run(new Auth());
+                    if (Auth.isLogon)
+                    {
+                        Application.Run(new MainFrame());
+                    }
+                    else
+                    {
+                        Application.Exit();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Another instance of the app is already running");
+                }
             }
         }
     }

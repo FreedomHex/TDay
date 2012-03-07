@@ -75,6 +75,9 @@
     <Compile Include="Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Profile.cs" />
+    <Compile Include="Providers\Enums.cs" />
     <Compile Include="Providers\AuthProvider.cs" />
     <Compile Include="MainFrame.cs">
       <SubType>Form</SubType>
@@ -82,6 +85,7 @@
     <Compile Include="MainFrame.Designer.cs">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Providers\ErrorProvider.cs" />
     <Compile Include="Providers\ProfileProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -160,6 +164,7 @@
   <ItemGroup>
     <None Include="Resources\Preferense.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

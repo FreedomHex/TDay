@@ -46,7 +46,7 @@ namespace TDay
             switch (comboBoxCategory.SelectedIndex)
             {
                 case 0:
-                    tabControl1.SelectedTab = Client;
+                    tabControl1.SelectedTab = ClientTab;
                     break;
                 case 1:
                     tabControl1.SelectedTab = Employee;
@@ -59,6 +59,20 @@ namespace TDay
                     break;
                 case 4:
                     tabControl1.SelectedTab = Other;
+                    break;
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            switch (comboBoxCategory.SelectedValue.ToString())
+            {
+                case "1":
+                    Client _Client = new Client();
+                    _Client.Name = textBox_ClientName.Text;
+                    //_Client.DateOfBirdh = DateTime.TryParse(textBox_CleintBirth,
+                    _Client.Add();
                     break;
 
             }

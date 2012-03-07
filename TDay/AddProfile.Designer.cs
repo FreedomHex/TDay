@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProfile));
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tDayDataSet = new TDay.TDayDataSet();
             this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Client = new System.Windows.Forms.TabPage();
+            this.ClientTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_CleintBirth = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -228,10 +229,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.Client.SuspendLayout();
+            this.ClientTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -256,6 +258,7 @@
             this.groupBox16.SuspendLayout();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // categoriesBindingSource
@@ -282,6 +285,7 @@
             this.button1.TabIndex = 27;
             this.button1.Text = "Add profile";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -297,7 +301,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.Client);
+            this.tabControl1.Controls.Add(this.ClientTab);
             this.tabControl1.Controls.Add(this.Employee);
             this.tabControl1.Controls.Add(this.Volunteer);
             this.tabControl1.Controls.Add(this.Board_Member);
@@ -308,28 +312,28 @@
             this.tabControl1.Size = new System.Drawing.Size(1023, 697);
             this.tabControl1.TabIndex = 29;
             // 
-            // Client
+            // ClientTab
             // 
-            this.Client.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Client.Controls.Add(this.groupBox1);
-            this.Client.Controls.Add(this.groupBox5);
-            this.Client.Controls.Add(this.groupBox4);
-            this.Client.Controls.Add(this.groupBox3);
-            this.Client.Controls.Add(this.groupBox2);
-            this.Client.Location = new System.Drawing.Point(4, 22);
-            this.Client.Name = "Client";
-            this.Client.Padding = new System.Windows.Forms.Padding(3);
-            this.Client.Size = new System.Drawing.Size(1015, 671);
-            this.Client.TabIndex = 0;
-            this.Client.Text = "tabPage1";
+            this.ClientTab.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientTab.Controls.Add(this.groupBox1);
+            this.ClientTab.Controls.Add(this.groupBox5);
+            this.ClientTab.Controls.Add(this.groupBox4);
+            this.ClientTab.Controls.Add(this.groupBox3);
+            this.ClientTab.Controls.Add(this.groupBox2);
+            this.ClientTab.Location = new System.Drawing.Point(4, 22);
+            this.ClientTab.Name = "ClientTab";
+            this.ClientTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ClientTab.Size = new System.Drawing.Size(1015, 671);
+            this.ClientTab.TabIndex = 0;
+            this.ClientTab.Text = "tabPage1";
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_ClientName);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox_CleintBirth);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox3);
@@ -355,14 +359,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
-            // textBox1
+            // textBox_ClientName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(132, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(397, 28);
-            this.textBox1.TabIndex = 7;
+            this.textBox_ClientName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientName.Location = new System.Drawing.Point(132, 27);
+            this.textBox_ClientName.Name = "textBox_ClientName";
+            this.textBox_ClientName.Size = new System.Drawing.Size(397, 28);
+            this.textBox_ClientName.TabIndex = 7;
             // 
             // label3
             // 
@@ -375,14 +379,14 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Date of Birth :";
             // 
-            // textBox2
+            // textBox_CleintBirth
             // 
-            this.textBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(132, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 28);
-            this.textBox2.TabIndex = 8;
+            this.textBox_CleintBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_CleintBirth.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_CleintBirth.Location = new System.Drawing.Point(132, 66);
+            this.textBox_CleintBirth.Name = "textBox_CleintBirth";
+            this.textBox_CleintBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_CleintBirth.TabIndex = 8;
             // 
             // checkBox1
             // 
@@ -2551,6 +2555,12 @@
             this.categoriesBindingSource1.DataMember = "Categories";
             this.categoriesBindingSource1.DataSource = this.tDayDataSet;
             // 
+            // AddProfileErrorProvider
+            // 
+            this.AddProfileErrorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
+            this.AddProfileErrorProvider.ContainerControl = this;
+            this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
+            // 
             // AddProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2572,7 +2582,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.Client.ResumeLayout(false);
+            this.ClientTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2616,6 +2626,7 @@
             this.groupBox17.ResumeLayout(false);
             this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2629,12 +2640,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Client;
+        private System.Windows.Forms.TabPage ClientTab;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_ClientName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_CleintBirth;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
@@ -2822,5 +2833,6 @@
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.TextBox textBox69;
         private System.Windows.Forms.BindingSource categoriesBindingSource1;
+        private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
     }
 }
