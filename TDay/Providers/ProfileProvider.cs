@@ -7,6 +7,6 @@ namespace TDay
 {
     public static class ProfileProvider
     {
-        
+
     }
 }
