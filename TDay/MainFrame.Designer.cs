@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -48,19 +49,30 @@
             this.tDayDataSet = new TDay.TDayDataSet();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip6 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.Client = new System.Windows.Forms.TabPage();
+            this.ClientTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox_ClientBirth = new System.Windows.Forms.TextBox();
+            this.ClientMember = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientParis = new System.Windows.Forms.TextBox();
+            this.textBox_ClientHD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -79,39 +91,39 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.DopEmerClientName = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.DopEmerClientPhone = new System.Windows.Forms.ToolStripTextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientPharmPhone = new System.Windows.Forms.TextBox();
+            this.textBox_ClientPharmName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBoxClientDocPhone = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientDocName = new System.Windows.Forms.TextBox();
+            this.textBox_ClientRelation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientEmPhone = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientEmerName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientEmail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientPhone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientPostal = new System.Windows.Forms.TextBox();
+            this.textBox_ClientCity = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox_ClientAdress = new System.Windows.Forms.TextBox();
+            this.textBox_ClientProvince = new System.Windows.Forms.TextBox();
+            this.textBox_ClientCountry = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.Employee = new System.Windows.Forms.TabPage();
+            this.EmployeeTab = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
@@ -119,13 +131,14 @@
             this.checkBox15 = new System.Windows.Forms.CheckBox();
             this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.textBox71 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpRelation = new System.Windows.Forms.TextBox();
             this.label73 = new System.Windows.Forms.Label();
-            this.textBox72 = new System.Windows.Forms.TextBox();
+            this.textBox_EmerCP = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
             this.label75 = new System.Windows.Forms.Label();
-            this.textBox73 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpEmerCN = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox_EmpPosition = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -134,29 +147,29 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpName = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpBirth = new System.Windows.Forms.TextBox();
+            this.textBox_EmpSin = new System.Windows.Forms.TextBox();
+            this.textBox_EmpHire = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpCell = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpPhone = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpPostal = new System.Windows.Forms.TextBox();
+            this.textBox_EmpCity = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.textBox_EmpAdress = new System.Windows.Forms.TextBox();
+            this.textBox_EmpProvince = new System.Windows.Forms.TextBox();
+            this.textBox_EmpCountry = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.Volunteer = new System.Windows.Forms.TabPage();
+            this.VolunteerTab = new System.Windows.Forms.TabPage();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.checkBox17 = new System.Windows.Forms.CheckBox();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
@@ -164,60 +177,60 @@
             this.checkBox20 = new System.Windows.Forms.CheckBox();
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.textBox_VolEmerRelation = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.textBox_VolEmerCP = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.textBox_VolEmerCN = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBox_VolCell = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.textBox_VolEmail = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.textBox_VolPhone = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
+            this.textBox_VolPostal = new System.Windows.Forms.TextBox();
+            this.textBox_VolCity = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
-            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.textBox_VolAdress = new System.Windows.Forms.TextBox();
+            this.textBox_VolProvince = new System.Windows.Forms.TextBox();
+            this.textBox_VolCountry = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.textBox_VolName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.Board_Member = new System.Windows.Forms.TabPage();
+            this.textBox_VolBirth = new System.Windows.Forms.TextBox();
+            this.Board_MemberTab = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.textBox_BoardCell = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.textBox_BoardEmail = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
-            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.textBox_BoardPhone = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.textBox_BoardPostal = new System.Windows.Forms.TextBox();
+            this.textBox_BoardCity = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
+            this.textBox_BoardAdress = new System.Windows.Forms.TextBox();
+            this.textBox_BoardProvince = new System.Windows.Forms.TextBox();
+            this.textBox_BoardCountry = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
-            this.textBox44 = new System.Windows.Forms.TextBox();
+            this.textBox_BoardName = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.Other = new System.Windows.Forms.TabPage();
+            this.textBox_BoardBirth = new System.Windows.Forms.TextBox();
+            this.textBox_BoardOccupation = new System.Windows.Forms.TextBox();
+            this.OtherTab = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.textBox55 = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
@@ -244,9 +257,10 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Transportation = new System.Windows.Forms.TabPage();
             this.Bills = new System.Windows.Forms.TabPage();
+            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
             this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -258,9 +272,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).BeginInit();
+            this.toolStrip6.SuspendLayout();
+            this.toolStrip5.SuspendLayout();
             this.toolStrip3.SuspendLayout();
             this.tabControl2.SuspendLayout();
-            this.Client.SuspendLayout();
+            this.ClientTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -268,37 +284,38 @@
             this.panel3.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.Employee.SuspendLayout();
+            this.EmployeeTab.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.Volunteer.SuspendLayout();
+            this.VolunteerTab.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.Board_Member.SuspendLayout();
+            this.Board_MemberTab.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.Other.SuspendLayout();
+            this.OtherTab.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 957);
+            this.panel1.Size = new System.Drawing.Size(175, 753);
             this.panel1.TabIndex = 4;
             // 
             // button4
@@ -358,12 +375,13 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tabControl1);
             this.panel2.Location = new System.Drawing.Point(175, 27);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1085, 957);
+            this.panel2.Size = new System.Drawing.Size(1085, 753);
             this.panel2.TabIndex = 5;
             // 
             // tabControl1
@@ -379,14 +397,14 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1099, 956);
+            this.tabControl1.Size = new System.Drawing.Size(1084, 752);
             this.tabControl1.TabIndex = 6;
             // 
             // Attendance
             // 
             this.Attendance.Location = new System.Drawing.Point(4, 22);
             this.Attendance.Name = "Attendance";
-            this.Attendance.Size = new System.Drawing.Size(1091, 930);
+            this.Attendance.Size = new System.Drawing.Size(1076, 726);
             this.Attendance.TabIndex = 0;
             this.Attendance.Text = "Attendance";
             this.Attendance.UseVisualStyleBackColor = true;
@@ -398,27 +416,36 @@
             this.Profiles.Controls.Add(this.toolStrip1);
             this.Profiles.Location = new System.Drawing.Point(4, 22);
             this.Profiles.Name = "Profiles";
-            this.Profiles.Size = new System.Drawing.Size(1091, 930);
+            this.Profiles.Size = new System.Drawing.Size(1076, 726);
             this.Profiles.TabIndex = 1;
             this.Profiles.Text = "Profiles";
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 37);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Controls.Add(this.toolStrip6);
+            this.splitContainer1.Panel1.Controls.Add(this.toolStrip5);
             this.splitContainer1.Panel1.Controls.Add(this.toolStrip3);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.button8);
+            this.splitContainer1.Panel2.Controls.Add(this.button7);
+            this.splitContainer1.Panel2.Controls.Add(this.button6);
+            this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(1091, 893);
-            this.splitContainer1.SplitterDistance = 349;
+            this.splitContainer1.Size = new System.Drawing.Size(1076, 689);
+            this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -427,28 +454,39 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Elephant", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.profilesBindingSource;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 72);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(349, 868);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(343, 615);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // profileIdDataGridViewTextBoxColumn
             // 
@@ -494,16 +532,91 @@
             this.profilesBindingSource.DataMember = "Profiles";
             this.profilesBindingSource.DataSource = this.tDayDataSet;
             // 
+            // toolStrip6
+            // 
+            this.toolStrip6.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel3,
+            this.toolStripComboBox1});
+            this.toolStrip6.Location = new System.Drawing.Point(0, 37);
+            this.toolStrip6.Name = "toolStrip6";
+            this.toolStrip6.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip6.Size = new System.Drawing.Size(343, 35);
+            this.toolStrip6.TabIndex = 2;
+            this.toolStrip6.Text = "toolStrip6";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(85, 32);
+            this.toolStripLabel3.Text = "Category:";
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolStripComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
+            this.toolStripComboBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripComboBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "All",
+            "Client",
+            "Employee",
+            "Volunteer",
+            "Board Member",
+            "Other"});
+            this.toolStripComboBox1.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(200, 29);
+            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
+            // 
+            // toolStrip5
+            // 
+            this.toolStrip5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton4,
+            this.toolStripTextBox1});
+            this.toolStrip5.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip5.Name = "toolStrip5";
+            this.toolStrip5.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip5.Size = new System.Drawing.Size(343, 37);
+            this.toolStrip5.TabIndex = 1;
+            this.toolStrip5.Text = "toolStrip5";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(250, 37);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
             // toolStrip3
             // 
             this.toolStrip3.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripTextBox3});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip3.Margin = new System.Windows.Forms.Padding(1);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(349, 25);
+            this.toolStrip3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.toolStrip3.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip3.Size = new System.Drawing.Size(343, 36);
             this.toolStrip3.TabIndex = 0;
             this.toolStrip3.Text = "toolStrip3";
+            this.toolStrip3.Visible = false;
             // 
             // toolStripButton3
             // 
@@ -511,47 +624,99 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 25);
             this.toolStripButton3.Text = "toolStripButton3";
+            // 
+            // toolStripTextBox3
+            // 
+            this.toolStripTextBox3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.Size = new System.Drawing.Size(100, 28);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.DimGray;
+            this.button8.Location = new System.Drawing.Point(7, 821);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(151, 45);
+            this.button8.TabIndex = 34;
+            this.button8.Text = "Accept changes";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.DimGray;
+            this.button7.Location = new System.Drawing.Point(574, 821);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(135, 45);
+            this.button7.TabIndex = 33;
+            this.button7.Text = "Delete";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.DimGray;
+            this.button6.Location = new System.Drawing.Point(410, 821);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(158, 45);
+            this.button6.TabIndex = 32;
+            this.button6.Text = "Print information";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.DimGray;
+            this.button5.Location = new System.Drawing.Point(261, 821);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(135, 45);
+            this.button5.TabIndex = 31;
+            this.button5.Text = "Print envelope";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
-            this.tabControl2.Controls.Add(this.Client);
-            this.tabControl2.Controls.Add(this.Employee);
-            this.tabControl2.Controls.Add(this.Volunteer);
-            this.tabControl2.Controls.Add(this.Board_Member);
-            this.tabControl2.Controls.Add(this.Other);
+            this.tabControl2.Controls.Add(this.ClientTab);
+            this.tabControl2.Controls.Add(this.EmployeeTab);
+            this.tabControl2.Controls.Add(this.VolunteerTab);
+            this.tabControl2.Controls.Add(this.Board_MemberTab);
+            this.tabControl2.Controls.Add(this.OtherTab);
             this.tabControl2.Location = new System.Drawing.Point(3, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(727, 825);
+            this.tabControl2.Size = new System.Drawing.Size(727, 815);
             this.tabControl2.TabIndex = 30;
             // 
-            // Client
+            // ClientTab
             // 
-            this.Client.BackColor = System.Drawing.SystemColors.Control;
-            this.Client.Controls.Add(this.groupBox1);
-            this.Client.Controls.Add(this.groupBox5);
-            this.Client.Controls.Add(this.groupBox4);
-            this.Client.Controls.Add(this.groupBox3);
-            this.Client.Controls.Add(this.groupBox2);
-            this.Client.Location = new System.Drawing.Point(4, 22);
-            this.Client.Name = "Client";
-            this.Client.Padding = new System.Windows.Forms.Padding(3);
-            this.Client.Size = new System.Drawing.Size(719, 799);
-            this.Client.TabIndex = 0;
-            this.Client.Text = "tabPage1";
+            this.ClientTab.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientTab.Controls.Add(this.groupBox1);
+            this.ClientTab.Controls.Add(this.groupBox5);
+            this.ClientTab.Controls.Add(this.groupBox4);
+            this.ClientTab.Controls.Add(this.groupBox3);
+            this.ClientTab.Controls.Add(this.groupBox2);
+            this.ClientTab.Location = new System.Drawing.Point(4, 22);
+            this.ClientTab.Name = "ClientTab";
+            this.ClientTab.Padding = new System.Windows.Forms.Padding(3);
+            this.ClientTab.Size = new System.Drawing.Size(719, 789);
+            this.ClientTab.TabIndex = 0;
+            this.ClientTab.Text = "tabPage1";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_ClientName);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.textBox_ClientBirth);
+            this.groupBox1.Controls.Add(this.ClientMember);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox_ClientParis);
+            this.groupBox1.Controls.Add(this.textBox_ClientHD);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DarkGray;
@@ -573,14 +738,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Name:";
             // 
-            // textBox1
+            // textBox_ClientName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox1.Location = new System.Drawing.Point(158, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(543, 28);
-            this.textBox1.TabIndex = 7;
+            this.textBox_ClientName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientName.Location = new System.Drawing.Point(158, 27);
+            this.textBox_ClientName.Name = "textBox_ClientName";
+            this.textBox_ClientName.Size = new System.Drawing.Size(543, 28);
+            this.textBox_ClientName.TabIndex = 7;
+            this.textBox_ClientName.TextChanged += new System.EventHandler(this.textBox_ClientName_TextChanged);
             // 
             // label3
             // 
@@ -593,30 +759,32 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Date of Birth :";
             // 
-            // textBox2
+            // textBox_ClientBirth
             // 
-            this.textBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox2.Location = new System.Drawing.Point(158, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 28);
-            this.textBox2.TabIndex = 8;
+            this.textBox_ClientBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientBirth.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientBirth.Location = new System.Drawing.Point(158, 66);
+            this.textBox_ClientBirth.MaxLength = 10;
+            this.textBox_ClientBirth.Name = "textBox_ClientBirth";
+            this.textBox_ClientBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientBirth.TabIndex = 8;
+            this.textBox_ClientBirth.TextChanged += new System.EventHandler(this.textBox_ClientBirth_TextChanged);
             // 
-            // checkBox1
+            // ClientMember
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBox1.Location = new System.Drawing.Point(460, 68);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 25);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Member";
-            this.checkBox1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ClientMember.AutoSize = true;
+            this.ClientMember.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ClientMember.Checked = true;
+            this.ClientMember.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ClientMember.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientMember.ForeColor = System.Drawing.Color.DimGray;
+            this.ClientMember.Location = new System.Drawing.Point(460, 68);
+            this.ClientMember.Name = "ClientMember";
+            this.ClientMember.Size = new System.Drawing.Size(95, 25);
+            this.ClientMember.TabIndex = 6;
+            this.ClientMember.Text = "Member";
+            this.ClientMember.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.ClientMember.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -629,23 +797,23 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "PARIS Number :";
             // 
-            // textBox3
+            // textBox_ClientParis
             // 
-            this.textBox3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(158, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 28);
-            this.textBox3.TabIndex = 9;
+            this.textBox_ClientParis.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientParis.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientParis.Location = new System.Drawing.Point(158, 105);
+            this.textBox_ClientParis.Name = "textBox_ClientParis";
+            this.textBox_ClientParis.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientParis.TabIndex = 9;
             // 
-            // textBox4
+            // textBox_ClientHD
             // 
-            this.textBox4.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(158, 139);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 28);
-            this.textBox4.TabIndex = 11;
+            this.textBox_ClientHD.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientHD.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientHD.Location = new System.Drawing.Point(158, 139);
+            this.textBox_ClientHD.Name = "textBox_ClientHD";
+            this.textBox_ClientHD.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientHD.TabIndex = 11;
             // 
             // label5
             // 
@@ -844,19 +1012,19 @@
             // 
             this.groupBox3.Controls.Add(this.panel3);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.textBox18);
-            this.groupBox3.Controls.Add(this.textBox17);
+            this.groupBox3.Controls.Add(this.textBox_ClientPharmPhone);
+            this.groupBox3.Controls.Add(this.textBox_ClientPharmName);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox16);
+            this.groupBox3.Controls.Add(this.textBoxClientDocPhone);
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox15);
-            this.groupBox3.Controls.Add(this.textBox14);
+            this.groupBox3.Controls.Add(this.textBox_ClientDocName);
+            this.groupBox3.Controls.Add(this.textBox_ClientRelation);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.textBox13);
+            this.groupBox3.Controls.Add(this.textBox_ClientEmPhone);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.textBox_ClientEmerName);
             this.groupBox3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox3.Location = new System.Drawing.Point(7, 385);
@@ -882,11 +1050,12 @@
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton2,
             this.toolStripLabel1,
-            this.toolStripTextBox1,
+            this.DopEmerClientName,
             this.toolStripLabel2,
-            this.toolStripTextBox2});
+            this.DopEmerClientPhone});
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -904,41 +1073,42 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(207, 34);
             this.toolStripButton2.Text = "Add emergency contact";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.ForeColor = System.Drawing.Color.DarkGray;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(224, 21);
-            this.toolStripLabel1.Text = "Emergency Contact Name :";
+            this.toolStripLabel1.Size = new System.Drawing.Size(139, 21);
+            this.toolStripLabel1.Text = "Emergency CN :";
             this.toolStripLabel1.Visible = false;
             // 
-            // toolStripTextBox1
+            // DopEmerClientName
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(8, 0, 1, 0);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(203, 28);
-            this.toolStripTextBox1.Visible = false;
+            this.DopEmerClientName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DopEmerClientName.Margin = new System.Windows.Forms.Padding(13, 0, 1, 0);
+            this.DopEmerClientName.Name = "DopEmerClientName";
+            this.DopEmerClientName.Size = new System.Drawing.Size(200, 28);
+            this.DopEmerClientName.Visible = false;
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.ForeColor = System.Drawing.Color.DarkGray;
-            this.toolStripLabel2.Margin = new System.Windows.Forms.Padding(25, 1, 0, 2);
+            this.toolStripLabel2.Margin = new System.Windows.Forms.Padding(6, 1, 0, 2);
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(228, 21);
-            this.toolStripLabel2.Text = "Emergency Contact Phone :";
+            this.toolStripLabel2.Size = new System.Drawing.Size(138, 21);
+            this.toolStripLabel2.Text = "Emergency CP :";
             this.toolStripLabel2.Visible = false;
             // 
-            // toolStripTextBox2
+            // DopEmerClientPhone
             // 
-            this.toolStripTextBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox2.Margin = new System.Windows.Forms.Padding(8, 0, 1, 0);
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(203, 28);
-            this.toolStripTextBox2.Visible = false;
+            this.DopEmerClientPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DopEmerClientPhone.Margin = new System.Windows.Forms.Padding(0);
+            this.DopEmerClientPhone.Name = "DopEmerClientPhone";
+            this.DopEmerClientPhone.Size = new System.Drawing.Size(200, 28);
+            this.DopEmerClientPhone.Visible = false;
             // 
             // label19
             // 
@@ -951,23 +1121,23 @@
             this.label19.TabIndex = 35;
             this.label19.Text = "Pharmacist Phone:";
             // 
-            // textBox18
+            // textBox_ClientPharmPhone
             // 
-            this.textBox18.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox18.Location = new System.Drawing.Point(522, 193);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(178, 28);
-            this.textBox18.TabIndex = 34;
+            this.textBox_ClientPharmPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientPharmPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientPharmPhone.Location = new System.Drawing.Point(522, 193);
+            this.textBox_ClientPharmPhone.Name = "textBox_ClientPharmPhone";
+            this.textBox_ClientPharmPhone.Size = new System.Drawing.Size(178, 28);
+            this.textBox_ClientPharmPhone.TabIndex = 34;
             // 
-            // textBox17
+            // textBox_ClientPharmName
             // 
-            this.textBox17.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox17.Location = new System.Drawing.Point(157, 193);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(200, 28);
-            this.textBox17.TabIndex = 33;
+            this.textBox_ClientPharmName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientPharmName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientPharmName.Location = new System.Drawing.Point(157, 193);
+            this.textBox_ClientPharmName.Name = "textBox_ClientPharmName";
+            this.textBox_ClientPharmName.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientPharmName.TabIndex = 33;
             // 
             // label18
             // 
@@ -980,14 +1150,14 @@
             this.label18.TabIndex = 32;
             this.label18.Text = "Doctor Name :";
             // 
-            // textBox16
+            // textBoxClientDocPhone
             // 
-            this.textBox16.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox16.Location = new System.Drawing.Point(500, 154);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(201, 28);
-            this.textBox16.TabIndex = 31;
+            this.textBoxClientDocPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxClientDocPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBoxClientDocPhone.Location = new System.Drawing.Point(500, 154);
+            this.textBoxClientDocPhone.Name = "textBoxClientDocPhone";
+            this.textBoxClientDocPhone.Size = new System.Drawing.Size(201, 28);
+            this.textBoxClientDocPhone.TabIndex = 31;
             // 
             // label17
             // 
@@ -1000,23 +1170,23 @@
             this.label17.TabIndex = 30;
             this.label17.Text = "Doctor Phone :";
             // 
-            // textBox15
+            // textBox_ClientDocName
             // 
-            this.textBox15.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox15.Location = new System.Drawing.Point(157, 154);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(200, 28);
-            this.textBox15.TabIndex = 29;
+            this.textBox_ClientDocName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientDocName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientDocName.Location = new System.Drawing.Point(157, 154);
+            this.textBox_ClientDocName.Name = "textBox_ClientDocName";
+            this.textBox_ClientDocName.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientDocName.TabIndex = 29;
             // 
-            // textBox14
+            // textBox_ClientRelation
             // 
-            this.textBox14.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox14.Location = new System.Drawing.Point(157, 114);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(200, 28);
-            this.textBox14.TabIndex = 27;
+            this.textBox_ClientRelation.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientRelation.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientRelation.Location = new System.Drawing.Point(157, 114);
+            this.textBox_ClientRelation.Name = "textBox_ClientRelation";
+            this.textBox_ClientRelation.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientRelation.TabIndex = 27;
             // 
             // label16
             // 
@@ -1040,14 +1210,14 @@
             this.label15.TabIndex = 27;
             this.label15.Text = "Relation :";
             // 
-            // textBox13
+            // textBox_ClientEmPhone
             // 
-            this.textBox13.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox13.Location = new System.Drawing.Point(500, 32);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(200, 28);
-            this.textBox13.TabIndex = 27;
+            this.textBox_ClientEmPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientEmPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientEmPhone.Location = new System.Drawing.Point(500, 32);
+            this.textBox_ClientEmPhone.Name = "textBox_ClientEmPhone";
+            this.textBox_ClientEmPhone.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientEmPhone.TabIndex = 27;
             // 
             // label14
             // 
@@ -1071,28 +1241,28 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "Emergency CN :";
             // 
-            // textBox9
+            // textBox_ClientEmerName
             // 
-            this.textBox9.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox9.Location = new System.Drawing.Point(157, 32);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(200, 28);
-            this.textBox9.TabIndex = 20;
+            this.textBox_ClientEmerName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientEmerName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientEmerName.Location = new System.Drawing.Point(157, 32);
+            this.textBox_ClientEmerName.Name = "textBox_ClientEmerName";
+            this.textBox_ClientEmerName.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientEmerName.TabIndex = 20;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.textBox_ClientEmail);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.textBox_ClientPhone);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.textBox_ClientPostal);
+            this.groupBox2.Controls.Add(this.textBox_ClientCity);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.textBox_ClientAdress);
+            this.groupBox2.Controls.Add(this.textBox_ClientProvince);
+            this.groupBox2.Controls.Add(this.textBox_ClientCountry);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label9);
@@ -1105,14 +1275,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Adress";
             // 
-            // textBox12
+            // textBox_ClientEmail
             // 
-            this.textBox12.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox12.Location = new System.Drawing.Point(501, 139);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(200, 28);
-            this.textBox12.TabIndex = 26;
+            this.textBox_ClientEmail.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientEmail.Location = new System.Drawing.Point(501, 139);
+            this.textBox_ClientEmail.Name = "textBox_ClientEmail";
+            this.textBox_ClientEmail.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientEmail.TabIndex = 26;
             // 
             // label12
             // 
@@ -1125,14 +1295,14 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Email :";
             // 
-            // textBox11
+            // textBox_ClientPhone
             // 
-            this.textBox11.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox11.Location = new System.Drawing.Point(158, 139);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(200, 28);
-            this.textBox11.TabIndex = 24;
+            this.textBox_ClientPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientPhone.Location = new System.Drawing.Point(158, 139);
+            this.textBox_ClientPhone.Name = "textBox_ClientPhone";
+            this.textBox_ClientPhone.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientPhone.TabIndex = 24;
             // 
             // label11
             // 
@@ -1145,23 +1315,23 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "Phone :";
             // 
-            // textBox10
+            // textBox_ClientPostal
             // 
-            this.textBox10.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox10.Location = new System.Drawing.Point(158, 103);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(200, 28);
-            this.textBox10.TabIndex = 23;
+            this.textBox_ClientPostal.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientPostal.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientPostal.Location = new System.Drawing.Point(158, 103);
+            this.textBox_ClientPostal.Name = "textBox_ClientPostal";
+            this.textBox_ClientPostal.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientPostal.TabIndex = 23;
             // 
-            // textBox6
+            // textBox_ClientCity
             // 
-            this.textBox6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox6.Location = new System.Drawing.Point(501, 30);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 28);
-            this.textBox6.TabIndex = 22;
+            this.textBox_ClientCity.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientCity.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientCity.Location = new System.Drawing.Point(501, 30);
+            this.textBox_ClientCity.Name = "textBox_ClientCity";
+            this.textBox_ClientCity.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientCity.TabIndex = 22;
             // 
             // label10
             // 
@@ -1185,32 +1355,32 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Address :";
             // 
-            // textBox5
+            // textBox_ClientAdress
             // 
-            this.textBox5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox5.Location = new System.Drawing.Point(158, 30);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 28);
-            this.textBox5.TabIndex = 16;
+            this.textBox_ClientAdress.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientAdress.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientAdress.Location = new System.Drawing.Point(158, 30);
+            this.textBox_ClientAdress.Name = "textBox_ClientAdress";
+            this.textBox_ClientAdress.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientAdress.TabIndex = 16;
             // 
-            // textBox7
+            // textBox_ClientProvince
             // 
-            this.textBox7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox7.Location = new System.Drawing.Point(158, 67);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(200, 28);
-            this.textBox7.TabIndex = 18;
+            this.textBox_ClientProvince.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientProvince.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientProvince.Location = new System.Drawing.Point(158, 67);
+            this.textBox_ClientProvince.Name = "textBox_ClientProvince";
+            this.textBox_ClientProvince.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientProvince.TabIndex = 18;
             // 
-            // textBox8
+            // textBox_ClientCountry
             // 
-            this.textBox8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox8.Location = new System.Drawing.Point(501, 67);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 28);
-            this.textBox8.TabIndex = 19;
+            this.textBox_ClientCountry.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientCountry.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientCountry.Location = new System.Drawing.Point(501, 67);
+            this.textBox_ClientCountry.Name = "textBox_ClientCountry";
+            this.textBox_ClientCountry.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientCountry.TabIndex = 19;
             // 
             // label8
             // 
@@ -1245,19 +1415,19 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Country :";
             // 
-            // Employee
+            // EmployeeTab
             // 
-            this.Employee.BackColor = System.Drawing.SystemColors.Control;
-            this.Employee.Controls.Add(this.groupBox8);
-            this.Employee.Controls.Add(this.groupBox18);
-            this.Employee.Controls.Add(this.groupBox6);
-            this.Employee.Controls.Add(this.groupBox7);
-            this.Employee.Location = new System.Drawing.Point(4, 22);
-            this.Employee.Name = "Employee";
-            this.Employee.Padding = new System.Windows.Forms.Padding(3);
-            this.Employee.Size = new System.Drawing.Size(719, 799);
-            this.Employee.TabIndex = 1;
-            this.Employee.Text = "tabPage2";
+            this.EmployeeTab.BackColor = System.Drawing.SystemColors.Control;
+            this.EmployeeTab.Controls.Add(this.groupBox8);
+            this.EmployeeTab.Controls.Add(this.groupBox18);
+            this.EmployeeTab.Controls.Add(this.groupBox6);
+            this.EmployeeTab.Controls.Add(this.groupBox7);
+            this.EmployeeTab.Location = new System.Drawing.Point(4, 22);
+            this.EmployeeTab.Name = "EmployeeTab";
+            this.EmployeeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.EmployeeTab.Size = new System.Drawing.Size(719, 789);
+            this.EmployeeTab.TabIndex = 1;
+            this.EmployeeTab.Text = "tabPage2";
             // 
             // groupBox8
             // 
@@ -1352,12 +1522,12 @@
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.textBox71);
+            this.groupBox18.Controls.Add(this.textBox_EmpRelation);
             this.groupBox18.Controls.Add(this.label73);
-            this.groupBox18.Controls.Add(this.textBox72);
+            this.groupBox18.Controls.Add(this.textBox_EmerCP);
             this.groupBox18.Controls.Add(this.label74);
             this.groupBox18.Controls.Add(this.label75);
-            this.groupBox18.Controls.Add(this.textBox73);
+            this.groupBox18.Controls.Add(this.textBox_EmpEmerCN);
             this.groupBox18.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox18.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox18.Location = new System.Drawing.Point(6, 385);
@@ -1367,14 +1537,14 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Emergency";
             // 
-            // textBox71
+            // textBox_EmpRelation
             // 
-            this.textBox71.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox71.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox71.Location = new System.Drawing.Point(157, 66);
-            this.textBox71.Name = "textBox71";
-            this.textBox71.Size = new System.Drawing.Size(200, 28);
-            this.textBox71.TabIndex = 27;
+            this.textBox_EmpRelation.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpRelation.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpRelation.Location = new System.Drawing.Point(157, 66);
+            this.textBox_EmpRelation.Name = "textBox_EmpRelation";
+            this.textBox_EmpRelation.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpRelation.TabIndex = 27;
             // 
             // label73
             // 
@@ -1387,14 +1557,14 @@
             this.label73.TabIndex = 27;
             this.label73.Text = "Relation :";
             // 
-            // textBox72
+            // textBox_EmerCP
             // 
-            this.textBox72.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox72.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox72.Location = new System.Drawing.Point(500, 32);
-            this.textBox72.Name = "textBox72";
-            this.textBox72.Size = new System.Drawing.Size(200, 28);
-            this.textBox72.TabIndex = 27;
+            this.textBox_EmerCP.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmerCP.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmerCP.Location = new System.Drawing.Point(500, 32);
+            this.textBox_EmerCP.Name = "textBox_EmerCP";
+            this.textBox_EmerCP.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmerCP.TabIndex = 27;
             // 
             // label74
             // 
@@ -1418,17 +1588,18 @@
             this.label75.TabIndex = 25;
             this.label75.Text = "Emergency CN :";
             // 
-            // textBox73
+            // textBox_EmpEmerCN
             // 
-            this.textBox73.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox73.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox73.Location = new System.Drawing.Point(157, 32);
-            this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(200, 28);
-            this.textBox73.TabIndex = 20;
+            this.textBox_EmpEmerCN.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpEmerCN.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpEmerCN.Location = new System.Drawing.Point(157, 32);
+            this.textBox_EmpEmerCN.Name = "textBox_EmpEmerCN";
+            this.textBox_EmpEmerCN.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpEmerCN.TabIndex = 20;
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textBox_EmpPosition);
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.radioButton3);
             this.groupBox6.Controls.Add(this.radioButton2);
@@ -1437,11 +1608,11 @@
             this.groupBox6.Controls.Add(this.label69);
             this.groupBox6.Controls.Add(this.label33);
             this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.textBox19);
+            this.groupBox6.Controls.Add(this.textBox_EmpName);
             this.groupBox6.Controls.Add(this.label21);
-            this.groupBox6.Controls.Add(this.textBox20);
-            this.groupBox6.Controls.Add(this.textBox21);
-            this.groupBox6.Controls.Add(this.textBox22);
+            this.groupBox6.Controls.Add(this.textBox_EmpBirth);
+            this.groupBox6.Controls.Add(this.textBox_EmpSin);
+            this.groupBox6.Controls.Add(this.textBox_EmpHire);
             this.groupBox6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
@@ -1450,6 +1621,15 @@
             this.groupBox6.TabIndex = 35;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Profile";
+            // 
+            // textBox_EmpPosition
+            // 
+            this.textBox_EmpPosition.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpPosition.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpPosition.Location = new System.Drawing.Point(469, 105);
+            this.textBox_EmpPosition.Name = "textBox_EmpPosition";
+            this.textBox_EmpPosition.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpPosition.TabIndex = 30;
             // 
             // label32
             // 
@@ -1538,14 +1718,14 @@
             this.label20.TabIndex = 2;
             this.label20.Text = "Name:";
             // 
-            // textBox19
+            // textBox_EmpName
             // 
-            this.textBox19.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox19.Location = new System.Drawing.Point(158, 27);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(511, 28);
-            this.textBox19.TabIndex = 7;
+            this.textBox_EmpName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpName.Location = new System.Drawing.Point(158, 27);
+            this.textBox_EmpName.Name = "textBox_EmpName";
+            this.textBox_EmpName.Size = new System.Drawing.Size(511, 28);
+            this.textBox_EmpName.TabIndex = 7;
             // 
             // label21
             // 
@@ -1558,48 +1738,50 @@
             this.label21.TabIndex = 3;
             this.label21.Text = "Date of Birth :";
             // 
-            // textBox20
+            // textBox_EmpBirth
             // 
-            this.textBox20.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox20.Location = new System.Drawing.Point(158, 66);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(200, 28);
-            this.textBox20.TabIndex = 8;
+            this.textBox_EmpBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpBirth.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpBirth.Location = new System.Drawing.Point(158, 66);
+            this.textBox_EmpBirth.Name = "textBox_EmpBirth";
+            this.textBox_EmpBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpBirth.TabIndex = 8;
+            this.textBox_EmpBirth.TextChanged += new System.EventHandler(this.textBox_EmpBirth_TextChanged);
             // 
-            // textBox21
+            // textBox_EmpSin
             // 
-            this.textBox21.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox21.Location = new System.Drawing.Point(158, 105);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(200, 28);
-            this.textBox21.TabIndex = 9;
+            this.textBox_EmpSin.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpSin.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpSin.Location = new System.Drawing.Point(158, 105);
+            this.textBox_EmpSin.Name = "textBox_EmpSin";
+            this.textBox_EmpSin.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpSin.TabIndex = 9;
             // 
-            // textBox22
+            // textBox_EmpHire
             // 
-            this.textBox22.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox22.Location = new System.Drawing.Point(469, 66);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(200, 28);
-            this.textBox22.TabIndex = 11;
+            this.textBox_EmpHire.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpHire.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpHire.Location = new System.Drawing.Point(469, 66);
+            this.textBox_EmpHire.Name = "textBox_EmpHire";
+            this.textBox_EmpHire.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpHire.TabIndex = 11;
+            this.textBox_EmpHire.TextChanged += new System.EventHandler(this.textBox_EmpHire_TextChanged);
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.textBox23);
+            this.groupBox7.Controls.Add(this.textBox_EmpCell);
             this.groupBox7.Controls.Add(this.label22);
-            this.groupBox7.Controls.Add(this.textBox24);
+            this.groupBox7.Controls.Add(this.textBox_EmpEmail);
             this.groupBox7.Controls.Add(this.label1);
-            this.groupBox7.Controls.Add(this.textBox25);
+            this.groupBox7.Controls.Add(this.textBox_EmpPhone);
             this.groupBox7.Controls.Add(this.label26);
-            this.groupBox7.Controls.Add(this.textBox26);
-            this.groupBox7.Controls.Add(this.textBox27);
+            this.groupBox7.Controls.Add(this.textBox_EmpPostal);
+            this.groupBox7.Controls.Add(this.textBox_EmpCity);
             this.groupBox7.Controls.Add(this.label27);
             this.groupBox7.Controls.Add(this.label28);
-            this.groupBox7.Controls.Add(this.textBox28);
-            this.groupBox7.Controls.Add(this.textBox29);
-            this.groupBox7.Controls.Add(this.textBox30);
+            this.groupBox7.Controls.Add(this.textBox_EmpAdress);
+            this.groupBox7.Controls.Add(this.textBox_EmpProvince);
+            this.groupBox7.Controls.Add(this.textBox_EmpCountry);
             this.groupBox7.Controls.Add(this.label29);
             this.groupBox7.Controls.Add(this.label30);
             this.groupBox7.Controls.Add(this.label31);
@@ -1612,14 +1794,14 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Adress";
             // 
-            // textBox23
+            // textBox_EmpCell
             // 
-            this.textBox23.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox23.Location = new System.Drawing.Point(500, 103);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(200, 28);
-            this.textBox23.TabIndex = 28;
+            this.textBox_EmpCell.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpCell.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpCell.Location = new System.Drawing.Point(500, 103);
+            this.textBox_EmpCell.Name = "textBox_EmpCell";
+            this.textBox_EmpCell.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpCell.TabIndex = 28;
             // 
             // label22
             // 
@@ -1632,14 +1814,14 @@
             this.label22.TabIndex = 27;
             this.label22.Text = "Cell :";
             // 
-            // textBox24
+            // textBox_EmpEmail
             // 
-            this.textBox24.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox24.Location = new System.Drawing.Point(501, 139);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(200, 28);
-            this.textBox24.TabIndex = 26;
+            this.textBox_EmpEmail.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpEmail.Location = new System.Drawing.Point(501, 139);
+            this.textBox_EmpEmail.Name = "textBox_EmpEmail";
+            this.textBox_EmpEmail.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpEmail.TabIndex = 26;
             // 
             // label1
             // 
@@ -1652,14 +1834,14 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Email :";
             // 
-            // textBox25
+            // textBox_EmpPhone
             // 
-            this.textBox25.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox25.Location = new System.Drawing.Point(158, 139);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(200, 28);
-            this.textBox25.TabIndex = 24;
+            this.textBox_EmpPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpPhone.Location = new System.Drawing.Point(158, 139);
+            this.textBox_EmpPhone.Name = "textBox_EmpPhone";
+            this.textBox_EmpPhone.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpPhone.TabIndex = 24;
             // 
             // label26
             // 
@@ -1672,23 +1854,23 @@
             this.label26.TabIndex = 18;
             this.label26.Text = "Phone :";
             // 
-            // textBox26
+            // textBox_EmpPostal
             // 
-            this.textBox26.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox26.Location = new System.Drawing.Point(158, 103);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(200, 28);
-            this.textBox26.TabIndex = 23;
+            this.textBox_EmpPostal.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpPostal.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpPostal.Location = new System.Drawing.Point(158, 103);
+            this.textBox_EmpPostal.Name = "textBox_EmpPostal";
+            this.textBox_EmpPostal.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpPostal.TabIndex = 23;
             // 
-            // textBox27
+            // textBox_EmpCity
             // 
-            this.textBox27.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox27.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox27.Location = new System.Drawing.Point(501, 30);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(200, 28);
-            this.textBox27.TabIndex = 22;
+            this.textBox_EmpCity.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpCity.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpCity.Location = new System.Drawing.Point(501, 30);
+            this.textBox_EmpCity.Name = "textBox_EmpCity";
+            this.textBox_EmpCity.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpCity.TabIndex = 22;
             // 
             // label27
             // 
@@ -1712,32 +1894,32 @@
             this.label28.TabIndex = 12;
             this.label28.Text = "Address :";
             // 
-            // textBox28
+            // textBox_EmpAdress
             // 
-            this.textBox28.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox28.Location = new System.Drawing.Point(158, 30);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(200, 28);
-            this.textBox28.TabIndex = 16;
+            this.textBox_EmpAdress.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpAdress.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpAdress.Location = new System.Drawing.Point(158, 30);
+            this.textBox_EmpAdress.Name = "textBox_EmpAdress";
+            this.textBox_EmpAdress.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpAdress.TabIndex = 16;
             // 
-            // textBox29
+            // textBox_EmpProvince
             // 
-            this.textBox29.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox29.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox29.Location = new System.Drawing.Point(158, 67);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(200, 28);
-            this.textBox29.TabIndex = 18;
+            this.textBox_EmpProvince.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpProvince.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpProvince.Location = new System.Drawing.Point(158, 67);
+            this.textBox_EmpProvince.Name = "textBox_EmpProvince";
+            this.textBox_EmpProvince.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpProvince.TabIndex = 18;
             // 
-            // textBox30
+            // textBox_EmpCountry
             // 
-            this.textBox30.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox30.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox30.Location = new System.Drawing.Point(501, 67);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(200, 28);
-            this.textBox30.TabIndex = 19;
+            this.textBox_EmpCountry.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_EmpCountry.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_EmpCountry.Location = new System.Drawing.Point(501, 67);
+            this.textBox_EmpCountry.Name = "textBox_EmpCountry";
+            this.textBox_EmpCountry.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpCountry.TabIndex = 19;
             // 
             // label29
             // 
@@ -1772,18 +1954,18 @@
             this.label31.TabIndex = 15;
             this.label31.Text = "Country :";
             // 
-            // Volunteer
+            // VolunteerTab
             // 
-            this.Volunteer.BackColor = System.Drawing.SystemColors.Control;
-            this.Volunteer.Controls.Add(this.groupBox12);
-            this.Volunteer.Controls.Add(this.groupBox11);
-            this.Volunteer.Controls.Add(this.groupBox10);
-            this.Volunteer.Controls.Add(this.groupBox9);
-            this.Volunteer.Location = new System.Drawing.Point(4, 22);
-            this.Volunteer.Name = "Volunteer";
-            this.Volunteer.Size = new System.Drawing.Size(719, 799);
-            this.Volunteer.TabIndex = 2;
-            this.Volunteer.Text = "Volunteer";
+            this.VolunteerTab.BackColor = System.Drawing.SystemColors.Control;
+            this.VolunteerTab.Controls.Add(this.groupBox12);
+            this.VolunteerTab.Controls.Add(this.groupBox11);
+            this.VolunteerTab.Controls.Add(this.groupBox10);
+            this.VolunteerTab.Controls.Add(this.groupBox9);
+            this.VolunteerTab.Location = new System.Drawing.Point(4, 22);
+            this.VolunteerTab.Name = "VolunteerTab";
+            this.VolunteerTab.Size = new System.Drawing.Size(719, 789);
+            this.VolunteerTab.TabIndex = 2;
+            this.VolunteerTab.Text = "Volunteer";
             // 
             // groupBox12
             // 
@@ -1878,12 +2060,12 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.textBox41);
+            this.groupBox11.Controls.Add(this.textBox_VolEmerRelation);
             this.groupBox11.Controls.Add(this.label42);
-            this.groupBox11.Controls.Add(this.textBox42);
+            this.groupBox11.Controls.Add(this.textBox_VolEmerCP);
             this.groupBox11.Controls.Add(this.label43);
             this.groupBox11.Controls.Add(this.label44);
-            this.groupBox11.Controls.Add(this.textBox43);
+            this.groupBox11.Controls.Add(this.textBox_VolEmerCN);
             this.groupBox11.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox11.Location = new System.Drawing.Point(6, 307);
@@ -1893,14 +2075,14 @@
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Emergency";
             // 
-            // textBox41
+            // textBox_VolEmerRelation
             // 
-            this.textBox41.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox41.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox41.Location = new System.Drawing.Point(157, 66);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(200, 28);
-            this.textBox41.TabIndex = 27;
+            this.textBox_VolEmerRelation.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolEmerRelation.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolEmerRelation.Location = new System.Drawing.Point(157, 66);
+            this.textBox_VolEmerRelation.Name = "textBox_VolEmerRelation";
+            this.textBox_VolEmerRelation.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolEmerRelation.TabIndex = 27;
             // 
             // label42
             // 
@@ -1913,14 +2095,14 @@
             this.label42.TabIndex = 27;
             this.label42.Text = "Relation :";
             // 
-            // textBox42
+            // textBox_VolEmerCP
             // 
-            this.textBox42.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox42.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox42.Location = new System.Drawing.Point(500, 32);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(200, 28);
-            this.textBox42.TabIndex = 27;
+            this.textBox_VolEmerCP.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolEmerCP.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolEmerCP.Location = new System.Drawing.Point(500, 32);
+            this.textBox_VolEmerCP.Name = "textBox_VolEmerCP";
+            this.textBox_VolEmerCP.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolEmerCP.TabIndex = 27;
             // 
             // label43
             // 
@@ -1944,30 +2126,30 @@
             this.label44.TabIndex = 25;
             this.label44.Text = "Emergency CN :";
             // 
-            // textBox43
+            // textBox_VolEmerCN
             // 
-            this.textBox43.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox43.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox43.Location = new System.Drawing.Point(157, 32);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(200, 28);
-            this.textBox43.TabIndex = 20;
+            this.textBox_VolEmerCN.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolEmerCN.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolEmerCN.Location = new System.Drawing.Point(157, 32);
+            this.textBox_VolEmerCN.Name = "textBox_VolEmerCN";
+            this.textBox_VolEmerCN.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolEmerCN.TabIndex = 20;
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.textBox33);
+            this.groupBox10.Controls.Add(this.textBox_VolCell);
             this.groupBox10.Controls.Add(this.label23);
-            this.groupBox10.Controls.Add(this.textBox34);
+            this.groupBox10.Controls.Add(this.textBox_VolEmail);
             this.groupBox10.Controls.Add(this.label24);
-            this.groupBox10.Controls.Add(this.textBox35);
+            this.groupBox10.Controls.Add(this.textBox_VolPhone);
             this.groupBox10.Controls.Add(this.label34);
-            this.groupBox10.Controls.Add(this.textBox36);
-            this.groupBox10.Controls.Add(this.textBox37);
+            this.groupBox10.Controls.Add(this.textBox_VolPostal);
+            this.groupBox10.Controls.Add(this.textBox_VolCity);
             this.groupBox10.Controls.Add(this.label35);
             this.groupBox10.Controls.Add(this.label38);
-            this.groupBox10.Controls.Add(this.textBox38);
-            this.groupBox10.Controls.Add(this.textBox39);
-            this.groupBox10.Controls.Add(this.textBox40);
+            this.groupBox10.Controls.Add(this.textBox_VolAdress);
+            this.groupBox10.Controls.Add(this.textBox_VolProvince);
+            this.groupBox10.Controls.Add(this.textBox_VolCountry);
             this.groupBox10.Controls.Add(this.label39);
             this.groupBox10.Controls.Add(this.label40);
             this.groupBox10.Controls.Add(this.label41);
@@ -1980,14 +2162,14 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Adress";
             // 
-            // textBox33
+            // textBox_VolCell
             // 
-            this.textBox33.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox33.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox33.Location = new System.Drawing.Point(500, 103);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(200, 28);
-            this.textBox33.TabIndex = 28;
+            this.textBox_VolCell.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolCell.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolCell.Location = new System.Drawing.Point(500, 103);
+            this.textBox_VolCell.Name = "textBox_VolCell";
+            this.textBox_VolCell.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolCell.TabIndex = 28;
             // 
             // label23
             // 
@@ -2000,14 +2182,14 @@
             this.label23.TabIndex = 27;
             this.label23.Text = "Cell :";
             // 
-            // textBox34
+            // textBox_VolEmail
             // 
-            this.textBox34.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox34.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox34.Location = new System.Drawing.Point(501, 139);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(200, 28);
-            this.textBox34.TabIndex = 26;
+            this.textBox_VolEmail.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolEmail.Location = new System.Drawing.Point(501, 139);
+            this.textBox_VolEmail.Name = "textBox_VolEmail";
+            this.textBox_VolEmail.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolEmail.TabIndex = 26;
             // 
             // label24
             // 
@@ -2020,14 +2202,14 @@
             this.label24.TabIndex = 25;
             this.label24.Text = "Email :";
             // 
-            // textBox35
+            // textBox_VolPhone
             // 
-            this.textBox35.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox35.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox35.Location = new System.Drawing.Point(158, 139);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(200, 28);
-            this.textBox35.TabIndex = 24;
+            this.textBox_VolPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolPhone.Location = new System.Drawing.Point(158, 139);
+            this.textBox_VolPhone.Name = "textBox_VolPhone";
+            this.textBox_VolPhone.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolPhone.TabIndex = 24;
             // 
             // label34
             // 
@@ -2040,23 +2222,23 @@
             this.label34.TabIndex = 18;
             this.label34.Text = "Phone :";
             // 
-            // textBox36
+            // textBox_VolPostal
             // 
-            this.textBox36.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox36.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox36.Location = new System.Drawing.Point(158, 103);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(200, 28);
-            this.textBox36.TabIndex = 23;
+            this.textBox_VolPostal.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolPostal.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolPostal.Location = new System.Drawing.Point(158, 103);
+            this.textBox_VolPostal.Name = "textBox_VolPostal";
+            this.textBox_VolPostal.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolPostal.TabIndex = 23;
             // 
-            // textBox37
+            // textBox_VolCity
             // 
-            this.textBox37.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox37.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox37.Location = new System.Drawing.Point(501, 30);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(200, 28);
-            this.textBox37.TabIndex = 22;
+            this.textBox_VolCity.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolCity.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolCity.Location = new System.Drawing.Point(501, 30);
+            this.textBox_VolCity.Name = "textBox_VolCity";
+            this.textBox_VolCity.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolCity.TabIndex = 22;
             // 
             // label35
             // 
@@ -2080,32 +2262,32 @@
             this.label38.TabIndex = 12;
             this.label38.Text = "Address :";
             // 
-            // textBox38
+            // textBox_VolAdress
             // 
-            this.textBox38.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox38.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox38.Location = new System.Drawing.Point(158, 30);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(200, 28);
-            this.textBox38.TabIndex = 16;
+            this.textBox_VolAdress.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolAdress.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolAdress.Location = new System.Drawing.Point(158, 30);
+            this.textBox_VolAdress.Name = "textBox_VolAdress";
+            this.textBox_VolAdress.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolAdress.TabIndex = 16;
             // 
-            // textBox39
+            // textBox_VolProvince
             // 
-            this.textBox39.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox39.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox39.Location = new System.Drawing.Point(158, 67);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(200, 28);
-            this.textBox39.TabIndex = 18;
+            this.textBox_VolProvince.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolProvince.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolProvince.Location = new System.Drawing.Point(158, 67);
+            this.textBox_VolProvince.Name = "textBox_VolProvince";
+            this.textBox_VolProvince.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolProvince.TabIndex = 18;
             // 
-            // textBox40
+            // textBox_VolCountry
             // 
-            this.textBox40.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox40.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox40.Location = new System.Drawing.Point(501, 67);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(200, 28);
-            this.textBox40.TabIndex = 19;
+            this.textBox_VolCountry.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolCountry.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolCountry.Location = new System.Drawing.Point(501, 67);
+            this.textBox_VolCountry.Name = "textBox_VolCountry";
+            this.textBox_VolCountry.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolCountry.TabIndex = 19;
             // 
             // label39
             // 
@@ -2143,9 +2325,9 @@
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.label36);
-            this.groupBox9.Controls.Add(this.textBox31);
+            this.groupBox9.Controls.Add(this.textBox_VolName);
             this.groupBox9.Controls.Add(this.label37);
-            this.groupBox9.Controls.Add(this.textBox32);
+            this.groupBox9.Controls.Add(this.textBox_VolBirth);
             this.groupBox9.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox9.Location = new System.Drawing.Point(6, 6);
@@ -2166,14 +2348,14 @@
             this.label36.TabIndex = 2;
             this.label36.Text = "Name:";
             // 
-            // textBox31
+            // textBox_VolName
             // 
-            this.textBox31.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox31.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox31.Location = new System.Drawing.Point(158, 27);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(511, 28);
-            this.textBox31.TabIndex = 7;
+            this.textBox_VolName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolName.Location = new System.Drawing.Point(158, 27);
+            this.textBox_VolName.Name = "textBox_VolName";
+            this.textBox_VolName.Size = new System.Drawing.Size(511, 28);
+            this.textBox_VolName.TabIndex = 7;
             // 
             // label37
             // 
@@ -2186,41 +2368,42 @@
             this.label37.TabIndex = 3;
             this.label37.Text = "Date of Birth :";
             // 
-            // textBox32
+            // textBox_VolBirth
             // 
-            this.textBox32.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox32.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox32.Location = new System.Drawing.Point(158, 66);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(200, 28);
-            this.textBox32.TabIndex = 8;
+            this.textBox_VolBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_VolBirth.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_VolBirth.Location = new System.Drawing.Point(158, 66);
+            this.textBox_VolBirth.Name = "textBox_VolBirth";
+            this.textBox_VolBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolBirth.TabIndex = 8;
+            this.textBox_VolBirth.TextChanged += new System.EventHandler(this.textBox_VolBirth_TextChanged);
             // 
-            // Board_Member
+            // Board_MemberTab
             // 
-            this.Board_Member.BackColor = System.Drawing.SystemColors.Control;
-            this.Board_Member.Controls.Add(this.groupBox14);
-            this.Board_Member.Controls.Add(this.groupBox13);
-            this.Board_Member.Location = new System.Drawing.Point(4, 22);
-            this.Board_Member.Name = "Board_Member";
-            this.Board_Member.Size = new System.Drawing.Size(719, 799);
-            this.Board_Member.TabIndex = 3;
-            this.Board_Member.Text = "tabPage1";
+            this.Board_MemberTab.BackColor = System.Drawing.SystemColors.Control;
+            this.Board_MemberTab.Controls.Add(this.groupBox14);
+            this.Board_MemberTab.Controls.Add(this.groupBox13);
+            this.Board_MemberTab.Location = new System.Drawing.Point(4, 22);
+            this.Board_MemberTab.Name = "Board_MemberTab";
+            this.Board_MemberTab.Size = new System.Drawing.Size(719, 789);
+            this.Board_MemberTab.TabIndex = 3;
+            this.Board_MemberTab.Text = "tabPage1";
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.textBox46);
+            this.groupBox14.Controls.Add(this.textBox_BoardCell);
             this.groupBox14.Controls.Add(this.label45);
-            this.groupBox14.Controls.Add(this.textBox48);
+            this.groupBox14.Controls.Add(this.textBox_BoardEmail);
             this.groupBox14.Controls.Add(this.label46);
-            this.groupBox14.Controls.Add(this.textBox49);
+            this.groupBox14.Controls.Add(this.textBox_BoardPhone);
             this.groupBox14.Controls.Add(this.label47);
-            this.groupBox14.Controls.Add(this.textBox50);
-            this.groupBox14.Controls.Add(this.textBox51);
+            this.groupBox14.Controls.Add(this.textBox_BoardPostal);
+            this.groupBox14.Controls.Add(this.textBox_BoardCity);
             this.groupBox14.Controls.Add(this.label51);
             this.groupBox14.Controls.Add(this.label52);
-            this.groupBox14.Controls.Add(this.textBox52);
-            this.groupBox14.Controls.Add(this.textBox53);
-            this.groupBox14.Controls.Add(this.textBox54);
+            this.groupBox14.Controls.Add(this.textBox_BoardAdress);
+            this.groupBox14.Controls.Add(this.textBox_BoardProvince);
+            this.groupBox14.Controls.Add(this.textBox_BoardCountry);
             this.groupBox14.Controls.Add(this.label53);
             this.groupBox14.Controls.Add(this.label54);
             this.groupBox14.Controls.Add(this.label55);
@@ -2233,14 +2416,14 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Adress";
             // 
-            // textBox46
+            // textBox_BoardCell
             // 
-            this.textBox46.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox46.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox46.Location = new System.Drawing.Point(500, 103);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(200, 28);
-            this.textBox46.TabIndex = 28;
+            this.textBox_BoardCell.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardCell.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardCell.Location = new System.Drawing.Point(500, 103);
+            this.textBox_BoardCell.Name = "textBox_BoardCell";
+            this.textBox_BoardCell.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardCell.TabIndex = 28;
             // 
             // label45
             // 
@@ -2253,14 +2436,14 @@
             this.label45.TabIndex = 27;
             this.label45.Text = "Cell :";
             // 
-            // textBox48
+            // textBox_BoardEmail
             // 
-            this.textBox48.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox48.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox48.Location = new System.Drawing.Point(501, 139);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(200, 28);
-            this.textBox48.TabIndex = 26;
+            this.textBox_BoardEmail.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardEmail.Location = new System.Drawing.Point(501, 139);
+            this.textBox_BoardEmail.Name = "textBox_BoardEmail";
+            this.textBox_BoardEmail.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardEmail.TabIndex = 26;
             // 
             // label46
             // 
@@ -2273,14 +2456,14 @@
             this.label46.TabIndex = 25;
             this.label46.Text = "Email :";
             // 
-            // textBox49
+            // textBox_BoardPhone
             // 
-            this.textBox49.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox49.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox49.Location = new System.Drawing.Point(158, 139);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(200, 28);
-            this.textBox49.TabIndex = 24;
+            this.textBox_BoardPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardPhone.Location = new System.Drawing.Point(158, 139);
+            this.textBox_BoardPhone.Name = "textBox_BoardPhone";
+            this.textBox_BoardPhone.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardPhone.TabIndex = 24;
             // 
             // label47
             // 
@@ -2293,23 +2476,23 @@
             this.label47.TabIndex = 18;
             this.label47.Text = "Phone :";
             // 
-            // textBox50
+            // textBox_BoardPostal
             // 
-            this.textBox50.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox50.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox50.Location = new System.Drawing.Point(158, 103);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(200, 28);
-            this.textBox50.TabIndex = 23;
+            this.textBox_BoardPostal.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardPostal.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardPostal.Location = new System.Drawing.Point(158, 103);
+            this.textBox_BoardPostal.Name = "textBox_BoardPostal";
+            this.textBox_BoardPostal.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardPostal.TabIndex = 23;
             // 
-            // textBox51
+            // textBox_BoardCity
             // 
-            this.textBox51.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox51.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox51.Location = new System.Drawing.Point(501, 30);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(200, 28);
-            this.textBox51.TabIndex = 22;
+            this.textBox_BoardCity.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardCity.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardCity.Location = new System.Drawing.Point(501, 30);
+            this.textBox_BoardCity.Name = "textBox_BoardCity";
+            this.textBox_BoardCity.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardCity.TabIndex = 22;
             // 
             // label51
             // 
@@ -2333,32 +2516,32 @@
             this.label52.TabIndex = 12;
             this.label52.Text = "Address :";
             // 
-            // textBox52
+            // textBox_BoardAdress
             // 
-            this.textBox52.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox52.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox52.Location = new System.Drawing.Point(158, 30);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(200, 28);
-            this.textBox52.TabIndex = 16;
+            this.textBox_BoardAdress.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardAdress.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardAdress.Location = new System.Drawing.Point(158, 30);
+            this.textBox_BoardAdress.Name = "textBox_BoardAdress";
+            this.textBox_BoardAdress.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardAdress.TabIndex = 16;
             // 
-            // textBox53
+            // textBox_BoardProvince
             // 
-            this.textBox53.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox53.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox53.Location = new System.Drawing.Point(158, 67);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(200, 28);
-            this.textBox53.TabIndex = 18;
+            this.textBox_BoardProvince.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardProvince.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardProvince.Location = new System.Drawing.Point(158, 67);
+            this.textBox_BoardProvince.Name = "textBox_BoardProvince";
+            this.textBox_BoardProvince.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardProvince.TabIndex = 18;
             // 
-            // textBox54
+            // textBox_BoardCountry
             // 
-            this.textBox54.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox54.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox54.Location = new System.Drawing.Point(501, 67);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(200, 28);
-            this.textBox54.TabIndex = 19;
+            this.textBox_BoardCountry.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardCountry.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardCountry.Location = new System.Drawing.Point(501, 67);
+            this.textBox_BoardCountry.Name = "textBox_BoardCountry";
+            this.textBox_BoardCountry.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardCountry.TabIndex = 19;
             // 
             // label53
             // 
@@ -2397,10 +2580,10 @@
             // 
             this.groupBox13.Controls.Add(this.label48);
             this.groupBox13.Controls.Add(this.label49);
-            this.groupBox13.Controls.Add(this.textBox44);
+            this.groupBox13.Controls.Add(this.textBox_BoardName);
             this.groupBox13.Controls.Add(this.label50);
-            this.groupBox13.Controls.Add(this.textBox45);
-            this.groupBox13.Controls.Add(this.textBox47);
+            this.groupBox13.Controls.Add(this.textBox_BoardBirth);
+            this.groupBox13.Controls.Add(this.textBox_BoardOccupation);
             this.groupBox13.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox13.Location = new System.Drawing.Point(6, 6);
@@ -2415,7 +2598,7 @@
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.ForeColor = System.Drawing.Color.DimGray;
-            this.label48.Location = new System.Drawing.Point(364, 69);
+            this.label48.Location = new System.Drawing.Point(357, 69);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(111, 21);
             this.label48.TabIndex = 23;
@@ -2432,14 +2615,14 @@
             this.label49.TabIndex = 2;
             this.label49.Text = "Name:";
             // 
-            // textBox44
+            // textBox_BoardName
             // 
-            this.textBox44.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox44.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox44.Location = new System.Drawing.Point(158, 27);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(511, 28);
-            this.textBox44.TabIndex = 7;
+            this.textBox_BoardName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardName.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardName.Location = new System.Drawing.Point(158, 27);
+            this.textBox_BoardName.Name = "textBox_BoardName";
+            this.textBox_BoardName.Size = new System.Drawing.Size(511, 28);
+            this.textBox_BoardName.TabIndex = 7;
             // 
             // label50
             // 
@@ -2452,34 +2635,35 @@
             this.label50.TabIndex = 3;
             this.label50.Text = "Date of Birth :";
             // 
-            // textBox45
+            // textBox_BoardBirth
             // 
-            this.textBox45.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox45.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox45.Location = new System.Drawing.Point(158, 66);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(200, 28);
-            this.textBox45.TabIndex = 8;
+            this.textBox_BoardBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardBirth.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardBirth.Location = new System.Drawing.Point(158, 66);
+            this.textBox_BoardBirth.Name = "textBox_BoardBirth";
+            this.textBox_BoardBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardBirth.TabIndex = 8;
+            this.textBox_BoardBirth.TextChanged += new System.EventHandler(this.textBox_BoardBirth_TextChanged);
             // 
-            // textBox47
+            // textBox_BoardOccupation
             // 
-            this.textBox47.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox47.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox47.Location = new System.Drawing.Point(469, 66);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(200, 28);
-            this.textBox47.TabIndex = 11;
+            this.textBox_BoardOccupation.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_BoardOccupation.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_BoardOccupation.Location = new System.Drawing.Point(469, 66);
+            this.textBox_BoardOccupation.Name = "textBox_BoardOccupation";
+            this.textBox_BoardOccupation.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardOccupation.TabIndex = 11;
             // 
-            // Other
+            // OtherTab
             // 
-            this.Other.BackColor = System.Drawing.SystemColors.Control;
-            this.Other.Controls.Add(this.groupBox15);
-            this.Other.Controls.Add(this.groupBox16);
-            this.Other.Location = new System.Drawing.Point(4, 22);
-            this.Other.Name = "Other";
-            this.Other.Size = new System.Drawing.Size(719, 799);
-            this.Other.TabIndex = 4;
-            this.Other.Text = "tabPage2";
+            this.OtherTab.BackColor = System.Drawing.SystemColors.Control;
+            this.OtherTab.Controls.Add(this.groupBox15);
+            this.OtherTab.Controls.Add(this.groupBox16);
+            this.OtherTab.Location = new System.Drawing.Point(4, 22);
+            this.OtherTab.Name = "OtherTab";
+            this.OtherTab.Size = new System.Drawing.Size(719, 789);
+            this.OtherTab.TabIndex = 4;
+            this.OtherTab.Text = "tabPage2";
             // 
             // groupBox15
             // 
@@ -2725,7 +2909,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -2733,7 +2917,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(1091, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(1076, 37);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -2753,7 +2937,7 @@
             // 
             this.Transportation.Location = new System.Drawing.Point(4, 22);
             this.Transportation.Name = "Transportation";
-            this.Transportation.Size = new System.Drawing.Size(1091, 930);
+            this.Transportation.Size = new System.Drawing.Size(1076, 726);
             this.Transportation.TabIndex = 2;
             this.Transportation.Text = "Transportation";
             this.Transportation.UseVisualStyleBackColor = true;
@@ -2762,18 +2946,10 @@
             // 
             this.Bills.Location = new System.Drawing.Point(4, 22);
             this.Bills.Name = "Bills";
-            this.Bills.Size = new System.Drawing.Size(1091, 930);
+            this.Bills.Size = new System.Drawing.Size(1076, 726);
             this.Bills.TabIndex = 3;
             this.Bills.Text = "Bills";
             this.Bills.UseVisualStyleBackColor = true;
-            // 
-            // profilesTableAdapter
-            // 
-            this.profilesTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoriesTableAdapter
-            // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // toolStrip4
             // 
@@ -2783,11 +2959,25 @@
             this.toolStrip4.TabIndex = 6;
             this.toolStrip4.Text = "toolStrip4";
             // 
+            // profilesTableAdapter
+            // 
+            this.profilesTableAdapter.ClearBeforeFill = true;
+            // 
+            // categoriesTableAdapter
+            // 
+            this.categoriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // AddProfileErrorProvider
+            // 
+            this.AddProfileErrorProvider.ContainerControl = this;
+            this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1260, 986);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1260, 782);
             this.Controls.Add(this.toolStrip4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -2809,10 +2999,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).EndInit();
+            this.toolStrip6.ResumeLayout(false);
+            this.toolStrip6.PerformLayout();
+            this.toolStrip5.ResumeLayout(false);
+            this.toolStrip5.PerformLayout();
             this.toolStrip3.ResumeLayout(false);
             this.toolStrip3.PerformLayout();
             this.tabControl2.ResumeLayout(false);
-            this.Client.ResumeLayout(false);
+            this.ClientTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2827,7 +3021,7 @@
             this.toolStrip2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.Employee.ResumeLayout(false);
+            this.EmployeeTab.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox18.ResumeLayout(false);
@@ -2836,7 +3030,7 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.Volunteer.ResumeLayout(false);
+            this.VolunteerTab.ResumeLayout(false);
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -2845,18 +3039,19 @@
             this.groupBox10.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.Board_Member.ResumeLayout(false);
+            this.Board_MemberTab.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
-            this.Other.ResumeLayout(false);
+            this.OtherTab.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2879,16 +3074,16 @@
         private System.Windows.Forms.TabPage Bills;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TabControl tabControl2;
-        private System.Windows.Forms.TabPage Client;
+        private System.Windows.Forms.TabPage ClientTab;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_ClientName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox_ClientBirth;
+        private System.Windows.Forms.CheckBox ClientMember;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_ClientParis;
+        private System.Windows.Forms.TextBox textBox_ClientHD;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.CheckBox checkBox7;
@@ -2907,63 +3102,63 @@
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox DopEmerClientName;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripTextBox DopEmerClientPhone;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox_ClientPharmPhone;
+        private System.Windows.Forms.TextBox textBox_ClientPharmName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBoxClientDocPhone;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox_ClientDocName;
+        private System.Windows.Forms.TextBox textBox_ClientRelation;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox_ClientEmPhone;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox_ClientEmerName;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox_ClientEmail;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox_ClientPhone;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox_ClientPostal;
+        private System.Windows.Forms.TextBox textBox_ClientCity;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox_ClientAdress;
+        private System.Windows.Forms.TextBox textBox_ClientProvince;
+        private System.Windows.Forms.TextBox textBox_ClientCountry;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TabPage Employee;
-        private System.Windows.Forms.TabPage Volunteer;
-        private System.Windows.Forms.TabPage Board_Member;
-        private System.Windows.Forms.TabPage Other;
+        private System.Windows.Forms.TabPage EmployeeTab;
+        private System.Windows.Forms.TabPage VolunteerTab;
+        private System.Windows.Forms.TabPage Board_MemberTab;
+        private System.Windows.Forms.TabPage OtherTab;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox textBox_EmpName;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox_EmpBirth;
+        private System.Windows.Forms.TextBox textBox_EmpSin;
+        private System.Windows.Forms.TextBox textBox_EmpHire;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox textBox_EmpEmail;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox textBox_EmpPhone;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox textBox_EmpPostal;
+        private System.Windows.Forms.TextBox textBox_EmpCity;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox textBox_EmpAdress;
+        private System.Windows.Forms.TextBox textBox_EmpProvince;
+        private System.Windows.Forms.TextBox textBox_EmpCountry;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
@@ -2974,38 +3169,38 @@
         private System.Windows.Forms.CheckBox checkBox15;
         private System.Windows.Forms.CheckBox checkBox16;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.TextBox textBox71;
+        private System.Windows.Forms.TextBox textBox_EmpRelation;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.TextBox textBox72;
+        private System.Windows.Forms.TextBox textBox_EmerCP;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.TextBox textBox73;
+        private System.Windows.Forms.TextBox textBox_EmpEmerCN;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox textBox_EmpCell;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox textBox_VolName;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox textBox_VolBirth;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBox_VolCell;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox textBox_VolEmail;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox textBox_VolPhone;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.TextBox textBox37;
+        private System.Windows.Forms.TextBox textBox_VolPostal;
+        private System.Windows.Forms.TextBox textBox_VolCity;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox39;
-        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox textBox_VolAdress;
+        private System.Windows.Forms.TextBox textBox_VolProvince;
+        private System.Windows.Forms.TextBox textBox_VolCountry;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
@@ -3016,33 +3211,33 @@
         private System.Windows.Forms.CheckBox checkBox20;
         private System.Windows.Forms.CheckBox checkBox21;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TextBox textBox41;
+        private System.Windows.Forms.TextBox textBox_VolEmerRelation;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox textBox_VolEmerCP;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.TextBox textBox_VolEmerCN;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox textBox44;
+        private System.Windows.Forms.TextBox textBox_BoardName;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox textBox45;
-        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.TextBox textBox_BoardBirth;
+        private System.Windows.Forms.TextBox textBox_BoardOccupation;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.TextBox textBox46;
+        private System.Windows.Forms.TextBox textBox_BoardCell;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox textBox_BoardEmail;
         private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.TextBox textBox49;
+        private System.Windows.Forms.TextBox textBox_BoardPhone;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox50;
-        private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox textBox_BoardPostal;
+        private System.Windows.Forms.TextBox textBox_BoardCity;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TextBox textBox52;
-        private System.Windows.Forms.TextBox textBox53;
-        private System.Windows.Forms.TextBox textBox54;
+        private System.Windows.Forms.TextBox textBox_BoardAdress;
+        private System.Windows.Forms.TextBox textBox_BoardProvince;
+        private System.Windows.Forms.TextBox textBox_BoardCountry;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
@@ -3071,15 +3266,28 @@
         private TDayDataSet tDayDataSet;
         private System.Windows.Forms.BindingSource profilesBindingSource;
         private TDayDataSetTableAdapters.ProfilesTableAdapter profilesTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.BindingSource categoriesBindingSource;
         private TDayDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
+        private System.Windows.Forms.ToolStrip toolStrip4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox3;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStrip toolStrip5;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn profileIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStrip toolStrip4;
+        private System.Windows.Forms.ToolStrip toolStrip6;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.TextBox textBox_EmpPosition;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
 
 
 

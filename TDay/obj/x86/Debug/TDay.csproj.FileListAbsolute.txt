@@ -58,3 +58,4 @@ D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.read.1.tlog
 D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.write.1.tlog
+D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Conn.resources

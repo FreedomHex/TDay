@@ -52,5 +52,11 @@ namespace TDay
                     break;
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Conn src = new Conn();
+            src.ShowDialog();
+        }
     }
 }

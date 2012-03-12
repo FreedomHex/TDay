@@ -75,8 +75,19 @@
     <Compile Include="Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Address.cs" />
+    <Compile Include="Classes\Attendance.cs" />
     <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\EmergencyContact.cs" />
+    <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Profile.cs" />
+    <Compile Include="Classes\Transportation.cs" />
+    <Compile Include="Conn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conn.Designer.cs">
+      <DependentUpon>Conn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Providers\Enums.cs" />
     <Compile Include="Providers\AuthProvider.cs" />
     <Compile Include="MainFrame.cs">
@@ -86,9 +97,14 @@
       <DependentUpon>MainFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Providers\ErrorProvider.cs" />
+    <Compile Include="Providers\FormProvider.cs" />
     <Compile Include="Providers\ProfileProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TDayDataSet.cs">
+      <DependentUpon>TDayDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TDayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conn.resx">
+      <DependentUpon>Conn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
@@ -164,7 +183,18 @@
   <ItemGroup>
     <None Include="Resources\Preferense.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Preferense1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preferense2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preferense3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

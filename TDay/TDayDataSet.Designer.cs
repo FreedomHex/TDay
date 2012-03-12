@@ -2882,6 +2882,8 @@ namespace TDay {
             
             private global::System.Data.DataColumn columnComments;
             
+            private global::System.Data.DataColumn columnMember;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProfilesDataTable() {
@@ -3037,6 +3039,14 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MemberColumn {
+                get {
+                    return this.columnMember;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3072,7 +3082,7 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProfilesRow AddProfilesRow(string Name, CategoriesRow parentCategoriesRowByFK_Profiles_Categories, System.DateTime BirthDate, System.DateTime HireDate, string Position, string PositionType, string Occupation, string SIN, string PARISNumber, string DoctorName, string DoctorPhone, string PharmacistName, string PharmacistPhone, string Comments) {
+            public ProfilesRow AddProfilesRow(string Name, CategoriesRow parentCategoriesRowByFK_Profiles_Categories, System.DateTime BirthDate, System.DateTime HireDate, string Position, string PositionType, string Occupation, string SIN, string PARISNumber, string DoctorName, string DoctorPhone, string PharmacistName, string PharmacistPhone, string Comments, bool Member) {
                 ProfilesRow rowProfilesRow = ((ProfilesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3089,7 +3099,8 @@ namespace TDay {
                         DoctorPhone,
                         PharmacistName,
                         PharmacistPhone,
-                        Comments};
+                        Comments,
+                        Member};
                 if ((parentCategoriesRowByFK_Profiles_Categories != null)) {
                     columnValuesArray[2] = parentCategoriesRowByFK_Profiles_Categories[0];
                 }
@@ -3137,6 +3148,7 @@ namespace TDay {
                 this.columnPharmacistName = base.Columns["PharmacistName"];
                 this.columnPharmacistPhone = base.Columns["PharmacistPhone"];
                 this.columnComments = base.Columns["Comments"];
+                this.columnMember = base.Columns["Member"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3172,6 +3184,8 @@ namespace TDay {
                 base.Columns.Add(this.columnPharmacistPhone);
                 this.columnComments = new global::System.Data.DataColumn("Comments", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComments);
+                this.columnMember = new global::System.Data.DataColumn("Member", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMember);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnProfileId}, true));
                 this.columnProfileId.AutoIncrement = true;
@@ -5816,6 +5830,22 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Member {
+                get {
+                    try {
+                        return ((bool)(this[this.tableProfiles.MemberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Member\' в таблице \'Profiles\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfiles.MemberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CategoriesRow CategoriesRow {
                 get {
                     return ((CategoriesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Profiles_Categories"])));
@@ -5967,6 +5997,18 @@ namespace TDay {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCommentsNull() {
                 this[this.tableProfiles.CommentsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMemberNull() {
+                return this.IsNull(this.tableProfiles.MemberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMemberNull() {
+                this[this.tableProfiles.MemberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9626,21 +9668,17 @@ SELECT EmergencyId, ProfileId, EmergencyContactName, EmergencyContactPhone, Rela
             tableMapping.ColumnMappings.Add("PharmacistName", "PharmacistName");
             tableMapping.ColumnMappings.Add("PharmacistPhone", "PharmacistPhone");
             tableMapping.ColumnMappings.Add("Comments", "Comments");
+            tableMapping.ColumnMappings.Add("Member", "Member");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Profiles] WHERE (([ProfileId] = @Original_ProfileId) AND ([Category] = @Original_Category) AND ((@IsNull_BirthDate = 1 AND [BirthDate] IS NULL) OR ([BirthDate] = @Original_BirthDate)) AND ((@IsNull_HireDate = 1 AND [HireDate] IS NULL) OR ([HireDate] = @Original_HireDate)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Profiles\r\nWHERE        (ProfileId = @Original_ProfileId)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BirthDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BirthDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HireDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HireDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HireDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HireDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfileId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Profiles] ([Name], [Category], [BirthDate], [HireDate], [Position], [PositionType], [Occupation], [SIN], [PARISNumber], [DoctorName], [DoctorPhone], [PharmacistName], [PharmacistPhone], [Comments]) VALUES (@Name, @Category, @BirthDate, @HireDate, @Position, @PositionType, @Occupation, @SIN, @PARISNumber, @DoctorName, @DoctorPhone, @PharmacistName, @PharmacistPhone, @Comments);
-SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, Comments FROM Profiles WHERE (ProfileId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Profiles] ([Name], [Category], [BirthDate], [HireDate], [Position], [PositionType], [Occupation], [SIN], [PARISNumber], [DoctorName], [DoctorPhone], [PharmacistName], [PharmacistPhone], [Comments], [Member]) VALUES (@Name, @Category, @BirthDate, @HireDate, @Position, @PositionType, @Occupation, @SIN, @PARISNumber, @DoctorName, @DoctorPhone, @PharmacistName, @PharmacistPhone, @Comments, @Member);
+SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, Comments, Member FROM Profiles WHERE (ProfileId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9656,10 +9694,11 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PharmacistName", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PharmacistName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PharmacistPhone", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PharmacistPhone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comments", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Member", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Member", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Profiles] SET [Name] = @Name, [Category] = @Category, [BirthDate] = @BirthDate, [HireDate] = @HireDate, [Position] = @Position, [PositionType] = @PositionType, [Occupation] = @Occupation, [SIN] = @SIN, [PARISNumber] = @PARISNumber, [DoctorName] = @DoctorName, [DoctorPhone] = @DoctorPhone, [PharmacistName] = @PharmacistName, [PharmacistPhone] = @PharmacistPhone, [Comments] = @Comments WHERE (([ProfileId] = @Original_ProfileId) AND ([Category] = @Original_Category) AND ((@IsNull_BirthDate = 1 AND [BirthDate] IS NULL) OR ([BirthDate] = @Original_BirthDate)) AND ((@IsNull_HireDate = 1 AND [HireDate] IS NULL) OR ([HireDate] = @Original_HireDate)));
-SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, Comments FROM Profiles WHERE (ProfileId = @ProfileId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Profiles] SET [Name] = @Name, [Category] = @Category, [BirthDate] = @BirthDate, [HireDate] = @HireDate, [Position] = @Position, [PositionType] = @PositionType, [Occupation] = @Occupation, [SIN] = @SIN, [PARISNumber] = @PARISNumber, [DoctorName] = @DoctorName, [DoctorPhone] = @DoctorPhone, [PharmacistName] = @PharmacistName, [PharmacistPhone] = @PharmacistPhone, [Comments] = @Comments, [Member] = @Member WHERE (([ProfileId] = @Original_ProfileId) AND ([Category] = @Original_Category) AND ((@IsNull_BirthDate = 1 AND [BirthDate] IS NULL) OR ([BirthDate] = @Original_BirthDate)) AND ((@IsNull_HireDate = 1 AND [HireDate] IS NULL) OR ([HireDate] = @Original_HireDate)) AND ((@IsNull_Member = 1 AND [Member] IS NULL) OR ([Member] = @Original_Member)));
+SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, Comments, Member FROM Profiles WHERE (ProfileId = @ProfileId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9675,12 +9714,15 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PharmacistName", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PharmacistName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PharmacistPhone", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PharmacistPhone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comments", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Member", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Member", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BirthDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BirthDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BirthDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_HireDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HireDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HireDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HireDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Member", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Member", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Member", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Member", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfileId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -9697,9 +9739,10 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, Oc" +
-                "cupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistP" +
-                "hone, Comments FROM dbo.Profiles";
+            this._commandCollection[0].CommandText = "SELECT        ProfileId, Name, Category, BirthDate, HireDate, Position, PositionT" +
+                "ype, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, \r\n  " +
+                "                       PharmacistPhone, Comments, Member\r\nFROM            Profil" +
+                "es";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9760,25 +9803,8 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ProfileId, int Original_Category, global::System.Nullable<global::System.DateTime> Original_BirthDate, global::System.Nullable<global::System.DateTime> Original_HireDate) {
+        public virtual int Delete(int Original_ProfileId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ProfileId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Category));
-            if ((Original_BirthDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_BirthDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Original_HireDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_HireDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9799,7 +9825,7 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, int Category, global::System.Nullable<global::System.DateTime> BirthDate, global::System.Nullable<global::System.DateTime> HireDate, string Position, string PositionType, string Occupation, string SIN, string PARISNumber, string DoctorName, string DoctorPhone, string PharmacistName, string PharmacistPhone, string Comments) {
+        public virtual int Insert(string Name, int Category, global::System.Nullable<global::System.DateTime> BirthDate, global::System.Nullable<global::System.DateTime> HireDate, string Position, string PositionType, string Occupation, string SIN, string PARISNumber, string DoctorName, string DoctorPhone, string PharmacistName, string PharmacistPhone, string Comments, global::System.Nullable<bool> Member) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -9879,6 +9905,12 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Comments));
             }
+            if ((Member.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((bool)(Member.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9914,10 +9946,12 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
                     string PharmacistName, 
                     string PharmacistPhone, 
                     string Comments, 
+                    global::System.Nullable<bool> Member, 
                     int Original_ProfileId, 
                     int Original_Category, 
                     global::System.Nullable<global::System.DateTime> Original_BirthDate, 
                     global::System.Nullable<global::System.DateTime> Original_HireDate, 
+                    global::System.Nullable<bool> Original_Member, 
                     int ProfileId) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
@@ -9998,25 +10032,39 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Comments));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ProfileId));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Category));
-            if ((Original_BirthDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_BirthDate.Value));
+            if ((Member.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Member.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_ProfileId));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Category));
+            if ((Original_BirthDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_BirthDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_HireDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_HireDate.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_HireDate.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ProfileId));
+            if ((Original_Member.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(Original_Member.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(ProfileId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10052,11 +10100,13 @@ SELECT ProfileId, Name, Category, BirthDate, HireDate, Position, PositionType, O
                     string PharmacistName, 
                     string PharmacistPhone, 
                     string Comments, 
+                    global::System.Nullable<bool> Member, 
                     int Original_ProfileId, 
                     int Original_Category, 
                     global::System.Nullable<global::System.DateTime> Original_BirthDate, 
-                    global::System.Nullable<global::System.DateTime> Original_HireDate) {
-            return this.Update(Name, Category, BirthDate, HireDate, Position, PositionType, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, Comments, Original_ProfileId, Original_Category, Original_BirthDate, Original_HireDate, Original_ProfileId);
+                    global::System.Nullable<global::System.DateTime> Original_HireDate, 
+                    global::System.Nullable<bool> Original_Member) {
+            return this.Update(Name, Category, BirthDate, HireDate, Position, PositionType, Occupation, SIN, PARISNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, Comments, Member, Original_ProfileId, Original_Category, Original_BirthDate, Original_HireDate, Original_Member, Original_ProfileId);
         }
     }
     

@@ -74,9 +74,16 @@ namespace TDay.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Preferense {
+        internal static System.Drawing.Bitmap Preferense3 {
             get {
-                object obj = ResourceManager.GetObject("Preferense", resourceCulture);
+                object obj = ResourceManager.GetObject("Preferense3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Search {
+            get {
+                object obj = ResourceManager.GetObject("Search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

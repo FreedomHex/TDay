@@ -35,6 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.ErrorLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -94,7 +95,7 @@
             // 
             this.buttonLogin.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonLogin.Location = new System.Drawing.Point(343, 215);
+            this.buttonLogin.Location = new System.Drawing.Point(343, 227);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(124, 36);
             this.buttonLogin.TabIndex = 5;
@@ -107,19 +108,31 @@
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorLabel.Location = new System.Drawing.Point(27, 228);
+            this.ErrorLabel.Location = new System.Drawing.Point(28, 204);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(42, 16);
             this.ErrorLabel.TabIndex = 6;
             this.ErrorLabel.Text = "label4";
             this.ErrorLabel.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::TDay.Properties.Resources.Preferense3;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(3, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 40);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Auth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(479, 259);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(479, 267);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
@@ -132,7 +145,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Auth";
-            this.Opacity = 0.8D;
+            this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auth";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Auth_KeyDown);
@@ -150,5 +163,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -6,23 +6,21 @@ using System.Data;
 
 namespace TDay
 {
-    public class Profile
+    public class Employee:Profile
     {
         TDayDataSet tDayDataSet = new TDayDataSet();
         TDayDataSetTableAdapters.ProfilesTableAdapter ProfilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
-        public int ProfileUID                       { get; set; }
-        public string Name                          { get; set; }
-        public string Occupation                    { get; set; }
-        public DateTime DateOfBirdh                 { get; set; }
-        public Address Adress                       { get; set; }
-        public EmergencyContact EmergencyContact    { get; set; }
-        public Attendance Attendance                { get; set; }
+        public DateTime HireDate { get; set; }
+        public string Position { get; set; }
+        public string SIN { get; set; }
+        public string PositionType { get; set; }
 
-        public Profile()
+        public Employee()
         {
-            Occupation = String.Empty;
+
         }
-        public Profile(int ProfileUID)
+
+        public Employee(int ProfileUID)
         {
             this.ProfileUID = ProfileUID;
             ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
@@ -32,44 +30,40 @@ namespace TDay
                 {
                     this.Name = Row["Name"].ToString();
                     this.DateOfBirdh = DateTime.Parse(Row["BirthDate"].ToString());
-                    this.Occupation = Row["Occupation"].ToString();
+                    this.HireDate = DateTime.Parse(Row["HireDate"].ToString());
+                    this.Position = Row["Position"].ToString();
+                    this.PositionType = Row["PositionType"].ToString();
+                    this.SIN = Row["SIN"].ToString();
                     this.Adress = new Address(ProfileUID);
                     this.EmergencyContact = new EmergencyContact(ProfileUID, false);
                     this.Attendance = new Attendance(ProfileUID);
                     break;
                 }
             }
+
         }
 
-        public void Update()
+        public new void Update()
         {
             ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
             DataRow Row = tDayDataSet.Profiles.FindByProfileId(ProfileUID);
             Row["Name"] = Name;
             Row["BirthDate"] = DateOfBirdh;
-            Row["Occupation"] = Occupation;
+            Row["HireDate"] = HireDate;
+            Row["Position"] = Position;
+            Row["PositionType"] = PositionType;
+            Row["SIN"] = SIN;
             ProfilesTableAdapter.Update(tDayDataSet.Profiles);
             Adress.Update();
-            if (Attendance.AttendanceId!=0)
-            {
-                Attendance.Update();
-            }
-            if (EmergencyContact.EmergencyId!=0)
-            {
-                EmergencyContact.Update();
-            }
+            Attendance.Update();
+            EmergencyContact.Update();
         }
-        public void Create(Enums.Category Category)
+
+        public void Create()
         {
-            ProfilesTableAdapter.Insert(Name, (int)Category, DateOfBirdh, null, null, null, Occupation, null, null, null, null, null, null, null,null);
+            ProfilesTableAdapter.Insert(this.Name, (int)Enums.Category.Employee, this.DateOfBirdh, this.HireDate, Position, PositionType, null, SIN, null, null, null, null, null, null,null);
             ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
             this.ProfileUID = tDayDataSet.Profiles[tDayDataSet.Profiles.Count - 1].ProfileId;
         }
-
-        public void Delete()
-        {
-            ProfilesTableAdapter.Delete(ProfileUID);
-        }
-
     }
 }
