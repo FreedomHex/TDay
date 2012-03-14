@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -44,21 +44,8 @@
             this.Attendance = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profileIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tDayDataSet = new TDay.TDayDataSet();
-            this.attendanceDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lunchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.lunchPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.takeOutPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miscellaneousPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vanPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roundTripPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookOfTicketsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daysBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -287,9 +274,23 @@
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
             this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
-            this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.daysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
+            this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.profileIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.attendanceDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lunchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lunchPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.takeOutPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miscellaneousPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vanPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roundTripPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookOfTicketsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -338,8 +339,8 @@
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -475,18 +476,19 @@
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dayIdDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
             this.profileIdDataGridViewTextBoxColumn1,
             this.attendanceDataGridViewCheckBoxColumn,
             this.lunchDataGridViewCheckBoxColumn,
@@ -497,53 +499,35 @@
             this.roundTripPriceDataGridViewTextBoxColumn,
             this.bookOfTicketsDataGridViewTextBoxColumn,
             this.Total,
-            this.commentsDataGridViewTextBoxColumn});
+            this.commentsDataGridViewTextBoxColumn,
+            this.dayIdDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.daysBindingSource1;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.DimGray;
             this.dataGridView2.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1089, 607);
             this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
-            // 
-            // dayIdDataGridViewTextBoxColumn
-            // 
-            this.dayIdDataGridViewTextBoxColumn.DataPropertyName = "DayId";
-            this.dayIdDataGridViewTextBoxColumn.HeaderText = "DayId";
-            this.dayIdDataGridViewTextBoxColumn.Name = "dayIdDataGridViewTextBoxColumn";
-            this.dayIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dayIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // profileIdDataGridViewTextBoxColumn1
-            // 
-            this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource;
-            this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
-            this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.profileIdDataGridViewTextBoxColumn1.Name = "profileIdDataGridViewTextBoxColumn1";
-            this.profileIdDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn1.Width = 200;
+            this.dataGridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
+            this.dataGridView2.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView2_DataBindingComplete);
+            this.dataGridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView2_DataError);
+            this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
+            this.dataGridView2.Paint += new System.Windows.Forms.PaintEventHandler(this.dataGridView2_Paint);
+            this.dataGridView2.Validated += new System.EventHandler(this.dataGridView2_Validated);
             // 
             // profilesBindingSource
             // 
@@ -554,71 +538,6 @@
             // 
             this.tDayDataSet.DataSetName = "TDayDataSet";
             this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // attendanceDataGridViewCheckBoxColumn
-            // 
-            this.attendanceDataGridViewCheckBoxColumn.DataPropertyName = "Attendance";
-            this.attendanceDataGridViewCheckBoxColumn.FalseValue = "";
-            this.attendanceDataGridViewCheckBoxColumn.HeaderText = "A";
-            this.attendanceDataGridViewCheckBoxColumn.Name = "attendanceDataGridViewCheckBoxColumn";
-            this.attendanceDataGridViewCheckBoxColumn.TrueValue = "";
-            this.attendanceDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // lunchDataGridViewCheckBoxColumn
-            // 
-            this.lunchDataGridViewCheckBoxColumn.DataPropertyName = "Lunch";
-            this.lunchDataGridViewCheckBoxColumn.HeaderText = "LC";
-            this.lunchDataGridViewCheckBoxColumn.Name = "lunchDataGridViewCheckBoxColumn";
-            this.lunchDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // lunchPriceDataGridViewTextBoxColumn
-            // 
-            this.lunchPriceDataGridViewTextBoxColumn.DataPropertyName = "LunchPrice";
-            this.lunchPriceDataGridViewTextBoxColumn.HeaderText = "L$";
-            this.lunchPriceDataGridViewTextBoxColumn.Name = "lunchPriceDataGridViewTextBoxColumn";
-            // 
-            // takeOutPriceDataGridViewTextBoxColumn
-            // 
-            this.takeOutPriceDataGridViewTextBoxColumn.DataPropertyName = "TakeOutPrice";
-            this.takeOutPriceDataGridViewTextBoxColumn.HeaderText = "TO$";
-            this.takeOutPriceDataGridViewTextBoxColumn.Name = "takeOutPriceDataGridViewTextBoxColumn";
-            // 
-            // miscellaneousPriceDataGridViewTextBoxColumn
-            // 
-            this.miscellaneousPriceDataGridViewTextBoxColumn.DataPropertyName = "MiscellaneousPrice";
-            this.miscellaneousPriceDataGridViewTextBoxColumn.HeaderText = "Miso$";
-            this.miscellaneousPriceDataGridViewTextBoxColumn.Name = "miscellaneousPriceDataGridViewTextBoxColumn";
-            // 
-            // vanPriceDataGridViewTextBoxColumn
-            // 
-            this.vanPriceDataGridViewTextBoxColumn.DataPropertyName = "VanPrice";
-            this.vanPriceDataGridViewTextBoxColumn.HeaderText = "Van";
-            this.vanPriceDataGridViewTextBoxColumn.Name = "vanPriceDataGridViewTextBoxColumn";
-            // 
-            // roundTripPriceDataGridViewTextBoxColumn
-            // 
-            this.roundTripPriceDataGridViewTextBoxColumn.DataPropertyName = "RoundTripPrice";
-            this.roundTripPriceDataGridViewTextBoxColumn.HeaderText = "RT";
-            this.roundTripPriceDataGridViewTextBoxColumn.Name = "roundTripPriceDataGridViewTextBoxColumn";
-            // 
-            // bookOfTicketsDataGridViewTextBoxColumn
-            // 
-            this.bookOfTicketsDataGridViewTextBoxColumn.DataPropertyName = "BookOfTickets";
-            this.bookOfTicketsDataGridViewTextBoxColumn.HeaderText = "BFT";
-            this.bookOfTicketsDataGridViewTextBoxColumn.Name = "bookOfTicketsDataGridViewTextBoxColumn";
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // commentsDataGridViewTextBoxColumn
-            // 
-            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
-            this.commentsDataGridViewTextBoxColumn.HeaderText = "Comments";
-            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
             // 
             // daysBindingSource1
             // 
@@ -665,7 +584,7 @@
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label64.ForeColor = System.Drawing.Color.DimGray;
-            this.label64.Location = new System.Drawing.Point(39, 10);
+            this.label64.Location = new System.Drawing.Point(50, 10);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(72, 21);
             this.label64.TabIndex = 2;
@@ -746,28 +665,28 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.profilesBindingSource;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 72);
             this.dataGridView1.MultiSelect = false;
@@ -3267,11 +3186,6 @@
             // 
             this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
-            // AddProfileErrorProvider
-            // 
-            this.AddProfileErrorProvider.ContainerControl = this;
-            this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
-            // 
             // daysBindingSource
             // 
             this.daysBindingSource.DataMember = "Days";
@@ -3280,6 +3194,113 @@
             // daysTableAdapter
             // 
             this.daysTableAdapter.ClearBeforeFill = true;
+            // 
+            // AddProfileErrorProvider
+            // 
+            this.AddProfileErrorProvider.ContainerControl = this;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
+            // 
+            // profileIdDataGridViewTextBoxColumn1
+            // 
+            this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource;
+            this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
+            this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.profileIdDataGridViewTextBoxColumn1.Name = "profileIdDataGridViewTextBoxColumn1";
+            this.profileIdDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // attendanceDataGridViewCheckBoxColumn
+            // 
+            this.attendanceDataGridViewCheckBoxColumn.DataPropertyName = "Attendance";
+            this.attendanceDataGridViewCheckBoxColumn.FalseValue = "false";
+            this.attendanceDataGridViewCheckBoxColumn.HeaderText = "A";
+            this.attendanceDataGridViewCheckBoxColumn.IndeterminateValue = "null";
+            this.attendanceDataGridViewCheckBoxColumn.Name = "attendanceDataGridViewCheckBoxColumn";
+            this.attendanceDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.attendanceDataGridViewCheckBoxColumn.TrueValue = "true";
+            this.attendanceDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // lunchDataGridViewCheckBoxColumn
+            // 
+            this.lunchDataGridViewCheckBoxColumn.DataPropertyName = "Lunch";
+            this.lunchDataGridViewCheckBoxColumn.FalseValue = "false";
+            this.lunchDataGridViewCheckBoxColumn.HeaderText = "LC";
+            this.lunchDataGridViewCheckBoxColumn.IndeterminateValue = "null";
+            this.lunchDataGridViewCheckBoxColumn.Name = "lunchDataGridViewCheckBoxColumn";
+            this.lunchDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.lunchDataGridViewCheckBoxColumn.TrueValue = "true";
+            this.lunchDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // lunchPriceDataGridViewTextBoxColumn
+            // 
+            this.lunchPriceDataGridViewTextBoxColumn.DataPropertyName = "LunchPrice";
+            this.lunchPriceDataGridViewTextBoxColumn.HeaderText = "L$";
+            this.lunchPriceDataGridViewTextBoxColumn.Name = "lunchPriceDataGridViewTextBoxColumn";
+            // 
+            // takeOutPriceDataGridViewTextBoxColumn
+            // 
+            this.takeOutPriceDataGridViewTextBoxColumn.DataPropertyName = "TakeOutPrice";
+            this.takeOutPriceDataGridViewTextBoxColumn.HeaderText = "TO$";
+            this.takeOutPriceDataGridViewTextBoxColumn.Name = "takeOutPriceDataGridViewTextBoxColumn";
+            // 
+            // miscellaneousPriceDataGridViewTextBoxColumn
+            // 
+            this.miscellaneousPriceDataGridViewTextBoxColumn.DataPropertyName = "MiscellaneousPrice";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.HeaderText = "Miso$";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.Name = "miscellaneousPriceDataGridViewTextBoxColumn";
+            // 
+            // vanPriceDataGridViewTextBoxColumn
+            // 
+            this.vanPriceDataGridViewTextBoxColumn.DataPropertyName = "VanPrice";
+            this.vanPriceDataGridViewTextBoxColumn.HeaderText = "Van";
+            this.vanPriceDataGridViewTextBoxColumn.Name = "vanPriceDataGridViewTextBoxColumn";
+            // 
+            // roundTripPriceDataGridViewTextBoxColumn
+            // 
+            this.roundTripPriceDataGridViewTextBoxColumn.DataPropertyName = "RoundTripPrice";
+            this.roundTripPriceDataGridViewTextBoxColumn.HeaderText = "RT";
+            this.roundTripPriceDataGridViewTextBoxColumn.Name = "roundTripPriceDataGridViewTextBoxColumn";
+            // 
+            // bookOfTicketsDataGridViewTextBoxColumn
+            // 
+            this.bookOfTicketsDataGridViewTextBoxColumn.DataPropertyName = "BookOfTickets";
+            this.bookOfTicketsDataGridViewTextBoxColumn.HeaderText = "BFT";
+            this.bookOfTicketsDataGridViewTextBoxColumn.Name = "bookOfTicketsDataGridViewTextBoxColumn";
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // commentsDataGridViewTextBoxColumn
+            // 
+            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn.HeaderText = "Comments";
+            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
+            // 
+            // dayIdDataGridViewTextBoxColumn
+            // 
+            this.dayIdDataGridViewTextBoxColumn.DataPropertyName = "DayId";
+            this.dayIdDataGridViewTextBoxColumn.HeaderText = "DayId";
+            this.dayIdDataGridViewTextBoxColumn.Name = "dayIdDataGridViewTextBoxColumn";
+            this.dayIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dayIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Visible = false;
             // 
             // MainFrame
             // 
@@ -3371,8 +3392,8 @@
             this.groupBox16.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3606,7 +3627,6 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.TextBox textBox_EmpPosition;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.BindingSource daysBindingSource;
         private TDayDataSetTableAdapters.DaysTableAdapter daysTableAdapter;
@@ -3614,8 +3634,17 @@
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox_ClientRelation;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn attendanceDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn lunchDataGridViewCheckBoxColumn;
@@ -3627,15 +3656,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bookOfTicketsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox_ClientRelation;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
 
 
 

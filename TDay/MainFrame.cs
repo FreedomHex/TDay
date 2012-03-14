@@ -52,15 +52,13 @@ namespace TDay
             }
             CurrentDay.CreateDay();
             this.daysTableAdapter.Fill(this.tDayDataSet.Days,CurrentDay.Date);
-            FormProvider.SerVisulaStyle(dataGridView2);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             CurrentDay.CreateDay();
-            daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
-            FormProvider.SerVisulaStyle(dataGridView2);
+            //daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
             tabControl1.SelectedTab = Attendance;
         }
         private void button2_Click(object sender, EventArgs e)
@@ -557,29 +555,137 @@ namespace TDay
 
         private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
             switch (e.ColumnIndex)
             {
                 case 3:
-                    if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue)
+                    DayItem Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.LunchPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["lunchPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 4:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.TakeOutPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["takeOutPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 5:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.MiscellaneousPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["miscellaneousPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 6:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.VanPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 7:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.RoundTripPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 8:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.BookOfTickets = (decimal)dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 10:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.Comments = dataGridView2.Rows[e.RowIndex].Cells["commentsDataGridViewTextBoxColumn"].Value.ToString();
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+            }
+        }
+
+        private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            FormProvider.CurrentRowIndex = e.RowIndex;
+            FormProvider.CurrentColIndex = e.ColumnIndex;
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)
                     {
-                        if(DialogResult.Yes == MessageBox.Show("Are you ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+                        if (DialogResult.Yes == MessageBox.Show("Are you ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                         {
                             daysTableAdapter.Delete((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value);
-                            daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
+                            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
                         }
+                        else
+                        {
+                            dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                            dataGridView2.RefreshEdit();
+                        }
+                    }
+                    
+                    break;
+                case 2:
+                    if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue)
+                    {
+                        DayItem Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                        Item.Lunch = false;
+                        Item.LunchPrice = Decimal.Zero;
+                        Item.Update();
+                        daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    }
+                    else
+                    {
+                        DayItem Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                        Item.Lunch = true;
+                        Item.LunchPrice = Item.GetLunchPrice();
+                        Item.Update();
+                        daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
                     }
                     break;
 
             }
         }
 
+        private void dataGridView2_Paint(object sender, PaintEventArgs e)
+        {
+            //FormProvider.SetVisulaStyle(dataGridView2);
+        }
 
+        private void dataGridView2_Validated(object sender, EventArgs e)
+        {
+           //ataGridView2.Rows[FormProvider.CurrentRowIndex].Cells[FormProvider.CurrentColIndex].Selected = true;
+        }
 
+        private void dataGridView2_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if ((int)ProfileProvider.GetCategory((int)dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].Value) != 1)
+            {
+                dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].ReadOnly = true;
+            }
+        }
 
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dataGridView2.Rows.Count > 0 && FormProvider.CurrentRowIndex < dataGridView2.Rows.Count)
+            {
+                dataGridView2.ClearSelection();
+                dataGridView2.Rows[FormProvider.CurrentRowIndex].Cells[FormProvider.CurrentColIndex].Selected = true;
+            }
+        }
+
+        private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            Rectangle rec = dataGridView2.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex,true);
+            Point m = dataGridView2.PointToScreen(Point.Empty);
+            toolTip1.Show(e.Exception.Message, this, rec.Location.X+Math.Abs(m.X-this.Location.X)+rec.Width, rec.Location.Y+Math.Abs(m.Y-this.Location.Y)+rec.Height, 3000);
+            e.ThrowException = false;
+            e.Cancel = true;
+        }
     }
 }

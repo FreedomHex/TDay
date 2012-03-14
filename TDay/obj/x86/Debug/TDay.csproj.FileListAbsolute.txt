@@ -47,8 +47,6 @@ D:\Projects\TDay\TDay\obj\x86\Debug\TDay.exe
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.pdb
 D:\Projects\TDay\TDay\bin\Debug\TDay.exe
 D:\Projects\TDay\TDay\bin\Debug\TDay.pdb
-D:\Projects\TDay\TDay\bin\Debug\System.Data.SqlServerCe.dll
-D:\Projects\TDay\TDay\bin\Debug\RU\System.Data.SqlServerCe.resources.dll
 D:\Projects\TDay\TDay\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.AddProfile.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Auth.resources
