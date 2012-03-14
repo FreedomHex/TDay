@@ -78,6 +78,8 @@
     <Compile Include="Classes\Address.cs" />
     <Compile Include="Classes\Attendance.cs" />
     <Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Day.cs" />
+    <Compile Include="Classes\DayItem.cs" />
     <Compile Include="Classes\EmergencyContact.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Profile.cs" />
@@ -133,6 +135,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -25,8 +25,11 @@ namespace TDay
         }
         public bool SortByCategory = false;
         public string CategoryFilter = String.Empty;
+        public Day CurrentDay = new Day();
         private void MainFrame_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Days". При необходимости она может быть перемещена или удалена.
+            
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Categories". При необходимости она может быть перемещена или удалена.
             this.categoriesTableAdapter.Fill(this.tDayDataSet.Categories);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Profiles". При необходимости она может быть перемещена или удалена.
@@ -43,12 +46,21 @@ namespace TDay
             tabControl2.TabStop = false;
             toolStripComboBox1.SelectedIndex = 0;
             DataGridViewCellEventArgs sen = new DataGridViewCellEventArgs(0, 0);
-            dataGridView1_CellClick(sender, sen);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1_CellClick(sender, sen);
+            }
+            CurrentDay.CreateDay();
+            this.daysTableAdapter.Fill(this.tDayDataSet.Days,CurrentDay.Date);
+            FormProvider.SerVisulaStyle(dataGridView2);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CurrentDay.CreateDay();
+            daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
+            FormProvider.SerVisulaStyle(dataGridView2);
             tabControl1.SelectedTab = Attendance;
         }
         private void button2_Click(object sender, EventArgs e)
@@ -101,18 +113,23 @@ namespace TDay
                     {
                         toolStripLabel1.Visible = true;
                         toolStripLabel2.Visible = true;
+                        toolStripLabel4.Visible = true;
                         DopEmerClientName.Visible = true;
                         DopEmerClientPhone.Visible = true;
+                        toolStripTextBox2.Visible = true;
                         toolStripButton2.Visible = false;
                         DopEmerClientName.Text = client.DopEmergencyContact.Name;
                         DopEmerClientPhone.Text = client.DopEmergencyContact.Phone;
+                        toolStripTextBox2.Text = client.DopEmergencyContact.Relation;
                     }
                     else
                     {
                         toolStripButton2.Visible = true;
                         toolStripLabel1.Visible = false;
                         toolStripLabel2.Visible = false;
+                        toolStripLabel4.Visible = false;
                         DopEmerClientName.Visible = false;
+                        toolStripTextBox2.Visible = false;
                         DopEmerClientPhone.Visible = false;
                     }
                     checkBox2.Checked = client.Attendance.Monday;
@@ -236,9 +253,11 @@ namespace TDay
         {
             toolStripLabel1.Visible = true;
             toolStripLabel2.Visible = true;
+            toolStripLabel4.Visible = true;
             DopEmerClientName.Visible = true;
             DopEmerClientPhone.Visible = true;
             toolStripButton2.Visible = false;
+            toolStripTextBox2.Visible = true;
         }
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -410,6 +429,7 @@ namespace TDay
                          client.DopEmergencyContact = new EmergencyContact();
                          client.DopEmergencyContact.Name = DopEmerClientName.Text;
                          client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
+                         client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
                          client.DopEmergencyContact.AddEmergencyContactTo(client);
                      }
                      else if(DopEmerClientName.Visible)
@@ -532,6 +552,29 @@ namespace TDay
                     dataGridView1.Rows[RowIndex].Selected = true;
                     button8.Enabled = false;
                     break;
+            }
+        }
+
+        private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (e.ColumnIndex)
+            {
+                case 3:
+                    if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue)
+                    {
+                        if(DialogResult.Yes == MessageBox.Show("Are you ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+                        {
+                            daysTableAdapter.Delete((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value);
+                            daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
+                        }
+                    }
+                    break;
+
             }
         }
 

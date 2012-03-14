@@ -2140,6 +2140,10 @@ namespace TDay {
             
             private global::System.Data.DataColumn columnComments;
             
+            private global::System.Data.DataColumn columnAttendance;
+            
+            private global::System.Data.DataColumn columnTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DaysDataTable() {
@@ -2263,6 +2267,22 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AttendanceColumn {
+                get {
+                    return this.columnAttendance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalColumn {
+                get {
+                    return this.columnTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2298,7 +2318,7 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DaysRow AddDaysRow(System.DateTime Date, ProfilesRow parentProfilesRowByFK_Profiles_Days, bool Lunch, decimal LunchPrice, decimal TakeOutPrice, decimal MiscellaneousPrice, decimal VanPrice, decimal RoundTripPrice, decimal BookOfTickets, string Comments) {
+            public DaysRow AddDaysRow(System.DateTime Date, ProfilesRow parentProfilesRowByFK_Profiles_Days, bool Lunch, decimal LunchPrice, decimal TakeOutPrice, decimal MiscellaneousPrice, decimal VanPrice, decimal RoundTripPrice, decimal BookOfTickets, string Comments, bool Attendance, decimal Total) {
                 DaysRow rowDaysRow = ((DaysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2311,7 +2331,9 @@ namespace TDay {
                         VanPrice,
                         RoundTripPrice,
                         BookOfTickets,
-                        Comments};
+                        Comments,
+                        Attendance,
+                        Total};
                 if ((parentProfilesRowByFK_Profiles_Days != null)) {
                     columnValuesArray[2] = parentProfilesRowByFK_Profiles_Days[0];
                 }
@@ -2355,6 +2377,8 @@ namespace TDay {
                 this.columnRoundTripPrice = base.Columns["RoundTripPrice"];
                 this.columnBookOfTickets = base.Columns["BookOfTickets"];
                 this.columnComments = base.Columns["Comments"];
+                this.columnAttendance = base.Columns["Attendance"];
+                this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2382,6 +2406,10 @@ namespace TDay {
                 base.Columns.Add(this.columnBookOfTickets);
                 this.columnComments = new global::System.Data.DataColumn("Comments", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnComments);
+                this.columnAttendance = new global::System.Data.DataColumn("Attendance", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttendance);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotal);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDayId}, true));
                 this.columnDayId.AutoIncrement = true;
@@ -5361,6 +5389,38 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Attendance {
+                get {
+                    try {
+                        return ((bool)(this[this.tableDays.AttendanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Attendance\' в таблице \'Days\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDays.AttendanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Total {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDays.TotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Total\' в таблице \'Days\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDays.TotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProfilesRow ProfilesRow {
                 get {
                     return ((ProfilesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Profiles_Days"])));
@@ -5452,6 +5512,30 @@ namespace TDay {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCommentsNull() {
                 this[this.tableDays.CommentsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAttendanceNull() {
+                return this.IsNull(this.tableDays.AttendanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAttendanceNull() {
+                this[this.tableDays.AttendanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalNull() {
+                return this.IsNull(this.tableDays.TotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalNull() {
+                this[this.tableDays.TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7952,7 +8036,7 @@ SELECT AttendanceId, ProfileId, Monday, Tuesday, Wednesday, Thursday, Friday FRO
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Bills] WHERE (([BillId] = @Original_BillId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([BillTotal] = @Original_BillTotal) AND ([Paid] = @Original_Paid) AND ([PaidType] = @Original_PaidType) AND ([PaidDate] = @Original_PaidDate) AND ([PreviousBillTotal] = @Original_PreviousBillTotal) AND ([PreviousBillPaid] = @Original_PreviousBillPaid) AND ([PreviousBillPaidDate] = @Original_PreviousBillPaidDate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Bills] WHERE (([BillId] = @Original_BillId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([BillTotal] = @Original_BillTotal) AND ([Paid] = @Original_Paid) AND ([PaidType] = @Original_PaidType) AND ([PaidDate] = @Original_PaidDate) AND ([PreviousBillTotal] = @Original_PreviousBillTotal) AND ([PreviousBillPaid] = @Original_PreviousBillPaid) AND ([PreviousBillPaidDate] = @Original_PreviousBillPaidDate))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BillId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BillId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7966,7 +8050,7 @@ SELECT AttendanceId, ProfileId, Monday, Tuesday, Wednesday, Thursday, Friday FRO
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreviousBillPaidDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousBillPaidDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Bills] ([Date], [ProfileId], [BillTotal], [Paid], [PaidType], [PaidDate], [PreviousBillTotal], [PreviousBillPaid], [PreviousBillPaidDate]) VALUES (@Date, @ProfileId, @BillTotal, @Paid, @PaidType, @PaidDate, @PreviousBillTotal, @PreviousBillPaid, @PreviousBillPaidDate);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Bills] ([Date], [ProfileId], [BillTotal], [Paid], [PaidType], [PaidDate], [PreviousBillTotal], [PreviousBillPaid], [PreviousBillPaidDate]) VALUES (@Date, @ProfileId, @BillTotal, @Paid, @PaidType, @PaidDate, @PreviousBillTotal, @PreviousBillPaid, @PreviousBillPaidDate);
 SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBillTotal, PreviousBillPaid, PreviousBillPaidDate FROM Bills WHERE (BillId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7980,7 +8064,7 @@ SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBil
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreviousBillPaidDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreviousBillPaidDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Bills] SET [Date] = @Date, [ProfileId] = @ProfileId, [BillTotal] = @BillTotal, [Paid] = @Paid, [PaidType] = @PaidType, [PaidDate] = @PaidDate, [PreviousBillTotal] = @PreviousBillTotal, [PreviousBillPaid] = @PreviousBillPaid, [PreviousBillPaidDate] = @PreviousBillPaidDate WHERE (([BillId] = @Original_BillId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([BillTotal] = @Original_BillTotal) AND ([Paid] = @Original_Paid) AND ([PaidType] = @Original_PaidType) AND ([PaidDate] = @Original_PaidDate) AND ([PreviousBillTotal] = @Original_PreviousBillTotal) AND ([PreviousBillPaid] = @Original_PreviousBillPaid) AND ([PreviousBillPaidDate] = @Original_PreviousBillPaidDate));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Bills] SET [Date] = @Date, [ProfileId] = @ProfileId, [BillTotal] = @BillTotal, [Paid] = @Paid, [PaidType] = @PaidType, [PaidDate] = @PaidDate, [PreviousBillTotal] = @PreviousBillTotal, [PreviousBillPaid] = @PreviousBillPaid, [PreviousBillPaidDate] = @PreviousBillPaidDate WHERE (([BillId] = @Original_BillId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([BillTotal] = @Original_BillTotal) AND ([Paid] = @Original_Paid) AND ([PaidType] = @Original_PaidType) AND ([PaidDate] = @Original_PaidDate) AND ([PreviousBillTotal] = @Original_PreviousBillTotal) AND ([PreviousBillPaid] = @Original_PreviousBillPaid) AND ([PreviousBillPaidDate] = @Original_PreviousBillPaidDate));
 SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBillTotal, PreviousBillPaid, PreviousBillPaidDate FROM Bills WHERE (BillId = @BillId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8018,17 +8102,25 @@ SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBil
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBill" +
-                "Total, PreviousBillPaid, PreviousBillPaidDate FROM dbo.Bills";
+            this._commandCollection[0].CommandText = "SELECT        BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, Previ" +
+                "ousBillTotal, PreviousBillPaid, PreviousBillPaidDate\r\nFROM            Bills\r\nWHE" +
+                "RE        (Date = @Date)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TDayDataSet.BillsDataTable dataTable) {
+        public virtual int Fill(TDayDataSet.BillsDataTable dataTable, string Date) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Date));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8040,8 +8132,14 @@ SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBil
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TDayDataSet.BillsDataTable GetData() {
+        public virtual TDayDataSet.BillsDataTable GetData(string Date) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Date == null)) {
+                throw new global::System.ArgumentNullException("Date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Date));
+            }
             TDayDataSet.BillsDataTable dataTable = new TDayDataSet.BillsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8681,31 +8779,18 @@ SELECT BillId, Date, ProfileId, BillTotal, Paid, PaidType, PaidDate, PreviousBil
             tableMapping.ColumnMappings.Add("RoundTripPrice", "RoundTripPrice");
             tableMapping.ColumnMappings.Add("BookOfTickets", "BookOfTickets");
             tableMapping.ColumnMappings.Add("Comments", "Comments");
+            tableMapping.ColumnMappings.Add("Attendance", "Attendance");
+            tableMapping.ColumnMappings.Add("Total", "Total");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Days] WHERE (([DayId] = @Original_DayId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([Lunch] = @Original_Lunch) AND ((@IsNull_LunchPrice = 1 AND [LunchPrice] IS NULL) OR ([LunchPrice] = @Original_LunchPrice)) AND ((@IsNull_TakeOutPrice = 1 AND [TakeOutPrice] IS NULL) OR ([TakeOutPrice] = @Original_TakeOutPrice)) AND ((@IsNull_MiscellaneousPrice = 1 AND [MiscellaneousPrice] IS NULL) OR ([MiscellaneousPrice] = @Original_MiscellaneousPrice)) AND ((@IsNull_VanPrice = 1 AND [VanPrice] IS NULL) OR ([VanPrice] = @Original_VanPrice)) AND ((@IsNull_RoundTripPrice = 1 AND [RoundTripPrice] IS NULL) OR ([RoundTripPrice] = @Original_RoundTripPrice)) AND ((@IsNull_BookOfTickets = 1 AND [BookOfTickets] IS NULL) OR ([BookOfTickets] = @Original_BookOfTickets)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Days\r\nWHERE        (DayId = @Original_DayId)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DayId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lunch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lunch", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LunchPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LunchPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LunchPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LunchPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_TakeOutPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TakeOutPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TakeOutPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TakeOutPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MiscellaneousPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiscellaneousPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MiscellaneousPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiscellaneousPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_VanPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VanPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VanPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VanPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RoundTripPrice", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoundTripPrice", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoundTripPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoundTripPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BookOfTickets", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookOfTickets", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BookOfTickets", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookOfTickets", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DayId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Days] ([Date], [ProfileId], [Lunch], [LunchPrice], [TakeOutPrice], [MiscellaneousPrice], [VanPrice], [RoundTripPrice], [BookOfTickets], [Comments]) VALUES (@Date, @ProfileId, @Lunch, @LunchPrice, @TakeOutPrice, @MiscellaneousPrice, @VanPrice, @RoundTripPrice, @BookOfTickets, @Comments);
-SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments FROM Days WHERE (DayId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Days] ([Date], [ProfileId], [Lunch], [LunchPrice], [TakeOutPrice], [MiscellaneousPrice], [VanPrice], [RoundTripPrice], [BookOfTickets], [Comments], [Attendance], [Total]) VALUES (@Date, @ProfileId, @Lunch, @LunchPrice, @TakeOutPrice, @MiscellaneousPrice, @VanPrice, @RoundTripPrice, @BookOfTickets, @Comments, @Attendance, @Total);
+SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Attendance, Total FROM Days WHERE (DayId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8717,10 +8802,12 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoundTripPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoundTripPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookOfTickets", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookOfTickets", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comments", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Days] SET [Date] = @Date, [ProfileId] = @ProfileId, [Lunch] = @Lunch, [LunchPrice] = @LunchPrice, [TakeOutPrice] = @TakeOutPrice, [MiscellaneousPrice] = @MiscellaneousPrice, [VanPrice] = @VanPrice, [RoundTripPrice] = @RoundTripPrice, [BookOfTickets] = @BookOfTickets, [Comments] = @Comments WHERE (([DayId] = @Original_DayId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([Lunch] = @Original_Lunch) AND ((@IsNull_LunchPrice = 1 AND [LunchPrice] IS NULL) OR ([LunchPrice] = @Original_LunchPrice)) AND ((@IsNull_TakeOutPrice = 1 AND [TakeOutPrice] IS NULL) OR ([TakeOutPrice] = @Original_TakeOutPrice)) AND ((@IsNull_MiscellaneousPrice = 1 AND [MiscellaneousPrice] IS NULL) OR ([MiscellaneousPrice] = @Original_MiscellaneousPrice)) AND ((@IsNull_VanPrice = 1 AND [VanPrice] IS NULL) OR ([VanPrice] = @Original_VanPrice)) AND ((@IsNull_RoundTripPrice = 1 AND [RoundTripPrice] IS NULL) OR ([RoundTripPrice] = @Original_RoundTripPrice)) AND ((@IsNull_BookOfTickets = 1 AND [BookOfTickets] IS NULL) OR ([BookOfTickets] = @Original_BookOfTickets)));
-SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments FROM Days WHERE (DayId = @DayId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Days] SET [Date] = @Date, [ProfileId] = @ProfileId, [Lunch] = @Lunch, [LunchPrice] = @LunchPrice, [TakeOutPrice] = @TakeOutPrice, [MiscellaneousPrice] = @MiscellaneousPrice, [VanPrice] = @VanPrice, [RoundTripPrice] = @RoundTripPrice, [BookOfTickets] = @BookOfTickets, [Comments] = @Comments, [Attendance] = @Attendance, [Total] = @Total WHERE (([DayId] = @Original_DayId) AND ([Date] = @Original_Date) AND ([ProfileId] = @Original_ProfileId) AND ([Lunch] = @Original_Lunch) AND ((@IsNull_LunchPrice = 1 AND [LunchPrice] IS NULL) OR ([LunchPrice] = @Original_LunchPrice)) AND ((@IsNull_TakeOutPrice = 1 AND [TakeOutPrice] IS NULL) OR ([TakeOutPrice] = @Original_TakeOutPrice)) AND ((@IsNull_MiscellaneousPrice = 1 AND [MiscellaneousPrice] IS NULL) OR ([MiscellaneousPrice] = @Original_MiscellaneousPrice)) AND ((@IsNull_VanPrice = 1 AND [VanPrice] IS NULL) OR ([VanPrice] = @Original_VanPrice)) AND ((@IsNull_RoundTripPrice = 1 AND [RoundTripPrice] IS NULL) OR ([RoundTripPrice] = @Original_RoundTripPrice)) AND ((@IsNull_BookOfTickets = 1 AND [BookOfTickets] IS NULL) OR ([BookOfTickets] = @Original_BookOfTickets)) AND ((@IsNull_Attendance = 1 AND [Attendance] IS NULL) OR ([Attendance] = @Original_Attendance)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)));
+SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Attendance, Total FROM Days WHERE (DayId = @DayId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProfileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8732,6 +8819,8 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoundTripPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoundTripPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BookOfTickets", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookOfTickets", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comments", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DayId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DayId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ProfileId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -8748,6 +8837,10 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoundTripPrice", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoundTripPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BookOfTickets", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookOfTickets", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BookOfTickets", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BookOfTickets", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Attendance", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Attendance", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Attendance", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Total", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DayId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DayId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -8764,17 +8857,20 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPric" +
-                "e, VanPrice, RoundTripPrice, BookOfTickets, Comments FROM dbo.Days";
+            this._commandCollection[0].CommandText = "SELECT        DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, Miscellane" +
+                "ousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Attendance, Total\r\n" +
+                "FROM            Days\r\nWHERE        (Date = @Date)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TDayDataSet.DaysDataTable dataTable) {
+        public virtual int Fill(TDayDataSet.DaysDataTable dataTable, System.DateTime Date) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Date));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8786,8 +8882,9 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TDayDataSet.DaysDataTable GetData() {
+        public virtual TDayDataSet.DaysDataTable GetData(System.DateTime Date) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Date));
             TDayDataSet.DaysDataTable dataTable = new TDayDataSet.DaysDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8826,59 +8923,8 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_DayId, System.DateTime Original_Date, int Original_ProfileId, bool Original_Lunch, global::System.Nullable<decimal> Original_LunchPrice, global::System.Nullable<decimal> Original_TakeOutPrice, global::System.Nullable<decimal> Original_MiscellaneousPrice, global::System.Nullable<decimal> Original_VanPrice, global::System.Nullable<decimal> Original_RoundTripPrice, global::System.Nullable<decimal> Original_BookOfTickets) {
+        public virtual int Delete(int Original_DayId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_DayId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ProfileId));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_Lunch));
-            if ((Original_LunchPrice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_LunchPrice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Original_TakeOutPrice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_TakeOutPrice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_MiscellaneousPrice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_MiscellaneousPrice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_VanPrice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_VanPrice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((Original_RoundTripPrice.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((decimal)(Original_RoundTripPrice.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_BookOfTickets.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((decimal)(Original_BookOfTickets.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8899,7 +8945,7 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime Date, int ProfileId, bool Lunch, global::System.Nullable<decimal> LunchPrice, global::System.Nullable<decimal> TakeOutPrice, global::System.Nullable<decimal> MiscellaneousPrice, global::System.Nullable<decimal> VanPrice, global::System.Nullable<decimal> RoundTripPrice, global::System.Nullable<decimal> BookOfTickets, string Comments) {
+        public virtual int Insert(System.DateTime Date, int ProfileId, bool Lunch, global::System.Nullable<decimal> LunchPrice, global::System.Nullable<decimal> TakeOutPrice, global::System.Nullable<decimal> MiscellaneousPrice, global::System.Nullable<decimal> VanPrice, global::System.Nullable<decimal> RoundTripPrice, global::System.Nullable<decimal> BookOfTickets, string Comments, global::System.Nullable<bool> Attendance, global::System.Nullable<decimal> Total) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Date));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ProfileId));
             this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(Lunch));
@@ -8945,6 +8991,18 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Comments));
             }
+            if ((Attendance.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((bool)(Attendance.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Total.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(Total.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8976,6 +9034,8 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
                     global::System.Nullable<decimal> RoundTripPrice, 
                     global::System.Nullable<decimal> BookOfTickets, 
                     string Comments, 
+                    global::System.Nullable<bool> Attendance, 
+                    global::System.Nullable<decimal> Total, 
                     int Original_DayId, 
                     System.DateTime Original_Date, 
                     int Original_ProfileId, 
@@ -8986,6 +9046,8 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
                     global::System.Nullable<decimal> Original_VanPrice, 
                     global::System.Nullable<decimal> Original_RoundTripPrice, 
                     global::System.Nullable<decimal> Original_BookOfTickets, 
+                    global::System.Nullable<bool> Original_Attendance, 
+                    global::System.Nullable<decimal> Original_Total, 
                     int DayId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Date));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ProfileId));
@@ -9032,59 +9094,87 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Comments));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_DayId));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_ProfileId));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_Lunch));
-            if ((Original_LunchPrice.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_LunchPrice.Value));
+            if ((Attendance.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Attendance.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_TakeOutPrice.HasValue == true)) {
+            if ((Total.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Total.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_DayId));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Date));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_ProfileId));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Original_Lunch));
+            if ((Original_LunchPrice.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_TakeOutPrice.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_LunchPrice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((Original_MiscellaneousPrice.HasValue == true)) {
+            if ((Original_TakeOutPrice.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_MiscellaneousPrice.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_TakeOutPrice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_VanPrice.HasValue == true)) {
+            if ((Original_MiscellaneousPrice.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_VanPrice.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_MiscellaneousPrice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_RoundTripPrice.HasValue == true)) {
+            if ((Original_VanPrice.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_RoundTripPrice.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_VanPrice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((Original_BookOfTickets.HasValue == true)) {
+            if ((Original_RoundTripPrice.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_BookOfTickets.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_RoundTripPrice.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(DayId));
+            if ((Original_BookOfTickets.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_BookOfTickets.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Attendance.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((bool)(Original_Attendance.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Total.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_Total.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(DayId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9116,6 +9206,8 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
                     global::System.Nullable<decimal> RoundTripPrice, 
                     global::System.Nullable<decimal> BookOfTickets, 
                     string Comments, 
+                    global::System.Nullable<bool> Attendance, 
+                    global::System.Nullable<decimal> Total, 
                     int Original_DayId, 
                     System.DateTime Original_Date, 
                     int Original_ProfileId, 
@@ -9125,8 +9217,10 @@ SELECT DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPri
                     global::System.Nullable<decimal> Original_MiscellaneousPrice, 
                     global::System.Nullable<decimal> Original_VanPrice, 
                     global::System.Nullable<decimal> Original_RoundTripPrice, 
-                    global::System.Nullable<decimal> Original_BookOfTickets) {
-            return this.Update(Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Original_DayId, Original_Date, Original_ProfileId, Original_Lunch, Original_LunchPrice, Original_TakeOutPrice, Original_MiscellaneousPrice, Original_VanPrice, Original_RoundTripPrice, Original_BookOfTickets, Original_DayId);
+                    global::System.Nullable<decimal> Original_BookOfTickets, 
+                    global::System.Nullable<bool> Original_Attendance, 
+                    global::System.Nullable<decimal> Original_Total) {
+            return this.Update(Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Attendance, Total, Original_DayId, Original_Date, Original_ProfileId, Original_Lunch, Original_LunchPrice, Original_TakeOutPrice, Original_MiscellaneousPrice, Original_VanPrice, Original_RoundTripPrice, Original_BookOfTickets, Original_Attendance, Original_Total, Original_DayId);
         }
     }
     

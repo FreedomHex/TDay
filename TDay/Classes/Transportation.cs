@@ -64,5 +64,29 @@ namespace TDay
             transportationTableAdapter.Insert(Profile.ProfileUID, Category, HandyDARTNumber, Monday, Tuesday, Wednesday, Thursday, Friday, Comments);
         }
 
+        public bool  GetDay(int DW)
+        {
+            bool _IsInDay = false;
+            switch (DW)
+            {
+                case 1:
+                    if (Monday) { _IsInDay = true; }
+                    break;
+                case 2:
+                    if (Tuesday) { _IsInDay = true; }
+                    break;
+                case 3:
+                    if (Wednesday) { _IsInDay = true; }
+                    break;
+                case 4:
+                    if (Thursday) { _IsInDay = true; }
+                    break;
+                case 5:
+                    if (Friday) { _IsInDay = true; }
+                    break;
+            }
+            return _IsInDay;
+        }
+
     }
 }

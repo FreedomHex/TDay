@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -40,15 +42,38 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profileIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tDayDataSet = new TDay.TDayDataSet();
+            this.attendanceDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lunchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lunchPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.takeOutPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miscellaneousPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vanPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roundTripPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookOfTicketsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daysBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip7 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label64 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label67 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             this.Profiles = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.profileIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tDayDataSet = new TDay.TDayDataSet();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
@@ -87,6 +112,8 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox_ClientRelation = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -94,6 +121,8 @@
             this.DopEmerClientName = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.DopEmerClientPhone = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox_ClientPharmPhone = new System.Windows.Forms.TextBox();
             this.textBox_ClientPharmName = new System.Windows.Forms.TextBox();
@@ -101,9 +130,7 @@
             this.textBoxClientDocPhone = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox_ClientDocName = new System.Windows.Forms.TextBox();
-            this.textBox_ClientRelation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.textBox_ClientEmPhone = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -261,17 +288,27 @@
             this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
             this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
             this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.daysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.Attendance.SuspendLayout();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).BeginInit();
+            this.toolStrip7.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.Profiles.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).BeginInit();
             this.toolStrip6.SuspendLayout();
             this.toolStrip5.SuspendLayout();
             this.toolStrip3.SuspendLayout();
@@ -302,6 +339,7 @@
             this.groupBox16.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -381,7 +419,7 @@
             this.panel2.Location = new System.Drawing.Point(175, 27);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1085, 753);
+            this.panel2.Size = new System.Drawing.Size(1098, 753);
             this.panel2.TabIndex = 5;
             // 
             // tabControl1
@@ -397,17 +435,270 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1084, 752);
+            this.tabControl1.Size = new System.Drawing.Size(1097, 752);
             this.tabControl1.TabIndex = 6;
             // 
             // Attendance
             // 
+            this.Attendance.Controls.Add(this.splitContainer2);
             this.Attendance.Location = new System.Drawing.Point(4, 22);
             this.Attendance.Name = "Attendance";
-            this.Attendance.Size = new System.Drawing.Size(1076, 726);
+            this.Attendance.Size = new System.Drawing.Size(1089, 726);
             this.Attendance.TabIndex = 0;
             this.Attendance.Text = "Attendance";
             this.Attendance.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Panel1.Controls.Add(this.toolStrip7);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer2.Panel2.Controls.Add(this.panel4);
+            this.splitContainer2.Size = new System.Drawing.Size(1089, 726);
+            this.splitContainer2.SplitterDistance = 644;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dayIdDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.profileIdDataGridViewTextBoxColumn1,
+            this.attendanceDataGridViewCheckBoxColumn,
+            this.lunchDataGridViewCheckBoxColumn,
+            this.lunchPriceDataGridViewTextBoxColumn,
+            this.takeOutPriceDataGridViewTextBoxColumn,
+            this.miscellaneousPriceDataGridViewTextBoxColumn,
+            this.vanPriceDataGridViewTextBoxColumn,
+            this.roundTripPriceDataGridViewTextBoxColumn,
+            this.bookOfTicketsDataGridViewTextBoxColumn,
+            this.Total,
+            this.commentsDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.daysBindingSource1;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle36;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.GridColor = System.Drawing.Color.DimGray;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(1089, 607);
+            this.dataGridView2.TabIndex = 2;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
+            // 
+            // dayIdDataGridViewTextBoxColumn
+            // 
+            this.dayIdDataGridViewTextBoxColumn.DataPropertyName = "DayId";
+            this.dayIdDataGridViewTextBoxColumn.HeaderText = "DayId";
+            this.dayIdDataGridViewTextBoxColumn.Name = "dayIdDataGridViewTextBoxColumn";
+            this.dayIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dayIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // profileIdDataGridViewTextBoxColumn1
+            // 
+            this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource;
+            this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
+            this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.profileIdDataGridViewTextBoxColumn1.Name = "profileIdDataGridViewTextBoxColumn1";
+            this.profileIdDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // profilesBindingSource
+            // 
+            this.profilesBindingSource.DataMember = "Profiles";
+            this.profilesBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // tDayDataSet
+            // 
+            this.tDayDataSet.DataSetName = "TDayDataSet";
+            this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // attendanceDataGridViewCheckBoxColumn
+            // 
+            this.attendanceDataGridViewCheckBoxColumn.DataPropertyName = "Attendance";
+            this.attendanceDataGridViewCheckBoxColumn.FalseValue = "";
+            this.attendanceDataGridViewCheckBoxColumn.HeaderText = "A";
+            this.attendanceDataGridViewCheckBoxColumn.Name = "attendanceDataGridViewCheckBoxColumn";
+            this.attendanceDataGridViewCheckBoxColumn.TrueValue = "";
+            this.attendanceDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // lunchDataGridViewCheckBoxColumn
+            // 
+            this.lunchDataGridViewCheckBoxColumn.DataPropertyName = "Lunch";
+            this.lunchDataGridViewCheckBoxColumn.HeaderText = "LC";
+            this.lunchDataGridViewCheckBoxColumn.Name = "lunchDataGridViewCheckBoxColumn";
+            this.lunchDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // lunchPriceDataGridViewTextBoxColumn
+            // 
+            this.lunchPriceDataGridViewTextBoxColumn.DataPropertyName = "LunchPrice";
+            this.lunchPriceDataGridViewTextBoxColumn.HeaderText = "L$";
+            this.lunchPriceDataGridViewTextBoxColumn.Name = "lunchPriceDataGridViewTextBoxColumn";
+            // 
+            // takeOutPriceDataGridViewTextBoxColumn
+            // 
+            this.takeOutPriceDataGridViewTextBoxColumn.DataPropertyName = "TakeOutPrice";
+            this.takeOutPriceDataGridViewTextBoxColumn.HeaderText = "TO$";
+            this.takeOutPriceDataGridViewTextBoxColumn.Name = "takeOutPriceDataGridViewTextBoxColumn";
+            // 
+            // miscellaneousPriceDataGridViewTextBoxColumn
+            // 
+            this.miscellaneousPriceDataGridViewTextBoxColumn.DataPropertyName = "MiscellaneousPrice";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.HeaderText = "Miso$";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.Name = "miscellaneousPriceDataGridViewTextBoxColumn";
+            // 
+            // vanPriceDataGridViewTextBoxColumn
+            // 
+            this.vanPriceDataGridViewTextBoxColumn.DataPropertyName = "VanPrice";
+            this.vanPriceDataGridViewTextBoxColumn.HeaderText = "Van";
+            this.vanPriceDataGridViewTextBoxColumn.Name = "vanPriceDataGridViewTextBoxColumn";
+            // 
+            // roundTripPriceDataGridViewTextBoxColumn
+            // 
+            this.roundTripPriceDataGridViewTextBoxColumn.DataPropertyName = "RoundTripPrice";
+            this.roundTripPriceDataGridViewTextBoxColumn.HeaderText = "RT";
+            this.roundTripPriceDataGridViewTextBoxColumn.Name = "roundTripPriceDataGridViewTextBoxColumn";
+            // 
+            // bookOfTicketsDataGridViewTextBoxColumn
+            // 
+            this.bookOfTicketsDataGridViewTextBoxColumn.DataPropertyName = "BookOfTickets";
+            this.bookOfTicketsDataGridViewTextBoxColumn.HeaderText = "BFT";
+            this.bookOfTicketsDataGridViewTextBoxColumn.Name = "bookOfTicketsDataGridViewTextBoxColumn";
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // commentsDataGridViewTextBoxColumn
+            // 
+            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn.HeaderText = "Comments";
+            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
+            // 
+            // daysBindingSource1
+            // 
+            this.daysBindingSource1.DataMember = "Days";
+            this.daysBindingSource1.DataSource = this.tDayDataSet;
+            // 
+            // toolStrip7
+            // 
+            this.toolStrip7.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton5});
+            this.toolStrip7.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip7.Name = "toolStrip7";
+            this.toolStrip7.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip7.Size = new System.Drawing.Size(1089, 37);
+            this.toolStrip7.TabIndex = 0;
+            this.toolStrip7.Text = "toolStrip7";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton5.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton5.Image = global::TDay.Properties.Resources.AddButton;
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(196, 34);
+            this.toolStripButton5.Text = "Add person to a day";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label64);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.label67);
+            this.panel4.Controls.Add(this.button9);
+            this.panel4.ForeColor = System.Drawing.Color.DimGray;
+            this.panel4.Location = new System.Drawing.Point(368, 18);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(172, 54);
+            this.panel4.TabIndex = 4;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.DimGray;
+            this.label64.Location = new System.Drawing.Point(39, 10);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(72, 21);
+            this.label64.TabIndex = 2;
+            this.label64.Text = "Mondey";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(135, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(37, 49);
+            this.button10.TabIndex = 1;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.DarkGray;
+            this.label67.Location = new System.Drawing.Point(44, 31);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(55, 17);
+            this.label67.TabIndex = 3;
+            this.label67.Text = "label67";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(37, 49);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // Profiles
             // 
@@ -416,7 +707,7 @@
             this.Profiles.Controls.Add(this.toolStrip1);
             this.Profiles.Location = new System.Drawing.Point(4, 22);
             this.Profiles.Name = "Profiles";
-            this.Profiles.Size = new System.Drawing.Size(1076, 726);
+            this.Profiles.Size = new System.Drawing.Size(1089, 726);
             this.Profiles.TabIndex = 1;
             this.Profiles.Text = "Profiles";
             // 
@@ -444,7 +735,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(1076, 689);
+            this.splitContainer1.Size = new System.Drawing.Size(1089, 689);
             this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
@@ -455,28 +746,28 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.profilesBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 72);
             this.dataGridView1.MultiSelect = false;
@@ -514,11 +805,6 @@
             this.categoriesBindingSource.DataMember = "Categories";
             this.categoriesBindingSource.DataSource = this.tDayDataSet;
             // 
-            // tDayDataSet
-            // 
-            this.tDayDataSet.DataSetName = "TDayDataSet";
-            this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -526,11 +812,6 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // profilesBindingSource
-            // 
-            this.profilesBindingSource.DataMember = "Profiles";
-            this.profilesBindingSource.DataSource = this.tDayDataSet;
             // 
             // toolStrip6
             // 
@@ -1010,6 +1291,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox_ClientRelation);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.panel3);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.textBox_ClientPharmPhone);
@@ -1018,9 +1301,7 @@
             this.groupBox3.Controls.Add(this.textBoxClientDocPhone);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.textBox_ClientDocName);
-            this.groupBox3.Controls.Add(this.textBox_ClientRelation);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.textBox_ClientEmPhone);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
@@ -1034,12 +1315,32 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Emergency";
             // 
+            // textBox_ClientRelation
+            // 
+            this.textBox_ClientRelation.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ClientRelation.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientRelation.Location = new System.Drawing.Point(158, 69);
+            this.textBox_ClientRelation.Name = "textBox_ClientRelation";
+            this.textBox_ClientRelation.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientRelation.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.DimGray;
+            this.label15.Location = new System.Drawing.Point(6, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(86, 21);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Relation :";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.toolStrip2);
-            this.panel3.Location = new System.Drawing.Point(4, 66);
+            this.panel3.Location = new System.Drawing.Point(4, 103);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(991, 36);
+            this.panel3.Size = new System.Drawing.Size(702, 71);
             this.panel3.TabIndex = 36;
             // 
             // toolStrip2
@@ -1052,14 +1353,16 @@
             this.toolStripLabel1,
             this.DopEmerClientName,
             this.toolStripLabel2,
-            this.DopEmerClientPhone});
+            this.DopEmerClientPhone,
+            this.toolStripLabel4,
+            this.toolStripTextBox2});
             this.toolStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip2.Size = new System.Drawing.Size(991, 36);
+            this.toolStrip2.Size = new System.Drawing.Size(702, 71);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -1110,12 +1413,29 @@
             this.DopEmerClientPhone.Size = new System.Drawing.Size(200, 28);
             this.DopEmerClientPhone.Visible = false;
             // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel4.Margin = new System.Windows.Forms.Padding(0, 5, 0, 2);
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(82, 21);
+            this.toolStripLabel4.Text = "Relation:";
+            this.toolStripLabel4.Visible = false;
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox2.Margin = new System.Windows.Forms.Padding(70, 3, 1, 0);
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(200, 28);
+            this.toolStripTextBox2.Visible = false;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DimGray;
-            this.label19.Location = new System.Drawing.Point(363, 196);
+            this.label19.Location = new System.Drawing.Point(363, 216);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(161, 21);
             this.label19.TabIndex = 35;
@@ -1125,7 +1445,7 @@
             // 
             this.textBox_ClientPharmPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ClientPharmPhone.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientPharmPhone.Location = new System.Drawing.Point(522, 193);
+            this.textBox_ClientPharmPhone.Location = new System.Drawing.Point(522, 213);
             this.textBox_ClientPharmPhone.Name = "textBox_ClientPharmPhone";
             this.textBox_ClientPharmPhone.Size = new System.Drawing.Size(178, 28);
             this.textBox_ClientPharmPhone.TabIndex = 34;
@@ -1134,7 +1454,7 @@
             // 
             this.textBox_ClientPharmName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ClientPharmName.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientPharmName.Location = new System.Drawing.Point(157, 193);
+            this.textBox_ClientPharmName.Location = new System.Drawing.Point(157, 213);
             this.textBox_ClientPharmName.Name = "textBox_ClientPharmName";
             this.textBox_ClientPharmName.Size = new System.Drawing.Size(200, 28);
             this.textBox_ClientPharmName.TabIndex = 33;
@@ -1144,7 +1464,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(6, 157);
+            this.label18.Location = new System.Drawing.Point(6, 177);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(125, 21);
             this.label18.TabIndex = 32;
@@ -1154,7 +1474,7 @@
             // 
             this.textBoxClientDocPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxClientDocPhone.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxClientDocPhone.Location = new System.Drawing.Point(500, 154);
+            this.textBoxClientDocPhone.Location = new System.Drawing.Point(500, 174);
             this.textBoxClientDocPhone.Name = "textBoxClientDocPhone";
             this.textBoxClientDocPhone.Size = new System.Drawing.Size(201, 28);
             this.textBoxClientDocPhone.TabIndex = 31;
@@ -1164,7 +1484,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(363, 157);
+            this.label17.Location = new System.Drawing.Point(363, 177);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(129, 21);
             this.label17.TabIndex = 30;
@@ -1174,41 +1494,21 @@
             // 
             this.textBox_ClientDocName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ClientDocName.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientDocName.Location = new System.Drawing.Point(157, 154);
+            this.textBox_ClientDocName.Location = new System.Drawing.Point(157, 174);
             this.textBox_ClientDocName.Name = "textBox_ClientDocName";
             this.textBox_ClientDocName.Size = new System.Drawing.Size(200, 28);
             this.textBox_ClientDocName.TabIndex = 29;
-            // 
-            // textBox_ClientRelation
-            // 
-            this.textBox_ClientRelation.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ClientRelation.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientRelation.Location = new System.Drawing.Point(157, 114);
-            this.textBox_ClientRelation.Name = "textBox_ClientRelation";
-            this.textBox_ClientRelation.Size = new System.Drawing.Size(200, 28);
-            this.textBox_ClientRelation.TabIndex = 27;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DimGray;
-            this.label16.Location = new System.Drawing.Point(4, 196);
+            this.label16.Location = new System.Drawing.Point(4, 216);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(157, 21);
             this.label16.TabIndex = 28;
             this.label16.Text = "Pharmacist Name:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(5, 117);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(86, 21);
-            this.label15.TabIndex = 27;
-            this.label15.Text = "Relation :";
             // 
             // textBox_ClientEmPhone
             // 
@@ -2917,7 +3217,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(1076, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(1089, 37);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -2937,7 +3237,7 @@
             // 
             this.Transportation.Location = new System.Drawing.Point(4, 22);
             this.Transportation.Name = "Transportation";
-            this.Transportation.Size = new System.Drawing.Size(1076, 726);
+            this.Transportation.Size = new System.Drawing.Size(1089, 726);
             this.Transportation.TabIndex = 2;
             this.Transportation.Text = "Transportation";
             this.Transportation.UseVisualStyleBackColor = true;
@@ -2946,7 +3246,7 @@
             // 
             this.Bills.Location = new System.Drawing.Point(4, 22);
             this.Bills.Name = "Bills";
-            this.Bills.Size = new System.Drawing.Size(1076, 726);
+            this.Bills.Size = new System.Drawing.Size(1089, 726);
             this.Bills.TabIndex = 3;
             this.Bills.Text = "Bills";
             this.Bills.UseVisualStyleBackColor = true;
@@ -2955,7 +3255,7 @@
             // 
             this.toolStrip4.Location = new System.Drawing.Point(0, 0);
             this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(1260, 25);
+            this.toolStrip4.Size = new System.Drawing.Size(1273, 25);
             this.toolStrip4.TabIndex = 6;
             this.toolStrip4.Text = "toolStrip4";
             // 
@@ -2972,12 +3272,21 @@
             this.AddProfileErrorProvider.ContainerControl = this;
             this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
             // 
+            // daysBindingSource
+            // 
+            this.daysBindingSource.DataMember = "Days";
+            this.daysBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // daysTableAdapter
+            // 
+            this.daysTableAdapter.ClearBeforeFill = true;
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1260, 782);
+            this.ClientSize = new System.Drawing.Size(1273, 782);
             this.Controls.Add(this.toolStrip4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -2989,6 +3298,19 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.Attendance.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).EndInit();
+            this.toolStrip7.ResumeLayout(false);
+            this.toolStrip7.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.Profiles.ResumeLayout(false);
             this.Profiles.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -2997,8 +3319,6 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).EndInit();
             this.toolStrip6.ResumeLayout(false);
             this.toolStrip6.PerformLayout();
             this.toolStrip5.ResumeLayout(false);
@@ -3052,6 +3372,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3112,9 +3433,7 @@
         private System.Windows.Forms.TextBox textBoxClientDocPhone;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox_ClientDocName;
-        private System.Windows.Forms.TextBox textBox_ClientRelation;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox_ClientEmPhone;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -3288,6 +3607,35 @@
         private System.Windows.Forms.TextBox textBox_EmpPosition;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.BindingSource daysBindingSource;
+        private TDayDataSetTableAdapters.DaysTableAdapter daysTableAdapter;
+        private System.Windows.Forms.BindingSource daysBindingSource1;
+        private System.Windows.Forms.ToolStrip toolStrip7;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn attendanceDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn lunchDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunchPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn takeOutPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miscellaneousPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vanPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roundTripPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookOfTicketsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox_ClientRelation;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
 
 
 

@@ -40,6 +40,8 @@ namespace TDay
             toolStripLabel2.Visible = true;
             toolStripTextBox_EmName.Visible = true;
             toolStripTextBox_EmPhone.Visible = true;
+            toolStripLabel3.Visible = true;
+            toolStripTextBox1.Visible = true;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,6 +121,7 @@ namespace TDay
                         EmergencyContact DopCont = new EmergencyContact();
                         DopCont.Name = toolStripTextBox_EmName.Text;
                         DopCont.Phone = toolStripTextBox_EmPhone.Text;
+                        DopCont.Relation = toolStripTextBox1.Text;
                         DopCont.AddEmergencyContactTo(_Client);
                         DopCont.Dispose();
                     }
@@ -277,11 +280,6 @@ namespace TDay
             }
         }
 
-        private void textBox_ClientBirth_TextChanged(object sender, EventArgs e)
-        {
-            CheckDateFormat(textBox_ClientBirth);
-        }
-
         private void CheckDateFormat(TextBox Box)
         {
             switch (Box.Text.Length)
@@ -310,26 +308,6 @@ namespace TDay
                     }
                     break;
             }
-        }
-
-        private void textBox_EmpBirth_TextChanged(object sender, EventArgs e)
-        {
-            CheckDateFormat(textBox_EmpBirth);
-        }
-
-        private void textBox_EmpHireDate_TextChanged(object sender, EventArgs e)
-        {
-            CheckDateFormat(textBox_EmpHireDate);
-        }
-
-        private void textBox_VolBirth_TextChanged(object sender, EventArgs e)
-        {
-            CheckDateFormat(textBox_VolBirth);
-        }
-
-        private void textBox_BorBirth_TextChanged(object sender, EventArgs e)
-        {
-            CheckDateFormat(textBox_BorBirth);
         }
     }
 }
