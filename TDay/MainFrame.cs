@@ -26,14 +26,14 @@ namespace TDay
         public bool SortByCategory = false;
         public string CategoryFilter = String.Empty;
         public Day CurrentDay = new Day();
+        TDayDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter = new TDayDataSetTableAdapters.ServicesTableAdapter();
         private void MainFrame_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Days". При необходимости она может быть перемещена или удалена.
-            
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Categories". При необходимости она может быть перемещена или удалена.
             this.categoriesTableAdapter.Fill(this.tDayDataSet.Categories);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Profiles". При необходимости она может быть перемещена или удалена.
-            this.profilesTableAdapter.Fill(this.tDayDataSet.Profiles);
+            this.profilesTableAdapter.FillAll(this.tDayDataSet.Profiles);
             tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
             tabControl1.Appearance = TabAppearance.Buttons;
             tabControl1.ItemSize = new System.Drawing.Size(0, 1);
@@ -46,26 +46,40 @@ namespace TDay
             tabControl2.TabStop = false;
             toolStripComboBox1.SelectedIndex = 0;
             DataGridViewCellEventArgs sen = new DataGridViewCellEventArgs(0, 0);
-            if (dataGridView1.Rows.Count > 0)
-            {
-                dataGridView1_CellClick(sender, sen);
-            }
             CurrentDay.CreateDay();
             this.daysTableAdapter.Fill(this.tDayDataSet.Days,CurrentDay.Date);
-            FormProvider.SerVisulaStyle(dataGridView2);
+            textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
+            textBox_date.Text = CurrentDay.Date.ToShortDateString();
+            ReCountTotals();
+        }
 
+        private void RelDataGrid2(object sender, int RowIndex)
+        {
+            this.profilesTableAdapter.Fill(this.tDayDataSet.Profiles);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                DataGridViewCellEventArgs sel = new DataGridViewCellEventArgs(0, RowIndex);
+                dataGridView1_CellClick(this, sel);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             CurrentDay.CreateDay();
+            profilesTableAdapter.FillAll(tDayDataSet.Profiles);
             daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
-            FormProvider.SerVisulaStyle(dataGridView2);
             tabControl1.SelectedTab = Attendance;
+            ReCountTotals();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = Profiles;
+            profilesTableAdapter.Fill(tDayDataSet.Profiles);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                DataGridViewCellEventArgs sel = new DataGridViewCellEventArgs(0,0);
+                dataGridView1_CellClick(sender, sel);
+            }
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -84,6 +98,7 @@ namespace TDay
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             button8.Enabled = true;
+            dataGridView1.Rows[e.RowIndex].Selected = true;
             switch (dataGridView1.Rows[e.RowIndex].Cells["categoryDataGridViewTextBoxColumn"].Value.ToString())
             {
                 #region Client
@@ -340,7 +355,6 @@ namespace TDay
         private void textBox_ClientBirth_TextChanged(object sender, EventArgs e)
         {
             button8.Enabled = true;
-            CheckDateFormat(textBox_ClientBirth);
         }
 
         private void CheckDateFormat(TextBox Box)
@@ -377,22 +391,19 @@ namespace TDay
 
         private void textBox_EmpBirth_TextChanged(object sender, EventArgs e)
         {
-            CheckDateFormat(textBox_EmpBirth);
+
         }
 
         private void textBox_EmpHire_TextChanged(object sender, EventArgs e)
         {
-            CheckDateFormat(textBox_EmpHire);
         }
 
         private void textBox_VolBirth_TextChanged(object sender, EventArgs e)
         {
-            CheckDateFormat(textBox_VolBirth);
         }
 
         private void textBox_BoardBirth_TextChanged(object sender, EventArgs e)
         {
-            CheckDateFormat(textBox_BoardBirth);
         }
 
 
@@ -406,7 +417,7 @@ namespace TDay
                      tabControl2.SelectedTab = ClientTab;
                     Client client = new Client(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
                     client.Name = textBox_ClientName.Text;
-                     client.DateOfBirdh = DateTime.Parse(textBox_ClientBirth.Text);
+                     client.DateOfBirdh = DateTime.Parse(textBox_ClientBirth.Value.ToShortDateString());
                      client.ParisNumber = textBox_ClientParis.Text;
                      client.Adress.Addres=textBox_ClientAdress.Text;
                      client.Adress.City=textBox_ClientCity.Text;
@@ -457,8 +468,8 @@ namespace TDay
                 case "2":
                     Employee employee = new Employee(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
                     employee.Name = textBox_EmpName.Text;
-                    employee.DateOfBirdh=DateTime.Parse(textBox_EmpBirth.Text);
-                    employee.HireDate=DateTime.Parse(textBox_EmpHire.Text);
+                    employee.DateOfBirdh=DateTime.Parse(textBox_EmpBirth.Value.ToShortDateString());
+                    employee.HireDate=DateTime.Parse(textBox_EmpHire.Value.ToShortDateString());
                     employee.Position=textBox_EmpPosition.Text;
                     employee.SIN=textBox_EmpSin.Text;
                     if (radioButton1.Checked) { employee.PositionType = "Causal"; }
@@ -490,7 +501,7 @@ namespace TDay
                     tabControl2.SelectedTab = VolunteerTab;
                     Profile volonteer = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
                     volonteer.Name = textBox_VolName.Text;
-                     volonteer.DateOfBirdh= DateTime.Parse(textBox_VolBirth.Text);
+                     volonteer.DateOfBirdh= DateTime.Parse(textBox_VolBirth.Value.ToShortDateString());
                      volonteer.Adress.Addres=textBox_VolAdress.Text;
                      volonteer.Adress.City=textBox_VolCity.Text;
                      volonteer.Adress.Province=textBox_VolProvince.Text;
@@ -519,7 +530,7 @@ namespace TDay
                     Profile board = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
                     board.Name=textBox_BoardName.Text;
                     board.Occupation=textBox_BoardOccupation.Text;
-                    board.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Text);
+                    board.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Value.ToShortDateString());
                     board.Adress.Addres=textBox_BoardAdress.Text;
                     board.Adress.City=textBox_BoardCity.Text;
                     board.Adress.Province=textBox_BoardProvince.Text;
@@ -538,7 +549,7 @@ namespace TDay
                     label48.Visible = false;
                     Profile other = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
                     other.Name = textBox_BoardName.Text;
-                    other.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Text);
+                    other.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Value.ToShortDateString());
                     other.Adress.Addres = textBox_BoardAdress.Text;
                     other.Adress.City = textBox_BoardCity.Text;
                     other.Adress.Province = textBox_BoardProvince.Text;
@@ -557,29 +568,367 @@ namespace TDay
 
         private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+            FormProvider.CurrentRowIndex = e.RowIndex;
+            FormProvider.CurrentColIndex = e.ColumnIndex;
             switch (e.ColumnIndex)
             {
                 case 3:
-                    if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue)
-                    {
-                        if(DialogResult.Yes == MessageBox.Show("Are you ?","",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
-                        {
-                            daysTableAdapter.Delete((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value);
-                            daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
-                        }
-                    }
+                    DayItem Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.LunchPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["lunchPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
                     break;
+                case 4:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.TakeOutPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["takeOutPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 5:
+                   Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.MiscellaneousPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["miscellaneousPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 6:
+                     Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.ProgramPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 7:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.VanPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 8:
+                     Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.RoundTripPrice = (decimal)dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 9:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.BookOfTickets = (decimal)dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 11:
+                    Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                    Item.Comments = dataGridView2.Rows[e.RowIndex].Cells["commentsDataGridViewTextBoxColumn"].Value.ToString();
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+            }
+            ReCountTotals();
+        }
 
+        private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                FormProvider.CurrentRowIndex = e.RowIndex;
+                FormProvider.CurrentColIndex = e.ColumnIndex;
+                switch (e.ColumnIndex)
+                {
+                    case 1:
+                        if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)
+                        {
+                            if (DialogResult.Yes == MessageBox.Show("Are you ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                            {
+                                daysTableAdapter.Delete((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value);
+                                daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                            }
+                            else
+                            {
+                                dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                                dataGridView2.RefreshEdit();
+                            }
+                        }
+
+                        break;
+                    case 2:
+                        if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue)
+                        {
+                            DayItem Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                            Item.Lunch = false;
+                            Item.LunchPrice = Decimal.Zero;
+                            Item.Update();
+                            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        }
+                        else
+                        {
+                            DayItem Item = new DayItem((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                            Item.Lunch = true;
+                            Item.LunchPrice = Item.GetLunchPrice();
+                            Item.Update();
+                            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        }
+                        break;
+
+                }
+                ReCountTotals();
+            }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                FormProvider.CurrentRowIndex = e.RowIndex;
+                FormProvider.CurrentColIndex = e.ColumnIndex;
+                dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+                switch (e.ColumnIndex)
+                {
+                    case 3:
+                            contextMenuStrip1.Tag = e.ColumnIndex;
+                            contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
+                break;
+                    case 6:
+                        if (ProfileProvider.GetCategory((int)dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].Value) == 1)
+                        {
+                            contextMenuStrip1.Tag = e.ColumnIndex;
+                            contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
+                        }
+                        break;
+                    case 8:
+                        if (ProfileProvider.GetCategory((int)dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].Value) == 1)
+                        {
+                            contextMenuStrip1.Tag = e.ColumnIndex;
+                            contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
+                        }
+                        break;
+                }
             }
         }
 
+        private void dataGridView2_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if ((int)ProfileProvider.GetCategory((int)dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].Value) != 1)
+            {
+                dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].Style.BackColor = Color.LightGray;
+                dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].ReadOnly = true;
+                dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].ReadOnly = true;
+            }
+        }
 
+        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dataGridView2.Rows.Count > 0 && FormProvider.CurrentRowIndex < dataGridView2.Rows.Count && FormProvider.CurrentRowIndex>=0)
+            {
+                dataGridView2.ClearSelection();
+                dataGridView2.Rows[FormProvider.CurrentRowIndex].Cells[FormProvider.CurrentColIndex].Selected = true;
+            }
+        }
 
+        private void dataGridView2_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            Rectangle rec = dataGridView2.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex,true);
+            Point m = dataGridView2.PointToScreen(Point.Empty);
+            toolTip1.Show(e.Exception.Message, this, rec.Location.X+Math.Abs(m.X-this.Location.X)+rec.Width, rec.Location.Y+Math.Abs(m.Y-this.Location.Y)+rec.Height, 3000);
+            e.ThrowException = false;
+            e.Cancel = true;
+        }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            button10.Enabled = true;
+            CurrentDay.ChangeDate(CurrentDay.Date.AddDays(-1));
+            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+            textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
+            textBox_date.Text = CurrentDay.Date.ToShortDateString();
+            ReCountTotals();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            CurrentDay.ChangeDate(CurrentDay.Date.AddDays(1));
+            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+            textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
+            textBox_date.Text = CurrentDay.Date.ToShortDateString();
+            if (CurrentDay.Date == DateTime.Now.Date)
+            {
+                button10.Enabled = false;
+            }
+            ReCountTotals();
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            panel5.Location = new Point(dataGridView2.Location.X + 4, dataGridView2.Location.Y +dataGridView2.Height-panel5.Height-22);
+            panel5.Visible = true;
+        }
+
+        private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripTextBox4.Text.Length > 2)
+            {
+                profilesBindingSource1.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);
+            }
+            else
+            {
+                profilesBindingSource1.RemoveFilter();
+            }
+           
+        }
+
+        private void dataGridView3_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            toolStripButton6_Click(sender, e);
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.Rows.Count > 0)
+            {
+                DayItem Item = new DayItem((int)dataGridView3.Rows[dataGridView3.SelectedCells[0].RowIndex].Cells[0].Value);
+
+                if (!CurrentDay.IsInDay(Item))
+                {
+                    CurrentDay.InsertItem(Item);
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    panel5.Visible = false;
+                    ReCountTotals();
+                }
+                else
+                {
+                    panel5.Visible = false;
+                    foreach (DataGridViewRow Row in dataGridView2.Rows)
+                    {
+                        if ((int)Row.Cells["profileIdDataGridViewTextBoxColumn1"].Value == Item.ProfileId)
+                        {
+                            Row.Cells["profileIdDataGridViewTextBoxColumn1"].Selected = true;
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        private void ReCountTotals()
+        {
+            int TotalLC = 0;
+            double TotalLCP = 0;
+            double TotalTOP = 0;
+            double TotalMisoP = 0;
+            double TotalVan = 0;
+            double TotalP = 0;
+            double TotalRTP = 0;
+            double TotalBFT = 0;
+            double TotalT = 0;
+            foreach(DataGridViewRow Row in dataGridView2.Rows)
+            {
+                if ((bool)Row.Cells["lunchDataGridViewCheckBoxColumn"].Value) { TotalLC++; }
+                TotalLCP += Convert.ToDouble(Row.Cells["lunchPriceDataGridViewTextBoxColumn"].Value.ToString());
+                TotalTOP += Convert.ToDouble(Row.Cells["takeOutPriceDataGridViewTextBoxColumn"].Value.ToString());
+                TotalMisoP += Convert.ToDouble(Row.Cells["miscellaneousPriceDataGridViewTextBoxColumn"].Value.ToString());
+                TotalVan += Convert.ToDouble(Row.Cells["vanPriceDataGridViewTextBoxColumn"].Value.ToString());
+                TotalP += Convert.ToDouble(Row.Cells["ProgramPrice"].Value.ToString());
+                TotalRTP += Convert.ToDouble(Row.Cells["roundTripPriceDataGridViewTextBoxColumn"].Value.ToString());
+                TotalBFT += Convert.ToDouble(Row.Cells["bookOfTicketsDataGridViewTextBoxColumn"].Value.ToString());
+                TotalT += Convert.ToDouble(Row.Cells["Total"].Value.ToString());
+            }
+            toolStripTextBox6.Text = dataGridView2.Rows.Count.ToString();
+            toolStripTextBox7.Text = TotalLC.ToString();
+            toolStripTextBox8.Text = TotalLCP.ToString();
+            toolStripTextBox9.Text = TotalTOP.ToString();
+            toolStripTextBox15.Text = TotalMisoP.ToString();
+            toolStripTextBox14.Text = TotalP.ToString();
+            toolStripTextBox13.Text = TotalVan.ToString();
+            toolStripTextBox12.Text = TotalRTP.ToString();
+            toolStripTextBox11.Text = TotalBFT.ToString();
+            toolStripTextBox16.Text = TotalT.ToString();
+        }
+
+        private void noChargeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (contextMenuStrip1.Tag != null)
+            {
+                switch ((int)contextMenuStrip1.Tag)
+                {
+                    case 3:
+                        DayItem Item = new DayItem((int)dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                        Item.LunchPrice = 0;
+                        Item.Lunch = false;
+                        Item.Update();
+                        daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        break;
+                    case 6:
+                        Item = new DayItem((int)dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                        Item.ProgramPrice = 0;
+                        Item.Update();
+                        daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        break;
+                    case 8:
+                        Item = new DayItem((int)dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value, CurrentDay.Date);
+                        Item.RoundTripPrice = 0;
+                        Item.Update();
+                        daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        break;
+                }
+            }
+        }
+
+        private void permaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch ((int)contextMenuStrip1.Tag)
+            {
+                case 3:
+                    servicesTableAdapter.Fill(tDayDataSet.Services);
+                    DataRow Row = tDayDataSet.Services.FindByServiceId(1);
+                    Row["ServiceFee"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[3].Value.ToString();
+                    servicesTableAdapter.Update(tDayDataSet);
+                    foreach (DataRow Dat in tDayDataSet.Days)
+                    {
+                        if ((bool)Dat["Lunch"])
+                        {
+                            Dat["LunchPrice"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[3].Value.ToString();
+                        }
+                    }
+                    break;
+                case 6:
+                    servicesTableAdapter.Fill(tDayDataSet.Services);
+                    Row = tDayDataSet.Services.FindByServiceId(3);
+                    Row["ServiceFee"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[6].Value.ToString();
+                    servicesTableAdapter.Update(tDayDataSet);
+                    foreach (DataRow Dat in tDayDataSet.Days)
+                    {
+                        if (ProfileProvider.GetCategory((int)Dat["ProfileId"]) == 1)
+                        {
+                            Dat["ProgramPrice"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[6].Value.ToString();
+                        }
+                    }
+                    break;
+                case 8:
+                    servicesTableAdapter.Fill(tDayDataSet.Services);
+                    Row = tDayDataSet.Services.FindByServiceId(2);
+                    Row["ServiceFee"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[8].Value.ToString();
+                    servicesTableAdapter.Update(tDayDataSet);
+                    foreach (DataRow Dat in tDayDataSet.Days)
+                    {
+                        if (ProfileProvider.GetCategory((int)Dat["ProfileId"]) == 1)
+                        {
+                            Dat["RoundTripPrice"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[8].Value.ToString();
+                        }
+                    }
+                    break;
+            }
+            daysTableAdapter.Update(tDayDataSet);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PdfPrinter.PrintClientInfo(0);
+        }
+
+       
     }
 }

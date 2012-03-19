@@ -16,9 +16,10 @@ namespace TDay
         public string DoctorPhone                           { get; set; }
         public string PharmacistName                        { get; set; }
         public string PharmacistPhone                       { get; set; }
+        public Transportation Transportation { get; set; }
         public bool Member                                  { get; set; }
         public EmergencyContact DopEmergencyContact         { get; set; }
-        public Transportation Transportation                { get; set; }
+
         public Client()
         {
         }
@@ -54,7 +55,7 @@ namespace TDay
         {
             try
             {
-                ProfilesTableAdapter.Insert(this.Name, (int)Enums.Category.Client, this.DateOfBirdh, null, null, null, null, null, this.ParisNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, null,Member);
+                ProfilesTableAdapter.Insert(this.Name, (int)Enums.Category.Client, this.DateOfBirdh, null, null, null, null, null, this.ParisNumber, DoctorName, DoctorPhone, PharmacistName, PharmacistPhone, null,Member,false);
                 ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
                 this.ProfileUID = tDayDataSet.Profiles[tDayDataSet.Profiles.Count - 1].ProfileId;
             }

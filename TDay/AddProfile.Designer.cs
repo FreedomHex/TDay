@@ -281,10 +281,10 @@
             // 
             this.button1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(4, 772);
+            this.button1.Location = new System.Drawing.Point(6, 740);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 37);
-            this.button1.TabIndex = 30;
+            this.button1.TabIndex = 250;
             this.button1.Text = "Add profile";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -293,10 +293,10 @@
             // 
             this.button2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DimGray;
-            this.button2.Location = new System.Drawing.Point(129, 772);
+            this.button2.Location = new System.Drawing.Point(129, 740);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 37);
-            this.button2.TabIndex = 31;
+            this.button2.TabIndex = 251;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -308,10 +308,10 @@
             this.tabControl1.Controls.Add(this.VolunteerTab);
             this.tabControl1.Controls.Add(this.Board_Member);
             this.tabControl1.Controls.Add(this.Other);
-            this.tabControl1.Location = new System.Drawing.Point(4, 36);
+            this.tabControl1.Location = new System.Drawing.Point(4, 34);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1023, 730);
+            this.tabControl1.Size = new System.Drawing.Size(1023, 721);
             this.tabControl1.TabIndex = 29;
             // 
             // ClientTab
@@ -325,7 +325,7 @@
             this.ClientTab.Location = new System.Drawing.Point(4, 22);
             this.ClientTab.Name = "ClientTab";
             this.ClientTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ClientTab.Size = new System.Drawing.Size(1015, 704);
+            this.ClientTab.Size = new System.Drawing.Size(1015, 695);
             this.ClientTab.TabIndex = 0;
             this.ClientTab.Text = "tabPage1";
             // 
@@ -375,7 +375,7 @@
             this.textBox_ClientName.Location = new System.Drawing.Point(132, 27);
             this.textBox_ClientName.Name = "textBox_ClientName";
             this.textBox_ClientName.Size = new System.Drawing.Size(397, 28);
-            this.textBox_ClientName.TabIndex = 0;
+            this.textBox_ClientName.TabIndex = 1;
             // 
             // label3
             // 
@@ -454,9 +454,9 @@
             this.groupBox5.Controls.Add(this.trans_wed);
             this.groupBox5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.DarkGray;
-            this.groupBox5.Location = new System.Drawing.Point(3, 625);
+            this.groupBox5.Location = new System.Drawing.Point(3, 617);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(998, 73);
+            this.groupBox5.Size = new System.Drawing.Size(998, 65);
             this.groupBox5.TabIndex = 28;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Transportation";
@@ -662,7 +662,7 @@
             this.textBox_ClientRelation.Location = new System.Drawing.Point(236, 70);
             this.textBox_ClientRelation.Name = "textBox_ClientRelation";
             this.textBox_ClientRelation.Size = new System.Drawing.Size(203, 28);
-            this.textBox_ClientRelation.TabIndex = 37;
+            this.textBox_ClientRelation.TabIndex = 13;
             // 
             // label15
             // 
@@ -678,9 +678,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.toolStrip1);
-            this.panel1.Location = new System.Drawing.Point(4, 108);
+            this.panel1.Location = new System.Drawing.Point(4, 103);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 82);
+            this.panel1.Size = new System.Drawing.Size(991, 70);
             this.panel1.TabIndex = 36;
             // 
             // toolStrip1
@@ -702,7 +702,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(991, 82);
+            this.toolStrip1.Size = new System.Drawing.Size(991, 70);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1066,7 +1066,7 @@
             this.EmployeeTab.Location = new System.Drawing.Point(4, 22);
             this.EmployeeTab.Name = "EmployeeTab";
             this.EmployeeTab.Padding = new System.Windows.Forms.Padding(3);
-            this.EmployeeTab.Size = new System.Drawing.Size(1015, 704);
+            this.EmployeeTab.Size = new System.Drawing.Size(1015, 695);
             this.EmployeeTab.TabIndex = 1;
             this.EmployeeTab.Text = "tabPage2";
             // 
@@ -1599,7 +1599,7 @@
             this.VolunteerTab.Controls.Add(this.groupBox10);
             this.VolunteerTab.Location = new System.Drawing.Point(4, 22);
             this.VolunteerTab.Name = "VolunteerTab";
-            this.VolunteerTab.Size = new System.Drawing.Size(1015, 704);
+            this.VolunteerTab.Size = new System.Drawing.Size(1015, 695);
             this.VolunteerTab.TabIndex = 2;
             this.VolunteerTab.Text = "Volunteer";
             // 
@@ -2018,7 +2018,7 @@
             this.Board_Member.Controls.Add(this.groupBox15);
             this.Board_Member.Location = new System.Drawing.Point(4, 22);
             this.Board_Member.Name = "Board_Member";
-            this.Board_Member.Size = new System.Drawing.Size(1015, 704);
+            this.Board_Member.Size = new System.Drawing.Size(1015, 695);
             this.Board_Member.TabIndex = 3;
             this.Board_Member.Text = "tabPage1";
             // 
@@ -2293,7 +2293,7 @@
             this.Other.Controls.Add(this.groupBox17);
             this.Other.Location = new System.Drawing.Point(4, 22);
             this.Other.Name = "Other";
-            this.Other.Size = new System.Drawing.Size(1015, 704);
+            this.Other.Size = new System.Drawing.Size(1015, 695);
             this.Other.TabIndex = 4;
             this.Other.Text = "tabPage2";
             // 
@@ -2554,6 +2554,7 @@
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.BackColor = System.Drawing.SystemColors.Control;
             this.comboBoxCategory.DataSource = this.categoriesBindingSource1;
             this.comboBoxCategory.DisplayMember = "CategoryName";
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2563,7 +2564,7 @@
             this.comboBoxCategory.Location = new System.Drawing.Point(148, 12);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(200, 29);
-            this.comboBoxCategory.TabIndex = 31;
+            this.comboBoxCategory.TabIndex = 0;
             this.comboBoxCategory.ValueMember = "CategoryId";
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -2581,13 +2582,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1036, 821);
+            this.ClientSize = new System.Drawing.Size(1036, 792);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

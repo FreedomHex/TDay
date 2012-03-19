@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -43,36 +46,63 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.profileIdDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tDayDataSet = new TDay.TDayDataSet();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profilesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip9 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip8 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.profileIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tDayDataSet = new TDay.TDayDataSet();
             this.attendanceDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lunchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lunchPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.takeOutPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.miscellaneousPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProgramPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vanPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roundTripPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookOfTicketsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daysBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip7 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip10 = new System.Windows.Forms.ToolStrip();
+            this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox6 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox8 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox9 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox15 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox14 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox13 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox12 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox11 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox16 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label64 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.label67 = new System.Windows.Forms.Label();
+            this.textBox_date = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox_weekday = new System.Windows.Forms.TextBox();
             this.Profiles = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.profileIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
@@ -90,10 +120,10 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.ClientTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_ClientBirth = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ClientName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_ClientBirth = new System.Windows.Forms.TextBox();
             this.ClientMember = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_ClientParis = new System.Windows.Forms.TextBox();
@@ -165,6 +195,8 @@
             this.label75 = new System.Windows.Forms.Label();
             this.textBox_EmpEmerCN = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox_EmpHire = new System.Windows.Forms.DateTimePicker();
+            this.textBox_EmpBirth = new System.Windows.Forms.DateTimePicker();
             this.textBox_EmpPosition = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -176,9 +208,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.textBox_EmpName = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox_EmpBirth = new System.Windows.Forms.TextBox();
             this.textBox_EmpSin = new System.Windows.Forms.TextBox();
-            this.textBox_EmpHire = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox_EmpCell = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -228,10 +258,10 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBox_VolBirth = new System.Windows.Forms.DateTimePicker();
             this.label36 = new System.Windows.Forms.Label();
             this.textBox_VolName = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox_VolBirth = new System.Windows.Forms.TextBox();
             this.Board_MemberTab = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.textBox_BoardCell = new System.Windows.Forms.TextBox();
@@ -251,11 +281,11 @@
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.textBox_BoardBirth = new System.Windows.Forms.DateTimePicker();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.textBox_BoardName = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.textBox_BoardBirth = new System.Windows.Forms.TextBox();
             this.textBox_BoardOccupation = new System.Windows.Forms.TextBox();
             this.OtherTab = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -287,9 +317,13 @@
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
             this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
-            this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.daysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
+            this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.noChargeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.permaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -297,18 +331,24 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource1)).BeginInit();
+            this.toolStrip9.SuspendLayout();
+            this.toolStrip8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).BeginInit();
             this.toolStrip7.SuspendLayout();
+            this.toolStrip10.SuspendLayout();
             this.panel4.SuspendLayout();
             this.Profiles.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             this.toolStrip6.SuspendLayout();
             this.toolStrip5.SuspendLayout();
             this.toolStrip3.SuspendLayout();
@@ -338,8 +378,9 @@
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -458,8 +499,10 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.panel5);
             this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
             this.splitContainer2.Panel1.Controls.Add(this.toolStrip7);
+            this.splitContainer2.Panel1.Controls.Add(this.toolStrip10);
             // 
             // splitContainer2.Panel2
             // 
@@ -469,53 +512,344 @@
             this.splitContainer2.SplitterDistance = 644;
             this.splitContainer2.TabIndex = 0;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dataGridView3);
+            this.panel5.Controls.Add(this.toolStrip9);
+            this.panel5.Controls.Add(this.toolStrip8);
+            this.panel5.Location = new System.Drawing.Point(18, 90);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(502, 272);
+            this.panel5.TabIndex = 3;
+            this.panel5.Visible = false;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.profileIdDataGridViewTextBoxColumn2,
+            this.categoryDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1});
+            this.dataGridView3.DataSource = this.profilesBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.EnableHeadersVisualStyles = false;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(502, 198);
+            this.dataGridView3.TabIndex = 2;
+            this.dataGridView3.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView3_CellMouseDoubleClick);
+            // 
+            // profileIdDataGridViewTextBoxColumn2
+            // 
+            this.profileIdDataGridViewTextBoxColumn2.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn2.HeaderText = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn2.Name = "profileIdDataGridViewTextBoxColumn2";
+            this.profileIdDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn1
+            // 
+            this.categoryDataGridViewTextBoxColumn1.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn1.DataSource = this.categoriesBindingSource;
+            this.categoryDataGridViewTextBoxColumn1.DisplayMember = "CategoryName";
+            this.categoryDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.categoryDataGridViewTextBoxColumn1.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn1.Name = "categoryDataGridViewTextBoxColumn1";
+            this.categoryDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.categoryDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.categoryDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.categoryDataGridViewTextBoxColumn1.ValueMember = "CategoryId";
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // tDayDataSet
+            // 
+            this.tDayDataSet.DataSetName = "TDayDataSet";
+            this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn1.Width = 300;
+            // 
+            // profilesBindingSource1
+            // 
+            this.profilesBindingSource1.DataMember = "Profiles";
+            this.profilesBindingSource1.DataSource = this.tDayDataSet;
+            // 
+            // toolStrip9
+            // 
+            this.toolStrip9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip9.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton7,
+            this.toolStripSeparator1,
+            this.toolStripButton6});
+            this.toolStrip9.Location = new System.Drawing.Point(0, 235);
+            this.toolStrip9.Name = "toolStrip9";
+            this.toolStrip9.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip9.Size = new System.Drawing.Size(502, 37);
+            this.toolStrip9.TabIndex = 1;
+            this.toolStrip9.Text = "toolStrip9";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton7.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton7.Image = global::TDay.Properties.Resources.CloseButton;
+            this.toolStripButton7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(87, 34);
+            this.toolStripButton7.Text = "Close";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton6.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton6.Image = global::TDay.Properties.Resources.AddButton;
+            this.toolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(139, 34);
+            this.toolStripButton6.Text = "Add to a day";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            // 
+            // toolStrip8
+            // 
+            this.toolStrip8.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip8.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton8,
+            this.toolStripTextBox4});
+            this.toolStrip8.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip8.Name = "toolStrip8";
+            this.toolStrip8.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip8.Size = new System.Drawing.Size(502, 37);
+            this.toolStrip8.TabIndex = 0;
+            this.toolStrip8.Text = "toolStrip8";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = global::TDay.Properties.Resources.Search;
+            this.toolStripButton8.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButton8.Text = "toolStripButton8";
+            // 
+            // toolStripTextBox4
+            // 
+            this.toolStripTextBox4.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox4.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox4.Name = "toolStripTextBox4";
+            this.toolStripTextBox4.Size = new System.Drawing.Size(200, 37);
+            this.toolStripTextBox4.TextChanged += new System.EventHandler(this.toolStripTextBox4_TextChanged);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dayIdDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
             this.profileIdDataGridViewTextBoxColumn1,
             this.attendanceDataGridViewCheckBoxColumn,
             this.lunchDataGridViewCheckBoxColumn,
             this.lunchPriceDataGridViewTextBoxColumn,
             this.takeOutPriceDataGridViewTextBoxColumn,
             this.miscellaneousPriceDataGridViewTextBoxColumn,
+            this.ProgramPrice,
             this.vanPriceDataGridViewTextBoxColumn,
             this.roundTripPriceDataGridViewTextBoxColumn,
             this.bookOfTicketsDataGridViewTextBoxColumn,
             this.Total,
-            this.commentsDataGridViewTextBoxColumn});
+            this.commentsDataGridViewTextBoxColumn,
+            this.dayIdDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.daysBindingSource1;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.DimGray;
             this.dataGridView2.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(1089, 607);
-            this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1089, 579);
+            this.dataGridView2.TabIndex = 7;
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
+            this.dataGridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
+            this.dataGridView2.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView2_DataBindingComplete);
+            this.dataGridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView2_DataError);
+            this.dataGridView2.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView2_RowPrePaint);
+            // 
+            // profileIdDataGridViewTextBoxColumn1
+            // 
+            this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.profileIdDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
+            this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.profileIdDataGridViewTextBoxColumn1.Name = "profileIdDataGridViewTextBoxColumn1";
+            this.profileIdDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.profileIdDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // profilesBindingSource
+            // 
+            this.profilesBindingSource.DataMember = "Profiles";
+            this.profilesBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // attendanceDataGridViewCheckBoxColumn
+            // 
+            this.attendanceDataGridViewCheckBoxColumn.DataPropertyName = "Attendance";
+            this.attendanceDataGridViewCheckBoxColumn.FalseValue = "false";
+            this.attendanceDataGridViewCheckBoxColumn.HeaderText = "A";
+            this.attendanceDataGridViewCheckBoxColumn.IndeterminateValue = "null";
+            this.attendanceDataGridViewCheckBoxColumn.Name = "attendanceDataGridViewCheckBoxColumn";
+            this.attendanceDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.attendanceDataGridViewCheckBoxColumn.TrueValue = "true";
+            this.attendanceDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // lunchDataGridViewCheckBoxColumn
+            // 
+            this.lunchDataGridViewCheckBoxColumn.DataPropertyName = "Lunch";
+            this.lunchDataGridViewCheckBoxColumn.FalseValue = "false";
+            this.lunchDataGridViewCheckBoxColumn.HeaderText = "LC";
+            this.lunchDataGridViewCheckBoxColumn.IndeterminateValue = "null";
+            this.lunchDataGridViewCheckBoxColumn.Name = "lunchDataGridViewCheckBoxColumn";
+            this.lunchDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.lunchDataGridViewCheckBoxColumn.TrueValue = "true";
+            this.lunchDataGridViewCheckBoxColumn.Width = 40;
+            // 
+            // lunchPriceDataGridViewTextBoxColumn
+            // 
+            this.lunchPriceDataGridViewTextBoxColumn.DataPropertyName = "LunchPrice";
+            this.lunchPriceDataGridViewTextBoxColumn.HeaderText = "L$";
+            this.lunchPriceDataGridViewTextBoxColumn.Name = "lunchPriceDataGridViewTextBoxColumn";
+            this.lunchPriceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // takeOutPriceDataGridViewTextBoxColumn
+            // 
+            this.takeOutPriceDataGridViewTextBoxColumn.DataPropertyName = "TakeOutPrice";
+            this.takeOutPriceDataGridViewTextBoxColumn.HeaderText = "TO$";
+            this.takeOutPriceDataGridViewTextBoxColumn.Name = "takeOutPriceDataGridViewTextBoxColumn";
+            this.takeOutPriceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // miscellaneousPriceDataGridViewTextBoxColumn
+            // 
+            this.miscellaneousPriceDataGridViewTextBoxColumn.DataPropertyName = "MiscellaneousPrice";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.HeaderText = "Miso$";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.Name = "miscellaneousPriceDataGridViewTextBoxColumn";
+            this.miscellaneousPriceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // ProgramPrice
+            // 
+            this.ProgramPrice.DataPropertyName = "ProgramPrice";
+            this.ProgramPrice.HeaderText = "P$";
+            this.ProgramPrice.Name = "ProgramPrice";
+            this.ProgramPrice.Width = 70;
+            // 
+            // vanPriceDataGridViewTextBoxColumn
+            // 
+            this.vanPriceDataGridViewTextBoxColumn.DataPropertyName = "VanPrice";
+            this.vanPriceDataGridViewTextBoxColumn.HeaderText = "Van";
+            this.vanPriceDataGridViewTextBoxColumn.Name = "vanPriceDataGridViewTextBoxColumn";
+            this.vanPriceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // roundTripPriceDataGridViewTextBoxColumn
+            // 
+            this.roundTripPriceDataGridViewTextBoxColumn.DataPropertyName = "RoundTripPrice";
+            this.roundTripPriceDataGridViewTextBoxColumn.HeaderText = "RT";
+            this.roundTripPriceDataGridViewTextBoxColumn.Name = "roundTripPriceDataGridViewTextBoxColumn";
+            this.roundTripPriceDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // bookOfTicketsDataGridViewTextBoxColumn
+            // 
+            this.bookOfTicketsDataGridViewTextBoxColumn.DataPropertyName = "BookOfTickets";
+            this.bookOfTicketsDataGridViewTextBoxColumn.HeaderText = "BFT";
+            this.bookOfTicketsDataGridViewTextBoxColumn.Name = "bookOfTicketsDataGridViewTextBoxColumn";
+            this.bookOfTicketsDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // commentsDataGridViewTextBoxColumn
+            // 
+            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn.HeaderText = "Comments";
+            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
+            this.commentsDataGridViewTextBoxColumn.Width = 200;
             // 
             // dayIdDataGridViewTextBoxColumn
             // 
@@ -531,94 +865,6 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // profileIdDataGridViewTextBoxColumn1
-            // 
-            this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource;
-            this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
-            this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.profileIdDataGridViewTextBoxColumn1.Name = "profileIdDataGridViewTextBoxColumn1";
-            this.profileIdDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // profilesBindingSource
-            // 
-            this.profilesBindingSource.DataMember = "Profiles";
-            this.profilesBindingSource.DataSource = this.tDayDataSet;
-            // 
-            // tDayDataSet
-            // 
-            this.tDayDataSet.DataSetName = "TDayDataSet";
-            this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // attendanceDataGridViewCheckBoxColumn
-            // 
-            this.attendanceDataGridViewCheckBoxColumn.DataPropertyName = "Attendance";
-            this.attendanceDataGridViewCheckBoxColumn.FalseValue = "";
-            this.attendanceDataGridViewCheckBoxColumn.HeaderText = "A";
-            this.attendanceDataGridViewCheckBoxColumn.Name = "attendanceDataGridViewCheckBoxColumn";
-            this.attendanceDataGridViewCheckBoxColumn.TrueValue = "";
-            this.attendanceDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // lunchDataGridViewCheckBoxColumn
-            // 
-            this.lunchDataGridViewCheckBoxColumn.DataPropertyName = "Lunch";
-            this.lunchDataGridViewCheckBoxColumn.HeaderText = "LC";
-            this.lunchDataGridViewCheckBoxColumn.Name = "lunchDataGridViewCheckBoxColumn";
-            this.lunchDataGridViewCheckBoxColumn.Width = 40;
-            // 
-            // lunchPriceDataGridViewTextBoxColumn
-            // 
-            this.lunchPriceDataGridViewTextBoxColumn.DataPropertyName = "LunchPrice";
-            this.lunchPriceDataGridViewTextBoxColumn.HeaderText = "L$";
-            this.lunchPriceDataGridViewTextBoxColumn.Name = "lunchPriceDataGridViewTextBoxColumn";
-            // 
-            // takeOutPriceDataGridViewTextBoxColumn
-            // 
-            this.takeOutPriceDataGridViewTextBoxColumn.DataPropertyName = "TakeOutPrice";
-            this.takeOutPriceDataGridViewTextBoxColumn.HeaderText = "TO$";
-            this.takeOutPriceDataGridViewTextBoxColumn.Name = "takeOutPriceDataGridViewTextBoxColumn";
-            // 
-            // miscellaneousPriceDataGridViewTextBoxColumn
-            // 
-            this.miscellaneousPriceDataGridViewTextBoxColumn.DataPropertyName = "MiscellaneousPrice";
-            this.miscellaneousPriceDataGridViewTextBoxColumn.HeaderText = "Miso$";
-            this.miscellaneousPriceDataGridViewTextBoxColumn.Name = "miscellaneousPriceDataGridViewTextBoxColumn";
-            // 
-            // vanPriceDataGridViewTextBoxColumn
-            // 
-            this.vanPriceDataGridViewTextBoxColumn.DataPropertyName = "VanPrice";
-            this.vanPriceDataGridViewTextBoxColumn.HeaderText = "Van";
-            this.vanPriceDataGridViewTextBoxColumn.Name = "vanPriceDataGridViewTextBoxColumn";
-            // 
-            // roundTripPriceDataGridViewTextBoxColumn
-            // 
-            this.roundTripPriceDataGridViewTextBoxColumn.DataPropertyName = "RoundTripPrice";
-            this.roundTripPriceDataGridViewTextBoxColumn.HeaderText = "RT";
-            this.roundTripPriceDataGridViewTextBoxColumn.Name = "roundTripPriceDataGridViewTextBoxColumn";
-            // 
-            // bookOfTicketsDataGridViewTextBoxColumn
-            // 
-            this.bookOfTicketsDataGridViewTextBoxColumn.DataPropertyName = "BookOfTickets";
-            this.bookOfTicketsDataGridViewTextBoxColumn.HeaderText = "BFT";
-            this.bookOfTicketsDataGridViewTextBoxColumn.Name = "bookOfTicketsDataGridViewTextBoxColumn";
-            // 
-            // Total
-            // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // commentsDataGridViewTextBoxColumn
-            // 
-            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
-            this.commentsDataGridViewTextBoxColumn.HeaderText = "Comments";
-            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
             // 
             // daysBindingSource1
             // 
@@ -647,58 +893,248 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(196, 34);
             this.toolStripButton5.Text = "Add person to a day";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
+            // toolStrip10
+            // 
+            this.toolStrip10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip10.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip10.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox5,
+            this.toolStripTextBox6,
+            this.toolStripTextBox7,
+            this.toolStripTextBox8,
+            this.toolStripTextBox9,
+            this.toolStripTextBox15,
+            this.toolStripTextBox14,
+            this.toolStripTextBox13,
+            this.toolStripTextBox12,
+            this.toolStripTextBox11,
+            this.toolStripTextBox16,
+            this.toolStripTextBox10});
+            this.toolStrip10.Location = new System.Drawing.Point(0, 616);
+            this.toolStrip10.Name = "toolStrip10";
+            this.toolStrip10.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip10.Size = new System.Drawing.Size(1089, 28);
+            this.toolStrip10.TabIndex = 1;
+            this.toolStrip10.Text = "toolStrip10";
+            // 
+            // toolStripTextBox5
+            // 
+            this.toolStripTextBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox5.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox5.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox5.Name = "toolStripTextBox5";
+            this.toolStripTextBox5.ReadOnly = true;
+            this.toolStripTextBox5.Size = new System.Drawing.Size(200, 28);
+            this.toolStripTextBox5.Text = "Total:   ";
+            this.toolStripTextBox5.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // toolStripTextBox6
+            // 
+            this.toolStripTextBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox6.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox6.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox6.Name = "toolStripTextBox6";
+            this.toolStripTextBox6.ReadOnly = true;
+            this.toolStripTextBox6.Size = new System.Drawing.Size(40, 28);
+            this.toolStripTextBox6.Text = "0";
+            this.toolStripTextBox6.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox7
+            // 
+            this.toolStripTextBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox7.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox7.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox7.Name = "toolStripTextBox7";
+            this.toolStripTextBox7.ReadOnly = true;
+            this.toolStripTextBox7.Size = new System.Drawing.Size(40, 28);
+            this.toolStripTextBox7.Text = "0";
+            this.toolStripTextBox7.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox8
+            // 
+            this.toolStripTextBox8.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox8.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox8.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox8.Name = "toolStripTextBox8";
+            this.toolStripTextBox8.ReadOnly = true;
+            this.toolStripTextBox8.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox8.Text = "0";
+            this.toolStripTextBox8.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox9
+            // 
+            this.toolStripTextBox9.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox9.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox9.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox9.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox9.Name = "toolStripTextBox9";
+            this.toolStripTextBox9.ReadOnly = true;
+            this.toolStripTextBox9.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox9.Text = "0";
+            this.toolStripTextBox9.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox15
+            // 
+            this.toolStripTextBox15.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox15.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox15.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox15.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox15.Name = "toolStripTextBox15";
+            this.toolStripTextBox15.ReadOnly = true;
+            this.toolStripTextBox15.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox15.Text = "0";
+            this.toolStripTextBox15.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox14
+            // 
+            this.toolStripTextBox14.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox14.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox14.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox14.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox14.Name = "toolStripTextBox14";
+            this.toolStripTextBox14.ReadOnly = true;
+            this.toolStripTextBox14.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox14.Text = "0";
+            this.toolStripTextBox14.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox13
+            // 
+            this.toolStripTextBox13.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox13.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox13.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox13.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox13.Name = "toolStripTextBox13";
+            this.toolStripTextBox13.ReadOnly = true;
+            this.toolStripTextBox13.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox13.Text = "0";
+            this.toolStripTextBox13.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox12
+            // 
+            this.toolStripTextBox12.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox12.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox12.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox12.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox12.Name = "toolStripTextBox12";
+            this.toolStripTextBox12.ReadOnly = true;
+            this.toolStripTextBox12.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox12.Text = "0";
+            this.toolStripTextBox12.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox11
+            // 
+            this.toolStripTextBox11.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox11.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox11.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox11.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox11.Name = "toolStripTextBox11";
+            this.toolStripTextBox11.ReadOnly = true;
+            this.toolStripTextBox11.Size = new System.Drawing.Size(70, 28);
+            this.toolStripTextBox11.Text = "0";
+            this.toolStripTextBox11.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox16
+            // 
+            this.toolStripTextBox16.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox16.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox16.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox16.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox16.Name = "toolStripTextBox16";
+            this.toolStripTextBox16.ReadOnly = true;
+            this.toolStripTextBox16.Size = new System.Drawing.Size(100, 28);
+            this.toolStripTextBox16.Text = "0";
+            this.toolStripTextBox16.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox10
+            // 
+            this.toolStripTextBox10.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox10.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox10.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox10.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox10.Name = "toolStripTextBox10";
+            this.toolStripTextBox10.ReadOnly = true;
+            this.toolStripTextBox10.Size = new System.Drawing.Size(200, 28);
+            this.toolStripTextBox10.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label64);
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Controls.Add(this.label67);
+            this.panel4.Controls.Add(this.textBox_date);
             this.panel4.Controls.Add(this.button9);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Controls.Add(this.textBox_weekday);
             this.panel4.ForeColor = System.Drawing.Color.DimGray;
-            this.panel4.Location = new System.Drawing.Point(368, 18);
+            this.panel4.Location = new System.Drawing.Point(421, 9);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(172, 54);
+            this.panel4.Size = new System.Drawing.Size(329, 62);
             this.panel4.TabIndex = 4;
             // 
-            // label64
+            // textBox_date
             // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.DimGray;
-            this.label64.Location = new System.Drawing.Point(39, 10);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(72, 21);
-            this.label64.TabIndex = 2;
-            this.label64.Text = "Mondey";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(135, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(37, 49);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.DarkGray;
-            this.label67.Location = new System.Drawing.Point(44, 31);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(55, 17);
-            this.label67.TabIndex = 3;
-            this.label67.Text = "label67";
+            this.textBox_date.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox_date.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_date.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_date.ForeColor = System.Drawing.Color.DarkGray;
+            this.textBox_date.Location = new System.Drawing.Point(66, 32);
+            this.textBox_date.Name = "textBox_date";
+            this.textBox_date.ReadOnly = true;
+            this.textBox_date.Size = new System.Drawing.Size(196, 21);
+            this.textBox_date.TabIndex = 5;
+            this.textBox_date.Text = "Mondey";
+            this.textBox_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(1, 3);
+            this.button9.BackgroundImage = global::TDay.Properties.Resources.button_left;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.Location = new System.Drawing.Point(0, 0);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(37, 49);
+            this.button9.Size = new System.Drawing.Size(60, 60);
             this.button9.TabIndex = 0;
-            this.button9.Text = "button9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = global::TDay.Properties.Resources.button_right;
+            this.button10.Enabled = false;
+            this.button10.Location = new System.Drawing.Point(268, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(60, 60);
+            this.button10.TabIndex = 1;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // textBox_weekday
+            // 
+            this.textBox_weekday.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox_weekday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_weekday.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_weekday.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox_weekday.Location = new System.Drawing.Point(66, 6);
+            this.textBox_weekday.Name = "textBox_weekday";
+            this.textBox_weekday.ReadOnly = true;
+            this.textBox_weekday.Size = new System.Drawing.Size(196, 21);
+            this.textBox_weekday.TabIndex = 2;
+            this.textBox_weekday.Text = "Mondey";
+            this.textBox_weekday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Profiles
             // 
@@ -746,28 +1182,29 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.profilesBindingSource;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 72);
             this.dataGridView1.MultiSelect = false;
@@ -799,11 +1236,6 @@
             this.categoryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.categoryDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.categoryDataGridViewTextBoxColumn.ValueMember = "CategoryId";
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.tDayDataSet;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -918,7 +1350,7 @@
             // 
             this.button8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.DimGray;
-            this.button8.Location = new System.Drawing.Point(7, 821);
+            this.button8.Location = new System.Drawing.Point(7, 800);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(151, 45);
             this.button8.TabIndex = 34;
@@ -930,7 +1362,7 @@
             // 
             this.button7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.DimGray;
-            this.button7.Location = new System.Drawing.Point(574, 821);
+            this.button7.Location = new System.Drawing.Point(574, 800);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(135, 45);
             this.button7.TabIndex = 33;
@@ -942,18 +1374,19 @@
             // 
             this.button6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(410, 821);
+            this.button6.Location = new System.Drawing.Point(410, 800);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(158, 45);
             this.button6.TabIndex = 32;
             this.button6.Text = "Print information";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.Location = new System.Drawing.Point(261, 821);
+            this.button5.Location = new System.Drawing.Point(261, 800);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(135, 45);
             this.button5.TabIndex = 31;
@@ -990,10 +1423,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox_ClientBirth);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox_ClientName);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox_ClientBirth);
             this.groupBox1.Controls.Add(this.ClientMember);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox_ClientParis);
@@ -1007,6 +1440,13 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profile";
+            // 
+            // textBox_ClientBirth
+            // 
+            this.textBox_ClientBirth.Location = new System.Drawing.Point(159, 63);
+            this.textBox_ClientBirth.Name = "textBox_ClientBirth";
+            this.textBox_ClientBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientBirth.TabIndex = 12;
             // 
             // label2
             // 
@@ -1039,17 +1479,6 @@
             this.label3.Size = new System.Drawing.Size(123, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Date of Birth :";
-            // 
-            // textBox_ClientBirth
-            // 
-            this.textBox_ClientBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ClientBirth.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientBirth.Location = new System.Drawing.Point(158, 66);
-            this.textBox_ClientBirth.MaxLength = 10;
-            this.textBox_ClientBirth.Name = "textBox_ClientBirth";
-            this.textBox_ClientBirth.Size = new System.Drawing.Size(200, 28);
-            this.textBox_ClientBirth.TabIndex = 8;
-            this.textBox_ClientBirth.TextChanged += new System.EventHandler(this.textBox_ClientBirth_TextChanged);
             // 
             // ClientMember
             // 
@@ -1338,7 +1767,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.toolStrip2);
-            this.panel3.Location = new System.Drawing.Point(4, 103);
+            this.panel3.Location = new System.Drawing.Point(4, 100);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(702, 71);
             this.panel3.TabIndex = 36;
@@ -1464,7 +1893,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.DimGray;
-            this.label18.Location = new System.Drawing.Point(6, 177);
+            this.label18.Location = new System.Drawing.Point(6, 181);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(125, 21);
             this.label18.TabIndex = 32;
@@ -1474,7 +1903,7 @@
             // 
             this.textBoxClientDocPhone.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxClientDocPhone.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxClientDocPhone.Location = new System.Drawing.Point(500, 174);
+            this.textBoxClientDocPhone.Location = new System.Drawing.Point(500, 178);
             this.textBoxClientDocPhone.Name = "textBoxClientDocPhone";
             this.textBoxClientDocPhone.Size = new System.Drawing.Size(201, 28);
             this.textBoxClientDocPhone.TabIndex = 31;
@@ -1484,7 +1913,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.DimGray;
-            this.label17.Location = new System.Drawing.Point(363, 177);
+            this.label17.Location = new System.Drawing.Point(363, 181);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(129, 21);
             this.label17.TabIndex = 30;
@@ -1494,7 +1923,7 @@
             // 
             this.textBox_ClientDocName.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ClientDocName.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientDocName.Location = new System.Drawing.Point(157, 174);
+            this.textBox_ClientDocName.Location = new System.Drawing.Point(157, 178);
             this.textBox_ClientDocName.Name = "textBox_ClientDocName";
             this.textBox_ClientDocName.Size = new System.Drawing.Size(200, 28);
             this.textBox_ClientDocName.TabIndex = 29;
@@ -1899,6 +2328,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textBox_EmpHire);
+            this.groupBox6.Controls.Add(this.textBox_EmpBirth);
             this.groupBox6.Controls.Add(this.textBox_EmpPosition);
             this.groupBox6.Controls.Add(this.label32);
             this.groupBox6.Controls.Add(this.radioButton3);
@@ -1910,9 +2341,7 @@
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Controls.Add(this.textBox_EmpName);
             this.groupBox6.Controls.Add(this.label21);
-            this.groupBox6.Controls.Add(this.textBox_EmpBirth);
             this.groupBox6.Controls.Add(this.textBox_EmpSin);
-            this.groupBox6.Controls.Add(this.textBox_EmpHire);
             this.groupBox6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
@@ -1921,6 +2350,20 @@
             this.groupBox6.TabIndex = 35;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Profile";
+            // 
+            // textBox_EmpHire
+            // 
+            this.textBox_EmpHire.Location = new System.Drawing.Point(468, 63);
+            this.textBox_EmpHire.Name = "textBox_EmpHire";
+            this.textBox_EmpHire.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpHire.TabIndex = 32;
+            // 
+            // textBox_EmpBirth
+            // 
+            this.textBox_EmpBirth.Location = new System.Drawing.Point(157, 63);
+            this.textBox_EmpBirth.Name = "textBox_EmpBirth";
+            this.textBox_EmpBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_EmpBirth.TabIndex = 31;
             // 
             // textBox_EmpPosition
             // 
@@ -2038,16 +2481,6 @@
             this.label21.TabIndex = 3;
             this.label21.Text = "Date of Birth :";
             // 
-            // textBox_EmpBirth
-            // 
-            this.textBox_EmpBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_EmpBirth.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_EmpBirth.Location = new System.Drawing.Point(158, 66);
-            this.textBox_EmpBirth.Name = "textBox_EmpBirth";
-            this.textBox_EmpBirth.Size = new System.Drawing.Size(200, 28);
-            this.textBox_EmpBirth.TabIndex = 8;
-            this.textBox_EmpBirth.TextChanged += new System.EventHandler(this.textBox_EmpBirth_TextChanged);
-            // 
             // textBox_EmpSin
             // 
             this.textBox_EmpSin.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2056,16 +2489,6 @@
             this.textBox_EmpSin.Name = "textBox_EmpSin";
             this.textBox_EmpSin.Size = new System.Drawing.Size(200, 28);
             this.textBox_EmpSin.TabIndex = 9;
-            // 
-            // textBox_EmpHire
-            // 
-            this.textBox_EmpHire.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_EmpHire.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_EmpHire.Location = new System.Drawing.Point(469, 66);
-            this.textBox_EmpHire.Name = "textBox_EmpHire";
-            this.textBox_EmpHire.Size = new System.Drawing.Size(200, 28);
-            this.textBox_EmpHire.TabIndex = 11;
-            this.textBox_EmpHire.TextChanged += new System.EventHandler(this.textBox_EmpHire_TextChanged);
             // 
             // groupBox7
             // 
@@ -2624,10 +3047,10 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.textBox_VolBirth);
             this.groupBox9.Controls.Add(this.label36);
             this.groupBox9.Controls.Add(this.textBox_VolName);
             this.groupBox9.Controls.Add(this.label37);
-            this.groupBox9.Controls.Add(this.textBox_VolBirth);
             this.groupBox9.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.Color.DarkGray;
             this.groupBox9.Location = new System.Drawing.Point(6, 6);
@@ -2636,6 +3059,13 @@
             this.groupBox9.TabIndex = 36;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Profile";
+            // 
+            // textBox_VolBirth
+            // 
+            this.textBox_VolBirth.Location = new System.Drawing.Point(157, 63);
+            this.textBox_VolBirth.Name = "textBox_VolBirth";
+            this.textBox_VolBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_VolBirth.TabIndex = 8;
             // 
             // label36
             // 
@@ -2667,16 +3097,6 @@
             this.label37.Size = new System.Drawing.Size(123, 21);
             this.label37.TabIndex = 3;
             this.label37.Text = "Date of Birth :";
-            // 
-            // textBox_VolBirth
-            // 
-            this.textBox_VolBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_VolBirth.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_VolBirth.Location = new System.Drawing.Point(158, 66);
-            this.textBox_VolBirth.Name = "textBox_VolBirth";
-            this.textBox_VolBirth.Size = new System.Drawing.Size(200, 28);
-            this.textBox_VolBirth.TabIndex = 8;
-            this.textBox_VolBirth.TextChanged += new System.EventHandler(this.textBox_VolBirth_TextChanged);
             // 
             // Board_MemberTab
             // 
@@ -2878,11 +3298,11 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.textBox_BoardBirth);
             this.groupBox13.Controls.Add(this.label48);
             this.groupBox13.Controls.Add(this.label49);
             this.groupBox13.Controls.Add(this.textBox_BoardName);
             this.groupBox13.Controls.Add(this.label50);
-            this.groupBox13.Controls.Add(this.textBox_BoardBirth);
             this.groupBox13.Controls.Add(this.textBox_BoardOccupation);
             this.groupBox13.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.ForeColor = System.Drawing.Color.DarkGray;
@@ -2893,12 +3313,19 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Profile";
             // 
+            // textBox_BoardBirth
+            // 
+            this.textBox_BoardBirth.Location = new System.Drawing.Point(158, 63);
+            this.textBox_BoardBirth.Name = "textBox_BoardBirth";
+            this.textBox_BoardBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_BoardBirth.TabIndex = 24;
+            // 
             // label48
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.ForeColor = System.Drawing.Color.DimGray;
-            this.label48.Location = new System.Drawing.Point(357, 69);
+            this.label48.Location = new System.Drawing.Point(359, 69);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(111, 21);
             this.label48.TabIndex = 23;
@@ -2934,16 +3361,6 @@
             this.label50.Size = new System.Drawing.Size(123, 21);
             this.label50.TabIndex = 3;
             this.label50.Text = "Date of Birth :";
-            // 
-            // textBox_BoardBirth
-            // 
-            this.textBox_BoardBirth.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_BoardBirth.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_BoardBirth.Location = new System.Drawing.Point(158, 66);
-            this.textBox_BoardBirth.Name = "textBox_BoardBirth";
-            this.textBox_BoardBirth.Size = new System.Drawing.Size(200, 28);
-            this.textBox_BoardBirth.TabIndex = 8;
-            this.textBox_BoardBirth.TextChanged += new System.EventHandler(this.textBox_BoardBirth_TextChanged);
             // 
             // textBox_BoardOccupation
             // 
@@ -3267,11 +3684,6 @@
             // 
             this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
-            // AddProfileErrorProvider
-            // 
-            this.AddProfileErrorProvider.ContainerControl = this;
-            this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
-            // 
             // daysBindingSource
             // 
             this.daysBindingSource.DataMember = "Days";
@@ -3280,6 +3692,40 @@
             // daysTableAdapter
             // 
             this.daysTableAdapter.ClearBeforeFill = true;
+            // 
+            // AddProfileErrorProvider
+            // 
+            this.AddProfileErrorProvider.ContainerControl = this;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noChargeToolStripMenuItem,
+            this.permaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 78);
+            // 
+            // noChargeToolStripMenuItem
+            // 
+            this.noChargeToolStripMenuItem.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noChargeToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.noChargeToolStripMenuItem.Name = "noChargeToolStripMenuItem";
+            this.noChargeToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.noChargeToolStripMenuItem.Text = "No Charge";
+            this.noChargeToolStripMenuItem.Click += new System.EventHandler(this.noChargeToolStripMenuItem_Click);
+            // 
+            // permaToolStripMenuItem
+            // 
+            this.permaToolStripMenuItem.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.permaToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.permaToolStripMenuItem.Name = "permaToolStripMenuItem";
+            this.permaToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.permaToolStripMenuItem.Text = "Permanent Charge";
+            this.permaToolStripMenuItem.Click += new System.EventHandler(this.permaToolStripMenuItem_Click);
             // 
             // MainFrame
             // 
@@ -3303,12 +3749,23 @@
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource1)).EndInit();
+            this.toolStrip9.ResumeLayout(false);
+            this.toolStrip9.PerformLayout();
+            this.toolStrip8.ResumeLayout(false);
+            this.toolStrip8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).EndInit();
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
+            this.toolStrip10.ResumeLayout(false);
+            this.toolStrip10.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.Profiles.ResumeLayout(false);
@@ -3318,7 +3775,6 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             this.toolStrip6.ResumeLayout(false);
             this.toolStrip6.PerformLayout();
             this.toolStrip5.ResumeLayout(false);
@@ -3371,8 +3827,9 @@
             this.groupBox16.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3400,7 +3857,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_ClientName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_ClientBirth;
         private System.Windows.Forms.CheckBox ClientMember;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_ClientParis;
@@ -3463,9 +3919,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox_EmpName;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox_EmpBirth;
         private System.Windows.Forms.TextBox textBox_EmpSin;
-        private System.Windows.Forms.TextBox textBox_EmpHire;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox textBox_EmpEmail;
         private System.Windows.Forms.Label label1;
@@ -3505,7 +3959,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox textBox_VolName;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox_VolBirth;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.TextBox textBox_VolCell;
         private System.Windows.Forms.Label label23;
@@ -3541,7 +3994,6 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox textBox_BoardName;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox textBox_BoardBirth;
         private System.Windows.Forms.TextBox textBox_BoardOccupation;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox textBox_BoardCell;
@@ -3606,29 +4058,12 @@
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.TextBox textBox_EmpPosition;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.BindingSource daysBindingSource;
         private TDayDataSetTableAdapters.DaysTableAdapter daysTableAdapter;
         private System.Windows.Forms.BindingSource daysBindingSource1;
         private System.Windows.Forms.ToolStrip toolStrip7;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn attendanceDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn lunchDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lunchPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn takeOutPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn miscellaneousPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vanPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roundTripPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bookOfTicketsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel4;
@@ -3636,6 +4071,59 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ErrorProvider AddProfileErrorProvider;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DateTimePicker textBox_ClientBirth;
+        private System.Windows.Forms.DateTimePicker textBox_EmpHire;
+        private System.Windows.Forms.DateTimePicker textBox_EmpBirth;
+        private System.Windows.Forms.DateTimePicker textBox_VolBirth;
+        private System.Windows.Forms.DateTimePicker textBox_BoardBirth;
+        private System.Windows.Forms.TextBox textBox_date;
+        private System.Windows.Forms.TextBox textBox_weekday;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ToolStrip toolStrip9;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStrip toolStrip8;
+        private System.Windows.Forms.BindingSource profilesBindingSource1;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn profileIdDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn categoryDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.ToolStrip toolStrip10;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox6;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox7;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox8;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox9;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox15;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox14;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox13;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox12;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox11;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox10;
+        private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn attendanceDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn lunchDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunchPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn takeOutPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miscellaneousPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProgramPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vanPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roundTripPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bookOfTicketsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox16;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem noChargeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permaToolStripMenuItem;
 
 
 

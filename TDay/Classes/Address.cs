@@ -12,6 +12,7 @@ namespace TDay
         TDayDataSet tDayDataSet = new TDayDataSet();
         TDayDataSetTableAdapters.AddressesTableAdapter addressesTableAdapter = new TDayDataSetTableAdapters.AddressesTableAdapter();
         public int AdressId { get; set; }
+        public int ProfileId { get; set; }
         public string Addres { get; set; }
         public string City { get; set; }
         public string Province { get; set; }

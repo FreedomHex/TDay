@@ -17,7 +17,7 @@ namespace TDay
         public Address Adress                       { get; set; }
         public EmergencyContact EmergencyContact    { get; set; }
         public Attendance Attendance                { get; set; }
-
+        public bool DelStatus                       { get; set; }
         public Profile()
         {
             Occupation = String.Empty;
@@ -61,14 +61,18 @@ namespace TDay
         }
         public void Create(Enums.Category Category)
         {
-            ProfilesTableAdapter.Insert(Name, (int)Category, DateOfBirdh, null, null, null, Occupation, null, null, null, null, null, null, null,null);
+            ProfilesTableAdapter.Insert(Name, (int)Category, DateOfBirdh, null, null, null, Occupation, null, null, null, null, null, null, null,null,false);
             ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
             this.ProfileUID = tDayDataSet.Profiles[tDayDataSet.Profiles.Count - 1].ProfileId;
         }
 
         public void Delete()
         {
-            ProfilesTableAdapter.Delete(ProfileUID);
+            ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
+            DataRow Row = tDayDataSet.Profiles.FindByProfileId(ProfileUID);
+            Row["DelStatus"] = true;
+            ProfilesTableAdapter.Update(tDayDataSet.Profiles);
+            //ProfilesTableAdapter.Delete(ProfileUID);
         }
 
     }

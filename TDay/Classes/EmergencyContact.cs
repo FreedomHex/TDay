@@ -12,6 +12,7 @@ namespace TDay
         TDayDataSet tDayDataSet = new TDayDataSet();
         TDayDataSetTableAdapters.EmergencyContactsTableAdapter emergencyContactsTableAdapter = new TDayDataSetTableAdapters.EmergencyContactsTableAdapter();
         public int EmergencyId  { get; set; }
+        public int ProfileId { get; set; }
         public string Name      { get; set; }
         public string Phone     { get; set; }
         public string Relation  { get; set; }

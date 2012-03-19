@@ -11,6 +11,7 @@ namespace TDay
         private bool disposed = false;
         TDayDataSet tDayDataSet = new TDayDataSet();
         TDayDataSetTableAdapters.AttendanceTableAdapter attendanceTableAdapter = new TDayDataSetTableAdapters.AttendanceTableAdapter();
+        public int ProfileId{ get; set; }
         public int AttendanceId { get; set; }
         public bool Monday { get; set; }
         public bool Tuesday { get; set; }
@@ -42,7 +43,7 @@ namespace TDay
         }
         public void AddAttendanceTo(Profile Profile)
         {
-            attendanceTableAdapter.Insert(Profile.ProfileUID, Monday, Thursday, Wednesday, Thursday, Friday);
+            attendanceTableAdapter.Insert(Profile.ProfileUID, Monday, Tuesday, Wednesday, Thursday, Friday);
         }
         public void Update()
         {

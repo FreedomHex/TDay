@@ -37,7 +37,7 @@ namespace TDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.0.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.1.0.3")]
         public string CurrentVersion {
             get {
                 return ((string)(this["CurrentVersion"]));
@@ -62,8 +62,7 @@ namespace TDay.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\SQLEXPRESS;Initial Catalog=TDay;User ID=TdayUser;Password=tda" +
-            "y2012")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\DataBase\\Tday.sdf")]
         public string TDayConnectionString {
             get {
                 return ((string)(this["TDayConnectionString"]));

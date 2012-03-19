@@ -11,6 +11,7 @@ namespace TDay
         TDayDataSet tDayDataSet = new TDayDataSet();
         TDayDataSetTableAdapters.TransportationTableAdapter transportationTableAdapter = new TDayDataSetTableAdapters.TransportationTableAdapter();
         public int TransportationId { get; set; }
+        public int ProfileId { get; set; }
         public string Category { get; set; }
         public string HandyDARTNumber { get; set; }
         public bool Monday { get; set; }

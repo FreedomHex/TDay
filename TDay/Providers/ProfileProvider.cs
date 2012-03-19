@@ -13,9 +13,18 @@ namespace TDay
         {
             TDayDataSet tDayDataSet = new TDayDataSet();
             TDayDataSetTableAdapters.ProfilesTableAdapter ProfilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
-            ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
+            ProfilesTableAdapter.FillAll(tDayDataSet.Profiles);
             DataRow Row = tDayDataSet.Profiles.FindByProfileId(ProfileId);
             return (int)Row["Category"];
+        }
+
+        public static bool GetDelStatus(int ProfileId)
+        {
+            TDayDataSet tDayDataSet = new TDayDataSet();
+            TDayDataSetTableAdapters.ProfilesTableAdapter ProfilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
+            ProfilesTableAdapter.FillAll(tDayDataSet.Profiles);
+            DataRow Row = tDayDataSet.Profiles.FindByProfileId(ProfileId);
+            return (bool)Row["DelStatus"];
         }
     }
 }

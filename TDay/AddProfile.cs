@@ -16,7 +16,7 @@ namespace TDay
         {
             InitializeComponent();
         }
-
+        TDayDataSetTableAdapters.ProfilesTableAdapter profilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
         private void AddProfile_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Categories". При необходимости она может быть перемещена или удалена.
@@ -26,6 +26,7 @@ namespace TDay
             tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabStop = false;
+            textBox_ClientName.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,6 +85,8 @@ namespace TDay
                     _Client.ParisNumber = textBox_ClientParis.Text;
                     _Client.DoctorName = textBox_ClientDocName.Text;
                     _Client.DoctorPhone = textBox_ClientDocPhone.Text;
+                    _Client.PharmacistName = textBox_PharmName.Text;
+                    _Client.PharmacistPhone = textBox_ClientPharmPhone.Text;
                     _Client.Create();
                     Address address = new Address();
                     address.Addres = textBox_ClientAddress.Text;
@@ -125,7 +128,8 @@ namespace TDay
                         DopCont.AddEmergencyContactTo(_Client);
                         DopCont.Dispose();
                     }
-                    ReLoad(sender, e);
+                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                    ReLoad(sender, tDayDataSet.Profiles.Rows.Count-1);
                     this.Close();
                     break;
                 #endregion
@@ -164,7 +168,8 @@ namespace TDay
                     attendance_emp.Friday = attendance_em_fri.Checked;
                     attendance_emp.AddAttendanceTo(employee);
                     attendance_emp.Dispose();
-                    ReLoad(sender, e);
+                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                    ReLoad(sender, tDayDataSet.Profiles.Rows.Count - 1);
                     this.Close();
                     break;
                 #endregion
@@ -199,7 +204,8 @@ namespace TDay
                     attendance_vol.Friday = attendance_vol_fri.Checked;
                     attendance_vol.AddAttendanceTo(volonteer);
                     attendance_vol.Dispose();
-                    ReLoad(sender, e);
+                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                    ReLoad(sender, tDayDataSet.Profiles.Rows.Count - 1);
                     this.Close();
                     break;
                 #endregion
@@ -221,7 +227,8 @@ namespace TDay
                     adress_bor.Cell = textBox_BorCell.Text;
                     adress_bor.AddAdressTo(board);
                     adress_bor.Dispose();
-                    ReLoad(sender, e);
+                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                    ReLoad(sender, tDayDataSet.Profiles.Rows.Count - 1);
                     this.Close();
                     break;
                 #endregion
@@ -243,7 +250,8 @@ namespace TDay
                     adress_other.Cell = textBox_BorCell.Text;
                     adress_other.AddAdressTo(other);
                     adress_other.Dispose();
-                    ReLoad(sender, e);
+                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                    ReLoad(sender, tDayDataSet.Profiles.Rows.Count - 1);
                     this.Close();
                     break;
                 #endregion
@@ -270,13 +278,13 @@ namespace TDay
             return PosType;
         }
 
-        private static void ReLoad(object sender, EventArgs e)
+        private static void ReLoad(object sender, int RowIndex)
         {
             Form mainForm = Application.OpenForms["MainFrame"];
             if (mainForm != null)
             {
-                MethodInfo form1_Load = mainForm.GetType().GetMethod("MainFrame_Load", BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.NonPublic);
-                form1_Load.Invoke(mainForm, new object[] { sender, e });
+                MethodInfo form1_Load = mainForm.GetType().GetMethod("RelDataGrid2", BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.NonPublic);
+                form1_Load.Invoke(mainForm, new object[] {sender, RowIndex });
             }
         }
 
