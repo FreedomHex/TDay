@@ -115,6 +115,18 @@ namespace TDay
                     textBox_ClientPostal.Text = client.Adress.PostalCode;
                     textBox_ClientPhone.Text = client.Adress.Phone;
                     textBox_ClientEmail.Text = client.Adress.Email;
+                    radioButton4.Checked = client.Own;
+                    radioButton5.Checked = !client.Own;
+                    if (!client.Own)
+                    {
+                        label5.Visible = true;
+                        textBox_ClientHD.Visible = true;
+                    }
+                    else
+                    {
+                        label5.Visible = false;
+                        textBox_ClientHD.Visible = false;
+                    }
                     textBox_ClientEmerName.Text = client.EmergencyContact.Name;
                     textBox_ClientEmPhone.Text = client.EmergencyContact.Phone;
                     textBox_ClientRelation.Text = client.EmergencyContact.Relation;
@@ -432,6 +444,7 @@ namespace TDay
                      client.Transportation.HandyDARTNumber=textBox_ClientHD.Text;
                      client.DoctorName=textBox_ClientDocName.Text;
                      client.DoctorPhone=textBoxClientDocPhone.Text;
+                     client.Own = radioButton4.Checked;
                      client.PharmacistName=textBox_ClientPharmName.Text;
                      client.PharmacistPhone=textBox_ClientPharmPhone.Text;
                      client.Member=ClientMember.Checked;
@@ -447,6 +460,7 @@ namespace TDay
                      {
                          client.DopEmergencyContact.Name = DopEmerClientName.Text;
                          client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
+                         client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
                      }
                      
                      client.Attendance.Monday=checkBox2.Checked;
@@ -926,7 +940,40 @@ namespace TDay
 
         private void button6_Click(object sender, EventArgs e)
         {
-            PdfPrinter.PrintClientInfo(0);
+            PdfPrinter.PrintClientInfo((int)dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["profileIdDataGridViewTextBoxColumn"].Value);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            PdfPrinter.PrintAttendance(CurrentDay);
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton5.Checked)
+            {
+                label5.Visible = true;
+                textBox_ClientHD.Visible = true;
+            }
+            else
+            {
+                label5.Visible = false;
+                textBox_ClientHD.Visible = false;
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!radioButton4.Checked)
+            {
+                label5.Visible = true;
+                textBox_ClientHD.Visible = true;
+            }
+            else
+            {
+                label5.Visible = false;
+                textBox_ClientHD.Visible = false;
+            }
         }
 
        

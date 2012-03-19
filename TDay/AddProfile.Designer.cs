@@ -232,6 +232,8 @@
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -332,6 +334,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.radioButton5);
+            this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.textBox_ClientBirth);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox_ClientName);
@@ -428,21 +432,23 @@
             // 
             this.textBox_ClientHD.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ClientHD.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox_ClientHD.Location = new System.Drawing.Point(793, 66);
+            this.textBox_ClientHD.Location = new System.Drawing.Point(793, 101);
             this.textBox_ClientHD.Name = "textBox_ClientHD";
             this.textBox_ClientHD.Size = new System.Drawing.Size(200, 28);
             this.textBox_ClientHD.TabIndex = 3;
+            this.textBox_ClientHD.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(619, 69);
+            this.label5.Location = new System.Drawing.Point(647, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 21);
             this.label5.TabIndex = 10;
             this.label5.Text = "HD Number :";
+            this.label5.Visible = false;
             // 
             // groupBox5
             // 
@@ -914,7 +920,7 @@
             this.groupBox2.Size = new System.Drawing.Size(998, 115);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Adress";
+            this.groupBox2.Text = "Address";
             // 
             // textBox_ClientEmail
             // 
@@ -2578,6 +2584,32 @@
             this.AddProfileErrorProvider.ContainerControl = this;
             this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton4.Location = new System.Drawing.Point(700, 66);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(66, 25);
+            this.radioButton4.TabIndex = 12;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Own";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton5.Location = new System.Drawing.Point(791, 66);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(201, 25);
+            this.radioButton5.TabIndex = 13;
+            this.radioButton5.Text = "HandyDARTNumber";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
             // AddProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2854,5 +2886,7 @@
         private System.Windows.Forms.DateTimePicker textBox_EmpBirth;
         private System.Windows.Forms.DateTimePicker textBox_VolBirth;
         private System.Windows.Forms.DateTimePicker textBox_BorBirth;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }

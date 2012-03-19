@@ -61,7 +61,7 @@ namespace TDay
 
         public void Create()
         {
-            ProfilesTableAdapter.Insert(this.Name, (int)Enums.Category.Employee, this.DateOfBirdh, this.HireDate, Position, PositionType, null, SIN, null, null, null, null, null, null,null,false);
+            ProfilesTableAdapter.Insert(this.Name, (int)Enums.Category.Employee, this.DateOfBirdh, this.HireDate, Position, PositionType, null, SIN, null, null, null, null, null, null,null,false,false);
             ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
             this.ProfileUID = tDayDataSet.Profiles[tDayDataSet.Profiles.Count - 1].ProfileId;
         }

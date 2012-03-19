@@ -61,7 +61,7 @@ namespace TDay
         }
         public void Create(Enums.Category Category)
         {
-            ProfilesTableAdapter.Insert(Name, (int)Category, DateOfBirdh, null, null, null, Occupation, null, null, null, null, null, null, null,null,false);
+            ProfilesTableAdapter.Insert(Name, (int)Category, DateOfBirdh, null, null, null, Occupation, null, null, null, null, null, null, null,null,false,false);
             ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
             this.ProfileUID = tDayDataSet.Profiles[tDayDataSet.Profiles.Count - 1].ProfileId;
         }

@@ -59,3 +59,5 @@ D:\Projects\TDay\TDay\bin\Debug\itextsharp.dll
 D:\Projects\TDay\TDay\bin\Debug\DataBase\Tday.sdf
 D:\Projects\TDay\TDay\bin\Debug\System.Data.SqlServerCe.dll
 D:\Projects\TDay\TDay\bin\Debug\RU\System.Data.SqlServerCe.resources.dll
+D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.read.1.tlog
+D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.write.1.tlog

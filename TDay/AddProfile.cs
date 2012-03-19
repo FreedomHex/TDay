@@ -87,6 +87,7 @@ namespace TDay
                     _Client.DoctorPhone = textBox_ClientDocPhone.Text;
                     _Client.PharmacistName = textBox_PharmName.Text;
                     _Client.PharmacistPhone = textBox_ClientPharmPhone.Text;
+                    _Client.Own = radioButton4.Checked;
                     _Client.Create();
                     Address address = new Address();
                     address.Addres = textBox_ClientAddress.Text;
@@ -315,6 +316,34 @@ namespace TDay
                         AddProfileErrorProvider.Clear();
                     }
                     break;
+            }
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton5.Checked)
+            {
+                label5.Visible = true;
+                textBox_ClientHD.Visible = true;
+            }
+            else
+            {
+                label5.Visible = false;
+                textBox_ClientHD.Visible = false;
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!radioButton4.Checked)
+            {
+                label5.Visible = true;
+                textBox_ClientHD.Visible = true;
+            }
+            else
+            {
+                label5.Visible = false;
+                textBox_ClientHD.Visible = false;
             }
         }
     }

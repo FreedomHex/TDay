@@ -230,6 +230,11 @@
     <Content Include="DataBase\Tday.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\print.png" />
+    <None Include="Resources\uncheck.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\checkbox_noncheck.png" />
+    <None Include="Resources\checkbox_cheked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

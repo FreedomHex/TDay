@@ -26,5 +26,14 @@ namespace TDay
             DataRow Row = tDayDataSet.Profiles.FindByProfileId(ProfileId);
             return (bool)Row["DelStatus"];
         }
+
+        public static string GetName(int ProfileId)
+        {
+            TDayDataSet tDayDataSet = new TDayDataSet();
+            TDayDataSetTableAdapters.ProfilesTableAdapter ProfilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
+            ProfilesTableAdapter.FillAll(tDayDataSet.Profiles);
+            DataRow Row = tDayDataSet.Profiles.FindByProfileId(ProfileId);
+            return Row["Name"].ToString();
+        }
     }
 }
