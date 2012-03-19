@@ -48,11 +48,7 @@ namespace TDay {
         
         private global::System.Data.DataRelation relationFK_Profiles_Addresses;
         
-        private global::System.Data.DataRelation relationFK_Profiles_Attendance;
-        
         private global::System.Data.DataRelation relationFK_Profiles_Bills;
-        
-        private global::System.Data.DataRelation relationFK_Profiles_Days;
         
         private global::System.Data.DataRelation relationFK_Profiles_EmergencyContacts;
         
@@ -61,6 +57,10 @@ namespace TDay {
         private global::System.Data.DataRelation relationFK_Profiles_Transportation;
         
         private global::System.Data.DataRelation relationFK_Users_UGroups;
+        
+        private global::System.Data.DataRelation relationFK_Profiles_Days;
+        
+        private global::System.Data.DataRelation relationFK_Profiles_Attendance;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -451,13 +451,13 @@ namespace TDay {
                 }
             }
             this.relationFK_Profiles_Addresses = this.Relations["FK_Profiles_Addresses"];
-            this.relationFK_Profiles_Attendance = this.Relations["FK_Profiles_Attendance"];
             this.relationFK_Profiles_Bills = this.Relations["FK_Profiles_Bills"];
-            this.relationFK_Profiles_Days = this.Relations["FK_Profiles_Days"];
             this.relationFK_Profiles_EmergencyContacts = this.Relations["FK_Profiles_EmergencyContacts"];
             this.relationFK_Profiles_Categories = this.Relations["FK_Profiles_Categories"];
             this.relationFK_Profiles_Transportation = this.Relations["FK_Profiles_Transportation"];
             this.relationFK_Users_UGroups = this.Relations["FK_Users_UGroups"];
+            this.relationFK_Profiles_Days = this.Relations["FK_Profiles_Days"];
+            this.relationFK_Profiles_Attendance = this.Relations["FK_Profiles_Attendance"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -494,18 +494,10 @@ namespace TDay {
                         this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableAddresses.ProfileIdColumn}, false);
             this.Relations.Add(this.relationFK_Profiles_Addresses);
-            this.relationFK_Profiles_Attendance = new global::System.Data.DataRelation("FK_Profiles_Attendance", new global::System.Data.DataColumn[] {
-                        this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAttendance.ProfileIdColumn}, false);
-            this.Relations.Add(this.relationFK_Profiles_Attendance);
             this.relationFK_Profiles_Bills = new global::System.Data.DataRelation("FK_Profiles_Bills", new global::System.Data.DataColumn[] {
                         this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableBills.ProfileIdColumn}, false);
             this.Relations.Add(this.relationFK_Profiles_Bills);
-            this.relationFK_Profiles_Days = new global::System.Data.DataRelation("FK_Profiles_Days", new global::System.Data.DataColumn[] {
-                        this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDays.ProfileIdColumn}, false);
-            this.Relations.Add(this.relationFK_Profiles_Days);
             this.relationFK_Profiles_EmergencyContacts = new global::System.Data.DataRelation("FK_Profiles_EmergencyContacts", new global::System.Data.DataColumn[] {
                         this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEmergencyContacts.ProfileIdColumn}, false);
@@ -522,6 +514,14 @@ namespace TDay {
                         this.tableUGroups.GroupIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsers.UGroupColumn}, false);
             this.Relations.Add(this.relationFK_Users_UGroups);
+            this.relationFK_Profiles_Days = new global::System.Data.DataRelation("FK_Profiles_Days", new global::System.Data.DataColumn[] {
+                        this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDays.ProfileIdColumn}, false);
+            this.Relations.Add(this.relationFK_Profiles_Days);
+            this.relationFK_Profiles_Attendance = new global::System.Data.DataRelation("FK_Profiles_Attendance", new global::System.Data.DataColumn[] {
+                        this.tableProfiles.ProfileIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAttendance.ProfileIdColumn}, false);
+            this.Relations.Add(this.relationFK_Profiles_Attendance);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6208,34 +6208,12 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AttendanceRow[] GetAttendanceRows() {
-                if ((this.Table.ChildRelations["FK_Profiles_Attendance"] == null)) {
-                    return new AttendanceRow[0];
-                }
-                else {
-                    return ((AttendanceRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Profiles_Attendance"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public BillsRow[] GetBillsRows() {
                 if ((this.Table.ChildRelations["FK_Profiles_Bills"] == null)) {
                     return new BillsRow[0];
                 }
                 else {
                     return ((BillsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Profiles_Bills"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DaysRow[] GetDaysRows() {
-                if ((this.Table.ChildRelations["FK_Profiles_Days"] == null)) {
-                    return new DaysRow[0];
-                }
-                else {
-                    return ((DaysRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Profiles_Days"])));
                 }
             }
             
@@ -6258,6 +6236,28 @@ namespace TDay {
                 }
                 else {
                     return ((TransportationRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Profiles_Transportation"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public DaysRow[] GetDaysRows() {
+                if ((this.Table.ChildRelations["FK_Profiles_Days"] == null)) {
+                    return new DaysRow[0];
+                }
+                else {
+                    return ((DaysRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Profiles_Days"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AttendanceRow[] GetAttendanceRows() {
+                if ((this.Table.ChildRelations["FK_Profiles_Attendance"] == null)) {
+                    return new AttendanceRow[0];
+                }
+                else {
+                    return ((AttendanceRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Profiles_Attendance"])));
                 }
             }
         }
