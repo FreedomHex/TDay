@@ -107,10 +107,23 @@
     <Compile Include="Providers\ProfileProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\Session.cs" />
     <Compile Include="TDayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TDayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersAdd.Designer.cs">
+      <DependentUpon>UsersAdd.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddProfile.resx">
       <DependentUpon>AddProfile.cs</DependentUpon>
@@ -134,7 +147,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersAdd.resx">
+      <DependentUpon>UsersAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -230,6 +251,12 @@
     <Content Include="DataBase\Tday.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Calendar.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\Alert.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\AddButtonRec.png" />
+    <None Include="Resources\Preferense_30x30.png" />
     <None Include="Resources\print.png" />
     <None Include="Resources\uncheck.png" />
     <None Include="Resources\check.png" />

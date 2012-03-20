@@ -6,10 +6,10 @@
       <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="CurrentVersion" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0.1.0.3</Value>
+      <Value Profile="(Default)">0.1.0.4</Value>
     </Setting>
     <Setting Name="DebugMode" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="TDayConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

@@ -27,6 +27,18 @@ namespace TDay
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabStop = false;
             textBox_ClientName.Focus();
+            switch (Session.Group)
+            {
+                case 1:
+                    break;
+                case 2:
+                    categoriesBindingSource1.Filter = "CategoryId<2 OR CategoryId>2";
+                    break;
+                case 3:
+                    
+                    categoriesBindingSource1.Filter = "CategoryId = 1";
+                    break;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,23 +59,23 @@ namespace TDay
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBoxCategory.SelectedIndex)
+            switch ((int)comboBoxCategory.SelectedValue)
             {
-                case 0:
+                case 1:
                     tabControl1.SelectedTab = ClientTab;
                     break;
-                case 1:
+                case 2:
                     tabControl1.SelectedTab = EmployeeTab;
                     break;
-                case 2:
+                case 3:
                     tabControl1.SelectedTab = VolunteerTab;
                     break;
-                case 3:
+                case 4:
                     tabControl1.SelectedTab = Board_Member;
                     textBox_BorOccupation.Visible = true;
                     label60.Visible = true;
                     break;
-                case 4:
+                case 5:
                     tabControl1.SelectedTab = Board_Member;
                     textBox_BorOccupation.Visible = false;
                     label60.Visible = false;
@@ -80,7 +92,7 @@ namespace TDay
                 case "1":
                     Client _Client = new Client();
                     _Client.Name = textBox_ClientName.Text;
-                    _Client.DateOfBirdh = DateTime.Parse(textBox_ClientBirth.Text);
+                    _Client.DateOfBirdh = textBox_ClientBirth.Value;
                     _Client.Member = checkBox_ClientMebmber.Checked;
                     _Client.ParisNumber = textBox_ClientParis.Text;
                     _Client.DoctorName = textBox_ClientDocName.Text;
@@ -108,11 +120,14 @@ namespace TDay
                     attendance.AddAttendanceTo(_Client);
                     Transportation trans = new Transportation();
                     trans.Monday = trans_mon.Checked;
+                    if (_Client.Own) { trans.Category = "Own"; } else { trans.Category = "HandyDART"; }
                     trans.Tuesday = trans_tue.Checked;
                     trans.Wednesday = trans_wed.Checked;
                     trans.Thursday = trans_thu.Checked;
                     trans.Friday = trans_fri.Checked;
                     trans.HandyDARTNumber = textBox_ClientHD.Text;
+                    trans.Address = address.Addres;
+                    trans.Phone = address.Phone;
                     trans.AddTransportationTo(_Client);
                     EmergencyContact Contact = new EmergencyContact();
                     Contact.Name = textBox_ClientEmerName.Text;
@@ -138,8 +153,8 @@ namespace TDay
                 case "2":
                     Employee employee = new Employee();
                     employee.Name = textBox_EmpName.Text;
-                    employee.DateOfBirdh = DateTime.Parse(textBox_EmpBirth.Text);
-                    employee.HireDate = DateTime.Parse(textBox_EmpHireDate.Text);
+                    employee.DateOfBirdh = textBox_EmpBirth.Value;
+                    employee.HireDate = textBox_EmpHireDate.Value;
                     employee.SIN = textBox_EmpSin.Text;
                     employee.Position = textBox_EmpPosition.Text;
                     employee.PositionType = GetPositionType();
@@ -178,7 +193,7 @@ namespace TDay
                 case "3":
                     Profile volonteer = new Profile();
                     volonteer.Name = textBox_VolName.Text;
-                    volonteer.DateOfBirdh = DateTime.Parse(textBox_VolBirth.Text);
+                    volonteer.DateOfBirdh = textBox_VolBirth.Value;
                     volonteer.Create(Enums.Category.Volunteer);
                     Address adress_vol = new Address();
                     adress_vol.Addres = textBox_VolAdress.Text;
@@ -215,7 +230,7 @@ namespace TDay
                     Profile board = new Profile();
                     board.Name = textBox_BorName.Text;
                     board.Occupation = textBox_BorOccupation.Text;
-                    board.DateOfBirdh = DateTime.Parse(textBox_BorBirth.Text);
+                    board.DateOfBirdh = textBox_BorBirth.Value;
                     board.Create(Enums.Category.BoardMember);
                     Address adress_bor = new Address();
                     adress_bor.Addres = textBox_BorAdress.Text;
@@ -238,7 +253,7 @@ namespace TDay
                     Profile other = new Profile();
                     other.Name = textBox_BorName.Text;
                     other.Occupation = textBox_BorOccupation.Text;
-                    other.DateOfBirdh = DateTime.Parse(textBox_BorBirth.Text);
+                    other.DateOfBirdh = textBox_BorBirth.Value;
                     other.Create(Enums.Category.Other);
                     Address adress_other = new Address();
                     adress_other.Addres = textBox_BorAdress.Text;

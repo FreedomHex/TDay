@@ -38,6 +38,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ClientTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.textBox_ClientBirth = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ClientName = new System.Windows.Forms.TextBox();
@@ -232,8 +234,6 @@
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
             this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -353,6 +353,32 @@
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profile";
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton5.Location = new System.Drawing.Point(791, 66);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(201, 25);
+            this.radioButton5.TabIndex = 13;
+            this.radioButton5.Text = "HandyDARTNumber";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton4.Location = new System.Drawing.Point(700, 66);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(66, 25);
+            this.radioButton4.TabIndex = 12;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Own";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // textBox_ClientBirth
             // 
@@ -2583,32 +2609,6 @@
             // 
             this.AddProfileErrorProvider.ContainerControl = this;
             this.AddProfileErrorProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("AddProfileErrorProvider.Icon")));
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton4.Location = new System.Drawing.Point(700, 66);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(66, 25);
-            this.radioButton4.TabIndex = 12;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Own";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton5.Location = new System.Drawing.Point(791, 66);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(201, 25);
-            this.radioButton5.TabIndex = 13;
-            this.radioButton5.Text = "HandyDARTNumber";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // AddProfile
             // 

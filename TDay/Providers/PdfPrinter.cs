@@ -317,7 +317,7 @@ namespace TDay
             TDayDataSet tDayDataSet = new TDayDataSet();
             TDayDataSetTableAdapters.DaysTableAdapter daysTableAdapter = new TDayDataSetTableAdapters.DaysTableAdapter();
             TDayDataSetTableAdapters.ProfilesTableAdapter profilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
-            
+
             try
             {
                 if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf"); }
@@ -328,8 +328,8 @@ namespace TDay
                 if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf"); }
             }
             FileStream FS = new FileStream(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf", FileMode.CreateNew);
-            var Doc = new iTextSharp.text.Document(PageSize.A4.Rotate(),20,20,20,20);
-            
+            var Doc = new iTextSharp.text.Document(PageSize.A4.Rotate(), 20, 20, 20, 20);
+
             PdfWriter.GetInstance(Doc, FS);
             Doc.Open();
             PdfPTable table = new PdfPTable(14);
@@ -337,7 +337,7 @@ namespace TDay
             table.WidthPercentage = 100;
 
             AddHeader(table, "Attendance", 20, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
-            AddHeader(table,_CurrentDay.Date.DayOfWeek + "  " + _CurrentDay.Date.ToShortDateString(), 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
+            AddHeader(table, _CurrentDay.Date.DayOfWeek + "  " + _CurrentDay.Date.ToShortDateString(), 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
             daysTableAdapter.Fill(tDayDataSet.Days, _CurrentDay.Date);
             AddPriviewCell(table, "Numb", 1);
             AddPriviewCell(table, "Name", 3);
@@ -363,20 +363,20 @@ namespace TDay
             double TotalT = 0;
             foreach (DataRow Row in tDayDataSet.Days)
             {
-                AddPriviewCell(table, Counter.ToString(),1);
-                AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]),3);
-                AddValueCell(table, (bool)Row["Attendance"], true,1);
-                AddValueCell(table, (bool)Row["Lunch"], true,1);
+                AddPriviewCell(table, Counter.ToString(), 1);
+                AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 3);
+                AddValueCell(table, (bool)Row["Attendance"], true, 1);
+                AddValueCell(table, (bool)Row["Lunch"], true, 1);
                 if ((bool)Row["Lunch"]) { TotalLC++; }
-                AddPriviewCell(table, Row["LunchPrice"].ToString(),1);
+                AddPriviewCell(table, Row["LunchPrice"].ToString(), 1);
                 TotalLCP += Convert.ToDouble(Row["LunchPrice"]);
-                AddPriviewCell(table, Row["TakeOutPrice"].ToString(),1);
+                AddPriviewCell(table, Row["TakeOutPrice"].ToString(), 1);
                 TotalTOP += Convert.ToDouble(Row["TakeOutPrice"]);
-                AddPriviewCell(table, Row["MiscellaneousPrice"].ToString(),1);
+                AddPriviewCell(table, Row["MiscellaneousPrice"].ToString(), 1);
                 TotalMisoP += Convert.ToDouble(Row["MiscellaneousPrice"]);
                 AddPriviewCell(table, Row["ProgramPrice"].ToString(), 1);
                 TotalP += Convert.ToDouble(Row["ProgramPrice"]);
-                AddPriviewCell(table, Row["VanPrice"].ToString(),1);
+                AddPriviewCell(table, Row["VanPrice"].ToString(), 1);
                 TotalVan += Convert.ToDouble(Row["VanPrice"]);
                 AddPriviewCell(table, Row["RoundTripPrice"].ToString(), 1);
                 TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
@@ -384,7 +384,7 @@ namespace TDay
                 TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
                 AddPriviewCell(table, Row["Total"].ToString(), 1);
                 Counter++;
-                
+
             }
             TotalT += TotalLCP + TotalMisoP + TotalTOP + TotalVan + TotalP + TotalRTP + TotalBFT;
             AddPriviewCell(table, "", 1);
@@ -402,6 +402,158 @@ namespace TDay
             Doc.Add(table);
             Doc.Close();
             Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf");
+        }
+
+        public static void PrintTransportation(string Day)
+        {
+            TDayDataSet tDayDataSet = new TDayDataSet();
+            TDayDataSetTableAdapters.TransportationTableAdapter transportationTableAdapter = new TDayDataSetTableAdapters.TransportationTableAdapter();
+            TDayDataSetTableAdapters.ProfilesTableAdapter profilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
+            try
+            {
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf"); }
+            }
+            catch (IOException)
+            {
+                string Proc = GetFileProcessName("Transportation.pdf");
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf"); }
+            }
+            FileStream FS = new FileStream(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf", FileMode.CreateNew);
+            var Doc = new iTextSharp.text.Document(PageSize.A4.Rotate(), 20, 20, 20, 20);
+
+            PdfWriter.GetInstance(Doc, FS);
+            Doc.Open();
+            PdfPTable table = new PdfPTable(20);
+            table.HorizontalAlignment = Element.ALIGN_LEFT;
+            table.WidthPercentage = 100;
+
+            AddHeader(table, "Transportation", 20, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
+            AddHeader(table, Day, 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
+           transportationTableAdapter.Fill(tDayDataSet.Transportation);
+            AddPriviewCell(table, "Numb", 1);
+            AddPriviewCell(table, "Name", 4);
+            AddPriviewCell(table, "Category", 2);
+            AddPriviewCell(table, "Address", 4);
+            AddPriviewCell(table, "Phone", 2);
+            AddPriviewCell(table, "HD#", 2);
+            AddPriviewCell(table, "Mon", 1);
+            AddPriviewCell(table, "Tue", 1);
+            AddPriviewCell(table, "Wed", 1);
+            AddPriviewCell(table, "Thu", 1);
+            AddPriviewCell(table, "Fri", 1);
+            //AddPriviewCell(table, "Comment", 1);
+            int Counter = 1;
+            foreach (DataRow Row in tDayDataSet.Transportation)
+            {
+                switch (Day)
+                {
+                    case "Master":
+                        AddPriviewCell(table, Counter.ToString(), 1);
+                        AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 4);
+                        AddPriviewCell(table, Row["Category"].ToString(), 2);
+                        AddPriviewCell(table, Row["Adress"].ToString(), 4);
+                        AddPriviewCell(table, Row["Phone"].ToString(), 2);
+                        AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
+                        AddValueCell(table, (bool)Row["Monday"], true, 1);
+                        AddValueCell(table, (bool)Row["Tuesday"], true, 1);
+                        AddValueCell(table, (bool)Row["Wednesday"], true, 1);
+                        AddValueCell(table, (bool)Row["Thursday"], true, 1);
+                        AddValueCell(table, (bool)Row["Friday"], true, 1);
+                        //AddPriviewCell(table, Row["Comments"].ToString(), 1);
+                        Counter++;
+                        break;
+                    case "Monday":
+                        if ((bool)Row["Monday"])
+                        {
+                            AddPriviewCell(table, Counter.ToString(), 1);
+                            AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 4);
+                            AddPriviewCell(table, Row["Category"].ToString(), 2);
+                            AddPriviewCell(table, Row["Adress"].ToString(), 4);
+                            AddPriviewCell(table, Row["Phone"].ToString(), 2);
+                            AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
+                            AddValueCell(table, (bool)Row["Monday"], true, 1);
+                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
+                            AddValueCell(table, (bool)Row["Friday"], true, 1);
+                            Counter++;
+                        }
+                        break;
+                    case "Tuesday":
+                        if ((bool)Row["Tuesday"])
+                        {
+                            AddPriviewCell(table, Counter.ToString(), 1);
+                            AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 4);
+                            AddPriviewCell(table, Row["Category"].ToString(), 2);
+                            AddPriviewCell(table, Row["Adress"].ToString(), 4);
+                            AddPriviewCell(table, Row["Phone"].ToString(), 2);
+                            AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
+                            AddValueCell(table, (bool)Row["Monday"], true, 1);
+                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
+                            AddValueCell(table, (bool)Row["Friday"], true, 1);
+                            Counter++;
+                        }
+                        break;
+                    case "Wednesday":
+                        if ((bool)Row["Wednesday"])
+                        {
+                            AddPriviewCell(table, Counter.ToString(), 1);
+                            AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 4);
+                            AddPriviewCell(table, Row["Category"].ToString(), 2);
+                            AddPriviewCell(table, Row["Adress"].ToString(), 4);
+                            AddPriviewCell(table, Row["Phone"].ToString(), 2);
+                            AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
+                            AddValueCell(table, (bool)Row["Monday"], true, 1);
+                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
+                            AddValueCell(table, (bool)Row["Friday"], true, 1);
+                            Counter++;
+                        }
+                        break;
+                    case "Thursday":
+                        if ((bool)Row["Thursday"])
+                        {
+                            AddPriviewCell(table, Counter.ToString(), 1);
+                            AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 4);
+                            AddPriviewCell(table, Row["Category"].ToString(), 2);
+                            AddPriviewCell(table, Row["Adress"].ToString(), 4);
+                            AddPriviewCell(table, Row["Phone"].ToString(), 2);
+                            AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
+                            AddValueCell(table, (bool)Row["Monday"], true, 1);
+                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
+                            AddValueCell(table, (bool)Row["Friday"], true, 1);
+                            Counter++;
+                        }
+                        break;
+                    case "Friday":
+                        if ((bool)Row["Friday"])
+                        {
+                            AddPriviewCell(table, Counter.ToString(), 1);
+                            AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 4);
+                            AddPriviewCell(table, Row["Category"].ToString(), 2);
+                            AddPriviewCell(table, Row["Adress"].ToString(), 4);
+                            AddPriviewCell(table, Row["Phone"].ToString(), 2);
+                            AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
+                            AddValueCell(table, (bool)Row["Monday"], true, 1);
+                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
+                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
+                            AddValueCell(table, (bool)Row["Friday"], true, 1);
+                            Counter++;
+                        }
+                        break;
+                }
+               
+
+            }
+            Doc.Add(table);
+            Doc.Close();
+            Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf");
         }
 
         private static void AddBlockCell(PdfPTable _Table)
@@ -698,21 +850,25 @@ namespace TDay
         public static string GetFileProcessName(string fileName)
         {
 
-            Process[] procs = Process.GetProcesses();
-            foreach (Process proc in procs)
-            {
-                if (proc.MainWindowHandle != new IntPtr(0) && !proc.HasExited)
+                Process[] procs = Process.GetProcesses();
+                foreach (Process proc in procs)
                 {
-                   // ProcessModule[] arr = new ProcessModule[proc.Modules.Count];
-                    if (proc.MainWindowTitle.IndexOf(fileName) != -1)
+                    try
                     {
-                        proc.Kill();
-                        break;
+                        if (proc.MainWindowHandle != new IntPtr(0) && !proc.HasExited)
+                        {
+                            if (proc.MainWindowTitle.IndexOf(fileName) != -1)
+                            {
+                                proc.Kill();
+                                break;
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        continue;
                     }
                 }
-            }
-
-
             return null;
         }
 

@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,6 +48,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.profileIdDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +66,6 @@
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.profileIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.attendanceDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lunchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lunchPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +95,7 @@
             this.toolStripTextBox11 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox16 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox10 = new System.Windows.Forms.ToolStripTextBox();
+            this.button19 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox_date = new System.Windows.Forms.TextBox();
@@ -105,6 +108,7 @@
             this.profileIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip6 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
@@ -121,6 +125,8 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.ClientTab = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.textBox_ClientBirth = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ClientName = new System.Windows.Forms.TextBox();
@@ -314,19 +320,46 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Transportation = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.profileIdDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoryDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handyDARTNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mondayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tuesdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.wednesdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.thursdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fridayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.commentsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transportationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transportationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.Bills = new System.Windows.Forms.TabPage();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
-            this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
-            this.daysBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddProfileErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.noChargeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
+            this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
+            this.daysBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
+            this.transportationTableAdapter = new TDay.TDayDataSetTableAdapters.TransportationTableAdapter();
+            this.toolStrip11 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -342,7 +375,6 @@
             this.toolStrip9.SuspendLayout();
             this.toolStrip8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).BeginInit();
             this.toolStrip7.SuspendLayout();
             this.toolStrip10.SuspendLayout();
@@ -352,6 +384,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).BeginInit();
             this.toolStrip6.SuspendLayout();
             this.toolStrip5.SuspendLayout();
             this.toolStrip3.SuspendLayout();
@@ -381,9 +414,18 @@
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
+            this.Transportation.SuspendLayout();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).BeginInit();
+            this.toolStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
+            this.toolStrip11.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -395,9 +437,9 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 753);
+            this.panel1.Size = new System.Drawing.Size(175, 720);
             this.panel1.TabIndex = 4;
             // 
             // button4
@@ -460,10 +502,10 @@
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(175, 27);
+            this.panel2.Location = new System.Drawing.Point(175, 40);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1098, 753);
+            this.panel2.Size = new System.Drawing.Size(1098, 720);
             this.panel2.TabIndex = 5;
             // 
             // tabControl1
@@ -475,11 +517,11 @@
             this.tabControl1.Controls.Add(this.Profiles);
             this.tabControl1.Controls.Add(this.Transportation);
             this.tabControl1.Controls.Add(this.Bills);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 9);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1097, 752);
+            this.tabControl1.Size = new System.Drawing.Size(1097, 710);
             this.tabControl1.TabIndex = 6;
             // 
             // Attendance
@@ -487,7 +529,7 @@
             this.Attendance.Controls.Add(this.splitContainer2);
             this.Attendance.Location = new System.Drawing.Point(4, 22);
             this.Attendance.Name = "Attendance";
-            this.Attendance.Size = new System.Drawing.Size(1089, 726);
+            this.Attendance.Size = new System.Drawing.Size(1089, 684);
             this.Attendance.TabIndex = 0;
             this.Attendance.Text = "Attendance";
             this.Attendance.UseVisualStyleBackColor = true;
@@ -502,6 +544,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.panel6);
             this.splitContainer2.Panel1.Controls.Add(this.panel5);
             this.splitContainer2.Panel1.Controls.Add(this.dataGridView2);
             this.splitContainer2.Panel1.Controls.Add(this.toolStrip7);
@@ -510,11 +553,27 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer2.Panel2.Controls.Add(this.button19);
             this.splitContainer2.Panel2.Controls.Add(this.button11);
             this.splitContainer2.Panel2.Controls.Add(this.panel4);
-            this.splitContainer2.Size = new System.Drawing.Size(1089, 726);
-            this.splitContainer2.SplitterDistance = 644;
+            this.splitContainer2.Size = new System.Drawing.Size(1089, 684);
+            this.splitContainer2.SplitterDistance = 602;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.BackColor = System.Drawing.Color.DimGray;
+            this.monthCalendar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.monthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.monthCalendar1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthCalendar1.ForeColor = System.Drawing.Color.DimGray;
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 0);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 5;
+            this.monthCalendar1.TitleBackColor = System.Drawing.Color.Black;
+            this.monthCalendar1.TitleForeColor = System.Drawing.Color.Black;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // panel5
             // 
@@ -536,28 +595,28 @@
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle67.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn2,
             this.categoryDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1});
             this.dataGridView3.DataSource = this.profilesBindingSource1;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle68;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(0, 37);
@@ -698,15 +757,15 @@
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle64.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle64;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn1,
@@ -724,14 +783,14 @@
             this.dayIdDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.daysBindingSource1;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle66.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle66;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.DimGray;
@@ -741,7 +800,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1089, 579);
+            this.dataGridView2.Size = new System.Drawing.Size(1089, 537);
             this.dataGridView2.TabIndex = 7;
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             this.dataGridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
@@ -752,9 +811,9 @@
             // profileIdDataGridViewTextBoxColumn1
             // 
             this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.profileIdDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle32;
+            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource1;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.profileIdDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle65;
             this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
             this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
@@ -764,11 +823,6 @@
             this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
             this.profileIdDataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // profilesBindingSource
-            // 
-            this.profilesBindingSource.DataMember = "Profiles";
-            this.profilesBindingSource.DataSource = this.tDayDataSet;
             // 
             // attendanceDataGridViewCheckBoxColumn
             // 
@@ -916,7 +970,7 @@
             this.toolStripTextBox11,
             this.toolStripTextBox16,
             this.toolStripTextBox10});
-            this.toolStrip10.Location = new System.Drawing.Point(0, 616);
+            this.toolStrip10.Location = new System.Drawing.Point(0, 574);
             this.toolStrip10.Name = "toolStrip10";
             this.toolStrip10.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip10.Size = new System.Drawing.Size(1089, 28);
@@ -1078,15 +1132,28 @@
             this.toolStripTextBox10.Size = new System.Drawing.Size(200, 28);
             this.toolStripTextBox10.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button19
+            // 
+            this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button19.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.ForeColor = System.Drawing.Color.DimGray;
+            this.button19.Image = ((System.Drawing.Image)(resources.GetObject("button19.Image")));
+            this.button19.Location = new System.Drawing.Point(245, 11);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(60, 60);
+            this.button19.TabIndex = 5;
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // button11
             // 
             this.button11.BackgroundImage = global::TDay.Properties.Resources.print;
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button11.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.DimGray;
-            this.button11.Location = new System.Drawing.Point(952, 13);
+            this.button11.Location = new System.Drawing.Point(952, 11);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(59, 56);
+            this.button11.Size = new System.Drawing.Size(60, 60);
             this.button11.TabIndex = 4;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -1160,7 +1227,7 @@
             this.Profiles.Controls.Add(this.toolStrip1);
             this.Profiles.Location = new System.Drawing.Point(4, 22);
             this.Profiles.Name = "Profiles";
-            this.Profiles.Size = new System.Drawing.Size(1089, 726);
+            this.Profiles.Size = new System.Drawing.Size(1089, 684);
             this.Profiles.TabIndex = 1;
             this.Profiles.Text = "Profiles";
             // 
@@ -1188,7 +1255,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(1089, 689);
+            this.splitContainer1.Size = new System.Drawing.Size(1089, 647);
             this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
@@ -1200,28 +1267,28 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle69;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.profilesBindingSource;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle70;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 72);
             this.dataGridView1.MultiSelect = false;
@@ -1229,7 +1296,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(343, 615);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 573);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -1261,6 +1328,11 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // profilesBindingSource
+            // 
+            this.profilesBindingSource.DataMember = "Profiles";
+            this.profilesBindingSource.DataSource = this.tDayDataSet;
             // 
             // toolStrip6
             // 
@@ -1367,7 +1439,7 @@
             // 
             this.button8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.DimGray;
-            this.button8.Location = new System.Drawing.Point(7, 800);
+            this.button8.Location = new System.Drawing.Point(12, 803);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(151, 45);
             this.button8.TabIndex = 34;
@@ -1379,7 +1451,7 @@
             // 
             this.button7.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.DimGray;
-            this.button7.Location = new System.Drawing.Point(574, 800);
+            this.button7.Location = new System.Drawing.Point(579, 803);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(135, 45);
             this.button7.TabIndex = 33;
@@ -1391,7 +1463,7 @@
             // 
             this.button6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.DimGray;
-            this.button6.Location = new System.Drawing.Point(410, 800);
+            this.button6.Location = new System.Drawing.Point(415, 803);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(158, 45);
             this.button6.TabIndex = 32;
@@ -1403,7 +1475,7 @@
             // 
             this.button5.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.DimGray;
-            this.button5.Location = new System.Drawing.Point(261, 800);
+            this.button5.Location = new System.Drawing.Point(266, 803);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(135, 45);
             this.button5.TabIndex = 31;
@@ -1417,7 +1489,7 @@
             this.tabControl2.Controls.Add(this.VolunteerTab);
             this.tabControl2.Controls.Add(this.Board_MemberTab);
             this.tabControl2.Controls.Add(this.OtherTab);
-            this.tabControl2.Location = new System.Drawing.Point(3, 0);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(727, 815);
@@ -1460,11 +1532,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profile";
             // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton5.Location = new System.Drawing.Point(486, 106);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(201, 25);
+            this.radioButton5.TabIndex = 15;
+            this.radioButton5.Text = "HandyDARTNumber";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton4.Location = new System.Drawing.Point(395, 106);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(66, 25);
+            this.radioButton4.TabIndex = 14;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Own";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
             // textBox_ClientBirth
             // 
+            this.textBox_ClientBirth.CalendarForeColor = System.Drawing.Color.DimGray;
+            this.textBox_ClientBirth.CalendarTitleForeColor = System.Drawing.Color.DimGray;
             this.textBox_ClientBirth.Location = new System.Drawing.Point(159, 63);
             this.textBox_ClientBirth.Name = "textBox_ClientBirth";
-            this.textBox_ClientBirth.Size = new System.Drawing.Size(200, 28);
+            this.textBox_ClientBirth.Size = new System.Drawing.Size(199, 28);
             this.textBox_ClientBirth.TabIndex = 12;
             // 
             // label2
@@ -3673,46 +3773,323 @@
             // 
             // Transportation
             // 
+            this.Transportation.Controls.Add(this.splitContainer3);
             this.Transportation.Location = new System.Drawing.Point(4, 22);
             this.Transportation.Name = "Transportation";
-            this.Transportation.Size = new System.Drawing.Size(1089, 726);
+            this.Transportation.Size = new System.Drawing.Size(1089, 684);
             this.Transportation.TabIndex = 2;
             this.Transportation.Text = "Transportation";
             this.Transportation.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.dataGridView4);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.button18);
+            this.splitContainer3.Panel2.Controls.Add(this.button17);
+            this.splitContainer3.Panel2.Controls.Add(this.button16);
+            this.splitContainer3.Panel2.Controls.Add(this.button15);
+            this.splitContainer3.Panel2.Controls.Add(this.button14);
+            this.splitContainer3.Panel2.Controls.Add(this.button13);
+            this.splitContainer3.Panel2.Controls.Add(this.button12);
+            this.splitContainer3.Size = new System.Drawing.Size(1089, 726);
+            this.splitContainer3.SplitterDistance = 639;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.profileIdDataGridViewTextBoxColumn3,
+            this.categoryDataGridViewTextBoxColumn2,
+            this.Adress,
+            this.Phone,
+            this.handyDARTNumberDataGridViewTextBoxColumn,
+            this.mondayDataGridViewCheckBoxColumn,
+            this.tuesdayDataGridViewCheckBoxColumn,
+            this.wednesdayDataGridViewCheckBoxColumn,
+            this.thursdayDataGridViewCheckBoxColumn,
+            this.fridayDataGridViewCheckBoxColumn,
+            this.commentsDataGridViewTextBoxColumn1,
+            this.transportationIdDataGridViewTextBoxColumn});
+            this.dataGridView4.DataSource = this.transportationBindingSource;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle72;
+            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView4.EnableHeadersVisualStyles = false;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.Size = new System.Drawing.Size(1089, 639);
+            this.dataGridView4.TabIndex = 1;
+            // 
+            // profileIdDataGridViewTextBoxColumn3
+            // 
+            this.profileIdDataGridViewTextBoxColumn3.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn3.DataSource = this.profilesBindingSource;
+            this.profileIdDataGridViewTextBoxColumn3.DisplayMember = "Name";
+            this.profileIdDataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.profileIdDataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.profileIdDataGridViewTextBoxColumn3.Name = "profileIdDataGridViewTextBoxColumn3";
+            this.profileIdDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.profileIdDataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.profileIdDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.profileIdDataGridViewTextBoxColumn3.ValueMember = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // categoryDataGridViewTextBoxColumn2
+            // 
+            this.categoryDataGridViewTextBoxColumn2.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn2.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn2.Name = "categoryDataGridViewTextBoxColumn2";
+            this.categoryDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Adress
+            // 
+            this.Adress.DataPropertyName = "Adress";
+            this.Adress.HeaderText = "Address";
+            this.Adress.Name = "Adress";
+            this.Adress.ReadOnly = true;
+            this.Adress.Width = 200;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            // 
+            // handyDARTNumberDataGridViewTextBoxColumn
+            // 
+            this.handyDARTNumberDataGridViewTextBoxColumn.DataPropertyName = "HandyDARTNumber";
+            this.handyDARTNumberDataGridViewTextBoxColumn.HeaderText = "HD#";
+            this.handyDARTNumberDataGridViewTextBoxColumn.Name = "handyDARTNumberDataGridViewTextBoxColumn";
+            this.handyDARTNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mondayDataGridViewCheckBoxColumn
+            // 
+            this.mondayDataGridViewCheckBoxColumn.DataPropertyName = "Monday";
+            this.mondayDataGridViewCheckBoxColumn.HeaderText = "Mon";
+            this.mondayDataGridViewCheckBoxColumn.Name = "mondayDataGridViewCheckBoxColumn";
+            this.mondayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.mondayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // tuesdayDataGridViewCheckBoxColumn
+            // 
+            this.tuesdayDataGridViewCheckBoxColumn.DataPropertyName = "Tuesday";
+            this.tuesdayDataGridViewCheckBoxColumn.HeaderText = "Tue";
+            this.tuesdayDataGridViewCheckBoxColumn.Name = "tuesdayDataGridViewCheckBoxColumn";
+            this.tuesdayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.tuesdayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // wednesdayDataGridViewCheckBoxColumn
+            // 
+            this.wednesdayDataGridViewCheckBoxColumn.DataPropertyName = "Wednesday";
+            this.wednesdayDataGridViewCheckBoxColumn.HeaderText = "Wed";
+            this.wednesdayDataGridViewCheckBoxColumn.Name = "wednesdayDataGridViewCheckBoxColumn";
+            this.wednesdayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.wednesdayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // thursdayDataGridViewCheckBoxColumn
+            // 
+            this.thursdayDataGridViewCheckBoxColumn.DataPropertyName = "Thursday";
+            this.thursdayDataGridViewCheckBoxColumn.HeaderText = "Thu";
+            this.thursdayDataGridViewCheckBoxColumn.Name = "thursdayDataGridViewCheckBoxColumn";
+            this.thursdayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.thursdayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // fridayDataGridViewCheckBoxColumn
+            // 
+            this.fridayDataGridViewCheckBoxColumn.DataPropertyName = "Friday";
+            this.fridayDataGridViewCheckBoxColumn.HeaderText = "Fri";
+            this.fridayDataGridViewCheckBoxColumn.Name = "fridayDataGridViewCheckBoxColumn";
+            this.fridayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.fridayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // commentsDataGridViewTextBoxColumn1
+            // 
+            this.commentsDataGridViewTextBoxColumn1.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn1.HeaderText = "Comments";
+            this.commentsDataGridViewTextBoxColumn1.Name = "commentsDataGridViewTextBoxColumn1";
+            this.commentsDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // transportationIdDataGridViewTextBoxColumn
+            // 
+            this.transportationIdDataGridViewTextBoxColumn.DataPropertyName = "TransportationId";
+            this.transportationIdDataGridViewTextBoxColumn.HeaderText = "TransportationId";
+            this.transportationIdDataGridViewTextBoxColumn.Name = "transportationIdDataGridViewTextBoxColumn";
+            this.transportationIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transportationIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // transportationBindingSource
+            // 
+            this.transportationBindingSource.DataMember = "Transportation";
+            this.transportationBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // button18
+            // 
+            this.button18.BackgroundImage = global::TDay.Properties.Resources.print;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button18.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.ForeColor = System.Drawing.Color.DimGray;
+            this.button18.Location = new System.Drawing.Point(993, 11);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(60, 60);
+            this.button18.TabIndex = 10;
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button17
+            // 
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button17.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.ForeColor = System.Drawing.Color.DimGray;
+            this.button17.Location = new System.Drawing.Point(821, 11);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(137, 60);
+            this.button17.TabIndex = 9;
+            this.button17.Text = "Friday";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button16.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.ForeColor = System.Drawing.Color.DimGray;
+            this.button16.Location = new System.Drawing.Point(661, 11);
+            this.button16.Name = "button16";
+            this.button16.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button16.Size = new System.Drawing.Size(137, 60);
+            this.button16.TabIndex = 8;
+            this.button16.Text = "Thursday";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button15.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.ForeColor = System.Drawing.Color.DimGray;
+            this.button15.Location = new System.Drawing.Point(504, 11);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(137, 60);
+            this.button15.TabIndex = 7;
+            this.button15.Text = "Wednesday";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button14.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.DimGray;
+            this.button14.Location = new System.Drawing.Point(342, 11);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(137, 60);
+            this.button14.TabIndex = 6;
+            this.button14.Text = "Tuesday";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button13.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.DimGray;
+            this.button13.Location = new System.Drawing.Point(182, 11);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(137, 60);
+            this.button13.TabIndex = 5;
+            this.button13.Text = "Monday";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button12.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.ForeColor = System.Drawing.Color.DimGray;
+            this.button12.Location = new System.Drawing.Point(19, 11);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(137, 60);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "Master";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // Bills
             // 
             this.Bills.Location = new System.Drawing.Point(4, 22);
             this.Bills.Name = "Bills";
-            this.Bills.Size = new System.Drawing.Size(1089, 726);
+            this.Bills.Size = new System.Drawing.Size(1089, 684);
             this.Bills.TabIndex = 3;
             this.Bills.Text = "Bills";
             this.Bills.UseVisualStyleBackColor = true;
             // 
             // toolStrip4
             // 
+            this.toolStrip4.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
             this.toolStrip4.Location = new System.Drawing.Point(0, 0);
             this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(1273, 25);
+            this.toolStrip4.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip4.Size = new System.Drawing.Size(1273, 37);
             this.toolStrip4.TabIndex = 6;
             this.toolStrip4.Text = "toolStrip4";
+            this.toolStrip4.Visible = false;
             // 
-            // profilesTableAdapter
+            // toolStripDropDownButton1
             // 
-            this.profilesTableAdapter.ClearBeforeFill = true;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usersToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(43, 34);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
             // 
-            // categoriesTableAdapter
+            // usersToolStripMenuItem
             // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // daysBindingSource
-            // 
-            this.daysBindingSource.DataMember = "Days";
-            this.daysBindingSource.DataSource = this.tDayDataSet;
-            // 
-            // daysTableAdapter
-            // 
-            this.daysTableAdapter.ClearBeforeFill = true;
+            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.usersToolStripMenuItem.Image = global::TDay.Properties.Resources.User;
+            this.usersToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(139, 38);
+            this.usersToolStripMenuItem.Text = "Users";
             // 
             // AddProfileErrorProvider
             // 
@@ -3728,7 +4105,7 @@
             this.noChargeToolStripMenuItem,
             this.permaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 78);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 56);
             // 
             // noChargeToolStripMenuItem
             // 
@@ -3748,38 +4125,81 @@
             this.permaToolStripMenuItem.Text = "Permanent Charge";
             this.permaToolStripMenuItem.Click += new System.EventHandler(this.permaToolStripMenuItem_Click);
             // 
-            // radioButton5
+            // profilesTableAdapter
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton5.Location = new System.Drawing.Point(486, 106);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(201, 25);
-            this.radioButton5.TabIndex = 15;
-            this.radioButton5.Text = "HandyDARTNumber";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.profilesTableAdapter.ClearBeforeFill = true;
             // 
-            // radioButton4
+            // categoriesTableAdapter
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.ForeColor = System.Drawing.Color.DimGray;
-            this.radioButton4.Location = new System.Drawing.Point(395, 106);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(66, 25);
-            this.radioButton4.TabIndex = 14;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Own";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.categoriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // daysBindingSource
+            // 
+            this.daysBindingSource.DataMember = "Days";
+            this.daysBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // daysTableAdapter
+            // 
+            this.daysTableAdapter.ClearBeforeFill = true;
+            // 
+            // transportationTableAdapter
+            // 
+            this.transportationTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolStrip11
+            // 
+            this.toolStrip11.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip11.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton2});
+            this.toolStrip11.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip11.Name = "toolStrip11";
+            this.toolStrip11.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip11.Size = new System.Drawing.Size(1273, 25);
+            this.toolStrip11.TabIndex = 7;
+            this.toolStrip11.Text = "toolStrip11";
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usersToolStripMenuItem1});
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(43, 34);
+            this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.ToolTipText = "Preferense";
+            this.toolStripDropDownButton2.Visible = false;
+            // 
+            // usersToolStripMenuItem1
+            // 
+            this.usersToolStripMenuItem1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersToolStripMenuItem1.ForeColor = System.Drawing.Color.DimGray;
+            this.usersToolStripMenuItem1.Image = global::TDay.Properties.Resources.User;
+            this.usersToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.usersToolStripMenuItem1.Name = "usersToolStripMenuItem1";
+            this.usersToolStripMenuItem1.Size = new System.Drawing.Size(139, 38);
+            this.usersToolStripMenuItem1.Text = "Users";
+            this.usersToolStripMenuItem1.Click += new System.EventHandler(this.usersToolStripMenuItem1_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.monthCalendar1);
+            this.panel6.Location = new System.Drawing.Point(245, 420);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(165, 162);
+            this.panel6.TabIndex = 8;
+            this.panel6.Visible = false;
             // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1273, 782);
+            this.ClientSize = new System.Drawing.Size(1273, 762);
+            this.Controls.Add(this.toolStrip11);
             this.Controls.Add(this.toolStrip4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -3807,7 +4227,6 @@
             this.toolStrip8.ResumeLayout(false);
             this.toolStrip8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).EndInit();
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
@@ -3822,6 +4241,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource)).EndInit();
             this.toolStrip6.ResumeLayout(false);
             this.toolStrip6.PerformLayout();
             this.toolStrip5.ResumeLayout(false);
@@ -3874,9 +4294,20 @@
             this.groupBox16.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
+            this.Transportation.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).EndInit();
+            this.toolStrip4.ResumeLayout(false);
+            this.toolStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
+            this.toolStrip11.ResumeLayout(false);
+            this.toolStrip11.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4153,6 +4584,41 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox12;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox11;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox10;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox16;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem noChargeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem permaToolStripMenuItem;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private TDayDataSetTableAdapters.TransportationTableAdapter transportationTableAdapter;
+        private System.Windows.Forms.BindingSource transportationBindingSource;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn handyDARTNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn mondayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn tuesdayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn wednesdayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn thursdayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn fridayDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn transportationIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip11;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem1;
         private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn attendanceDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn lunchDataGridViewCheckBoxColumn;
@@ -4167,13 +4633,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox16;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem noChargeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem permaToolStripMenuItem;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Panel panel6;
 
 
 

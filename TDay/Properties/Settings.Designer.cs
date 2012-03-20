@@ -37,7 +37,7 @@ namespace TDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.1.0.3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.1.0.4")]
         public string CurrentVersion {
             get {
                 return ((string)(this["CurrentVersion"]));
@@ -49,7 +49,7 @@ namespace TDay.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool DebugMode {
             get {
                 return ((bool)(this["DebugMode"]));

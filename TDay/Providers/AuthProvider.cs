@@ -17,6 +17,10 @@ namespace TDay
             {
                 if (Row["Login"].ToString() == Username && Row["Password"].ToString() == Password)
                 {
+                    Session.UserId =(int)Row["UserId"];
+                    Session.Group = (int)Row["UGroup"];
+                    Session.Login = Username;
+                    Session.Password = Password;
                     _isAuthentificated = true;
                     break;
                 }

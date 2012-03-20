@@ -16,7 +16,8 @@ namespace TDay
             InitializeComponent();
             if (TDay.Properties.Settings.Default.DebugMode)
             {
-                this.Text = "TDay" + " Version:" + TDay.Properties.Settings.Default.CurrentVersion + "|DebugMode";
+                this.Text = "TDay";
+                //this.Text = "TDay" + " Version:" + TDay.Properties.Settings.Default.CurrentVersion + "|DebugMode";
             }
             else
             {
@@ -25,10 +26,13 @@ namespace TDay
         }
         public bool SortByCategory = false;
         public string CategoryFilter = String.Empty;
+        public string _TransportDay = String.Empty;
         public Day CurrentDay = new Day();
         TDayDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter = new TDayDataSetTableAdapters.ServicesTableAdapter();
         private void MainFrame_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Transportation". При необходимости она может быть перемещена или удалена.
+            transportationTableAdapter.Fill(this.tDayDataSet.Transportation);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Days". При необходимости она может быть перемещена или удалена.
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Categories". При необходимости она может быть перемещена или удалена.
             this.categoriesTableAdapter.Fill(this.tDayDataSet.Categories);
@@ -51,12 +55,14 @@ namespace TDay
             textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
             textBox_date.Text = CurrentDay.Date.ToShortDateString();
             ReCountTotals();
+            CheckPermission();
+            
         }
 
         private void RelDataGrid2(object sender, int RowIndex)
         {
             this.profilesTableAdapter.Fill(this.tDayDataSet.Profiles);
-            if (dataGridView1.Rows.Count > 0)
+            if (dataGridView1.Rows.Count > 0 && RowIndex<dataGridView1.Rows.Count)
             {
                 DataGridViewCellEventArgs sel = new DataGridViewCellEventArgs(0, RowIndex);
                 dataGridView1_CellClick(this, sel);
@@ -84,6 +90,8 @@ namespace TDay
         private void button3_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = Transportation;
+            transportationTableAdapter.Fill(tDayDataSet.Transportation);
+            button12_Click(sender, e);
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -292,8 +300,17 @@ namespace TDay
             switch (toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString())
             {
                 case "All":
-                    SortByCategory = false;
-                    this.profilesBindingSource.RemoveFilter();
+                    if (Session.Group != 3)
+                    {
+                        SortByCategory = false;
+                        this.profilesBindingSource.RemoveFilter();
+                    }
+                    else
+                    {
+                        SortByCategory = true;
+                        this.profilesBindingSource.Filter = "Category<2 OR Category>2";
+                    }
+                    
                     break;
                 case "Client":
                     SortByCategory = true;
@@ -351,12 +368,15 @@ namespace TDay
 
         private void button7_Click(object sender, EventArgs e)
         {
-                     Profile client = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
-                     if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete a profile "+client.Name+" ?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                        {
-                            client.Delete();
-                            profilesTableAdapter.Fill(tDayDataSet.Profiles);
-                        }  
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Profile client = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
+                if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete a profile " + client.Name + " ?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    client.Delete();
+                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                }
+            }
         }
 
         private void textBox_ClientName_TextChanged(object sender, EventArgs e)
@@ -421,162 +441,168 @@ namespace TDay
 
         private void button8_Click(object sender, EventArgs e)
         {
-            int RowIndex = dataGridView1.SelectedCells[0].RowIndex;
-            switch (dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["categoryDataGridViewTextBoxColumn"].Value.ToString())
+            if (dataGridView1.Rows.Count > 0)
             {
-                #region Client
-                case "1":
-                     tabControl2.SelectedTab = ClientTab;
-                    Client client = new Client(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
-                    client.Name = textBox_ClientName.Text;
-                     client.DateOfBirdh = DateTime.Parse(textBox_ClientBirth.Value.ToShortDateString());
-                     client.ParisNumber = textBox_ClientParis.Text;
-                     client.Adress.Addres=textBox_ClientAdress.Text;
-                     client.Adress.City=textBox_ClientCity.Text;
-                     client.Adress.Province=textBox_ClientProvince.Text;
-                     client.Adress.Country=textBox_ClientCountry.Text;
-                     client.Adress.PostalCode=textBox_ClientPostal.Text;
-                     client.Adress.Phone=textBox_ClientPhone.Text;
-                     client.Adress.Email=textBox_ClientEmail.Text;
-                     client.EmergencyContact.Name=textBox_ClientEmerName.Text;
-                     client.EmergencyContact.Phone=textBox_ClientEmPhone.Text;
-                     client.EmergencyContact.Relation=textBox_ClientRelation.Text;
-                     client.Transportation.HandyDARTNumber=textBox_ClientHD.Text;
-                     client.DoctorName=textBox_ClientDocName.Text;
-                     client.DoctorPhone=textBoxClientDocPhone.Text;
-                     client.Own = radioButton4.Checked;
-                     client.PharmacistName=textBox_ClientPharmName.Text;
-                     client.PharmacistPhone=textBox_ClientPharmPhone.Text;
-                     client.Member=ClientMember.Checked;
-                     if (DopEmerClientName.Visible && client.DopEmergencyContact == null)
-                     {
-                         client.DopEmergencyContact = new EmergencyContact();
-                         client.DopEmergencyContact.Name = DopEmerClientName.Text;
-                         client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
-                         client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
-                         client.DopEmergencyContact.AddEmergencyContactTo(client);
-                     }
-                     else if(DopEmerClientName.Visible)
-                     {
-                         client.DopEmergencyContact.Name = DopEmerClientName.Text;
-                         client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
-                         client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
-                     }
-                     
-                     client.Attendance.Monday=checkBox2.Checked;
-                     client.Attendance.Tuesday=checkBox3.Checked;
-                     client.Attendance.Wednesday=checkBox4.Checked;
-                     client.Attendance.Thursday=checkBox5.Checked;
-                     client.Attendance.Friday=checkBox6.Checked;
-                     client.Transportation.Monday=checkBox11.Checked;
-                     client.Transportation.Tuesday=checkBox10.Checked;
-                     client.Transportation.Wednesday=checkBox9.Checked;
-                     client.Transportation.Thursday=checkBox8.Checked;
-                     client.Transportation.Friday = checkBox7.Checked;
-                     client.Update();
-                     profilesTableAdapter.Fill(tDayDataSet.Profiles);
-                     dataGridView1.Rows[RowIndex].Selected = true;
-                     button8.Enabled = false;
-                    break;
-                #endregion
-                case "2":
-                    Employee employee = new Employee(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
-                    employee.Name = textBox_EmpName.Text;
-                    employee.DateOfBirdh=DateTime.Parse(textBox_EmpBirth.Value.ToShortDateString());
-                    employee.HireDate=DateTime.Parse(textBox_EmpHire.Value.ToShortDateString());
-                    employee.Position=textBox_EmpPosition.Text;
-                    employee.SIN=textBox_EmpSin.Text;
-                    if (radioButton1.Checked) { employee.PositionType = "Causal"; }
-                    if (radioButton2.Checked) { employee.PositionType = "Part time"; }
-                    if (radioButton3.Checked) { employee.PositionType = "Full time"; }
+                int RowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                switch (dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["categoryDataGridViewTextBoxColumn"].Value.ToString())
+                {
+                    #region Client
+                    case "1":
+                        tabControl2.SelectedTab = ClientTab;
+                        Client client = new Client(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
+                        client.Name = textBox_ClientName.Text;
+                        client.DateOfBirdh = DateTime.Parse(textBox_ClientBirth.Value.ToShortDateString());
+                        client.ParisNumber = textBox_ClientParis.Text;
+                        client.Adress.Addres = textBox_ClientAdress.Text;
+                        client.Adress.City = textBox_ClientCity.Text;
+                        client.Adress.Province = textBox_ClientProvince.Text;
+                        client.Adress.Country = textBox_ClientCountry.Text;
+                        client.Adress.PostalCode = textBox_ClientPostal.Text;
+                        client.Adress.Phone = textBox_ClientPhone.Text;
+                        client.Adress.Email = textBox_ClientEmail.Text;
+                        client.EmergencyContact.Name = textBox_ClientEmerName.Text;
+                        client.EmergencyContact.Phone = textBox_ClientEmPhone.Text;
+                        client.EmergencyContact.Relation = textBox_ClientRelation.Text;
+                        client.Transportation.HandyDARTNumber = textBox_ClientHD.Text;
+                        client.DoctorName = textBox_ClientDocName.Text;
+                        client.DoctorPhone = textBoxClientDocPhone.Text;
+                        client.Own = radioButton4.Checked;
+                        client.PharmacistName = textBox_ClientPharmName.Text;
+                        client.PharmacistPhone = textBox_ClientPharmPhone.Text;
+                        client.Member = ClientMember.Checked;
+                        if (DopEmerClientName.Visible && client.DopEmergencyContact == null)
+                        {
+                            client.DopEmergencyContact = new EmergencyContact();
+                            client.DopEmergencyContact.Name = DopEmerClientName.Text;
+                            client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
+                            client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
+                            client.DopEmergencyContact.AddEmergencyContactTo(client);
+                        }
+                        else if (DopEmerClientName.Visible)
+                        {
+                            client.DopEmergencyContact.Name = DopEmerClientName.Text;
+                            client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
+                            client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
+                        }
 
-                    employee.Adress.Addres = textBox_EmpAdress.Text;
-                    employee.Adress.City = textBox_EmpCity.Text;
-                    employee.Adress.Province = textBox_EmpProvince.Text;
-                    employee.Adress.Country = textBox_EmpCountry.Text;
-                    employee.Adress.PostalCode = textBox_EmpPostal.Text;
-                    employee.Adress.Phone = textBox_EmpPhone.Text;
-                    employee.Adress.Email=textBox_EmpEmail.Text;
-                    employee.Adress.Cell=textBox_EmpCell.Text;
-                    employee.EmergencyContact.Name=textBox_EmpEmerCN.Text;
-                    employee.EmergencyContact.Phone=textBox_EmerCP.Text;
-                    employee.EmergencyContact.Relation=textBox_EmpRelation.Text;
-                    employee.Attendance.Monday = checkBox16.Checked;
-                    employee.Attendance.Tuesday=checkBox15.Checked;
-                    employee.Attendance.Wednesday=checkBox14.Checked;
-                    employee.Attendance.Thursday=checkBox13.Checked;
-                    employee.Attendance.Friday=checkBox12.Checked;
-                    employee.Update();
-                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
-                    dataGridView1.Rows[RowIndex].Selected = true;
-                    button8.Enabled = false;
-                    break;
-                case "3":
-                    tabControl2.SelectedTab = VolunteerTab;
-                    Profile volonteer = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
-                    volonteer.Name = textBox_VolName.Text;
-                     volonteer.DateOfBirdh= DateTime.Parse(textBox_VolBirth.Value.ToShortDateString());
-                     volonteer.Adress.Addres=textBox_VolAdress.Text;
-                     volonteer.Adress.City=textBox_VolCity.Text;
-                     volonteer.Adress.Province=textBox_VolProvince.Text;
-                     volonteer.Adress.Country=textBox_VolCountry.Text;
-                     volonteer.Adress.PostalCode=textBox_VolPostal.Text;
-                     volonteer.Adress.Phone=textBox_VolPhone.Text;
-                     volonteer.Adress.Email=textBox_VolEmail.Text;
-                     volonteer.Adress.Cell=textBox_VolCell.Text;
-                     volonteer.EmergencyContact.Name=textBox_VolEmerCN.Text;
-                     volonteer.EmergencyContact.Phone=textBox_VolEmerCP.Text;
-                     volonteer.EmergencyContact.Relation=textBox_VolEmerRelation.Text;
-                     volonteer.Attendance.Monday=checkBox21.Checked;
-                     volonteer.Attendance.Tuesday=checkBox20.Checked;
-                     volonteer.Attendance.Wednesday=checkBox19.Checked;
-                     volonteer.Attendance.Thursday=checkBox18.Checked;
-                     volonteer.Attendance.Friday=checkBox17.Checked;
-                     volonteer.Update();
-                     profilesTableAdapter.Fill(tDayDataSet.Profiles);
-                     dataGridView1.Rows[RowIndex].Selected = true;
-                     button8.Enabled = false;
-                     break;
-                case "4":
-                    
-                    textBox_BoardOccupation.Visible = true;
-                    label48.Visible = true;
-                    Profile board = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
-                    board.Name=textBox_BoardName.Text;
-                    board.Occupation=textBox_BoardOccupation.Text;
-                    board.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Value.ToShortDateString());
-                    board.Adress.Addres=textBox_BoardAdress.Text;
-                    board.Adress.City=textBox_BoardCity.Text;
-                    board.Adress.Province=textBox_BoardProvince.Text;
-                    board.Adress.Country=textBox_BoardCountry.Text;
-                    board.Adress.Cell=textBox_BoardCell.Text;
-                    board.Adress.PostalCode=textBox_BoardPostal.Text;
-                    board.Adress.Phone=textBox_BoardPhone.Text;
-                    board.Adress.Email=textBox_BoardEmail.Text;
-                    board.Update();
-                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
-                    dataGridView1.Rows[RowIndex].Selected = true;
-                    button8.Enabled = false;
-                    break;
-                case "5":
-                    textBox_BoardOccupation.Visible = false;
-                    label48.Visible = false;
-                    Profile other = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
-                    other.Name = textBox_BoardName.Text;
-                    other.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Value.ToShortDateString());
-                    other.Adress.Addres = textBox_BoardAdress.Text;
-                    other.Adress.City = textBox_BoardCity.Text;
-                    other.Adress.Province = textBox_BoardProvince.Text;
-                    other.Adress.Country = textBox_BoardCountry.Text;
-                    other.Adress.Cell = textBox_BoardCell.Text;
-                    other.Adress.PostalCode = textBox_BoardPostal.Text;
-                    other.Adress.Phone = textBox_BoardPhone.Text;
-                    other.Adress.Email = textBox_BoardEmail.Text;
-                    other.Update();
-                    profilesTableAdapter.Fill(tDayDataSet.Profiles);
-                    dataGridView1.Rows[RowIndex].Selected = true;
-                    button8.Enabled = false;
-                    break;
+                        client.Attendance.Monday = checkBox2.Checked;
+                        client.Attendance.Tuesday = checkBox3.Checked;
+                        client.Attendance.Wednesday = checkBox4.Checked;
+                        client.Attendance.Thursday = checkBox5.Checked;
+                        client.Attendance.Friday = checkBox6.Checked;
+                        client.Transportation.Monday = checkBox11.Checked;
+                        client.Transportation.Tuesday = checkBox10.Checked;
+                        client.Transportation.Wednesday = checkBox9.Checked;
+                        client.Transportation.Thursday = checkBox8.Checked;
+                        client.Transportation.Friday = checkBox7.Checked;
+                        client.Transportation.Address = client.Adress.Addres;
+                        client.Transportation.Phone = client.Adress.Phone;
+                        if (client.Own) { client.Transportation.Category = "Own"; } else { client.Transportation.Category = "HandyDART"; }
+                        client.Update();
+                        profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                        dataGridView1.Rows[RowIndex].Selected = true;
+                        button8.Enabled = false;
+                        break;
+                    #endregion
+                    case "2":
+                        Employee employee = new Employee(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
+                        employee.Name = textBox_EmpName.Text;
+                        employee.DateOfBirdh = DateTime.Parse(textBox_EmpBirth.Value.ToShortDateString());
+                        employee.HireDate = DateTime.Parse(textBox_EmpHire.Value.ToShortDateString());
+                        employee.Position = textBox_EmpPosition.Text;
+                        employee.SIN = textBox_EmpSin.Text;
+                        if (radioButton1.Checked) { employee.PositionType = "Causal"; }
+                        if (radioButton2.Checked) { employee.PositionType = "Part time"; }
+                        if (radioButton3.Checked) { employee.PositionType = "Full time"; }
+
+                        employee.Adress.Addres = textBox_EmpAdress.Text;
+                        employee.Adress.City = textBox_EmpCity.Text;
+                        employee.Adress.Province = textBox_EmpProvince.Text;
+                        employee.Adress.Country = textBox_EmpCountry.Text;
+                        employee.Adress.PostalCode = textBox_EmpPostal.Text;
+                        employee.Adress.Phone = textBox_EmpPhone.Text;
+                        employee.Adress.Email = textBox_EmpEmail.Text;
+                        employee.Adress.Cell = textBox_EmpCell.Text;
+                        employee.EmergencyContact.Name = textBox_EmpEmerCN.Text;
+                        employee.EmergencyContact.Phone = textBox_EmerCP.Text;
+                        employee.EmergencyContact.Relation = textBox_EmpRelation.Text;
+                        employee.Attendance.Monday = checkBox16.Checked;
+                        employee.Attendance.Tuesday = checkBox15.Checked;
+                        employee.Attendance.Wednesday = checkBox14.Checked;
+                        employee.Attendance.Thursday = checkBox13.Checked;
+                        employee.Attendance.Friday = checkBox12.Checked;
+                        employee.Update();
+                        profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                        dataGridView1.Rows[RowIndex].Selected = true;
+                        button8.Enabled = false;
+                        break;
+                    case "3":
+                        tabControl2.SelectedTab = VolunteerTab;
+                        Profile volonteer = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
+                        volonteer.Name = textBox_VolName.Text;
+                        volonteer.DateOfBirdh = DateTime.Parse(textBox_VolBirth.Value.ToShortDateString());
+                        volonteer.Adress.Addres = textBox_VolAdress.Text;
+                        volonteer.Adress.City = textBox_VolCity.Text;
+                        volonteer.Adress.Province = textBox_VolProvince.Text;
+                        volonteer.Adress.Country = textBox_VolCountry.Text;
+                        volonteer.Adress.PostalCode = textBox_VolPostal.Text;
+                        volonteer.Adress.Phone = textBox_VolPhone.Text;
+                        volonteer.Adress.Email = textBox_VolEmail.Text;
+                        volonteer.Adress.Cell = textBox_VolCell.Text;
+                        volonteer.EmergencyContact.Name = textBox_VolEmerCN.Text;
+                        volonteer.EmergencyContact.Phone = textBox_VolEmerCP.Text;
+                        volonteer.EmergencyContact.Relation = textBox_VolEmerRelation.Text;
+                        volonteer.Attendance.Monday = checkBox21.Checked;
+                        volonteer.Attendance.Tuesday = checkBox20.Checked;
+                        volonteer.Attendance.Wednesday = checkBox19.Checked;
+                        volonteer.Attendance.Thursday = checkBox18.Checked;
+                        volonteer.Attendance.Friday = checkBox17.Checked;
+                        volonteer.Update();
+                        profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                        dataGridView1.Rows[RowIndex].Selected = true;
+                        button8.Enabled = false;
+                        break;
+                    case "4":
+
+                        textBox_BoardOccupation.Visible = true;
+                        label48.Visible = true;
+                        Profile board = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
+                        board.Name = textBox_BoardName.Text;
+                        board.Occupation = textBox_BoardOccupation.Text;
+                        board.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Value.ToShortDateString());
+                        board.Adress.Addres = textBox_BoardAdress.Text;
+                        board.Adress.City = textBox_BoardCity.Text;
+                        board.Adress.Province = textBox_BoardProvince.Text;
+                        board.Adress.Country = textBox_BoardCountry.Text;
+                        board.Adress.Cell = textBox_BoardCell.Text;
+                        board.Adress.PostalCode = textBox_BoardPostal.Text;
+                        board.Adress.Phone = textBox_BoardPhone.Text;
+                        board.Adress.Email = textBox_BoardEmail.Text;
+                        board.Update();
+                        profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                        dataGridView1.Rows[RowIndex].Selected = true;
+                        button8.Enabled = false;
+                        break;
+                    case "5":
+                        textBox_BoardOccupation.Visible = false;
+                        label48.Visible = false;
+                        Profile other = new Profile(Int32.Parse(dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value.ToString()));
+                        other.Name = textBox_BoardName.Text;
+                        other.DateOfBirdh = DateTime.Parse(textBox_BoardBirth.Value.ToShortDateString());
+                        other.Adress.Addres = textBox_BoardAdress.Text;
+                        other.Adress.City = textBox_BoardCity.Text;
+                        other.Adress.Province = textBox_BoardProvince.Text;
+                        other.Adress.Country = textBox_BoardCountry.Text;
+                        other.Adress.Cell = textBox_BoardCell.Text;
+                        other.Adress.PostalCode = textBox_BoardPostal.Text;
+                        other.Adress.Phone = textBox_BoardPhone.Text;
+                        other.Adress.Email = textBox_BoardEmail.Text;
+                        other.Update();
+                        profilesTableAdapter.Fill(tDayDataSet.Profiles);
+                        dataGridView1.Rows[RowIndex].Selected = true;
+                        button8.Enabled = false;
+                        break;
+                }
             }
         }
 
@@ -751,6 +777,7 @@ namespace TDay
         {
             button10.Enabled = true;
             CurrentDay.ChangeDate(CurrentDay.Date.AddDays(-1));
+            monthCalendar1.SelectionStart = CurrentDay.Date;
             daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
             textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
             textBox_date.Text = CurrentDay.Date.ToShortDateString();
@@ -761,6 +788,7 @@ namespace TDay
         {
             CurrentDay.ChangeDate(CurrentDay.Date.AddDays(1));
             daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+            monthCalendar1.SelectionStart = CurrentDay.Date;
             textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
             textBox_date.Text = CurrentDay.Date.ToShortDateString();
             if (CurrentDay.Date == DateTime.Now.Date)
@@ -940,7 +968,10 @@ namespace TDay
 
         private void button6_Click(object sender, EventArgs e)
         {
-            PdfPrinter.PrintClientInfo((int)dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["profileIdDataGridViewTextBoxColumn"].Value);
+            if (dataGridView1.Rows.Count > 0)
+            {
+                PdfPrinter.PrintClientInfo((int)dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["profileIdDataGridViewTextBoxColumn"].Value);
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -976,6 +1007,141 @@ namespace TDay
             }
         }
 
+        private void button13_Click(object sender, EventArgs e)
+        {
+            transportationBindingSource.Filter = "Monday=1";
+            mondayDataGridViewCheckBoxColumn.Visible = false;
+            tuesdayDataGridViewCheckBoxColumn.Visible = false;
+            wednesdayDataGridViewCheckBoxColumn.Visible = false;
+            thursdayDataGridViewCheckBoxColumn.Visible = false;
+            fridayDataGridViewCheckBoxColumn.Visible = false;
+            _TransportDay = "Monday";
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            transportationBindingSource.RemoveFilter();
+            mondayDataGridViewCheckBoxColumn.Visible = true;
+            tuesdayDataGridViewCheckBoxColumn.Visible = true;
+            wednesdayDataGridViewCheckBoxColumn.Visible = true;
+            thursdayDataGridViewCheckBoxColumn.Visible = true;
+            fridayDataGridViewCheckBoxColumn.Visible = true;
+            _TransportDay = "Master";
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            transportationBindingSource.Filter = "Tuesday=1";
+            mondayDataGridViewCheckBoxColumn.Visible = false;
+            tuesdayDataGridViewCheckBoxColumn.Visible = false;
+            wednesdayDataGridViewCheckBoxColumn.Visible = false;
+            thursdayDataGridViewCheckBoxColumn.Visible = false;
+            fridayDataGridViewCheckBoxColumn.Visible = false;
+            _TransportDay = "Tuesday";
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            transportationBindingSource.Filter = "Wednesday=1";
+            mondayDataGridViewCheckBoxColumn.Visible = false;
+            tuesdayDataGridViewCheckBoxColumn.Visible = false;
+            wednesdayDataGridViewCheckBoxColumn.Visible = false;
+            thursdayDataGridViewCheckBoxColumn.Visible = false;
+            fridayDataGridViewCheckBoxColumn.Visible = false;
+            _TransportDay = "Wednesday";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            transportationBindingSource.Filter = "Thursday=1";
+            mondayDataGridViewCheckBoxColumn.Visible = false;
+            tuesdayDataGridViewCheckBoxColumn.Visible = false;
+            wednesdayDataGridViewCheckBoxColumn.Visible = false;
+            thursdayDataGridViewCheckBoxColumn.Visible = false;
+            fridayDataGridViewCheckBoxColumn.Visible = false;
+            _TransportDay = "Thursday";
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            transportationBindingSource.Filter = "Friday=1";
+            mondayDataGridViewCheckBoxColumn.Visible = false;
+            tuesdayDataGridViewCheckBoxColumn.Visible = false;
+            wednesdayDataGridViewCheckBoxColumn.Visible = false;
+            thursdayDataGridViewCheckBoxColumn.Visible = false;
+            fridayDataGridViewCheckBoxColumn.Visible = false;
+            _TransportDay = "Friday";
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            PdfPrinter.PrintTransportation(_TransportDay);
+        }
+
+        private void CheckPermission()
+        {
+            switch (Session.Group)
+            {
+                case 1:
+                    toolStripDropDownButton2.Visible = true;
+                    break;
+                case 2:
+                    button4.Enabled = false;
+                    break;
+                case 3:
+                    dataGridView2.DataSource = null;
+                    toolStripComboBox1.Items.Clear();
+                    toolStripComboBox1.Items.Add("Client");
+                    toolStripComboBox1.SelectedIndex = 0;
+                    button1.Enabled = false;
+                    button4.Enabled = false;
+                    tabControl1.SelectedTab = Profiles;
+                    break;
+            }
+        }
+
+        private void usersToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Users src = new Users();
+            src.ShowDialog();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (panel6.Visible)
+            {
+                panel6.Visible = false;
+
+            }
+            else
+            {
+                panel6.Location = new Point(button19.Location.X, dataGridView2.Location.Y + dataGridView2.Height - panel6.Height);
+                monthCalendar1.MaxDate = DateTime.Now.Date;
+                panel6.Visible = true;
+            }
+        }
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            if (e.Start == DateTime.Now.Date)
+            {
+                button10.Enabled = false;
+                CurrentDay.ChangeDate(CurrentDay.Date = monthCalendar1.SelectionStart);
+                daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
+                textBox_date.Text = CurrentDay.Date.ToShortDateString();
+                ReCountTotals();
+            }
+            else
+            {
+                button10.Enabled = true;
+                CurrentDay.ChangeDate(CurrentDay.Date = monthCalendar1.SelectionStart);
+                daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
+                textBox_date.Text = CurrentDay.Date.ToShortDateString();
+                ReCountTotals();
+            }
+        }
        
     }
 }

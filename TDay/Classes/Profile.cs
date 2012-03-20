@@ -10,6 +10,7 @@ namespace TDay
     {
         TDayDataSet tDayDataSet = new TDayDataSet();
         TDayDataSetTableAdapters.ProfilesTableAdapter ProfilesTableAdapter = new TDayDataSetTableAdapters.ProfilesTableAdapter();
+        TDayDataSetTableAdapters.TransportationTableAdapter transportationTableAdapter = new TDayDataSetTableAdapters.TransportationTableAdapter();
         public int ProfileUID                       { get; set; }
         public string Name                          { get; set; }
         public string Occupation                    { get; set; }
@@ -73,6 +74,7 @@ namespace TDay
             Row["DelStatus"] = true;
             ProfilesTableAdapter.Update(tDayDataSet.Profiles);
             //ProfilesTableAdapter.Delete(ProfileUID);
+            transportationTableAdapter.Delete(ProfileUID);
         }
 
     }

@@ -20,6 +20,8 @@ namespace TDay
         public bool Thursday { get; set; }
         public bool Friday { get; set; }
         public string Comments { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
 
         public Transportation()
         {
@@ -41,6 +43,8 @@ namespace TDay
                     Thursday = bool.Parse(Row["Thursday"].ToString());
                     Friday = bool.Parse(Row["Friday"].ToString());
                     Comments = Row["Comments"].ToString();
+                    Address = Row["Adress"].ToString();
+                    Phone = Row["Phone"].ToString();
                     TransportationId = int.Parse(Row["TransportationId"].ToString());
                     break;
                 }
@@ -58,11 +62,13 @@ namespace TDay
             Row["Thursday"] = Thursday;
             Row["Friday"] = Friday;
             Row["Comments"] = Comments;
+            Row["Adress"] = Address;
+            Row["Phone"] = Phone;
             transportationTableAdapter.Update(tDayDataSet.Transportation);
         }
         public void AddTransportationTo(Profile Profile)
         {
-            transportationTableAdapter.Insert(Profile.ProfileUID, Category, HandyDARTNumber, Monday, Tuesday, Wednesday, Thursday, Friday, Comments);
+            transportationTableAdapter.Insert(Profile.ProfileUID, Category, HandyDARTNumber, Monday, Tuesday, Wednesday, Thursday, Friday, Comments,Address,Phone);
         }
 
         public bool  GetDay(int DW)
