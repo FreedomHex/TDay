@@ -26,7 +26,7 @@ namespace TDay
         public Profile(int ProfileUID)
         {
             this.ProfileUID = ProfileUID;
-            ProfilesTableAdapter.Fill(tDayDataSet.Profiles);
+            ProfilesTableAdapter.FillAll(tDayDataSet.Profiles);
             foreach (DataRow Row in tDayDataSet.Profiles)
             {
                 if (Row["ProfileId"].ToString() == ProfileUID.ToString())

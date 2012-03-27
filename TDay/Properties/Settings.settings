@@ -19,5 +19,12 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=|DataDirectory|\DataBase\Tday.sdf</Value>
     </Setting>
+    <Setting Name="PlantString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Renfrew-Collingwood Seniors' Society
+2970 East 22nd Avenue
+Vancouver, BC
+V5M 2Y4
+Phone and Fax: 604-430-1441</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

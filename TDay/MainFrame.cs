@@ -17,7 +17,7 @@ namespace TDay
             if (TDay.Properties.Settings.Default.DebugMode)
             {
                 this.Text = "TDay";
-                //this.Text = "TDay" + " Version:" + TDay.Properties.Settings.Default.CurrentVersion + "|DebugMode";
+                this.Text = "TDay" + " Version:" + TDay.Properties.Settings.Default.CurrentVersion + "|DebugMode";
             }
             else
             {
@@ -31,6 +31,8 @@ namespace TDay
         TDayDataSetTableAdapters.ServicesTableAdapter servicesTableAdapter = new TDayDataSetTableAdapters.ServicesTableAdapter();
         private void MainFrame_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Bills". При необходимости она может быть перемещена или удалена.
+            this.billsTableAdapter.Fill(this.tDayDataSet.Bills);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Transportation". При необходимости она может быть перемещена или удалена.
             transportationTableAdapter.Fill(this.tDayDataSet.Transportation);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "tDayDataSet.Days". При необходимости она может быть перемещена или удалена.
@@ -95,7 +97,24 @@ namespace TDay
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            Bill _Bill = new Bill();
+            _Bill.Create();
+            billsTableAdapter.Fill(tDayDataSet.Bills);
             tabControl1.SelectedTab = Bills;
+            richTextBox1.Text = TDay.Properties.Settings.Default.PlantString;
+            richTextBox1.SelectAll();
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+            richTextBox2.SelectAll();
+            richTextBox2.SelectionAlignment = HorizontalAlignment.Center;
+            daysBindingSource2.Filter = "ProfileId=-1";
+            daysTableAdapter.FillByMonth(tDayDataSet.Days, _Bill.FirstDayOfMonth, _Bill.LastDayOfMonth);
+            dataGridView6.Sort(dateDataGridViewTextBoxColumn2, ListSortDirection.Ascending);
+            profilesTableAdapter.FillAll(tDayDataSet.Profiles);
+            if (dataGridView5.Rows.Count > 0)
+            {
+                dataGridView5_CellClick(sender,new DataGridViewCellEventArgs(0,0));
+            }
+
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -106,181 +125,185 @@ namespace TDay
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             button8.Enabled = true;
-            dataGridView1.Rows[e.RowIndex].Selected = true;
-            switch (dataGridView1.Rows[e.RowIndex].Cells["categoryDataGridViewTextBoxColumn"].Value.ToString())
+             if (e.RowIndex < dataGridView1.Rows.Count && e.RowIndex>=0)
             {
-                #region Client
-                case "1":
-                    tabControl2.SelectedTab = ClientTab;
-                    Client client = new Client(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    textBox_ClientName.Text = client.Name;
-                    textBox_ClientBirth.Text = client.DateOfBirdh.ToShortDateString();
-                    textBox_ClientParis.Text = client.ParisNumber;
-                    textBox_ClientAdress.Text = client.Adress.Addres;
-                    textBox_ClientCity.Text = client.Adress.City;
-                    textBox_ClientProvince.Text = client.Adress.Province;
-                    textBox_ClientCountry.Text = client.Adress.Country;
-                    textBox_ClientPostal.Text = client.Adress.PostalCode;
-                    textBox_ClientPhone.Text = client.Adress.Phone;
-                    textBox_ClientEmail.Text = client.Adress.Email;
-                    radioButton4.Checked = client.Own;
-                    radioButton5.Checked = !client.Own;
-                    if (!client.Own)
-                    {
-                        label5.Visible = true;
-                        textBox_ClientHD.Visible = true;
-                    }
-                    else
-                    {
-                        label5.Visible = false;
-                        textBox_ClientHD.Visible = false;
-                    }
-                    textBox_ClientEmerName.Text = client.EmergencyContact.Name;
-                    textBox_ClientEmPhone.Text = client.EmergencyContact.Phone;
-                    textBox_ClientRelation.Text = client.EmergencyContact.Relation;
-                    textBox_ClientHD.Text = client.Transportation.HandyDARTNumber;
-                    textBox_ClientDocName.Text = client.DoctorName;
-                    textBoxClientDocPhone.Text = client.DoctorPhone;
-                    textBox_ClientPharmName.Text = client.PharmacistName;
-                    textBox_ClientPharmPhone.Text = client.PharmacistPhone;
-                    ClientMember.Checked = client.Member;
-                    if (client.DopEmergencyContact!=null)
-                    {
-                        toolStripLabel1.Visible = true;
-                        toolStripLabel2.Visible = true;
-                        toolStripLabel4.Visible = true;
-                        DopEmerClientName.Visible = true;
-                        DopEmerClientPhone.Visible = true;
-                        toolStripTextBox2.Visible = true;
-                        toolStripButton2.Visible = false;
-                        DopEmerClientName.Text = client.DopEmergencyContact.Name;
-                        DopEmerClientPhone.Text = client.DopEmergencyContact.Phone;
-                        toolStripTextBox2.Text = client.DopEmergencyContact.Relation;
-                    }
-                    else
-                    {
-                        toolStripButton2.Visible = true;
-                        toolStripLabel1.Visible = false;
-                        toolStripLabel2.Visible = false;
-                        toolStripLabel4.Visible = false;
-                        DopEmerClientName.Visible = false;
-                        toolStripTextBox2.Visible = false;
-                        DopEmerClientPhone.Visible = false;
-                    }
-                    checkBox2.Checked = client.Attendance.Monday;
-                    checkBox3.Checked = client.Attendance.Tuesday;
-                    checkBox4.Checked = client.Attendance.Wednesday;
-                    checkBox5.Checked = client.Attendance.Thursday;
-                    checkBox6.Checked = client.Attendance.Friday;
+                dataGridView1.Rows[e.RowIndex].Selected = true;
 
-                    checkBox11.Checked = client.Transportation.Monday;
-                    checkBox10.Checked = client.Transportation.Tuesday;
-                    checkBox9.Checked = client.Transportation.Wednesday;
-                    checkBox8.Checked = client.Transportation.Thursday;
-                    checkBox7.Checked = client.Transportation.Friday;
-                    break;
-                #endregion
-                #region Employee
-                case "2":
-                    tabControl2.SelectedTab = EmployeeTab;
-                    Employee employee = new Employee(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    textBox_EmpName.Text = employee.Name;
-                    textBox_EmpBirth.Text = employee.DateOfBirdh.ToShortDateString();
-                    textBox_EmpHire.Text = employee.HireDate.ToShortDateString();
-                    textBox_EmpPosition.Text = employee.Position;
-                    textBox_EmpSin.Text = employee.SIN;
-                    switch (employee.PositionType)
-                    {
-                        case "Causal":
-                            radioButton1.Checked = true;
-                            break;
-                        case "Part time":
-                            radioButton2.Checked = true;
-                            break;
-                        case "Full time":
-                            radioButton3.Checked = true;
-                            break;
-                    }
-                    textBox_EmpAdress.Text = employee.Adress.Addres;
-                    textBox_EmpCity.Text = employee.Adress.City;
-                    textBox_EmpProvince.Text = employee.Adress.Province;
-                    textBox_EmpCountry.Text = employee.Adress.Country;
-                    textBox_EmpPostal.Text = employee.Adress.PostalCode;
-                    textBox_EmpPhone.Text = employee.Adress.Phone;
-                    textBox_EmpEmail.Text = employee.Adress.Email;
-                    textBox_EmpCell.Text = employee.Adress.Cell;
-                    textBox_EmpEmerCN.Text = employee.EmergencyContact.Name;
-                    textBox_EmerCP.Text = employee.EmergencyContact.Phone;
-                    textBox_EmpRelation.Text = employee.EmergencyContact.Relation;
-                    checkBox16.Checked = employee.Attendance.Monday;
-                    checkBox15.Checked = employee.Attendance.Tuesday;
-                    checkBox14.Checked = employee.Attendance.Wednesday;
-                    checkBox13.Checked = employee.Attendance.Thursday;
-                    checkBox12.Checked = employee.Attendance.Friday;
-                    break;
-                #endregion
-                #region Volonteer
-                case "3":
-                    tabControl2.SelectedTab = VolunteerTab;
-                    Profile volonteer = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    textBox_VolName.Text = volonteer.Name;
-                    textBox_VolBirth.Text = volonteer.DateOfBirdh.ToShortDateString();
-                    textBox_VolAdress.Text = volonteer.Adress.Addres;
-                    textBox_VolCity.Text = volonteer.Adress.City;
-                    textBox_VolProvince.Text = volonteer.Adress.Province;
-                    textBox_VolCountry.Text = volonteer.Adress.Country;
-                    textBox_VolPostal.Text = volonteer.Adress.PostalCode;
-                    textBox_VolPhone.Text = volonteer.Adress.Phone;
-                    textBox_VolEmail.Text = volonteer.Adress.Email;
-                    textBox_VolCell.Text = volonteer.Adress.Cell;
-                    textBox_VolEmerCN.Text = volonteer.EmergencyContact.Name;
-                    textBox_VolEmerCP.Text = volonteer.EmergencyContact.Phone;
-                    textBox_VolEmerRelation.Text = volonteer.EmergencyContact.Relation;
-                    checkBox21.Checked = volonteer.Attendance.Monday;
-                    checkBox20.Checked = volonteer.Attendance.Tuesday;
-                    checkBox19.Checked = volonteer.Attendance.Wednesday;
-                    checkBox18.Checked = volonteer.Attendance.Thursday;
-                    checkBox17.Checked = volonteer.Attendance.Friday;
-                    break;
-                #endregion
-                #region BoardMember
-                case "4":
-                    tabControl2.SelectedTab = Board_MemberTab;
-                    textBox_BoardOccupation.Visible = true;
-                    label48.Visible = true;
-                    Profile board = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    textBox_BoardName.Text = board.Name;
-                    textBox_BoardOccupation.Text = board.Occupation;
-                    textBox_BoardBirth.Text = board.DateOfBirdh.ToShortDateString();
-                    textBox_BoardAdress.Text = board.Adress.Addres;
-                    textBox_BoardCity.Text = board.Adress.City;
-                    textBox_BoardProvince.Text = board.Adress.Province;
-                    textBox_BoardCountry.Text = board.Adress.Country;
-                    textBox_BoardCell.Text = board.Adress.Cell;
-                    textBox_BoardPostal.Text = board.Adress.PostalCode;
-                    textBox_BoardPhone.Text = board.Adress.Phone;
-                    textBox_BoardEmail.Text = board.Adress.Email;
-                    break;
-                #endregion
-                #region Other
-                case "5":
-                    tabControl2.SelectedTab = Board_MemberTab;
-                    textBox_BoardOccupation.Visible = false;
-                    label48.Visible = false;
-                    board = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    textBox_BoardName.Text = board.Name;
-                    textBox_BoardOccupation.Text = board.Occupation;
-                    textBox_BoardBirth.Text = board.DateOfBirdh.ToShortDateString();
-                    textBox_BoardAdress.Text = board.Adress.Addres;
-                    textBox_BoardCity.Text = board.Adress.City;
-                    textBox_BoardProvince.Text = board.Adress.Province;
-                    textBox_BoardCountry.Text = board.Adress.Country;
-                    textBox_BoardCell.Text = board.Adress.Cell;
-                    textBox_BoardPostal.Text = board.Adress.PostalCode;
-                    textBox_BoardPhone.Text = board.Adress.Phone;
-                    textBox_BoardEmail.Text = board.Adress.Email;
-                    break;
-                #endregion
+                switch (dataGridView1.Rows[e.RowIndex].Cells["categoryDataGridViewTextBoxColumn"].Value.ToString())
+                {
+                    #region Client
+                    case "1":
+                        tabControl2.SelectedTab = ClientTab;
+                        Client client = new Client(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        textBox_ClientName.Text = client.Name;
+                        textBox_ClientBirth.Text = client.DateOfBirdh.ToShortDateString();
+                        textBox_ClientParis.Text = client.ParisNumber;
+                        textBox_ClientAdress.Text = client.Adress.Addres;
+                        textBox_ClientCity.Text = client.Adress.City;
+                        textBox_ClientProvince.Text = client.Adress.Province;
+                        textBox_ClientCountry.Text = client.Adress.Country;
+                        textBox_ClientPostal.Text = client.Adress.PostalCode;
+                        textBox_ClientPhone.Text = client.Adress.Phone;
+                        textBox_ClientEmail.Text = client.Adress.Email;
+                        radioButton4.Checked = client.Own;
+                        radioButton5.Checked = !client.Own;
+                        if (!client.Own)
+                        {
+                            label5.Visible = true;
+                            textBox_ClientHD.Visible = true;
+                        }
+                        else
+                        {
+                            label5.Visible = false;
+                            textBox_ClientHD.Visible = false;
+                        }
+                        textBox_ClientEmerName.Text = client.EmergencyContact.Name;
+                        textBox_ClientEmPhone.Text = client.EmergencyContact.Phone;
+                        textBox_ClientRelation.Text = client.EmergencyContact.Relation;
+                        textBox_ClientHD.Text = client.Transportation.HandyDARTNumber;
+                        textBox_ClientDocName.Text = client.DoctorName;
+                        textBoxClientDocPhone.Text = client.DoctorPhone;
+                        textBox_ClientPharmName.Text = client.PharmacistName;
+                        textBox_ClientPharmPhone.Text = client.PharmacistPhone;
+                        ClientMember.Checked = client.Member;
+                        if (client.DopEmergencyContact != null)
+                        {
+                            toolStripLabel1.Visible = true;
+                            toolStripLabel2.Visible = true;
+                            toolStripLabel4.Visible = true;
+                            DopEmerClientName.Visible = true;
+                            DopEmerClientPhone.Visible = true;
+                            toolStripTextBox2.Visible = true;
+                            toolStripButton2.Visible = false;
+                            DopEmerClientName.Text = client.DopEmergencyContact.Name;
+                            DopEmerClientPhone.Text = client.DopEmergencyContact.Phone;
+                            toolStripTextBox2.Text = client.DopEmergencyContact.Relation;
+                        }
+                        else
+                        {
+                            toolStripButton2.Visible = true;
+                            toolStripLabel1.Visible = false;
+                            toolStripLabel2.Visible = false;
+                            toolStripLabel4.Visible = false;
+                            DopEmerClientName.Visible = false;
+                            toolStripTextBox2.Visible = false;
+                            DopEmerClientPhone.Visible = false;
+                        }
+                        checkBox2.Checked = client.Attendance.Monday;
+                        checkBox3.Checked = client.Attendance.Tuesday;
+                        checkBox4.Checked = client.Attendance.Wednesday;
+                        checkBox5.Checked = client.Attendance.Thursday;
+                        checkBox6.Checked = client.Attendance.Friday;
+
+                        checkBox11.Checked = client.Transportation.Monday;
+                        checkBox10.Checked = client.Transportation.Tuesday;
+                        checkBox9.Checked = client.Transportation.Wednesday;
+                        checkBox8.Checked = client.Transportation.Thursday;
+                        checkBox7.Checked = client.Transportation.Friday;
+                        break;
+                    #endregion
+                    #region Employee
+                    case "2":
+                        tabControl2.SelectedTab = EmployeeTab;
+                        Employee employee = new Employee(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        textBox_EmpName.Text = employee.Name;
+                        textBox_EmpBirth.Text = employee.DateOfBirdh.ToShortDateString();
+                        textBox_EmpHire.Text = employee.HireDate.ToShortDateString();
+                        textBox_EmpPosition.Text = employee.Position;
+                        textBox_EmpSin.Text = employee.SIN;
+                        switch (employee.PositionType)
+                        {
+                            case "Causal":
+                                radioButton1.Checked = true;
+                                break;
+                            case "Part time":
+                                radioButton2.Checked = true;
+                                break;
+                            case "Full time":
+                                radioButton3.Checked = true;
+                                break;
+                        }
+                        textBox_EmpAdress.Text = employee.Adress.Addres;
+                        textBox_EmpCity.Text = employee.Adress.City;
+                        textBox_EmpProvince.Text = employee.Adress.Province;
+                        textBox_EmpCountry.Text = employee.Adress.Country;
+                        textBox_EmpPostal.Text = employee.Adress.PostalCode;
+                        textBox_EmpPhone.Text = employee.Adress.Phone;
+                        textBox_EmpEmail.Text = employee.Adress.Email;
+                        textBox_EmpCell.Text = employee.Adress.Cell;
+                        textBox_EmpEmerCN.Text = employee.EmergencyContact.Name;
+                        textBox_EmerCP.Text = employee.EmergencyContact.Phone;
+                        textBox_EmpRelation.Text = employee.EmergencyContact.Relation;
+                        checkBox16.Checked = employee.Attendance.Monday;
+                        checkBox15.Checked = employee.Attendance.Tuesday;
+                        checkBox14.Checked = employee.Attendance.Wednesday;
+                        checkBox13.Checked = employee.Attendance.Thursday;
+                        checkBox12.Checked = employee.Attendance.Friday;
+                        break;
+                    #endregion
+                    #region Volonteer
+                    case "3":
+                        tabControl2.SelectedTab = VolunteerTab;
+                        Profile volonteer = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        textBox_VolName.Text = volonteer.Name;
+                        textBox_VolBirth.Text = volonteer.DateOfBirdh.ToShortDateString();
+                        textBox_VolAdress.Text = volonteer.Adress.Addres;
+                        textBox_VolCity.Text = volonteer.Adress.City;
+                        textBox_VolProvince.Text = volonteer.Adress.Province;
+                        textBox_VolCountry.Text = volonteer.Adress.Country;
+                        textBox_VolPostal.Text = volonteer.Adress.PostalCode;
+                        textBox_VolPhone.Text = volonteer.Adress.Phone;
+                        textBox_VolEmail.Text = volonteer.Adress.Email;
+                        textBox_VolCell.Text = volonteer.Adress.Cell;
+                        textBox_VolEmerCN.Text = volonteer.EmergencyContact.Name;
+                        textBox_VolEmerCP.Text = volonteer.EmergencyContact.Phone;
+                        textBox_VolEmerRelation.Text = volonteer.EmergencyContact.Relation;
+                        checkBox21.Checked = volonteer.Attendance.Monday;
+                        checkBox20.Checked = volonteer.Attendance.Tuesday;
+                        checkBox19.Checked = volonteer.Attendance.Wednesday;
+                        checkBox18.Checked = volonteer.Attendance.Thursday;
+                        checkBox17.Checked = volonteer.Attendance.Friday;
+                        break;
+                    #endregion
+                    #region BoardMember
+                    case "4":
+                        tabControl2.SelectedTab = Board_MemberTab;
+                        textBox_BoardOccupation.Visible = true;
+                        label48.Visible = true;
+                        Profile board = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        textBox_BoardName.Text = board.Name;
+                        textBox_BoardOccupation.Text = board.Occupation;
+                        textBox_BoardBirth.Text = board.DateOfBirdh.ToShortDateString();
+                        textBox_BoardAdress.Text = board.Adress.Addres;
+                        textBox_BoardCity.Text = board.Adress.City;
+                        textBox_BoardProvince.Text = board.Adress.Province;
+                        textBox_BoardCountry.Text = board.Adress.Country;
+                        textBox_BoardCell.Text = board.Adress.Cell;
+                        textBox_BoardPostal.Text = board.Adress.PostalCode;
+                        textBox_BoardPhone.Text = board.Adress.Phone;
+                        textBox_BoardEmail.Text = board.Adress.Email;
+                        break;
+                    #endregion
+                    #region Other
+                    case "5":
+                        tabControl2.SelectedTab = Board_MemberTab;
+                        textBox_BoardOccupation.Visible = false;
+                        label48.Visible = false;
+                        board = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        textBox_BoardName.Text = board.Name;
+                        textBox_BoardOccupation.Text = board.Occupation;
+                        textBox_BoardBirth.Text = board.DateOfBirdh.ToShortDateString();
+                        textBox_BoardAdress.Text = board.Adress.Addres;
+                        textBox_BoardCity.Text = board.Adress.City;
+                        textBox_BoardProvince.Text = board.Adress.Province;
+                        textBox_BoardCountry.Text = board.Adress.Country;
+                        textBox_BoardCell.Text = board.Adress.Cell;
+                        textBox_BoardPostal.Text = board.Adress.PostalCode;
+                        textBox_BoardPhone.Text = board.Adress.Phone;
+                        textBox_BoardEmail.Text = board.Adress.Email;
+                        break;
+                    #endregion
+                }
             }
         }
 
@@ -300,17 +323,20 @@ namespace TDay
             switch (toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString())
             {
                 case "All":
-                    if (Session.Group != 3)
-                    {
-                        SortByCategory = false;
-                        this.profilesBindingSource.RemoveFilter();
-                    }
-                    else
-                    {
-                        SortByCategory = true;
+                    switch(Session.Group){
+                        case 1:
+                             SortByCategory = false;
+                              this.profilesBindingSource.RemoveFilter();
+                            break;
+                        case 2:
+                            SortByCategory = false;
                         this.profilesBindingSource.Filter = "Category<2 OR Category>2";
+                            break;
+                        case 3:
+                            SortByCategory = false;
+                            this.profilesBindingSource.Filter = "Category=1";
+                            break;
                     }
-                    
                     break;
                 case "Client":
                     SortByCategory = true;
@@ -346,22 +372,72 @@ namespace TDay
             {
                 if (SortByCategory)
                 {
-                    profilesBindingSource.Filter = CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                    switch (Session.Group)
+                    {
+                        case 1:
+                            profilesBindingSource.Filter = CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            break;
+                        case 2:
+                            profilesBindingSource.Filter = "(Category<2 OR Category>2) AND "+ CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            break;
+                        case 3:
+                            profilesBindingSource.Filter = "Category=1 AND " + CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            break;
+                    }
+                   
                 }
                 else
                 {
-                    profilesBindingSource.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                    switch (Session.Group)
+                    {
+                        case 1:
+                            profilesBindingSource.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            break;
+                        case 2:
+                            profilesBindingSource.Filter ="(Category<2 OR Category>2) AND "+ String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            break;
+                        case 3:
+                            profilesBindingSource.Filter = "Category=1 AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            break;
+                    }
+                    
                 }
             }
             else
             {
                 if (SortByCategory)
                 {
-                    profilesBindingSource.Filter = CategoryFilter;
+                    switch (Session.Group)
+                    {
+                        case 1:
+                            profilesBindingSource.Filter = CategoryFilter;
+                            break;
+                        case 2:
+                            profilesBindingSource.Filter = CategoryFilter + " AND (Category<2 OR Category>2)";
+                            break;
+                        case 3:
+                            profilesBindingSource.Filter = CategoryFilter + " AND Category=1";
+                            break;
+                    }
+                    
                 }
                 else
                 {
-                    profilesBindingSource.RemoveFilter();
+                    switch (Session.Group)
+                    {
+                        case 1:
+                            profilesBindingSource.RemoveFilter();
+                            break;
+                        case 2:
+                            profilesBindingSource.RemoveFilter();
+                            profilesBindingSource.Filter = "Category<2 OR Category>2";
+                            break;
+                        case 3:
+                            profilesBindingSource.RemoveFilter();
+                            profilesBindingSource.Filter = "Category=1";
+                            break;
+                    }
+                    
                 }
             }
         }
@@ -675,7 +751,7 @@ namespace TDay
                     case 1:
                         if ((bool)dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)
                         {
-                            if (DialogResult.Yes == MessageBox.Show("Are you ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                            if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this entry?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                             {
                                 daysTableAdapter.Delete((int)dataGridView2.Rows[e.RowIndex].Cells["dayIdDataGridViewTextBoxColumn"].Value);
                                 daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
@@ -782,6 +858,7 @@ namespace TDay
             textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
             textBox_date.Text = CurrentDay.Date.ToShortDateString();
             ReCountTotals();
+            CheckDayLock();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -796,6 +873,7 @@ namespace TDay
                 button10.Enabled = false;
             }
             ReCountTotals();
+            CheckDayLock();
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -807,17 +885,54 @@ namespace TDay
         {
             panel5.Location = new Point(dataGridView2.Location.X + 4, dataGridView2.Location.Y +dataGridView2.Height-panel5.Height-22);
             panel5.Visible = true;
+            
+            switch (Session.Group)
+            {
+                case 1:
+                    profilesBindingSource1.RemoveFilter();
+                    profilesBindingSource1.Filter = "Category<4";
+                    break;
+                case 2:
+                    profilesBindingSource1.Filter = "Category<2";
+                    break;
+                case 3:
+                    profilesBindingSource1.Filter = "Category=1";
+                    break;
+            }
         }
 
         private void toolStripTextBox4_TextChanged(object sender, EventArgs e)
         {
             if (toolStripTextBox4.Text.Length > 2)
             {
-                profilesBindingSource1.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);
+                switch (Session.Group)
+                {
+                    case 1:
+                        profilesBindingSource1.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);
+                        break;
+                    case 2:
+                        profilesBindingSource1.Filter = "(Category<2 OR Category>2) AND "+String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);;
+                        break;
+                    case 3:
+                        profilesBindingSource1.Filter = "Category=1 AND "+String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);;
+                        break;
+                }
+                
             }
             else
             {
-                profilesBindingSource1.RemoveFilter();
+                switch (Session.Group)
+                {
+                    case 1:
+                        profilesBindingSource1.RemoveFilter();
+                        break;
+                    case 2:
+                        profilesBindingSource1.Filter = "Category<2 OR Category>2";
+                        break;
+                    case 3:
+                        profilesBindingSource1.Filter = "Category=1";
+                        break;
+                }
             }
            
         }
@@ -1087,6 +1202,7 @@ namespace TDay
                     break;
                 case 2:
                     button4.Enabled = false;
+                    toolStripComboBox1.Items.RemoveAt(2);
                     break;
                 case 3:
                     dataGridView2.DataSource = null;
@@ -1131,6 +1247,8 @@ namespace TDay
                 textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
                 textBox_date.Text = CurrentDay.Date.ToShortDateString();
                 ReCountTotals();
+                panel6.Visible = false;
+                CheckDayLock();
             }
             else
             {
@@ -1140,8 +1258,310 @@ namespace TDay
                 textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
                 textBox_date.Text = CurrentDay.Date.ToShortDateString();
                 ReCountTotals();
+                panel6.Visible = false;
+                CheckDayLock();
             }
         }
+
+        private void CheckDayLock()
+        {
+            switch (Session.Group)
+            {
+                case 2:
+                    if (CurrentDay.Date != DateTime.Now.Date)
+                    {
+                        dataGridView2.Enabled = false;
+                        toolStripButton5.Enabled = false;
+                    }
+                    else
+                    {
+                        dataGridView2.Enabled = true;
+                        toolStripButton5.Enabled = true;
+                    }
+                    break;
+                case 3:
+                    if (CurrentDay.Date != DateTime.Now.Date)
+                    {
+                        dataGridView2.Enabled = false;
+                        toolStripButton5.Enabled = false;
+                    }
+                    else
+                    {
+                        dataGridView2.Enabled = true;
+                        toolStripButton5.Enabled = true;
+                    }
+                    break;
+            }
+        }
+
+        private void MainFrame_Shown(object sender, EventArgs e)
+        {
+            this.Opacity = 100;
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                BillsItem Item = new BillsItem((int)dataGridView5.Rows[e.RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value);
+                richTextBox2.ResetText();
+                richTextBox2.AppendText(String.Format("INVOICE #{0}", dataGridView5.Rows[e.RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value.ToString())+"\n");
+                richTextBox2.AppendText(String.Format("For Services of  {0:MMMM}", Item.Date));
+                richTextBox3.ResetText();
+                richTextBox3.AppendText(String.Format("{0} \n", Item.Profile.Name));
+                richTextBox3.AppendText(String.Format("{0} \n",Item.Profile.Adress.Addres));
+                richTextBox3.AppendText(String.Format("{0} \n", Item.Profile.Adress.City));
+                richTextBox3.AppendText(String.Format("{0} \n", Item.Profile.Adress.PostalCode));
+                if (Item.PreviousBillTotal > Item.PreviousBillPaid)
+                {
+                    label67.Text = "Overdue";
+                    textBox2.Text = Item.PreviousBillPaid.ToString();
+                    textBox6.Text = (Item.PreviousBillTotal - Item.PreviousBillPaid + Item.BillTotal).ToString();
+                }
+                else
+                {
+                    label67.Text = "Payments/Credits";
+                    textBox2.Text = Item.PreviousBillPaid.ToString();
+                    textBox6.Text = (Item.PreviousBillTotal - Item.PreviousBillPaid + Item.BillTotal).ToString();
+                }
+                if (Item.Paid > 0)
+                {
+                    checkBox1.Checked = true;
+                    groupBox25.Enabled = true;
+                    switch (Item.PaidType)
+                    {
+                        case "cash":
+                            radioButton6.Checked = true;
+                            break;
+                        case "cheque":
+                            radioButton7.Checked = true;
+                            break;
+                    }
+                    textBox5.Text = Item.Paid.ToString();
+                    dateTimePicker1.Value = Item.PaidDate;
+                }
+                else
+                {
+                    checkBox1.Checked = false;
+                    groupBox25.Enabled = false;
+                    textBox5.Text = String.Empty;
+                    dateTimePicker1.Value = DateTime.Now.Date;
+                }
+                textBox1.Text = Item.PreviousBillTotal.ToString();
+                textBox3.Text = Item.BillTotal.ToString();
+                textBox4.Text = Item.PreviousBillPaidDate.ToShortDateString();
+                //daysBindingSource2.RemoveFilter();
+                daysBindingSource2.Filter = String.Format("ProfileId = {0}", Item.ProfileIdBills.ToString());
+                RecountTotals();
+            }
+        }
+        private void RecountTotals()
+        {
+            double Misc = 0;
+            double Trans = 0;
+            double Program = 0;
+            double TO = 0;
+            double Lanch = 0;
+            double Van = 0;
+            double BFT = 0;
+            foreach (DataGridViewRow Row in dataGridView6.Rows)
+            {
+                Misc += Double.Parse(Row.Cells["miscellaneousPriceDataGridViewTextBoxColumn1"].Value.ToString());
+                Trans += Double.Parse(Row.Cells["roundTripPriceDataGridViewTextBoxColumn1"].Value.ToString());
+                Program += Double.Parse(Row.Cells["programPriceDataGridViewTextBoxColumn"].Value.ToString());
+                TO += Double.Parse(Row.Cells["takeOutPriceDataGridViewTextBoxColumn1"].Value.ToString());
+                Lanch += Double.Parse(Row.Cells["lunchPriceDataGridViewTextBoxColumn1"].Value.ToString());
+                Van += Double.Parse(Row.Cells["VanPrice"].Value.ToString());
+                BFT += Double.Parse(Row.Cells["BookOfTickets"].Value.ToString());
+            }
+            toolStripTextBox19.Text = (Misc+Trans+Program+TO+Lanch+Van+BFT).ToString();
+            toolStripTextBox20.Text = Lanch.ToString();
+            toolStripTextBox21.Text = TO.ToString();
+            toolStripTextBox22.Text = Misc.ToString();
+            toolStripTextBox23.Text = Program.ToString();
+            toolStripTextBox24.Text = Trans.ToString();
+            toolStripTextBox25.Text = Van.ToString();
+            toolStripTextBox26.Text = BFT.ToString();
+        }
+
+        private void toolStrip15_MouseHover(object sender, EventArgs e)
+        {
+            toolStripButton10.Visible = true;
+        }
+
+        private void toolStrip15_MouseLeave(object sender, EventArgs e)
+        {
+            if (!richTextBox1.Enabled)
+            {
+                toolStripButton10.Visible = false;
+            }
+        }
+
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            if (!richTextBox1.Enabled)
+            {
+                richTextBox1.Enabled = true;
+                toolStripButton10.Image = TDay.Properties.Resources.Save;
+                toolStripButton10.Text = "Save";
+            }
+            else
+            {
+                TDay.Properties.Settings.Default.PlantString = richTextBox1.Text;
+                TDay.Properties.Settings.Default.Save();
+                toolStripButton10.Image = TDay.Properties.Resources.Edit;
+                toolStripButton10.Text = "Edit Item";
+                richTextBox1.Enabled = false;
+
+            }
+        }
+
+        private void toolStripButton11_Click(object sender, EventArgs e)
+        {
+            panel8.Visible = false;
+        }
+
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            panel8.Location = new Point(dataGridView5.Location.X + 4, dataGridView5.Location.Y + dataGridView5.Height - panel8.Height - 22);
+            panel8.Visible = true;
+           // profilesTableAdapter.FillAll(tDayDataSet.Profiles);
+            profilesBindingSource3.Filter = "Category<4 AND DelStatus=0";
+        }
+
+        private void toolStripButton12_Click(object sender, EventArgs e)
+        {
+            if (dataGridView7.SelectedCells.Count > 0)
+            {
+                TDayDataSet tempSet = new TDayDataSet();
+                Bill _Bill = new Bill();
+                billsTableAdapter.FillByMonth(tempSet.Bills, _Bill.FirstDayOfMonth, _Bill.LastDayOfMonth);
+                int Index = -1;
+                foreach (DataRow Row in tempSet.Bills)
+                {
+                    if ((int)Row["ProfileId"] == (int)dataGridView7.Rows[dataGridView7.SelectedCells[0].RowIndex].Cells["dataGridViewTextBoxColumn1"].Value)
+                    {
+                        Index = (int)Row["BillId"];
+                            break;
+                    }
+                }
+                if (Index != -1)
+                {
+                    panel8.Visible = false;
+                    foreach (DataGridViewRow Row in dataGridView5.Rows)
+                    {
+                        if ((int)Row.Cells["billIdDataGridViewTextBoxColumn"].Value == Index)
+                        {
+                            DataGridViewCellEventArgs eve = new DataGridViewCellEventArgs(0, Row.Index);
+                            dataGridView5_CellClick(sender, eve);
+                            dataGridView5.Rows[Row.Index].Selected = true;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    BillsItem item = new BillsItem((int)dataGridView7.Rows[dataGridView7.SelectedCells[0].RowIndex].Cells["dataGridViewTextBoxColumn1"].Value, _Bill.FirstDayOfMonth, _Bill.LastDayOfMonth);
+                    item.Insert();
+                    billsTableAdapter.Fill(tDayDataSet.Bills);
+                    panel8.Visible = false;
+                    dataGridView7.Rows[dataGridView7.Rows.Count - 1].Selected = true;
+                }
+
+            }
+        }
+
+        private void toolStripButton15_Click(object sender, EventArgs e)
+        {
+            if(DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this entry?","Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question))
+            if (dataGridView5.SelectedCells.Count > 0)
+            {
+                billsTableAdapter.Delete((int)dataGridView5.Rows[dataGridView5.SelectedCells[0].RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value);
+                billsTableAdapter.Fill(tDayDataSet.Bills);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                groupBox25.Enabled = true;
+            }
+            else
+            {
+                groupBox25.Enabled = false;
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            if (dataGridView5.SelectedCells.Count > 0)
+            {
+                BillsItem Item = new BillsItem((int)dataGridView5.Rows[dataGridView5.SelectedCells[0].RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value);
+                Decimal Paid = Decimal.Zero;
+                Decimal.TryParse(textBox5.Text, out Paid);
+                Item.Paid = Paid;
+                Item.PaidDate = dateTimePicker1.Value;
+                if (radioButton6.Checked)
+                {
+                    Item.PaidType = "cash";
+                }
+                if (radioButton7.Checked)
+                {
+                    Item.PaidType = "cheque";
+                }
+                Item.Update();
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (dataGridView5.SelectedCells.Count > 0)
+            {
+                PdfPrinter.PrintBills((int)dataGridView5.Rows[dataGridView5.SelectedCells[0].RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value);
+            }
+        }
+
+        private void toolStripTextBox17_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripTextBox17.Text.Length > 2)
+            {
+                string Filter = String.Empty;
+                foreach (DataGridViewRow Row in dataGridView5.Rows)
+                {
+                    if (Row.Cells["profileIdDataGridViewTextBoxColumn4"].EditedFormattedValue.ToString().IndexOf(toolStripTextBox17.Text) != -1)
+                    {
+                        Filter += "ProfileId =" + Row.Cells["profileIdDataGridViewTextBoxColumn4"].Value.ToString() + " OR ";
+                    }
+                }
+                if (Filter.Length > 0)
+                {
+                    billsBindingSource.Filter = Filter.Remove(Filter.Length - 3);
+                }
+            }
+            else
+            {
+                billsBindingSource.RemoveFilter();
+            }
+        }
+
+        private void toolStripTextBox27_TextChanged(object sender, EventArgs e)
+        {
+            string TempFilter = "Category<4";
+            if(toolStripTextBox27.Text.Length>2)
+            {
+                profilesBindingSource3.Filter = TempFilter+" AND "+String.Format("Name LIKE '%{0}%'",toolStripTextBox27.Text);
+            } else 
+            {
+                profilesBindingSource3.Filter = "Category<4";
+            }
+        }
+
+        private void dataGridView5_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
        
     }
 }

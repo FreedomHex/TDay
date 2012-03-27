@@ -46,7 +46,7 @@ namespace TDay
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             CurrentRowIndex = dataGridView1.SelectedCells[0].RowIndex;
-            if (DialogResult.Yes == MessageBox.Show("Do you?", "Deleting", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this user?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
                 usersTableAdapter.Delete((int)dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["userIdDataGridViewTextBoxColumn"].Value);
                 usersTableAdapter.Fill(tDayDataSet.Users);

@@ -320,14 +320,15 @@ namespace TDay
 
             try
             {
-                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf"); }
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf"); }
             }
             catch (IOException)
             {
-                string Proc = GetFileProcessName("Attendance_" + _CurrentDay.Date.ToShortDateString().ToString() + ".pdf");
-                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf"); }
+                string Proc = GetFileProcessName("Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf");
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf"); }
             }
-            FileStream FS = new FileStream(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf", FileMode.CreateNew);
+            FileStream FS = new FileStream(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString()
+                + ".pdf", FileMode.CreateNew);
             var Doc = new iTextSharp.text.Document(PageSize.A4.Rotate(), 20, 20, 20, 20);
 
             PdfWriter.GetInstance(Doc, FS);
@@ -401,7 +402,7 @@ namespace TDay
             AddPriviewCell(table, TotalT.ToString(), 1);
             Doc.Add(table);
             Doc.Close();
-            Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.ToShortDateString() + ".pdf");
+            Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf");
         }
 
         public static void PrintTransportation(string Day)
@@ -556,6 +557,245 @@ namespace TDay
             Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Transportation.pdf");
         }
 
+        public static void PrintBills(int ItemId)
+        {
+            try
+            {
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf"); }
+            }
+            catch (IOException)
+            {
+                string Proc = GetFileProcessName("Bill_" + ItemId.ToString() + ".pdf");
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf"); }
+            }
+            FileStream FS = new FileStream(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf", FileMode.CreateNew);
+            var Doc = new iTextSharp.text.Document(PageSize.A4, 20, 20, 20, 20);
+            PdfWriter.GetInstance(Doc, FS);
+            Doc.Open();
+            BillsItem Item = new BillsItem(ItemId);
+            PdfPTable table = new PdfPTable(5);
+            table.WidthPercentage = 100;
+            AddPriviewCell(table, TDay.Properties.Settings.Default.PlantString,5);
+            AddPriviewCell(table, String.Format("For Services of  {0:MMMM} - {0:yyyy}",Item.Date), 5);
+            AddPriviewCell(table, Item.Profile.Name + "\n" + Item.Profile.Adress.Addres + "\n" + Item.Profile.Adress.City + "\n" + Item.Profile.Adress.PostalCode, 2,4, Element.ALIGN_LEFT);
+            if (Item.PreviousBillTotal > Item.PreviousBillPaid)
+            {
+                AddPriviewCell(table, "Balance Forward \nOverdue \nNew Charges", 1);
+            }
+            else
+            {
+                AddPriviewCell(table, "Balance Forward \nPayments/Credits\nNew Charges", 1,3,Element.ALIGN_LEFT);
+            }
+            AddPriviewCell(table, Item.PreviousBillPaidDate.ToShortDateString(), 1,3,Element.ALIGN_CENTER);
+            AddPriviewCell(table, Item.PreviousBillTotal.ToString()+"\n"+Item.PreviousBillPaid.ToString()+"\n"+Item.BillTotal.ToString(), 2,3,Element.ALIGN_CENTER);
+            AddPriviewCell(table, "Balance:", 2,1,Element.ALIGN_LEFT);
+            AddPriviewCell(table, (Item.PreviousBillTotal-Item.PreviousBillPaid+Item.BillTotal).ToString(), 1, 1, Element.ALIGN_CENTER);
+            Doc.Add(table);
+            int TableColums = 0;
+            TDayDataSet TempSet = new TDayDataSet();
+            TDayDataSetTableAdapters.DaysTableAdapter daysTableAdapter = new TDayDataSetTableAdapters.DaysTableAdapter();
+            daysTableAdapter.FillByMonth(TempSet.Days, Bill.GetFirstMonthDay(Item.Date), Bill.GetLastMonthDay(Item.Date));
+            double Misc = 0;
+            double Trans = 0;
+            double Program = 0;
+            double TO = 0;
+            double Lanch = 0;
+            double Van = 0;
+            double BFT = 0;
+            foreach (DataRow Row in TempSet.Days)
+            {
+                if ((int)Row["ProfileId"] == Item.ProfileIdBills)
+                {
+                    Misc += Double.Parse(Row["MiscellaneousPrice"].ToString());
+                    Trans += Double.Parse(Row["RoundTripPrice"].ToString());
+                    Program += Double.Parse(Row["ProgramPrice"].ToString());
+                    TO += Double.Parse(Row["TakeOutPrice"].ToString());
+                    Lanch += Double.Parse(Row["LunchPrice"].ToString());
+                    Van += Double.Parse(Row["VanPrice"].ToString());
+                    BFT += Double.Parse(Row["BookOfTickets"].ToString());
+                }
+            }
+            //Говнокод (((( но к сожалению вообще мозги ничего придумать не могут(((((((((( 3 дня - 2 часа сна...........
+            if (Misc > 0) { TableColums++; }
+            if (Trans > 0) { TableColums++; }
+            if (Program > 0) { TableColums++; }
+            if (TO > 0) { TableColums++; }
+            if (Lanch > 0) { TableColums++; }
+            if (Van > 0) { TableColums++; }
+            if (BFT > 0) { TableColums++; }
+            PdfPTable tablePart = new PdfPTable(TableColums+3);
+            tablePart.WidthPercentage = 100;
+            AddHeader(tablePart, " New Charges", 12, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
+                AddPriviewCell(tablePart, "Date", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke));
+                AddPriviewCell(tablePart, "Comments", 2, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke));
+            if (Lanch > 0) { AddPriviewCell(tablePart, "Lunch", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (TO > 0) { AddPriviewCell(tablePart, "TO", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Misc > 0) { AddPriviewCell(tablePart, "Misc", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Program > 0) { AddPriviewCell(tablePart, "Program", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Van > 0) { AddPriviewCell(tablePart, "Van", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Trans > 0) { AddPriviewCell(tablePart, "Trans", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (BFT > 0) { AddPriviewCell(tablePart, "BFT", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)
+                ); }
+            DataView DV = TempSet.Days.DefaultView;
+            DV.Sort = "Date ASC";
+            BindingSource TemS = new BindingSource();
+            TemS.DataSource = DV;
+            int ItemsCount = 0;
+            foreach (DataRowView Row in TemS.List)
+            {
+                if ((int)Row["ProfileId"] == Item.ProfileIdBills)
+                {
+                    AddPriviewCell(tablePart, ((DateTime)Row["Date"]).ToShortDateString(), 1, 1, Element.ALIGN_CENTER);
+                    AddPriviewCell(tablePart, Row["Comments"].ToString(), 2, 1, Element.ALIGN_CENTER);
+                    if (Lanch > 0) { AddPriviewCell(tablePart, Row["LunchPrice"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    if (TO > 0) { AddPriviewCell(tablePart, Row["TakeOutPrice"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    if (Misc > 0) { AddPriviewCell(tablePart, Row["MiscellaneousPrice"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    if (Program > 0) { AddPriviewCell(tablePart, Row["ProgramPrice"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    if (Van > 0) { AddPriviewCell(tablePart, Row["VanPrice"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    if (Trans > 0) { AddPriviewCell(tablePart, Row["RoundTripPrice"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    if (BFT > 0) { AddPriviewCell(tablePart, Row["BookOfTickets"].ToString(), 1, 1, Element.ALIGN_CENTER); }
+                    ItemsCount++;
+                }
+            }
+            AddPriviewCell(tablePart, ItemsCount.ToString(), 1, 1, Element.ALIGN_CENTER);
+            AddPriviewCell(tablePart, "", TableColums + 2, 1, Element.ALIGN_CENTER);
+            AddPriviewCell(tablePart, "Totals:", 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke));
+            AddPriviewCell(tablePart, (Lanch + TO + Misc + Program + Van + Trans + BFT).ToString(), 2, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke));
+            if (Lanch > 0) { AddPriviewCell(tablePart, Lanch.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (TO > 0) { AddPriviewCell(tablePart, TO.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Misc > 0) { AddPriviewCell(tablePart, Misc.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Program > 0) { AddPriviewCell(tablePart, Program.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Van > 0) { AddPriviewCell(tablePart, Van.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (Trans > 0) { AddPriviewCell(tablePart, Trans.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke)); }
+            if (BFT > 0){ AddPriviewCell(tablePart, BFT.ToString(), 1, 1, Element.ALIGN_CENTER, new BaseColor(Color.WhiteSmoke) );}
+            AddEmpyRow(tablePart);
+            AddEmpyRow(tablePart);
+            AddEmpyRow(tablePart);
+            Doc.Add(tablePart);
+            PdfPTable tableFooster = new PdfPTable(6);
+            tableFooster.WidthPercentage = 100;
+            if (Item.Paid > 0)
+            {
+                PdfPCell pricell = new PdfPCell(new Phrase("Paid", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                pricell = new PdfPCell(new Phrase(Item.Paid.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.UNDERLINE, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                pricell = new PdfPCell(new Phrase("Cash", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricell.PaddingBottom = 3;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                if (Item.PaidType == "cash")
+                {
+                    AddValueCell(tableFooster, true, true, 1, false);
+                }
+                else
+                {
+                    AddValueCell(tableFooster, false, true, 1, false);
+                }
+                pricell = new PdfPCell(new Phrase("Cheque", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricell.PaddingBottom = 3;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                if (Item.PaidType == "cheque")
+                {
+                    AddValueCell(tableFooster, true, true, 1, false);
+                }
+                else
+                {
+                    AddValueCell(tableFooster, false, true, 1, false);
+                }
+            }
+            else
+            {
+                PdfPCell pricell = new PdfPCell(new Phrase("Paid", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                pricell = new PdfPCell(new Phrase("___________", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_CENTER;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                pricell = new PdfPCell(new Phrase("Cash", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pricell.VerticalAlignment = Element.ALIGN_BOTTOM;
+                pricell.PaddingBottom = 3;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                AddValueCell(tableFooster, false, true, 1, false);
+                pricell = new PdfPCell(new Phrase("Cheque", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+                pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricell.PaddingBottom = 3;
+                pricell.Colspan = 1;
+                tableFooster.AddCell(pricell);
+                AddValueCell(tableFooster, false, true, 1, false);
+            }
+            AddEmpyRow(tableFooster);
+            AddEmpyRow(tableFooster);
+            PdfPCell pricellnew = new PdfPCell(new Phrase("Date", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricellnew.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            pricellnew.HorizontalAlignment = Element.ALIGN_RIGHT;
+            pricellnew.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricellnew.Colspan = 1;
+            tableFooster.AddCell(pricellnew);
+            if (Item.Paid > 0)
+            {
+                pricellnew = new PdfPCell(new Phrase(Item.PaidDate.ToShortDateString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricellnew.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricellnew.HorizontalAlignment = Element.ALIGN_CENTER;
+                pricellnew.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricellnew.Colspan = 1;
+                tableFooster.AddCell(pricellnew);
+            }
+            else
+            {
+                pricellnew = new PdfPCell(new Phrase("___________", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricellnew.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                pricellnew.HorizontalAlignment = Element.ALIGN_CENTER;
+                pricellnew.VerticalAlignment = Element.ALIGN_MIDDLE;
+                pricellnew.Colspan = 1;
+                tableFooster.AddCell(pricellnew);
+            }
+            pricellnew = new PdfPCell(new Phrase("Society Representative", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricellnew.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            pricellnew.HorizontalAlignment = Element.ALIGN_CENTER;
+            pricellnew.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricellnew.Colspan = 2;
+            tableFooster.AddCell(pricellnew);
+            pricellnew = new PdfPCell(new Phrase("___________________________", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricellnew.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            pricellnew.HorizontalAlignment = Element.ALIGN_CENTER;
+            pricellnew.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricellnew.Colspan = 2;
+            tableFooster.AddCell(pricellnew);
+
+
+
+            Doc.Add(tableFooster);
+            Doc.Close();
+            Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf");
+        }
+
+
         private static void AddBlockCell(PdfPTable _Table)
         {
             PdfPCell pricell = new PdfPCell(new Phrase("", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
@@ -564,6 +804,16 @@ namespace TDay
             pricell.PaddingBottom = 3;
             pricell.Colspan = 4;
             _Table.AddCell(pricell);
+        }
+
+        private static void AddEmpyRow(PdfPTable _Table)
+        {
+            PdfPCell cell = new PdfPCell();
+            cell.Padding = 5;
+            cell.Colspan = _Table.NumberOfColumns;
+            cell.HorizontalAlignment = Element.ALIGN_LEFT;
+            cell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            _Table.AddCell(cell);
         }
 
         private static void AddHeader(PdfPTable _Table, string Text, int TextWidth, BaseColor _FontColor, BaseColor _BackColor)
@@ -591,6 +841,29 @@ namespace TDay
             pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
             pricell.HorizontalAlignment = Element.ALIGN_CENTER;
             pricell.PaddingBottom = 3;
+            pricell.Colspan = Colspan;
+            _Table.AddCell(pricell);
+        }
+
+        private static void AddPriviewCell(PdfPTable _Table, string Text, int Colspan,int RowSpan, int Align)
+        {
+            PdfPCell pricell = new PdfPCell(new Phrase(Text, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.HorizontalAlignment = Align;
+            pricell.PaddingBottom = 5;
+            pricell.Rowspan = RowSpan;
+            pricell.Colspan = Colspan;
+            _Table.AddCell(pricell);
+        }
+
+        private static void AddPriviewCell(PdfPTable _Table, string Text, int Colspan, int RowSpan, int Align, BaseColor _Color)
+        {
+            PdfPCell pricell = new PdfPCell(new Phrase(Text, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.HorizontalAlignment = Align;
+            pricell.PaddingBottom = 5;
+            pricell.BackgroundColor = _Color;
+            pricell.Rowspan = RowSpan;
             pricell.Colspan = Colspan;
             _Table.AddCell(pricell);
         }
@@ -632,6 +905,23 @@ namespace TDay
             valcell.Colspan = Colspan;
             valcell.AddElement(image);
             valcell.PaddingBottom = 3;
+            valcell.HorizontalAlignment = Element.ALIGN_CENTER;
+            valcell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            _Table.AddCell(valcell);
+        }
+
+        private static void AddValueCell(PdfPTable _Table, bool Value, bool isCheckBox, int Colspan, bool Border)
+        {
+            PdfPCell valcell = new PdfPCell(new Phrase(String.Empty, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 16, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            if (!Border) { valcell.Border = iTextSharp.text.Rectangle.NO_BORDER; }
+            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(TDay.Properties.Resources.uncheck, BaseColor.WHITE);
+            if (Value) { image = iTextSharp.text.Image.GetInstance(TDay.Properties.Resources.check, BaseColor.WHITE); }
+            image.ScaleToFit(15, 15);
+            image.Alignment = Element.ALIGN_CENTER;
+            //valcell.Image = image;
+            valcell.Colspan = Colspan;
+            valcell.AddElement(image);
+            valcell.PaddingBottom = 1;
             valcell.HorizontalAlignment = Element.ALIGN_CENTER;
             valcell.VerticalAlignment = Element.ALIGN_MIDDLE;
             _Table.AddCell(valcell);

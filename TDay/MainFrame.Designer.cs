@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,6 +54,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -66,6 +73,7 @@
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.profileIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bindingSourceDaysProfiles = new System.Windows.Forms.BindingSource(this.components);
             this.attendanceDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lunchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lunchPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -343,6 +351,85 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.Bills = new System.Windows.Forms.TabPage();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profilesBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip16 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip17 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox27 = new System.Windows.Forms.ToolStripTextBox();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.billIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profileIdDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.profilesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.billsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip12 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox17 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.button21 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.label70 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button20 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dateDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentsDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunchPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.takeOutPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miscellaneousPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VanPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roundTripPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookOfTickets = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daysBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip14 = new System.Windows.Forms.ToolStrip();
+            this.toolStripTextBox18 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox19 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox20 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox21 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox22 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox23 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox25 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox24 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox26 = new System.Windows.Forms.ToolStripTextBox();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.toolStrip15 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.toolStrip13 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -351,15 +438,17 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.noChargeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip11 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.profilesTableAdapter = new TDay.TDayDataSetTableAdapters.ProfilesTableAdapter();
             this.categoriesTableAdapter = new TDay.TDayDataSetTableAdapters.CategoriesTableAdapter();
             this.daysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
             this.transportationTableAdapter = new TDay.TDayDataSetTableAdapters.TransportationTableAdapter();
-            this.toolStrip11 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.usersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.billsTableAdapter = new TDay.TDayDataSetTableAdapters.BillsTableAdapter();
+            this.label76 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -367,6 +456,7 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
@@ -375,6 +465,7 @@
             this.toolStrip9.SuspendLayout();
             this.toolStrip8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDaysProfiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).BeginInit();
             this.toolStrip7.SuspendLayout();
             this.toolStrip10.SuspendLayout();
@@ -420,12 +511,41 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).BeginInit();
+            this.Bills.SuspendLayout();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource3)).BeginInit();
+            this.toolStrip16.SuspendLayout();
+            this.toolStrip17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billsBindingSource)).BeginInit();
+            this.toolStrip12.SuspendLayout();
+            this.groupBox25.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource2)).BeginInit();
+            this.toolStrip14.SuspendLayout();
+            this.groupBox21.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            this.toolStrip15.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox24.SuspendLayout();
+            this.groupBox23.SuspendLayout();
+            this.groupBox22.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.toolStrip13.SuspendLayout();
             this.toolStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
             this.toolStrip11.SuspendLayout();
-            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -439,7 +559,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(175, 720);
+            this.panel1.Size = new System.Drawing.Size(175, 740);
             this.panel1.TabIndex = 4;
             // 
             // button4
@@ -505,7 +625,7 @@
             this.panel2.Location = new System.Drawing.Point(175, 40);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1098, 720);
+            this.panel2.Size = new System.Drawing.Size(1098, 740);
             this.panel2.TabIndex = 5;
             // 
             // tabControl1
@@ -521,7 +641,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1097, 710);
+            this.tabControl1.Size = new System.Drawing.Size(1097, 730);
             this.tabControl1.TabIndex = 6;
             // 
             // Attendance
@@ -529,7 +649,7 @@
             this.Attendance.Controls.Add(this.splitContainer2);
             this.Attendance.Location = new System.Drawing.Point(4, 22);
             this.Attendance.Name = "Attendance";
-            this.Attendance.Size = new System.Drawing.Size(1089, 684);
+            this.Attendance.Size = new System.Drawing.Size(1089, 704);
             this.Attendance.TabIndex = 0;
             this.Attendance.Text = "Attendance";
             this.Attendance.UseVisualStyleBackColor = true;
@@ -556,9 +676,18 @@
             this.splitContainer2.Panel2.Controls.Add(this.button19);
             this.splitContainer2.Panel2.Controls.Add(this.button11);
             this.splitContainer2.Panel2.Controls.Add(this.panel4);
-            this.splitContainer2.Size = new System.Drawing.Size(1089, 684);
-            this.splitContainer2.SplitterDistance = 602;
+            this.splitContainer2.Size = new System.Drawing.Size(1089, 704);
+            this.splitContainer2.SplitterDistance = 622;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.monthCalendar1);
+            this.panel6.Location = new System.Drawing.Point(245, 420);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(165, 162);
+            this.panel6.TabIndex = 8;
+            this.panel6.Visible = false;
             // 
             // monthCalendar1
             // 
@@ -595,28 +724,28 @@
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle67.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle67.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle67.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle67.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle67.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle67.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn2,
             this.categoryDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1});
             this.dataGridView3.DataSource = this.profilesBindingSource1;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle68.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.EnableHeadersVisualStyles = false;
             this.dataGridView3.Location = new System.Drawing.Point(0, 37);
@@ -757,15 +886,15 @@
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle64.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle64.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle64.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn1,
@@ -783,14 +912,14 @@
             this.dayIdDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.daysBindingSource1;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle66.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle66.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle66.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle66.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle66.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.GridColor = System.Drawing.Color.DimGray;
@@ -800,7 +929,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1089, 537);
+            this.dataGridView2.Size = new System.Drawing.Size(1089, 557);
             this.dataGridView2.TabIndex = 7;
             this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             this.dataGridView2.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseClick);
@@ -811,9 +940,9 @@
             // profileIdDataGridViewTextBoxColumn1
             // 
             this.profileIdDataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.profilesBindingSource1;
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.profileIdDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle65;
+            this.profileIdDataGridViewTextBoxColumn1.DataSource = this.bindingSourceDaysProfiles;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.profileIdDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle19;
             this.profileIdDataGridViewTextBoxColumn1.DisplayMember = "Name";
             this.profileIdDataGridViewTextBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.profileIdDataGridViewTextBoxColumn1.HeaderText = "Name";
@@ -823,6 +952,11 @@
             this.profileIdDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.profileIdDataGridViewTextBoxColumn1.ValueMember = "ProfileId";
             this.profileIdDataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // bindingSourceDaysProfiles
+            // 
+            this.bindingSourceDaysProfiles.DataMember = "Profiles";
+            this.bindingSourceDaysProfiles.DataSource = this.tDayDataSet;
             // 
             // attendanceDataGridViewCheckBoxColumn
             // 
@@ -970,7 +1104,7 @@
             this.toolStripTextBox11,
             this.toolStripTextBox16,
             this.toolStripTextBox10});
-            this.toolStrip10.Location = new System.Drawing.Point(0, 574);
+            this.toolStrip10.Location = new System.Drawing.Point(0, 594);
             this.toolStrip10.Name = "toolStrip10";
             this.toolStrip10.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip10.Size = new System.Drawing.Size(1089, 28);
@@ -1227,7 +1361,7 @@
             this.Profiles.Controls.Add(this.toolStrip1);
             this.Profiles.Location = new System.Drawing.Point(4, 22);
             this.Profiles.Name = "Profiles";
-            this.Profiles.Size = new System.Drawing.Size(1089, 684);
+            this.Profiles.Size = new System.Drawing.Size(1089, 704);
             this.Profiles.TabIndex = 1;
             this.Profiles.Text = "Profiles";
             // 
@@ -1255,7 +1389,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.button6);
             this.splitContainer1.Panel2.Controls.Add(this.button5);
             this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(1089, 647);
+            this.splitContainer1.Size = new System.Drawing.Size(1089, 667);
             this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 1;
@@ -1267,28 +1401,28 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle69.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle69.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.profilesBindingSource;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle70.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle70.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 72);
             this.dataGridView1.MultiSelect = false;
@@ -1296,7 +1430,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(343, 573);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 593);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -3776,7 +3910,7 @@
             this.Transportation.Controls.Add(this.splitContainer3);
             this.Transportation.Location = new System.Drawing.Point(4, 22);
             this.Transportation.Name = "Transportation";
-            this.Transportation.Size = new System.Drawing.Size(1089, 684);
+            this.Transportation.Size = new System.Drawing.Size(1089, 704);
             this.Transportation.TabIndex = 2;
             this.Transportation.Text = "Transportation";
             this.Transportation.UseVisualStyleBackColor = true;
@@ -3802,8 +3936,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.button14);
             this.splitContainer3.Panel2.Controls.Add(this.button13);
             this.splitContainer3.Panel2.Controls.Add(this.button12);
-            this.splitContainer3.Size = new System.Drawing.Size(1089, 726);
-            this.splitContainer3.SplitterDistance = 639;
+            this.splitContainer3.Size = new System.Drawing.Size(1089, 684);
+            this.splitContainer3.SplitterDistance = 597;
             this.splitContainer3.TabIndex = 0;
             // 
             // dataGridView4
@@ -3812,14 +3946,14 @@
             this.dataGridView4.AllowUserToDeleteRows = false;
             this.dataGridView4.AutoGenerateColumns = false;
             this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle71.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.profileIdDataGridViewTextBoxColumn3,
@@ -3835,21 +3969,21 @@
             this.commentsDataGridViewTextBoxColumn1,
             this.transportationIdDataGridViewTextBoxColumn});
             this.dataGridView4.DataSource = this.transportationBindingSource;
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle72.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView4.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.EnableHeadersVisualStyles = false;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.Size = new System.Drawing.Size(1089, 639);
+            this.dataGridView4.Size = new System.Drawing.Size(1089, 597);
             this.dataGridView4.TabIndex = 1;
             // 
             // profileIdDataGridViewTextBoxColumn3
@@ -4049,12 +4183,998 @@
             // 
             // Bills
             // 
+            this.Bills.Controls.Add(this.splitContainer4);
             this.Bills.Location = new System.Drawing.Point(4, 22);
             this.Bills.Name = "Bills";
-            this.Bills.Size = new System.Drawing.Size(1089, 684);
+            this.Bills.Size = new System.Drawing.Size(1089, 704);
             this.Bills.TabIndex = 3;
             this.Bills.Text = "Bills";
             this.Bills.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.panel8);
+            this.splitContainer4.Panel1.Controls.Add(this.dataGridView5);
+            this.splitContainer4.Panel1.Controls.Add(this.toolStrip12);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.AutoScroll = true;
+            this.splitContainer4.Panel2.Controls.Add(this.groupBox25);
+            this.splitContainer4.Panel2.Controls.Add(this.checkBox1);
+            this.splitContainer4.Panel2.Controls.Add(this.button20);
+            this.splitContainer4.Panel2.Controls.Add(this.panel7);
+            this.splitContainer4.Panel2.Controls.Add(this.groupBox21);
+            this.splitContainer4.Panel2.Controls.Add(this.groupBox20);
+            this.splitContainer4.Panel2.Controls.Add(this.groupBox19);
+            this.splitContainer4.Panel2.Controls.Add(this.groupBox17);
+            this.splitContainer4.Panel2.Controls.Add(this.toolStrip13);
+            this.splitContainer4.Size = new System.Drawing.Size(1089, 704);
+            this.splitContainer4.SplitterDistance = 374;
+            this.splitContainer4.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.dataGridView7);
+            this.panel8.Controls.Add(this.toolStrip16);
+            this.panel8.Controls.Add(this.toolStrip17);
+            this.panel8.Location = new System.Drawing.Point(3, 174);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(368, 272);
+            this.panel8.TabIndex = 4;
+            this.panel8.Visible = false;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.AllowUserToAddRows = false;
+            this.dataGridView7.AllowUserToDeleteRows = false;
+            this.dataGridView7.AutoGenerateColumns = false;
+            this.dataGridView7.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView7.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView7.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewComboBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView7.DataSource = this.profilesBindingSource3;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView7.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView7.EnableHeadersVisualStyles = false;
+            this.dataGridView7.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.ReadOnly = true;
+            this.dataGridView7.RowHeadersVisible = false;
+            this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView7.Size = new System.Drawing.Size(368, 198);
+            this.dataGridView7.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProfileId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.DataPropertyName = "Category";
+            this.dataGridViewComboBoxColumn1.DataSource = this.categoriesBindingSource;
+            this.dataGridViewComboBoxColumn1.DisplayMember = "CategoryName";
+            this.dataGridViewComboBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Category";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.ReadOnly = true;
+            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn1.ValueMember = "CategoryId";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // profilesBindingSource3
+            // 
+            this.profilesBindingSource3.DataMember = "Profiles";
+            this.profilesBindingSource3.DataSource = this.tDayDataSet;
+            // 
+            // toolStrip16
+            // 
+            this.toolStrip16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip16.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip16.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton11,
+            this.toolStripSeparator2,
+            this.toolStripButton12});
+            this.toolStrip16.Location = new System.Drawing.Point(0, 235);
+            this.toolStrip16.Name = "toolStrip16";
+            this.toolStrip16.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip16.Size = new System.Drawing.Size(368, 37);
+            this.toolStrip16.TabIndex = 1;
+            this.toolStrip16.Text = "toolStrip16";
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton11.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton11.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton11.Image = global::TDay.Properties.Resources.CloseButton;
+            this.toolStripButton11.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(87, 34);
+            this.toolStripButton11.Text = "Close";
+            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton12.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton12.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton12.Image = global::TDay.Properties.Resources.AddButton;
+            this.toolStripButton12.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(139, 34);
+            this.toolStripButton12.Text = "Add to a day";
+            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
+            // 
+            // toolStrip17
+            // 
+            this.toolStrip17.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip17.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton13,
+            this.toolStripTextBox27});
+            this.toolStrip17.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip17.Name = "toolStrip17";
+            this.toolStrip17.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip17.Size = new System.Drawing.Size(368, 37);
+            this.toolStrip17.TabIndex = 0;
+            this.toolStrip17.Text = "toolStrip17";
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton13.Image = global::TDay.Properties.Resources.Search;
+            this.toolStripButton13.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButton13.Text = "toolStripButton8";
+            // 
+            // toolStripTextBox27
+            // 
+            this.toolStripTextBox27.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox27.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox27.Name = "toolStripTextBox27";
+            this.toolStripTextBox27.Size = new System.Drawing.Size(200, 37);
+            this.toolStripTextBox27.TextChanged += new System.EventHandler(this.toolStripTextBox27_TextChanged);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.billIdDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn1,
+            this.profileIdDataGridViewTextBoxColumn4});
+            this.dataGridView5.DataSource = this.billsBindingSource;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView5.EnableHeadersVisualStyles = false;
+            this.dataGridView5.Location = new System.Drawing.Point(0, 37);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersVisible = false;
+            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.Size = new System.Drawing.Size(374, 667);
+            this.dataGridView5.TabIndex = 1;
+            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
+            this.dataGridView5.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView5_DataError);
+            // 
+            // billIdDataGridViewTextBoxColumn
+            // 
+            this.billIdDataGridViewTextBoxColumn.DataPropertyName = "BillId";
+            this.billIdDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.billIdDataGridViewTextBoxColumn.Name = "billIdDataGridViewTextBoxColumn";
+            this.billIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.billIdDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // dateDataGridViewTextBoxColumn1
+            // 
+            this.dateDataGridViewTextBoxColumn1.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn1.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn1.Name = "dateDataGridViewTextBoxColumn1";
+            this.dateDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // profileIdDataGridViewTextBoxColumn4
+            // 
+            this.profileIdDataGridViewTextBoxColumn4.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn4.DataSource = this.profilesBindingSource2;
+            this.profileIdDataGridViewTextBoxColumn4.DisplayMember = "Name";
+            this.profileIdDataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.profileIdDataGridViewTextBoxColumn4.HeaderText = "Name";
+            this.profileIdDataGridViewTextBoxColumn4.Name = "profileIdDataGridViewTextBoxColumn4";
+            this.profileIdDataGridViewTextBoxColumn4.ReadOnly = true;
+            this.profileIdDataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.profileIdDataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.profileIdDataGridViewTextBoxColumn4.ValueMember = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn4.Width = 200;
+            // 
+            // profilesBindingSource2
+            // 
+            this.profilesBindingSource2.DataMember = "Profiles";
+            this.profilesBindingSource2.DataSource = this.tDayDataSet;
+            // 
+            // billsBindingSource
+            // 
+            this.billsBindingSource.DataMember = "Bills";
+            this.billsBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // toolStrip12
+            // 
+            this.toolStrip12.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip12.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip12.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton9,
+            this.toolStripTextBox17,
+            this.toolStripButton14});
+            this.toolStrip12.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip12.Name = "toolStrip12";
+            this.toolStrip12.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip12.Size = new System.Drawing.Size(374, 37);
+            this.toolStrip12.TabIndex = 0;
+            this.toolStrip12.Text = "toolStrip12";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = global::TDay.Properties.Resources.Search;
+            this.toolStripButton9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButton9.Text = "toolStripButton9";
+            // 
+            // toolStripTextBox17
+            // 
+            this.toolStripTextBox17.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox17.Margin = new System.Windows.Forms.Padding(1, 3, 1, 1);
+            this.toolStripTextBox17.Name = "toolStripTextBox17";
+            this.toolStripTextBox17.Size = new System.Drawing.Size(200, 33);
+            this.toolStripTextBox17.TextChanged += new System.EventHandler(this.toolStripTextBox17_TextChanged);
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton14.Image = global::TDay.Properties.Resources.AddButton;
+            this.toolStripButton14.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(109, 34);
+            this.toolStripButton14.Text = "Add Bill";
+            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
+            // 
+            // groupBox25
+            // 
+            this.groupBox25.Controls.Add(this.button21);
+            this.groupBox25.Controls.Add(this.dateTimePicker1);
+            this.groupBox25.Controls.Add(this.textBox5);
+            this.groupBox25.Controls.Add(this.label72);
+            this.groupBox25.Controls.Add(this.label71);
+            this.groupBox25.Controls.Add(this.radioButton7);
+            this.groupBox25.Controls.Add(this.radioButton6);
+            this.groupBox25.Controls.Add(this.label70);
+            this.groupBox25.Enabled = false;
+            this.groupBox25.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox25.ForeColor = System.Drawing.Color.DarkGray;
+            this.groupBox25.Location = new System.Drawing.Point(95, 665);
+            this.groupBox25.Name = "groupBox25";
+            this.groupBox25.Size = new System.Drawing.Size(603, 147);
+            this.groupBox25.TabIndex = 13;
+            this.groupBox25.TabStop = false;
+            this.groupBox25.Text = "Paid";
+            // 
+            // button21
+            // 
+            this.button21.ForeColor = System.Drawing.Color.DimGray;
+            this.button21.Location = new System.Drawing.Point(469, 94);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(128, 42);
+            this.button21.TabIndex = 7;
+            this.button21.Text = "Accept";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(64, 99);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(275, 28);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(64, 65);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(275, 28);
+            this.textBox5.TabIndex = 5;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.ForeColor = System.Drawing.Color.DimGray;
+            this.label72.Location = new System.Drawing.Point(5, 105);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(53, 21);
+            this.label72.TabIndex = 4;
+            this.label72.Text = "Date:";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.ForeColor = System.Drawing.Color.DimGray;
+            this.label71.Location = new System.Drawing.Point(6, 68);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(52, 21);
+            this.label71.TabIndex = 3;
+            this.label71.Text = "Paid:";
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton7.Location = new System.Drawing.Point(252, 33);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(87, 25);
+            this.radioButton7.TabIndex = 2;
+            this.radioButton7.Text = "Cheque";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Checked = true;
+            this.radioButton6.ForeColor = System.Drawing.Color.DimGray;
+            this.radioButton6.Location = new System.Drawing.Point(161, 33);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(68, 25);
+            this.radioButton6.TabIndex = 1;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Cash";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.ForeColor = System.Drawing.Color.DimGray;
+            this.label70.Location = new System.Drawing.Point(6, 35);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(149, 21);
+            this.label70.TabIndex = 0;
+            this.label70.Text = "Form of payment:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Gray;
+            this.checkBox1.Location = new System.Drawing.Point(16, 664);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(66, 25);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Paid";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button20
+            // 
+            this.button20.BackgroundImage = global::TDay.Properties.Resources.print;
+            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button20.Font = new System.Drawing.Font("Elephant", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.ForeColor = System.Drawing.Color.DimGray;
+            this.button20.Location = new System.Drawing.Point(637, 816);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(60, 60);
+            this.button20.TabIndex = 11;
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.dataGridView6);
+            this.panel7.Controls.Add(this.toolStrip14);
+            this.panel7.Location = new System.Drawing.Point(3, 432);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(700, 224);
+            this.panel7.TabIndex = 8;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.AutoGenerateColumns = false;
+            this.dataGridView6.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateDataGridViewTextBoxColumn2,
+            this.commentsDataGridViewTextBoxColumn2,
+            this.lunchPriceDataGridViewTextBoxColumn1,
+            this.takeOutPriceDataGridViewTextBoxColumn1,
+            this.miscellaneousPriceDataGridViewTextBoxColumn1,
+            this.programPriceDataGridViewTextBoxColumn,
+            this.VanPrice,
+            this.roundTripPriceDataGridViewTextBoxColumn1,
+            this.BookOfTickets});
+            this.dataGridView6.DataSource = this.daysBindingSource2;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Elephant", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView6.DefaultCellStyle = dataGridViewCellStyle30;
+            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView6.EnableHeadersVisualStyles = false;
+            this.dataGridView6.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.RowHeadersVisible = false;
+            this.dataGridView6.Size = new System.Drawing.Size(700, 199);
+            this.dataGridView6.TabIndex = 1;
+            // 
+            // dateDataGridViewTextBoxColumn2
+            // 
+            this.dateDataGridViewTextBoxColumn2.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn2.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn2.Name = "dateDataGridViewTextBoxColumn2";
+            this.dateDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // commentsDataGridViewTextBoxColumn2
+            // 
+            this.commentsDataGridViewTextBoxColumn2.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn2.HeaderText = "Comments";
+            this.commentsDataGridViewTextBoxColumn2.Name = "commentsDataGridViewTextBoxColumn2";
+            this.commentsDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.commentsDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // lunchPriceDataGridViewTextBoxColumn1
+            // 
+            this.lunchPriceDataGridViewTextBoxColumn1.DataPropertyName = "LunchPrice";
+            this.lunchPriceDataGridViewTextBoxColumn1.HeaderText = "Lunch";
+            this.lunchPriceDataGridViewTextBoxColumn1.Name = "lunchPriceDataGridViewTextBoxColumn1";
+            this.lunchPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.lunchPriceDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // takeOutPriceDataGridViewTextBoxColumn1
+            // 
+            this.takeOutPriceDataGridViewTextBoxColumn1.DataPropertyName = "TakeOutPrice";
+            this.takeOutPriceDataGridViewTextBoxColumn1.HeaderText = "TO";
+            this.takeOutPriceDataGridViewTextBoxColumn1.Name = "takeOutPriceDataGridViewTextBoxColumn1";
+            this.takeOutPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.takeOutPriceDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // miscellaneousPriceDataGridViewTextBoxColumn1
+            // 
+            this.miscellaneousPriceDataGridViewTextBoxColumn1.DataPropertyName = "MiscellaneousPrice";
+            this.miscellaneousPriceDataGridViewTextBoxColumn1.HeaderText = "Misc";
+            this.miscellaneousPriceDataGridViewTextBoxColumn1.Name = "miscellaneousPriceDataGridViewTextBoxColumn1";
+            this.miscellaneousPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.miscellaneousPriceDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // programPriceDataGridViewTextBoxColumn
+            // 
+            this.programPriceDataGridViewTextBoxColumn.DataPropertyName = "ProgramPrice";
+            this.programPriceDataGridViewTextBoxColumn.HeaderText = "Program";
+            this.programPriceDataGridViewTextBoxColumn.Name = "programPriceDataGridViewTextBoxColumn";
+            this.programPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.programPriceDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // VanPrice
+            // 
+            this.VanPrice.DataPropertyName = "VanPrice";
+            this.VanPrice.HeaderText = "Van";
+            this.VanPrice.Name = "VanPrice";
+            this.VanPrice.ReadOnly = true;
+            this.VanPrice.Width = 60;
+            // 
+            // roundTripPriceDataGridViewTextBoxColumn1
+            // 
+            this.roundTripPriceDataGridViewTextBoxColumn1.DataPropertyName = "RoundTripPrice";
+            this.roundTripPriceDataGridViewTextBoxColumn1.HeaderText = "Trans";
+            this.roundTripPriceDataGridViewTextBoxColumn1.Name = "roundTripPriceDataGridViewTextBoxColumn1";
+            this.roundTripPriceDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.roundTripPriceDataGridViewTextBoxColumn1.Width = 60;
+            // 
+            // BookOfTickets
+            // 
+            this.BookOfTickets.DataPropertyName = "BookOfTickets";
+            this.BookOfTickets.HeaderText = "BFT";
+            this.BookOfTickets.Name = "BookOfTickets";
+            this.BookOfTickets.ReadOnly = true;
+            this.BookOfTickets.Width = 60;
+            // 
+            // daysBindingSource2
+            // 
+            this.daysBindingSource2.DataMember = "Days";
+            this.daysBindingSource2.DataSource = this.tDayDataSet;
+            // 
+            // toolStrip14
+            // 
+            this.toolStrip14.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip14.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip14.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip14.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox18,
+            this.toolStripTextBox19,
+            this.toolStripTextBox20,
+            this.toolStripTextBox21,
+            this.toolStripTextBox22,
+            this.toolStripTextBox23,
+            this.toolStripTextBox25,
+            this.toolStripTextBox24,
+            this.toolStripTextBox26});
+            this.toolStrip14.Location = new System.Drawing.Point(0, 199);
+            this.toolStrip14.Name = "toolStrip14";
+            this.toolStrip14.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip14.Size = new System.Drawing.Size(700, 25);
+            this.toolStrip14.TabIndex = 0;
+            this.toolStrip14.Text = "toolStrip14";
+            // 
+            // toolStripTextBox18
+            // 
+            this.toolStripTextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox18.Enabled = false;
+            this.toolStripTextBox18.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox18.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox18.Margin = new System.Windows.Forms.Padding(0);
+            this.toolStripTextBox18.Name = "toolStripTextBox18";
+            this.toolStripTextBox18.ReadOnly = true;
+            this.toolStripTextBox18.Size = new System.Drawing.Size(100, 25);
+            this.toolStripTextBox18.Text = "Total:";
+            this.toolStripTextBox18.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox19
+            // 
+            this.toolStripTextBox19.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox19.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox19.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox19.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox19.Name = "toolStripTextBox19";
+            this.toolStripTextBox19.ReadOnly = true;
+            this.toolStripTextBox19.Size = new System.Drawing.Size(150, 26);
+            this.toolStripTextBox19.Text = "0";
+            this.toolStripTextBox19.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox20
+            // 
+            this.toolStripTextBox20.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox20.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox20.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox20.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox20.Name = "toolStripTextBox20";
+            this.toolStripTextBox20.ReadOnly = true;
+            this.toolStripTextBox20.Size = new System.Drawing.Size(70, 26);
+            this.toolStripTextBox20.Text = "0";
+            this.toolStripTextBox20.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox21
+            // 
+            this.toolStripTextBox21.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox21.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox21.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox21.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox21.Name = "toolStripTextBox21";
+            this.toolStripTextBox21.ReadOnly = true;
+            this.toolStripTextBox21.Size = new System.Drawing.Size(60, 26);
+            this.toolStripTextBox21.Text = "0";
+            this.toolStripTextBox21.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox22
+            // 
+            this.toolStripTextBox22.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox22.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox22.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox22.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox22.Name = "toolStripTextBox22";
+            this.toolStripTextBox22.ReadOnly = true;
+            this.toolStripTextBox22.Size = new System.Drawing.Size(60, 26);
+            this.toolStripTextBox22.Text = "0";
+            this.toolStripTextBox22.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox23
+            // 
+            this.toolStripTextBox23.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox23.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox23.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox23.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox23.Name = "toolStripTextBox23";
+            this.toolStripTextBox23.ReadOnly = true;
+            this.toolStripTextBox23.Size = new System.Drawing.Size(60, 26);
+            this.toolStripTextBox23.Text = "0";
+            this.toolStripTextBox23.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox25
+            // 
+            this.toolStripTextBox25.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox25.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox25.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox25.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox25.Name = "toolStripTextBox25";
+            this.toolStripTextBox25.ReadOnly = true;
+            this.toolStripTextBox25.Size = new System.Drawing.Size(60, 26);
+            this.toolStripTextBox25.Text = "0";
+            this.toolStripTextBox25.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox24
+            // 
+            this.toolStripTextBox24.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox24.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox24.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox24.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox24.Name = "toolStripTextBox24";
+            this.toolStripTextBox24.ReadOnly = true;
+            this.toolStripTextBox24.Size = new System.Drawing.Size(60, 26);
+            this.toolStripTextBox24.Text = "0";
+            this.toolStripTextBox24.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripTextBox26
+            // 
+            this.toolStripTextBox26.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toolStripTextBox26.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripTextBox26.ForeColor = System.Drawing.Color.DimGray;
+            this.toolStripTextBox26.Margin = new System.Windows.Forms.Padding(0, -1, 0, 0);
+            this.toolStripTextBox26.Name = "toolStripTextBox26";
+            this.toolStripTextBox26.ReadOnly = true;
+            this.toolStripTextBox26.Size = new System.Drawing.Size(60, 26);
+            this.toolStripTextBox26.Text = "0";
+            this.toolStripTextBox26.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.richTextBox2);
+            this.groupBox21.Location = new System.Drawing.Point(17, 169);
+            this.groupBox21.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox21.Size = new System.Drawing.Size(686, 67);
+            this.groupBox21.TabIndex = 7;
+            this.groupBox21.TabStop = false;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox2.Enabled = false;
+            this.richTextBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.richTextBox2.Location = new System.Drawing.Point(1, 14);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(684, 52);
+            this.richTextBox2.TabIndex = 2;
+            this.richTextBox2.Text = "";
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.splitContainer5);
+            this.groupBox20.Location = new System.Drawing.Point(16, 37);
+            this.groupBox20.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox20.Size = new System.Drawing.Size(686, 132);
+            this.groupBox20.TabIndex = 6;
+            this.groupBox20.TabStop = false;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(1, 14);
+            this.splitContainer5.Name = "splitContainer5";
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.richTextBox1);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.toolStrip15);
+            this.splitContainer5.Size = new System.Drawing.Size(684, 117);
+            this.splitContainer5.SplitterDistance = 634;
+            this.splitContainer5.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Font = new System.Drawing.Font("Elephant", 11.85F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(634, 117);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            // 
+            // toolStrip15
+            // 
+            this.toolStrip15.Dock = System.Windows.Forms.DockStyle.Right;
+            this.toolStrip15.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip15.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton10});
+            this.toolStrip15.Location = new System.Drawing.Point(20, 0);
+            this.toolStrip15.Name = "toolStrip15";
+            this.toolStrip15.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip15.Size = new System.Drawing.Size(26, 117);
+            this.toolStrip15.TabIndex = 0;
+            this.toolStrip15.Text = "toolStrip15";
+            this.toolStrip15.MouseLeave += new System.EventHandler(this.toolStrip15_MouseLeave);
+            this.toolStrip15.MouseHover += new System.EventHandler(this.toolStrip15_MouseHover);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = global::TDay.Properties.Resources.Edit;
+            this.toolStripButton10.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStripButton10.Size = new System.Drawing.Size(34, 34);
+            this.toolStripButton10.Text = "Edit Item";
+            this.toolStripButton10.Visible = false;
+            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.textBox6);
+            this.groupBox19.Controls.Add(this.label76);
+            this.groupBox19.Controls.Add(this.groupBox24);
+            this.groupBox19.Controls.Add(this.groupBox23);
+            this.groupBox19.Controls.Add(this.groupBox22);
+            this.groupBox19.Location = new System.Drawing.Point(347, 253);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(354, 145);
+            this.groupBox19.TabIndex = 5;
+            this.groupBox19.TabStop = false;
+            // 
+            // groupBox24
+            // 
+            this.groupBox24.Controls.Add(this.textBox3);
+            this.groupBox24.Controls.Add(this.textBox2);
+            this.groupBox24.Controls.Add(this.textBox1);
+            this.groupBox24.Location = new System.Drawing.Point(244, 0);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(110, 112);
+            this.groupBox24.TabIndex = 2;
+            this.groupBox24.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox3.Location = new System.Drawing.Point(2, 80);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(105, 17);
+            this.textBox3.TabIndex = 2;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox2.Location = new System.Drawing.Point(1, 50);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(105, 17);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox1.Location = new System.Drawing.Point(1, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(105, 17);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.textBox4);
+            this.groupBox23.Location = new System.Drawing.Point(134, 0);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(111, 112);
+            this.groupBox23.TabIndex = 1;
+            this.groupBox23.TabStop = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox4.Location = new System.Drawing.Point(4, 50);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(105, 17);
+            this.textBox4.TabIndex = 3;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.label68);
+            this.groupBox22.Controls.Add(this.label67);
+            this.groupBox22.Controls.Add(this.label64);
+            this.groupBox22.Location = new System.Drawing.Point(0, 0);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(135, 112);
+            this.groupBox22.TabIndex = 0;
+            this.groupBox22.TabStop = false;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.Color.DimGray;
+            this.label68.Location = new System.Drawing.Point(5, 83);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(93, 17);
+            this.label68.TabIndex = 2;
+            this.label68.Text = "New Charges";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.DimGray;
+            this.label67.Location = new System.Drawing.Point(5, 53);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(123, 17);
+            this.label67.TabIndex = 1;
+            this.label67.Text = "Payments/Credits";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.DimGray;
+            this.label64.Location = new System.Drawing.Point(5, 23);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(119, 17);
+            this.label64.TabIndex = 0;
+            this.label64.Text = "Balance Forward";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.richTextBox3);
+            this.groupBox17.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.ForeColor = System.Drawing.Color.DimGray;
+            this.groupBox17.Location = new System.Drawing.Point(16, 249);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(277, 149);
+            this.groupBox17.TabIndex = 4;
+            this.groupBox17.TabStop = false;
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox3.Enabled = false;
+            this.richTextBox3.ForeColor = System.Drawing.Color.DimGray;
+            this.richTextBox3.Location = new System.Drawing.Point(3, 24);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(271, 122);
+            this.richTextBox3.TabIndex = 0;
+            this.richTextBox3.Text = "";
+            // 
+            // toolStrip13
+            // 
+            this.toolStrip13.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip13.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton15});
+            this.toolStrip13.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip13.Name = "toolStrip13";
+            this.toolStrip13.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip13.Size = new System.Drawing.Size(703, 37);
+            this.toolStrip13.TabIndex = 1;
+            this.toolStrip13.Text = "toolStrip13";
+            // 
+            // toolStripButton15
+            // 
+            this.toolStripButton15.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton15.ForeColor = System.Drawing.Color.DarkGray;
+            this.toolStripButton15.Image = global::TDay.Properties.Resources.CloseButton;
+            this.toolStripButton15.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(127, 34);
+            this.toolStripButton15.Text = "Delete Bill";
+            this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             // 
             // toolStrip4
             // 
@@ -4125,27 +5245,6 @@
             this.permaToolStripMenuItem.Text = "Permanent Charge";
             this.permaToolStripMenuItem.Click += new System.EventHandler(this.permaToolStripMenuItem_Click);
             // 
-            // profilesTableAdapter
-            // 
-            this.profilesTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoriesTableAdapter
-            // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // daysBindingSource
-            // 
-            this.daysBindingSource.DataMember = "Days";
-            this.daysBindingSource.DataSource = this.tDayDataSet;
-            // 
-            // daysTableAdapter
-            // 
-            this.daysTableAdapter.ClearBeforeFill = true;
-            // 
-            // transportationTableAdapter
-            // 
-            this.transportationTableAdapter.ClearBeforeFill = true;
-            // 
             // toolStrip11
             // 
             this.toolStrip11.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -4168,7 +5267,7 @@
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(43, 34);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(43, 22);
             this.toolStripDropDownButton2.Text = "toolStripDropDownButton2";
             this.toolStripDropDownButton2.ToolTipText = "Preferense";
             this.toolStripDropDownButton2.Visible = false;
@@ -4184,30 +5283,72 @@
             this.usersToolStripMenuItem1.Text = "Users";
             this.usersToolStripMenuItem1.Click += new System.EventHandler(this.usersToolStripMenuItem1_Click);
             // 
-            // panel6
+            // profilesTableAdapter
             // 
-            this.panel6.Controls.Add(this.monthCalendar1);
-            this.panel6.Location = new System.Drawing.Point(245, 420);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(165, 162);
-            this.panel6.TabIndex = 8;
-            this.panel6.Visible = false;
+            this.profilesTableAdapter.ClearBeforeFill = true;
+            // 
+            // categoriesTableAdapter
+            // 
+            this.categoriesTableAdapter.ClearBeforeFill = true;
+            // 
+            // daysBindingSource
+            // 
+            this.daysBindingSource.DataMember = "Days";
+            this.daysBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // daysTableAdapter
+            // 
+            this.daysTableAdapter.ClearBeforeFill = true;
+            // 
+            // transportationTableAdapter
+            // 
+            this.transportationTableAdapter.ClearBeforeFill = true;
+            // 
+            // billsTableAdapter
+            // 
+            this.billsTableAdapter.ClearBeforeFill = true;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.ForeColor = System.Drawing.Color.DimGray;
+            this.label76.Location = new System.Drawing.Point(5, 115);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(55, 17);
+            this.label76.TabIndex = 3;
+            this.label76.Text = "Balans:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.DimGray;
+            this.textBox6.Location = new System.Drawing.Point(242, 116);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(105, 17);
+            this.textBox6.TabIndex = 3;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1273, 762);
+            this.ClientSize = new System.Drawing.Size(1273, 782);
             this.Controls.Add(this.toolStrip11);
             this.Controls.Add(this.toolStrip4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "MainFrame";
+            this.Opacity = 0D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainFrame";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainFrame_Load);
+            this.Shown += new System.EventHandler(this.MainFrame_Shown);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
@@ -4216,6 +5357,7 @@
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -4227,6 +5369,7 @@
             this.toolStrip8.ResumeLayout(false);
             this.toolStrip8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDaysProfiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource1)).EndInit();
             this.toolStrip7.ResumeLayout(false);
             this.toolStrip7.PerformLayout();
@@ -4300,14 +5443,59 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).EndInit();
+            this.Bills.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            this.splitContainer4.Panel2.PerformLayout();
+            this.splitContainer4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource3)).EndInit();
+            this.toolStrip16.ResumeLayout(false);
+            this.toolStrip16.PerformLayout();
+            this.toolStrip17.ResumeLayout(false);
+            this.toolStrip17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilesBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.billsBindingSource)).EndInit();
+            this.toolStrip12.ResumeLayout(false);
+            this.toolStrip12.PerformLayout();
+            this.groupBox25.ResumeLayout(false);
+            this.groupBox25.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource2)).EndInit();
+            this.toolStrip14.ResumeLayout(false);
+            this.toolStrip14.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            this.splitContainer5.Panel2.PerformLayout();
+            this.splitContainer5.ResumeLayout(false);
+            this.toolStrip15.ResumeLayout(false);
+            this.toolStrip15.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox24.ResumeLayout(false);
+            this.groupBox24.PerformLayout();
+            this.groupBox23.ResumeLayout(false);
+            this.groupBox23.PerformLayout();
+            this.groupBox22.ResumeLayout(false);
+            this.groupBox22.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.toolStrip13.ResumeLayout(false);
+            this.toolStrip13.PerformLayout();
             this.toolStrip4.ResumeLayout(false);
             this.toolStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
             this.toolStrip11.ResumeLayout(false);
             this.toolStrip11.PerformLayout();
-            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4619,7 +5807,11 @@
         private System.Windows.Forms.ToolStrip toolStrip11;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource bindingSourceDaysProfiles;
         private System.Windows.Forms.DataGridViewCheckBoxColumn attendanceDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn lunchDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunchPriceDataGridViewTextBoxColumn;
@@ -4633,9 +5825,88 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.BindingSource billsBindingSource;
+        private TDayDataSetTableAdapters.BillsTableAdapter billsTableAdapter;
+        private System.Windows.Forms.BindingSource profilesBindingSource2;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.ToolStrip toolStrip12;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox17;
+        private System.Windows.Forms.BindingSource daysBindingSource2;
+        private System.Windows.Forms.ToolStrip toolStrip13;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.ToolStrip toolStrip14;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox18;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ToolStrip toolStrip15;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox19;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox20;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox21;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox22;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox23;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn billIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn profileIdDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox25;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunchPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn takeOutPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miscellaneousPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VanPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roundTripPriceDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookOfTickets;
+        private System.Windows.Forms.GroupBox groupBox24;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox23;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ToolStrip toolStrip16;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStrip toolStrip17;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox27;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.BindingSource profilesBindingSource3;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.GroupBox groupBox25;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label76;
 
 
 
