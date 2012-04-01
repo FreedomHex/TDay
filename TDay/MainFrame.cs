@@ -50,7 +50,9 @@ namespace TDay
             tabControl2.ItemSize = new System.Drawing.Size(0, 1);
             tabControl2.SizeMode = TabSizeMode.Fixed;
             tabControl2.TabStop = false;
-            toolStripComboBox1.SelectedIndex = 0;
+            toolStripComboBox3.SelectedIndex = 0;
+            daysBindingSource1.Filter = "Category=1";
+            daysBindingSource3.Filter = "Category>1";
             DataGridViewCellEventArgs sen = new DataGridViewCellEventArgs(0, 0);
             CurrentDay.CreateDay();
             this.daysTableAdapter.Fill(this.tDayDataSet.Days,CurrentDay.Date);
@@ -74,9 +76,11 @@ namespace TDay
         private void button1_Click(object sender, EventArgs e)
         {
             CurrentDay.CreateDay();
+            tabControl1.SelectedTab = Attendance;
             profilesTableAdapter.FillAll(tDayDataSet.Profiles);
             daysTableAdapter.Fill(tDayDataSet.Days,CurrentDay.Date);
-            tabControl1.SelectedTab = Attendance;
+            daysBindingSource1.Filter="Category=1";
+            daysBindingSource3.Filter = "Category>1";
             ReCountTotals();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -92,13 +96,15 @@ namespace TDay
         private void button3_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = Transportation;
+            profilesTableAdapter.FillAll(tDayDataSet.Profiles);
             transportationTableAdapter.Fill(tDayDataSet.Transportation);
+            transportationBindingSource2.Filter = "Category='Own'";
+            transportationBindingSource1.Filter = "Category='HandyDART'";
             button12_Click(sender, e);
         }
         private void button4_Click(object sender, EventArgs e)
         {
             Bill _Bill = new Bill();
-            _Bill.Create();
             billsTableAdapter.Fill(tDayDataSet.Bills);
             tabControl1.SelectedTab = Bills;
             richTextBox1.Text = TDay.Properties.Settings.Default.PlantString;
@@ -168,26 +174,26 @@ namespace TDay
                         ClientMember.Checked = client.Member;
                         if (client.DopEmergencyContact != null)
                         {
-                            toolStripLabel1.Visible = true;
-                            toolStripLabel2.Visible = true;
-                            toolStripLabel4.Visible = true;
-                            DopEmerClientName.Visible = true;
-                            DopEmerClientPhone.Visible = true;
-                            toolStripTextBox2.Visible = true;
-                            toolStripButton2.Visible = false;
-                            DopEmerClientName.Text = client.DopEmergencyContact.Name;
-                            DopEmerClientPhone.Text = client.DopEmergencyContact.Phone;
-                            toolStripTextBox2.Text = client.DopEmergencyContact.Relation;
+                            toolStripLabel5.Visible = true;
+                            toolStripLabel6.Visible = true;
+                            toolStripLabel7.Visible = true;
+                            toolStripTextBox_EmName.Visible = true;
+                            toolStripTextBox_EmPhone.Visible = true;
+                            toolStripTextBox54.Visible = true;
+                            toolStripButton23.Visible = false;
+                            toolStripTextBox_EmName.Text = client.DopEmergencyContact.Name;
+                            toolStripTextBox_EmPhone.Text = client.DopEmergencyContact.Phone;
+                            toolStripTextBox54.Text = client.DopEmergencyContact.Relation;
                         }
                         else
                         {
-                            toolStripButton2.Visible = true;
-                            toolStripLabel1.Visible = false;
-                            toolStripLabel2.Visible = false;
-                            toolStripLabel4.Visible = false;
-                            DopEmerClientName.Visible = false;
-                            toolStripTextBox2.Visible = false;
-                            DopEmerClientPhone.Visible = false;
+                            toolStripButton23.Visible = true;
+                            toolStripLabel5.Visible = false;
+                            toolStripLabel6.Visible = false;
+                            toolStripLabel7.Visible = false;
+                            toolStripTextBox_EmName.Visible = false;
+                            toolStripTextBox54.Visible = false;
+                            toolStripTextBox_EmPhone.Visible = false;
                         }
                         checkBox2.Checked = client.Attendance.Monday;
                         checkBox3.Checked = client.Attendance.Tuesday;
@@ -273,6 +279,7 @@ namespace TDay
                         Profile board = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
                         textBox_BoardName.Text = board.Name;
                         textBox_BoardOccupation.Text = board.Occupation;
+                        textBox_BoardBirth.Visible = true;
                         textBox_BoardBirth.Text = board.DateOfBirdh.ToShortDateString();
                         textBox_BoardAdress.Text = board.Adress.Addres;
                         textBox_BoardCity.Text = board.Adress.City;
@@ -288,11 +295,12 @@ namespace TDay
                     case "5":
                         tabControl2.SelectedTab = Board_MemberTab;
                         textBox_BoardOccupation.Visible = false;
+
                         label48.Visible = false;
                         board = new Profile(Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
                         textBox_BoardName.Text = board.Name;
                         textBox_BoardOccupation.Text = board.Occupation;
-                        textBox_BoardBirth.Text = board.DateOfBirdh.ToShortDateString();
+                        textBox_BoardBirth.Visible = false;
                         textBox_BoardAdress.Text = board.Adress.Addres;
                         textBox_BoardCity.Text = board.Adress.City;
                         textBox_BoardProvince.Text = board.Adress.Province;
@@ -309,18 +317,21 @@ namespace TDay
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            toolStripLabel1.Visible = true;
-            toolStripLabel2.Visible = true;
-            toolStripLabel4.Visible = true;
-            DopEmerClientName.Visible = true;
-            DopEmerClientPhone.Visible = true;
-            toolStripButton2.Visible = false;
-            toolStripTextBox2.Visible = true;
+            toolStripLabel5.Visible = true;
+            toolStripLabel6.Visible = true;
+            toolStripLabel7.Visible = true;
+            toolStripTextBox_EmName.Visible = true;
+            toolStripTextBox_EmPhone.Visible = true;
+            toolStripTextBox_EmName.Text = String.Empty;
+            toolStripTextBox_EmPhone.Text = String.Empty;
+            toolStripTextBox54.Text = String.Empty;
+            toolStripButton23.Visible = false;
+            toolStripTextBox54.Visible = true;
         }
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (toolStripComboBox1.Items[toolStripComboBox1.SelectedIndex].ToString())
+            switch (toolStripComboBox3.Items[toolStripComboBox3.SelectedIndex].ToString())
             {
                 case "All":
                     switch(Session.Group){
@@ -368,20 +379,20 @@ namespace TDay
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if (toolStripTextBox1.Text.Length > 2)
+            if (toolStripTextBox55.Text.Length > 2)
             {
                 if (SortByCategory)
                 {
                     switch (Session.Group)
                     {
                         case 1:
-                            profilesBindingSource.Filter = CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            profilesBindingSource.Filter = CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox55.Text);
                             break;
                         case 2:
-                            profilesBindingSource.Filter = "(Category<2 OR Category>2) AND "+ CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            profilesBindingSource.Filter = "(Category<2 OR Category>2) AND "+ CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox55.Text);
                             break;
                         case 3:
-                            profilesBindingSource.Filter = "Category=1 AND " + CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            profilesBindingSource.Filter = "Category=1 AND " + CategoryFilter + " AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox55.Text);
                             break;
                     }
                    
@@ -391,13 +402,13 @@ namespace TDay
                     switch (Session.Group)
                     {
                         case 1:
-                            profilesBindingSource.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            profilesBindingSource.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox55.Text);
                             break;
                         case 2:
-                            profilesBindingSource.Filter ="(Category<2 OR Category>2) AND "+ String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            profilesBindingSource.Filter ="(Category<2 OR Category>2) AND "+ String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox55.Text);
                             break;
                         case 3:
-                            profilesBindingSource.Filter = "Category=1 AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox1.Text);
+                            profilesBindingSource.Filter = "Category=1 AND " + String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox55.Text);
                             break;
                     }
                     
@@ -546,19 +557,19 @@ namespace TDay
                         client.PharmacistName = textBox_ClientPharmName.Text;
                         client.PharmacistPhone = textBox_ClientPharmPhone.Text;
                         client.Member = ClientMember.Checked;
-                        if (DopEmerClientName.Visible && client.DopEmergencyContact == null)
+                        if (toolStripTextBox_EmName.Visible && client.DopEmergencyContact == null)
                         {
                             client.DopEmergencyContact = new EmergencyContact();
-                            client.DopEmergencyContact.Name = DopEmerClientName.Text;
-                            client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
-                            client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
+                            client.DopEmergencyContact.Name = toolStripTextBox_EmName.Text;
+                            client.DopEmergencyContact.Phone = toolStripTextBox_EmPhone.Text;
+                            client.DopEmergencyContact.Relation = toolStripTextBox54.Text;
                             client.DopEmergencyContact.AddEmergencyContactTo(client);
                         }
-                        else if (DopEmerClientName.Visible)
+                        else if (toolStripTextBox_EmName.Visible)
                         {
-                            client.DopEmergencyContact.Name = DopEmerClientName.Text;
-                            client.DopEmergencyContact.Phone = DopEmerClientPhone.Text;
-                            client.DopEmergencyContact.Relation = toolStripTextBox2.Text;
+                            client.DopEmergencyContact.Name = toolStripTextBox_EmName.Text;
+                            client.DopEmergencyContact.Phone = toolStripTextBox_EmPhone.Text;
+                            client.DopEmergencyContact.Relation = toolStripTextBox54.Text;
                         }
 
                         client.Attendance.Monday = checkBox2.Checked;
@@ -817,18 +828,18 @@ namespace TDay
 
         private void dataGridView2_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            if ((int)ProfileProvider.GetCategory((int)dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].Value) != 1)
-            {
-                dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
-                dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
-                dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
-                dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].Style.BackColor = Color.LightGray;
-                dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].ReadOnly = true;
-                dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].ReadOnly = true;
-                dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].ReadOnly = true;
-                dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].ReadOnly = true;
-                dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].ReadOnly = true;
-            }
+            //if ((int)ProfileProvider.GetCategory((int)dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].Value) != 1)
+            //{
+            //    dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+            //    dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+            //    dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].Style.BackColor = Color.LightGray;
+            //    dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].Style.BackColor = Color.LightGray;
+            //    dataGridView2.Rows[e.RowIndex].Cells["vanPriceDataGridViewTextBoxColumn"].ReadOnly = true;
+            //    dataGridView2.Rows[e.RowIndex].Cells["roundTripPriceDataGridViewTextBoxColumn"].ReadOnly = true;
+            //    dataGridView2.Rows[e.RowIndex].Cells["bookOfTicketsDataGridViewTextBoxColumn"].ReadOnly = true;
+            //    dataGridView2.Rows[e.RowIndex].Cells["profileIdDataGridViewTextBoxColumn1"].ReadOnly = true;
+            //    dataGridView2.Rows[e.RowIndex].Cells["ProgramPrice"].ReadOnly = true;
+            //}
         }
 
         private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -851,7 +862,6 @@ namespace TDay
 
         private void button9_Click(object sender, EventArgs e)
         {
-            button10.Enabled = true;
             CurrentDay.ChangeDate(CurrentDay.Date.AddDays(-1));
             monthCalendar1.SelectionStart = CurrentDay.Date;
             daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
@@ -859,6 +869,15 @@ namespace TDay
             textBox_date.Text = CurrentDay.Date.ToShortDateString();
             ReCountTotals();
             CheckDayLock();
+            if (!CurrentDay.IsCreated)
+            {
+                button22.Enabled = true;
+            }
+            else
+            {
+                button22.Enabled = false;
+            }
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -866,14 +885,20 @@ namespace TDay
             CurrentDay.ChangeDate(CurrentDay.Date.AddDays(1));
             daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
             monthCalendar1.SelectionStart = CurrentDay.Date;
+            
             textBox_weekday.Text = CurrentDay.Date.DayOfWeek.ToString();
             textBox_date.Text = CurrentDay.Date.ToShortDateString();
-            if (CurrentDay.Date == DateTime.Now.Date)
-            {
-                button10.Enabled = false;
-            }
+            
             ReCountTotals();
             CheckDayLock();
+            if (!CurrentDay.IsCreated)
+            {
+                button22.Enabled = true;
+            }
+            else
+            {
+                button22.Enabled = false;
+            }
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
@@ -885,18 +910,17 @@ namespace TDay
         {
             panel5.Location = new Point(dataGridView2.Location.X + 4, dataGridView2.Location.Y +dataGridView2.Height-panel5.Height-22);
             panel5.Visible = true;
-            
             switch (Session.Group)
             {
                 case 1:
                     profilesBindingSource1.RemoveFilter();
-                    profilesBindingSource1.Filter = "Category<4";
+                    profilesBindingSource1.Filter = "Category<4 AND DelStatus=0";
                     break;
                 case 2:
-                    profilesBindingSource1.Filter = "Category<2";
+                    profilesBindingSource1.Filter = "Category<2 OR Category>2 AND Category<4  DelStatus=0";
                     break;
                 case 3:
-                    profilesBindingSource1.Filter = "Category=1";
+                    profilesBindingSource1.Filter = "Category=1 AND DelStatus=0";
                     break;
             }
         }
@@ -908,13 +932,13 @@ namespace TDay
                 switch (Session.Group)
                 {
                     case 1:
-                        profilesBindingSource1.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);
+                        profilesBindingSource1.Filter = String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text) + " and DelStatus=0";
                         break;
                     case 2:
-                        profilesBindingSource1.Filter = "(Category<2 OR Category>2) AND "+String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);;
+                        profilesBindingSource1.Filter = "(Category<2 OR Category>2) and DelStatus=0 AND "+String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);;
                         break;
                     case 3:
-                        profilesBindingSource1.Filter = "Category=1 AND "+String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);;
+                        profilesBindingSource1.Filter = "Category=1 and DelStatus=0 AND "+String.Format("CONVERT({0},'System.String') LIKE '%{1}%'", "Name", toolStripTextBox4.Text);;
                         break;
                 }
                 
@@ -925,12 +949,13 @@ namespace TDay
                 {
                     case 1:
                         profilesBindingSource1.RemoveFilter();
+                        profilesBindingSource1.Filter = "Category<4 and DelStatus=0";
                         break;
                     case 2:
-                        profilesBindingSource1.Filter = "Category<2 OR Category>2";
+                        profilesBindingSource1.Filter = "Category<2 OR Category>2 AND Category<4 and DelStatus=0";
                         break;
                     case 3:
-                        profilesBindingSource1.Filter = "Category=1";
+                        profilesBindingSource1.Filter = "Category=1 and DelStatus=0";
                         break;
                 }
             }
@@ -958,11 +983,25 @@ namespace TDay
                 else
                 {
                     panel5.Visible = false;
-                    foreach (DataGridViewRow Row in dataGridView2.Rows)
+                    if (ProfileProvider.GetCategory(Item.ProfileId) == 1)
                     {
-                        if ((int)Row.Cells["profileIdDataGridViewTextBoxColumn1"].Value == Item.ProfileId)
+
+                        foreach (DataGridViewRow Row in dataGridView2.Rows)
                         {
-                            Row.Cells["profileIdDataGridViewTextBoxColumn1"].Selected = true;
+                            if ((int)Row.Cells["profileIdDataGridViewTextBoxColumn1"].Value == Item.ProfileId)
+                            {
+                                Row.Cells["profileIdDataGridViewTextBoxColumn1"].Selected = true;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (DataGridViewRow Row in dataGridView8.Rows)
+                        {
+                            if ((int)Row.Cells["dataGridViewComboBoxColumn2"].Value == Item.ProfileId)
+                            {
+                                Row.Cells["dataGridViewComboBoxColumn2"].Selected = true;
+                            }
                         }
                     }
                 }
@@ -993,16 +1032,60 @@ namespace TDay
                 TotalBFT += Convert.ToDouble(Row.Cells["bookOfTicketsDataGridViewTextBoxColumn"].Value.ToString());
                 TotalT += Convert.ToDouble(Row.Cells["Total"].Value.ToString());
             }
-            toolStripTextBox6.Text = dataGridView2.Rows.Count.ToString();
-            toolStripTextBox7.Text = TotalLC.ToString();
-            toolStripTextBox8.Text = TotalLCP.ToString();
-            toolStripTextBox9.Text = TotalTOP.ToString();
-            toolStripTextBox15.Text = TotalMisoP.ToString();
-            toolStripTextBox14.Text = TotalP.ToString();
-            toolStripTextBox13.Text = TotalVan.ToString();
-            toolStripTextBox12.Text = TotalRTP.ToString();
-            toolStripTextBox11.Text = TotalBFT.ToString();
-            toolStripTextBox16.Text = TotalT.ToString();
+            toolStripTextBox41.Text = dataGridView2.Rows.Count.ToString();
+            toolStripTextBox42.Text = TotalLC.ToString();
+            toolStripTextBox43.Text = TotalLCP.ToString("0.00");
+            toolStripTextBox44.Text = TotalTOP.ToString("0.00");
+            toolStripTextBox45.Text = TotalMisoP.ToString("0.00");
+            toolStripTextBox46.Text = TotalP.ToString("0.00");
+            toolStripTextBox47.Text = TotalVan.ToString("0.00");
+            toolStripTextBox48.Text = TotalRTP.ToString("0.00");
+            toolStripTextBox49.Text = TotalBFT.ToString("0.00");
+            toolStripTextBox50.Text = TotalT.ToString("0.00");
+            //****************Хрень
+            TotalLC = 0;
+            TotalLCP = 0;
+            TotalTOP = 0;
+            TotalMisoP = 0;
+            TotalVan = 0;
+            TotalP = 0;
+            TotalRTP = 0;
+            TotalBFT = 0;
+            TotalT = 0;
+            foreach (DataGridViewRow Row in dataGridView8.Rows)
+            {
+                if ((bool)Row.Cells["dataGridViewCheckBoxColumn2"].Value) { TotalLC++; }
+                TotalLCP += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn3"].Value.ToString());
+                TotalTOP += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn4"].Value.ToString());
+                TotalMisoP += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn5"].Value.ToString());
+                TotalVan += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn7"].Value.ToString());
+                TotalP += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn6"].Value.ToString());
+                TotalRTP += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn8"].Value.ToString());
+                TotalBFT += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn9"].Value.ToString());
+                TotalT += Convert.ToDouble(Row.Cells["dataGridViewTextBoxColumn10"].Value.ToString());
+            }
+            toolStripTextBox29.Text = dataGridView8.Rows.Count.ToString();
+            toolStripTextBox30.Text = TotalLC.ToString();
+            toolStripTextBox31.Text = TotalLCP.ToString("0.00");
+            toolStripTextBox32.Text = TotalTOP.ToString("0.00");
+            toolStripTextBox33.Text = TotalMisoP.ToString("0.00");
+            toolStripTextBox34.Text = TotalP.ToString("0.00");
+            toolStripTextBox35.Text = TotalVan.ToString("0.00");
+            toolStripTextBox36.Text = TotalRTP.ToString("0.00");
+            toolStripTextBox37.Text = TotalBFT.ToString("0.00");
+            toolStripTextBox38.Text = TotalT.ToString("0.00");
+
+            toolStripTextBox6.Text = (int.Parse(toolStripTextBox41.Text) + int.Parse(toolStripTextBox29.Text)).ToString();
+            toolStripTextBox7.Text = (int.Parse(toolStripTextBox42.Text) + int.Parse(toolStripTextBox30.Text)).ToString();
+            toolStripTextBox8.Text = (double.Parse(toolStripTextBox43.Text) + double.Parse(toolStripTextBox31.Text)).ToString("0.00");
+            toolStripTextBox9.Text = (double.Parse(toolStripTextBox44.Text) + double.Parse(toolStripTextBox32.Text)).ToString("0.00");
+            toolStripTextBox15.Text = (double.Parse(toolStripTextBox45.Text) + double.Parse(toolStripTextBox33.Text)).ToString("0.00");
+            toolStripTextBox14.Text = (double.Parse(toolStripTextBox46.Text) + double.Parse(toolStripTextBox34.Text)).ToString("0.00");
+            toolStripTextBox13.Text = (double.Parse(toolStripTextBox47.Text) + double.Parse(toolStripTextBox35.Text)).ToString("0.00");
+            toolStripTextBox12.Text = (double.Parse(toolStripTextBox48.Text) + double.Parse(toolStripTextBox36.Text)).ToString("0.00");
+            toolStripTextBox11.Text = (double.Parse(toolStripTextBox49.Text) + double.Parse(toolStripTextBox37.Text)).ToString("0.00");
+            toolStripTextBox16.Text = (double.Parse(toolStripTextBox50.Text) + double.Parse(toolStripTextBox38.Text)).ToString("0.00");
+
         }
 
         private void noChargeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1030,6 +1113,13 @@ namespace TDay
                         Item.Update();
                         daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
                         break;
+                    case -3:
+                        Item = new DayItem((int)dataGridView8.Rows[dataGridView8.SelectedCells[0].RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                        Item.LunchPrice = 0;
+                        Item.Lunch = false;
+                        Item.Update();
+                        daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        break;
                 }
             }
         }
@@ -1045,9 +1135,11 @@ namespace TDay
                     servicesTableAdapter.Update(tDayDataSet);
                     foreach (DataRow Dat in tDayDataSet.Days)
                     {
-                        if ((bool)Dat["Lunch"])
+                        if ((bool)Dat["Lunch"] && (int)Dat["Category"]==1)
                         {
-                            Dat["LunchPrice"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[3].Value.ToString();
+                            DayItem Item = new DayItem((int)Dat["DayId"],CurrentDay.Date);
+                            Item.LunchPrice = (decimal)dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[3].Value;
+                            Item.Update();
                         }
                     }
                     break;
@@ -1056,11 +1148,15 @@ namespace TDay
                     Row = tDayDataSet.Services.FindByServiceId(3);
                     Row["ServiceFee"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[6].Value.ToString();
                     servicesTableAdapter.Update(tDayDataSet);
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
                     foreach (DataRow Dat in tDayDataSet.Days)
                     {
+
                         if (ProfileProvider.GetCategory((int)Dat["ProfileId"]) == 1)
                         {
-                            Dat["ProgramPrice"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[6].Value.ToString();
+                            DayItem Item = new DayItem((int)Dat["DayId"], CurrentDay.Date);
+                            Item.ProgramPrice = (decimal)dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[6].Value;
+                            Item.Update();
                         }
                     }
                     break;
@@ -1071,14 +1167,31 @@ namespace TDay
                     servicesTableAdapter.Update(tDayDataSet);
                     foreach (DataRow Dat in tDayDataSet.Days)
                     {
-                        if (ProfileProvider.GetCategory((int)Dat["ProfileId"]) == 1)
+                        if (ProfileProvider.GetCategory((int)Dat["ProfileId"]) == 1 && Double.Parse(Dat["RoundTripPrice"].ToString())>0)
                         {
-                            Dat["RoundTripPrice"] = dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[8].Value.ToString();
+                            DayItem Item = new DayItem((int)Dat["DayId"], CurrentDay.Date);
+                            Item.RoundTripPrice = (decimal)dataGridView2.Rows[dataGridView2.SelectedCells[0].RowIndex].Cells[8].Value;
+                            Item.Update();
+                        }
+                    }
+                    break;
+                case -3:
+                     servicesTableAdapter.Fill(tDayDataSet.Services);
+                    Row = tDayDataSet.Services.FindByServiceId(4);
+                    Row["ServiceFee"] = dataGridView8.Rows[dataGridView8.SelectedCells[0].RowIndex].Cells[3].Value.ToString();
+                    servicesTableAdapter.Update(tDayDataSet);
+                    foreach (DataRow Dat in tDayDataSet.Days)
+                    {
+                        if ((bool)Dat["Lunch"] && (int)Dat["Category"]!=1)
+                        {
+                            DayItem Item = new DayItem((int)Dat["DayId"],CurrentDay.Date);
+                            Item.LunchPrice = (decimal)dataGridView8.Rows[dataGridView8.SelectedCells[0].RowIndex].Cells[3].Value;
+                            Item.Update();
                         }
                     }
                     break;
             }
-            daysTableAdapter.Update(tDayDataSet);
+            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -1124,67 +1237,103 @@ namespace TDay
 
         private void button13_Click(object sender, EventArgs e)
         {
-            transportationBindingSource.Filter = "Monday=1";
+            transportationBindingSource1.Filter = "Category='HandyDART' AND Monday=1";
+            transportationBindingSource2.Filter = "Category='Own' AND Monday=1";
             mondayDataGridViewCheckBoxColumn.Visible = false;
             tuesdayDataGridViewCheckBoxColumn.Visible = false;
             wednesdayDataGridViewCheckBoxColumn.Visible = false;
             thursdayDataGridViewCheckBoxColumn.Visible = false;
             fridayDataGridViewCheckBoxColumn.Visible = false;
+            dataGridViewCheckBoxColumn3.Visible = false;
+            dataGridViewCheckBoxColumn4.Visible = false;
+            dataGridViewCheckBoxColumn5.Visible = false;
+            dataGridViewCheckBoxColumn6.Visible = false;
+            dataGridViewCheckBoxColumn7.Visible = false;
             _TransportDay = "Monday";
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            transportationBindingSource.RemoveFilter();
+            transportationBindingSource1.Filter = "Category='HandyDART'";
+            transportationBindingSource2.Filter = "Category='Own'";
             mondayDataGridViewCheckBoxColumn.Visible = true;
             tuesdayDataGridViewCheckBoxColumn.Visible = true;
             wednesdayDataGridViewCheckBoxColumn.Visible = true;
             thursdayDataGridViewCheckBoxColumn.Visible = true;
             fridayDataGridViewCheckBoxColumn.Visible = true;
+            dataGridViewCheckBoxColumn3.Visible = true;
+            dataGridViewCheckBoxColumn4.Visible = true;
+            dataGridViewCheckBoxColumn5.Visible = true;
+            dataGridViewCheckBoxColumn6.Visible = true;
+            dataGridViewCheckBoxColumn7.Visible = true;
             _TransportDay = "Master";
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            transportationBindingSource.Filter = "Tuesday=1";
+            transportationBindingSource1.Filter = "Category='HandyDART' AND Tuesday=1";
+            transportationBindingSource2.Filter = "Category='Own' AND Tuesday=1";
             mondayDataGridViewCheckBoxColumn.Visible = false;
             tuesdayDataGridViewCheckBoxColumn.Visible = false;
             wednesdayDataGridViewCheckBoxColumn.Visible = false;
             thursdayDataGridViewCheckBoxColumn.Visible = false;
             fridayDataGridViewCheckBoxColumn.Visible = false;
+            dataGridViewCheckBoxColumn3.Visible = false;
+            dataGridViewCheckBoxColumn4.Visible = false;
+            dataGridViewCheckBoxColumn5.Visible = false;
+            dataGridViewCheckBoxColumn6.Visible = false;
+            dataGridViewCheckBoxColumn7.Visible = false;
             _TransportDay = "Tuesday";
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            transportationBindingSource.Filter = "Wednesday=1";
+            transportationBindingSource1.Filter = "Category='HandyDART' AND Wednesday=1";
+            transportationBindingSource2.Filter = "Category='Own' AND Wednesday=1";
             mondayDataGridViewCheckBoxColumn.Visible = false;
             tuesdayDataGridViewCheckBoxColumn.Visible = false;
             wednesdayDataGridViewCheckBoxColumn.Visible = false;
             thursdayDataGridViewCheckBoxColumn.Visible = false;
             fridayDataGridViewCheckBoxColumn.Visible = false;
+            dataGridViewCheckBoxColumn3.Visible = false;
+            dataGridViewCheckBoxColumn4.Visible = false;
+            dataGridViewCheckBoxColumn5.Visible = false;
+            dataGridViewCheckBoxColumn6.Visible = false;
+            dataGridViewCheckBoxColumn7.Visible = false;
             _TransportDay = "Wednesday";
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            transportationBindingSource.Filter = "Thursday=1";
+            transportationBindingSource1.Filter = "Category='HandyDART' AND Thursday=1";
+            transportationBindingSource2.Filter = "Category='Own' AND Thursday=1";
             mondayDataGridViewCheckBoxColumn.Visible = false;
             tuesdayDataGridViewCheckBoxColumn.Visible = false;
             wednesdayDataGridViewCheckBoxColumn.Visible = false;
             thursdayDataGridViewCheckBoxColumn.Visible = false;
             fridayDataGridViewCheckBoxColumn.Visible = false;
+            dataGridViewCheckBoxColumn3.Visible = false;
+            dataGridViewCheckBoxColumn4.Visible = false;
+            dataGridViewCheckBoxColumn5.Visible = false;
+            dataGridViewCheckBoxColumn6.Visible = false;
+            dataGridViewCheckBoxColumn7.Visible = false;
             _TransportDay = "Thursday";
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            transportationBindingSource.Filter = "Friday=1";
+            transportationBindingSource1.Filter = "Category='HandyDART' AND Friday=1";
+            transportationBindingSource2.Filter = "Category='Own' AND Friday=1";
             mondayDataGridViewCheckBoxColumn.Visible = false;
             tuesdayDataGridViewCheckBoxColumn.Visible = false;
             wednesdayDataGridViewCheckBoxColumn.Visible = false;
             thursdayDataGridViewCheckBoxColumn.Visible = false;
             fridayDataGridViewCheckBoxColumn.Visible = false;
+            dataGridViewCheckBoxColumn3.Visible = false;
+            dataGridViewCheckBoxColumn4.Visible = false;
+            dataGridViewCheckBoxColumn5.Visible = false;
+            dataGridViewCheckBoxColumn6.Visible = false;
+            dataGridViewCheckBoxColumn7.Visible = false;
             _TransportDay = "Friday";
         }
 
@@ -1202,13 +1351,13 @@ namespace TDay
                     break;
                 case 2:
                     button4.Enabled = false;
-                    toolStripComboBox1.Items.RemoveAt(2);
+                    toolStripComboBox3.Items.RemoveAt(2);
                     break;
                 case 3:
                     dataGridView2.DataSource = null;
-                    toolStripComboBox1.Items.Clear();
-                    toolStripComboBox1.Items.Add("Client");
-                    toolStripComboBox1.SelectedIndex = 0;
+                    toolStripComboBox3.Items.Clear();
+                    toolStripComboBox3.Items.Add("Client");
+                    toolStripComboBox3.SelectedIndex = 0;
                     button1.Enabled = false;
                     button4.Enabled = false;
                     tabControl1.SelectedTab = Profiles;
@@ -1232,7 +1381,6 @@ namespace TDay
             else
             {
                 panel6.Location = new Point(button19.Location.X, dataGridView2.Location.Y + dataGridView2.Height - panel6.Height);
-                monthCalendar1.MaxDate = DateTime.Now.Date;
                 panel6.Visible = true;
             }
         }
@@ -1306,17 +1454,17 @@ namespace TDay
                 BillsItem Item = new BillsItem((int)dataGridView5.Rows[e.RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value);
                 richTextBox2.ResetText();
                 richTextBox2.AppendText(String.Format("INVOICE #{0}", dataGridView5.Rows[e.RowIndex].Cells["billIdDataGridViewTextBoxColumn"].Value.ToString())+"\n");
-                richTextBox2.AppendText(String.Format("For Services of  {0:MMMM}", Item.Date));
+                richTextBox2.AppendText(String.Format("For Services in  {0:MMMM}", Item.Date));
                 richTextBox3.ResetText();
                 richTextBox3.AppendText(String.Format("{0} \n", Item.Profile.Name));
                 richTextBox3.AppendText(String.Format("{0} \n",Item.Profile.Adress.Addres));
                 richTextBox3.AppendText(String.Format("{0} \n", Item.Profile.Adress.City));
                 richTextBox3.AppendText(String.Format("{0} \n", Item.Profile.Adress.PostalCode));
-                if (Item.PreviousBillTotal > Item.PreviousBillPaid)
+                if (Item.PreviousBillPaid==0)
                 {
                     label67.Text = "Overdue";
-                    textBox2.Text = Item.PreviousBillPaid.ToString();
-                    textBox6.Text = (Item.PreviousBillTotal - Item.PreviousBillPaid + Item.BillTotal).ToString();
+                    textBox2.Text = Item.PreviousBillTotal.ToString();
+                    textBox6.Text = (Item.PreviousBillTotal + Item.BillTotal).ToString();
                 }
                 else
                 {
@@ -1511,6 +1659,7 @@ namespace TDay
                     Item.PaidType = "cheque";
                 }
                 Item.Update();
+                MessageBox.Show("Платёж сделан", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1524,12 +1673,12 @@ namespace TDay
 
         private void toolStripTextBox17_TextChanged(object sender, EventArgs e)
         {
-            if (toolStripTextBox17.Text.Length > 2)
+            if (toolStripTextBox52.Text.Length > 2)
             {
                 string Filter = String.Empty;
                 foreach (DataGridViewRow Row in dataGridView5.Rows)
                 {
-                    if (Row.Cells["profileIdDataGridViewTextBoxColumn4"].EditedFormattedValue.ToString().IndexOf(toolStripTextBox17.Text) != -1)
+                    if (Row.Cells["profileIdDataGridViewTextBoxColumn4"].EditedFormattedValue.ToString().IndexOf(toolStripTextBox52.Text) != -1)
                     {
                         Filter += "ProfileId =" + Row.Cells["profileIdDataGridViewTextBoxColumn4"].Value.ToString() + " OR ";
                     }
@@ -1548,12 +1697,12 @@ namespace TDay
         private void toolStripTextBox27_TextChanged(object sender, EventArgs e)
         {
             string TempFilter = "Category<4";
-            if(toolStripTextBox27.Text.Length>2)
+            if(toolStripTextBox53.Text.Length>2)
             {
-                profilesBindingSource3.Filter = TempFilter+" AND "+String.Format("Name LIKE '%{0}%'",toolStripTextBox27.Text);
+                profilesBindingSource3.Filter = TempFilter+" AND "+String.Format("Name LIKE '%{0}%'",toolStripTextBox53.Text)+" AND DelStatus=0";
             } else 
             {
-                profilesBindingSource3.Filter = "Category<4";
+                profilesBindingSource3.Filter = "Category<4 AND DelStatus=0";
             }
         }
 
@@ -1562,6 +1711,162 @@ namespace TDay
 
         }
 
-       
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0 && dataGridView1.SelectedCells!=null)
+            {
+                PrintEnv src = new PrintEnv();
+                 src.ProfileId = (int)dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells["profileIdDataGridViewTextBoxColumn"].Value;
+                src.ShowDialog();
+            }
+        }
+
+        private void dataGridView8_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            FormProvider.CurrentRowIndex2 = e.RowIndex;
+            FormProvider.CurrentColIndex2 = e.ColumnIndex;
+            switch (e.ColumnIndex)
+            {
+                case 3:
+                    DayItem Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.LunchPrice = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn3"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 4:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.TakeOutPrice = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn4"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 5:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.MiscellaneousPrice = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn5"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 6:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.ProgramPrice = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn6"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 7:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.VanPrice = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn7"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 8:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.RoundTripPrice = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn8"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 9:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.BookOfTickets = (decimal)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn9"].Value;
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+                case 11:
+                    Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                    Item.Comments = dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn11"].Value.ToString();
+                    Item.Update();
+                    daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                    break;
+            }
+            ReCountTotals();
+        }
+
+        private void dataGridView8_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (dataGridView8.Rows.Count > 0 && FormProvider.CurrentRowIndex2 < dataGridView8.Rows.Count && FormProvider.CurrentRowIndex2 >= 0)
+            {
+                dataGridView8.ClearSelection();
+                dataGridView8.Rows[FormProvider.CurrentRowIndex2].Cells[FormProvider.CurrentColIndex2].Selected = true;
+            }
+        }
+
+        private void dataGridView8_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                FormProvider.CurrentRowIndex2 = e.RowIndex;
+                FormProvider.CurrentColIndex2 = e.ColumnIndex;
+                switch (e.ColumnIndex)
+                {
+                    case 1:
+                        if ((bool)dataGridView8.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)
+                        {
+                            if (DialogResult.Yes == MessageBox.Show("Are you sure you want to delete this entry?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                            {
+                                daysTableAdapter.Delete((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value);
+                                daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                            }
+                            else
+                            {
+                                dataGridView8.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 1;
+                                dataGridView8.RefreshEdit();
+                            }
+                        }
+
+                        break;
+                    case 2:
+                        if ((bool)dataGridView8.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue)
+                        {
+                            DayItem Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                            Item.Lunch = false;
+                            Item.LunchPrice = Decimal.Zero;
+                            Item.Update();
+                            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        }
+                        else
+                        {
+                            DayItem Item = new DayItem((int)dataGridView8.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value, CurrentDay.Date);
+                            Item.Lunch = true;
+                            Item.LunchPrice = Item.GetLunchPrice();
+                            Item.Update();
+                            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+                        }
+                        break;
+
+                }
+                ReCountTotals();
+            }
+            else if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                FormProvider.CurrentRowIndex2 = e.RowIndex;
+                FormProvider.CurrentColIndex2 = e.ColumnIndex;
+                dataGridView8.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+                switch (e.ColumnIndex)
+                {
+                    case 3:
+                        contextMenuStrip1.Tag = (-1)*e.ColumnIndex;
+                        contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
+                        break;
+                }
+            }
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            CurrentDay.CreateDay();
+            daysTableAdapter.Fill(tDayDataSet.Days, CurrentDay.Date);
+        }
+
+        private void toolStripButton19_Click(object sender, EventArgs e)
+        {
+            Bill _Bill = new Bill();
+            _Bill.Create();
+            billsTableAdapter.Fill(tDayDataSet.Bills);
+        }
+
+        private void toolStripButton24_Click(object sender, EventArgs e)
+        {
+            AddProfile src = new AddProfile();
+            src.ShowDialog();
+        }
+ 
     }
 }

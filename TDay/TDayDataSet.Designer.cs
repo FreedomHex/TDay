@@ -2146,6 +2146,8 @@ namespace TDay {
             
             private global::System.Data.DataColumn columnTotal;
             
+            private global::System.Data.DataColumn columnCategory;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DaysDataTable() {
@@ -2293,6 +2295,14 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CategoryColumn {
+                get {
+                    return this.columnCategory;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2328,7 +2338,7 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DaysRow AddDaysRow(System.DateTime Date, ProfilesRow parentProfilesRowByFK_Profiles_Days, bool Lunch, decimal LunchPrice, decimal TakeOutPrice, decimal ProgramPrice, decimal MiscellaneousPrice, decimal VanPrice, decimal RoundTripPrice, decimal BookOfTickets, string Comments, bool Attendance, decimal Total) {
+            public DaysRow AddDaysRow(System.DateTime Date, ProfilesRow parentProfilesRowByFK_Profiles_Days, bool Lunch, decimal LunchPrice, decimal TakeOutPrice, decimal ProgramPrice, decimal MiscellaneousPrice, decimal VanPrice, decimal RoundTripPrice, decimal BookOfTickets, string Comments, bool Attendance, decimal Total, int Category) {
                 DaysRow rowDaysRow = ((DaysRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2344,7 +2354,8 @@ namespace TDay {
                         BookOfTickets,
                         Comments,
                         Attendance,
-                        Total};
+                        Total,
+                        Category};
                 if ((parentProfilesRowByFK_Profiles_Days != null)) {
                     columnValuesArray[2] = parentProfilesRowByFK_Profiles_Days[0];
                 }
@@ -2391,6 +2402,7 @@ namespace TDay {
                 this.columnComments = base.Columns["Comments"];
                 this.columnAttendance = base.Columns["Attendance"];
                 this.columnTotal = base.Columns["Total"];
+                this.columnCategory = base.Columns["Category"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2424,6 +2436,8 @@ namespace TDay {
                 base.Columns.Add(this.columnAttendance);
                 this.columnTotal = new global::System.Data.DataColumn("Total", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
+                this.columnCategory = new global::System.Data.DataColumn("Category", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategory);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDayId}, true));
                 this.columnDayId.AutoIncrement = true;
@@ -5526,6 +5540,22 @@ namespace TDay {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Category {
+                get {
+                    try {
+                        return ((int)(this[this.tableDays.CategoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Category\' в таблице \'Days\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDays.CategoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProfilesRow ProfilesRow {
                 get {
                     return ((ProfilesRow)(this.GetParentRow(this.Table.ParentRelations["FK_Profiles_Days"])));
@@ -5653,6 +5683,18 @@ namespace TDay {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalNull() {
                 this[this.tableDays.TotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCategoryNull() {
+                return this.IsNull(this.tableDays.CategoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCategoryNull() {
+                this[this.tableDays.CategoryColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8714,6 +8756,7 @@ namespace TDay.TDayDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Comments", "Comments");
             tableMapping.ColumnMappings.Add("Attendance", "Attendance");
             tableMapping.ColumnMappings.Add("Total", "Total");
+            tableMapping.ColumnMappings.Add("Category", "Category");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlServerCe.SqlCeCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -8722,7 +8765,7 @@ namespace TDay.TDayDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "DayId", global::System.Data.DataRowVersion.Original, null));
             this._adapter.InsertCommand = new global::System.Data.SqlServerCe.SqlCeCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Days] ([Date], [ProfileId], [Lunch], [LunchPrice], [TakeOutPrice], [ProgramPrice], [MiscellaneousPrice], [VanPrice], [RoundTripPrice], [BookOfTickets], [Comments], [Attendance], [Total]) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Days] ([Date], [ProfileId], [Lunch], [LunchPrice], [TakeOutPrice], [ProgramPrice], [MiscellaneousPrice], [VanPrice], [RoundTripPrice], [BookOfTickets], [Comments], [Attendance], [Total], [Category]) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Date", global::System.Data.DataRowVersion.Current, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Current, null));
@@ -8737,9 +8780,10 @@ namespace TDay.TDayDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p11", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p12", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p13", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Total", global::System.Data.DataRowVersion.Current, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Category", global::System.Data.DataRowVersion.Current, null));
             this._adapter.UpdateCommand = new global::System.Data.SqlServerCe.SqlCeCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Days] SET [Date] = @p1, [ProfileId] = @p2, [Lunch] = @p3, [LunchPrice] = @p4, [TakeOutPrice] = @p5, [ProgramPrice] = @p6, [MiscellaneousPrice] = @p7, [VanPrice] = @p8, [RoundTripPrice] = @p9, [BookOfTickets] = @p10, [Comments] = @p11, [Attendance] = @p12, [Total] = @p13 WHERE (([DayId] = @p14))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Days] SET [Date] = @p1, [ProfileId] = @p2, [Lunch] = @p3, [LunchPrice] = @p4, [TakeOutPrice] = @p5, [ProgramPrice] = @p6, [MiscellaneousPrice] = @p7, [VanPrice] = @p8, [RoundTripPrice] = @p9, [BookOfTickets] = @p10, [Comments] = @p11, [Attendance] = @p12, [Total] = @p13, [Category] = @p14 WHERE (([DayId] = @p15))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Date", global::System.Data.DataRowVersion.Current, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "ProfileId", global::System.Data.DataRowVersion.Current, null));
@@ -8754,7 +8798,8 @@ namespace TDay.TDayDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p11", global::System.Data.SqlDbType.NText, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p12", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Attendance", global::System.Data.DataRowVersion.Current, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p13", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Total", global::System.Data.DataRowVersion.Current, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "DayId", global::System.Data.DataRowVersion.Original, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p14", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "Category", global::System.Data.DataRowVersion.Current, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@p15", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, true, 0, 0, "DayId", global::System.Data.DataRowVersion.Original, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8770,10 +8815,10 @@ namespace TDay.TDayDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlServerCe.SqlCeCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlServerCe.SqlCeCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, ProgramPri" +
-                "ce, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Atten" +
-                "dance, \r\n                         Total\r\nFROM            Days\r\nWHERE        (Dat" +
-                "e = @Date)";
+            this._commandCollection[0].CommandText = @"SELECT        DayId, Date, ProfileId, Lunch, LunchPrice, TakeOutPrice, ProgramPrice, MiscellaneousPrice, VanPrice, RoundTripPrice, BookOfTickets, Comments, Attendance, Total, 
+                         Category
+FROM            Days
+WHERE        (Date = @Date)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlServerCe.SqlCeParameter("@Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, true, 0, 0, "Date", global::System.Data.DataRowVersion.Current, null));
             this._commandCollection[1] = new global::System.Data.SqlServerCe.SqlCeCommand();
@@ -8896,7 +8941,7 @@ WHERE        (Date > @FirstDayMonth) AND (Date < @LastDayMonth)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime p1, int p2, bool p3, global::System.Nullable<decimal> p4, global::System.Nullable<decimal> p5, global::System.Nullable<decimal> p6, global::System.Nullable<decimal> p7, global::System.Nullable<decimal> p8, global::System.Nullable<decimal> p9, global::System.Nullable<decimal> p10, string p11, global::System.Nullable<bool> p12, global::System.Nullable<decimal> p13) {
+        public virtual int Insert(System.DateTime p1, int p2, bool p3, global::System.Nullable<decimal> p4, global::System.Nullable<decimal> p5, global::System.Nullable<decimal> p6, global::System.Nullable<decimal> p7, global::System.Nullable<decimal> p8, global::System.Nullable<decimal> p9, global::System.Nullable<decimal> p10, string p11, global::System.Nullable<bool> p12, global::System.Nullable<decimal> p13, global::System.Nullable<int> p14) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(p1));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
             this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(p3));
@@ -8960,6 +9005,12 @@ WHERE        (Date > @FirstDayMonth) AND (Date < @LastDayMonth)";
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((p14.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(p14.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8980,7 +9031,7 @@ WHERE        (Date > @FirstDayMonth) AND (Date < @LastDayMonth)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime p1, int p2, bool p3, global::System.Nullable<decimal> p4, global::System.Nullable<decimal> p5, global::System.Nullable<decimal> p6, global::System.Nullable<decimal> p7, global::System.Nullable<decimal> p8, global::System.Nullable<decimal> p9, global::System.Nullable<decimal> p10, string p11, global::System.Nullable<bool> p12, global::System.Nullable<decimal> p13, int p14) {
+        public virtual int Update(System.DateTime p1, int p2, bool p3, global::System.Nullable<decimal> p4, global::System.Nullable<decimal> p5, global::System.Nullable<decimal> p6, global::System.Nullable<decimal> p7, global::System.Nullable<decimal> p8, global::System.Nullable<decimal> p9, global::System.Nullable<decimal> p10, string p11, global::System.Nullable<bool> p12, global::System.Nullable<decimal> p13, global::System.Nullable<int> p14, int p15) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(p1));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((bool)(p3));
@@ -9044,7 +9095,13 @@ WHERE        (Date > @FirstDayMonth) AND (Date < @LastDayMonth)";
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14));
+            if ((p14.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(p15));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

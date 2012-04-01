@@ -12,5 +12,8 @@ namespace TDay
     {
         public static int CurrentRowIndex { get; set; }
         public static int CurrentColIndex { get; set; }
+        public static int CurrentRowIndex2 { get; set; }
+        public static int CurrentColIndex2 { get; set; }
+
     }
 }

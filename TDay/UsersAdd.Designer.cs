@@ -38,16 +38,17 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tDayDataSet = new TDay.TDayDataSet();
             this.uGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tDayDataSet = new TDay.TDayDataSet();
             this.uGroupsTableAdapter = new TDay.TDayDataSetTableAdapters.UGroupsTableAdapter();
             this.usersTableAdapter = new TDay.TDayDataSetTableAdapters.UsersTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uGroupsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(44, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 33);
@@ -58,6 +59,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(197, 140);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 33);
@@ -69,44 +71,49 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(8, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 21);
+            this.label1.Size = new System.Drawing.Size(51, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Login:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 21);
+            this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(8, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 21);
+            this.label3.Size = new System.Drawing.Size(76, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Category:";
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(116, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 28);
+            this.textBox1.Size = new System.Drawing.Size(214, 26);
             this.textBox1.TabIndex = 5;
             // 
             // textBox2
             // 
+            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.DimGray;
             this.textBox2.Location = new System.Drawing.Point(116, 54);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(214, 28);
+            this.textBox2.Size = new System.Drawing.Size(214, 26);
             this.textBox2.TabIndex = 6;
             // 
             // comboBox1
@@ -114,23 +121,24 @@
             this.comboBox1.DataSource = this.uGroupsBindingSource;
             this.comboBox1.DisplayMember = "GroupName";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.DimGray;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(116, 92);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(214, 29);
+            this.comboBox1.Size = new System.Drawing.Size(214, 26);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.ValueMember = "GroupId";
-            // 
-            // tDayDataSet
-            // 
-            this.tDayDataSet.DataSetName = "TDayDataSet";
-            this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // uGroupsBindingSource
             // 
             this.uGroupsBindingSource.DataMember = "UGroups";
             this.uGroupsBindingSource.DataSource = this.tDayDataSet;
+            // 
+            // tDayDataSet
+            // 
+            this.tDayDataSet.DataSetName = "TDayDataSet";
+            this.tDayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // uGroupsTableAdapter
             // 
@@ -164,8 +172,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add User";
             this.Load += new System.EventHandler(this.UsersAdd_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uGroupsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDayDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

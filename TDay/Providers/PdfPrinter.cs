@@ -340,6 +340,18 @@ namespace TDay
             AddHeader(table, "Attendance", 20, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
             AddHeader(table, _CurrentDay.Date.DayOfWeek + "  " + _CurrentDay.Date.ToShortDateString(), 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
             daysTableAdapter.Fill(tDayDataSet.Days, _CurrentDay.Date);
+            
+            int Counter = 0;
+            int TotalLC = 0;
+            double TotalLCP = 0;
+            double TotalTOP = 0;
+            double TotalMisoP = 0;
+            double TotalVan = 0;
+            double TotalP = 0;
+            double TotalRTP = 0;
+            double TotalBFT = 0;
+            double TotalT = 0;
+            AddHeader(table, "Billed Clients", 12, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
             AddPriviewCell(table, "Numb", 1);
             AddPriviewCell(table, "Name", 3);
             AddPriviewCell(table, "A", 1);
@@ -352,54 +364,189 @@ namespace TDay
             AddPriviewCell(table, "RT", 1);
             AddPriviewCell(table, "BFT", 1);
             AddPriviewCell(table, "Total", 1);
-            int Counter = 1;
-            int TotalLC = 0;
-            double TotalLCP = 0;
-            double TotalTOP = 0;
-            double TotalMisoP = 0;
-            double TotalVan = 0;
-            double TotalP = 0;
-            double TotalRTP = 0;
-            double TotalBFT = 0;
-            double TotalT = 0;
             foreach (DataRow Row in tDayDataSet.Days)
             {
-                AddPriviewCell(table, Counter.ToString(), 1);
-                AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 3);
-                AddValueCell(table, (bool)Row["Attendance"], true, 1);
-                AddValueCell(table, (bool)Row["Lunch"], true, 1);
-                if ((bool)Row["Lunch"]) { TotalLC++; }
-                AddPriviewCell(table, Row["LunchPrice"].ToString(), 1);
-                TotalLCP += Convert.ToDouble(Row["LunchPrice"]);
-                AddPriviewCell(table, Row["TakeOutPrice"].ToString(), 1);
-                TotalTOP += Convert.ToDouble(Row["TakeOutPrice"]);
-                AddPriviewCell(table, Row["MiscellaneousPrice"].ToString(), 1);
-                TotalMisoP += Convert.ToDouble(Row["MiscellaneousPrice"]);
-                AddPriviewCell(table, Row["ProgramPrice"].ToString(), 1);
-                TotalP += Convert.ToDouble(Row["ProgramPrice"]);
-                AddPriviewCell(table, Row["VanPrice"].ToString(), 1);
-                TotalVan += Convert.ToDouble(Row["VanPrice"]);
-                AddPriviewCell(table, Row["RoundTripPrice"].ToString(), 1);
-                TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
-                AddPriviewCell(table, Row["BookOfTickets"].ToString(), 1);
-                TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
-                AddPriviewCell(table, Row["Total"].ToString(), 1);
-                Counter++;
+                if (ProfileProvider.GetCategory((int)Row["ProfileId"]) == 1)
+                {
+                    AddPriviewCell(table, Counter.ToString(), 1);
+                    AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 3);
+                    AddValueCell(table, (bool)Row["Attendance"], true, 1);
+                    AddValueCell(table, (bool)Row["Lunch"], true, 1);
+                    if ((bool)Row["Lunch"]) { TotalLC++; }
+                    AddPriviewCell(table, Row["LunchPrice"].ToString(), 1);
+                    TotalLCP += Convert.ToDouble(Row["LunchPrice"]);
+                    AddPriviewCell(table, Row["TakeOutPrice"].ToString(), 1);
+                    TotalTOP += Convert.ToDouble(Row["TakeOutPrice"]);
+                    AddPriviewCell(table, Row["MiscellaneousPrice"].ToString(), 1);
+                    TotalMisoP += Convert.ToDouble(Row["MiscellaneousPrice"]);
+                    if (ProfileProvider.GetCategory((int)Row["ProfileId"]) == 1)
+                    {
+                        AddPriviewCell(table, Row["ProgramPrice"].ToString(), 1);
+                        TotalP += Convert.ToDouble(Row["ProgramPrice"]);
+                        AddPriviewCell(table, Row["VanPrice"].ToString(), 1);
+                        TotalVan += Convert.ToDouble(Row["VanPrice"]);
+                        AddPriviewCell(table, Row["RoundTripPrice"].ToString(), 1);
+                        TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
+                        AddPriviewCell(table, Row["BookOfTickets"].ToString(), 1);
+                        TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
+                    }
+                    else
+                    {
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalP += Convert.ToDouble(Row["ProgramPrice"]);
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalVan += Convert.ToDouble(Row["VanPrice"]);
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
+                    }
+                    AddPriviewCell(table, Row["Total"].ToString(), 1);
+                    Counter++;
 
+                }
+                
             }
-            TotalT += TotalLCP + TotalMisoP + TotalTOP + TotalVan + TotalP + TotalRTP + TotalBFT;
             AddPriviewCell(table, "", 1);
             AddPriviewCell(table, "Total:", 3);
+            AddPriviewCell(table, Counter.ToString(), 1);
+            AddPriviewCell(table, TotalLC.ToString(), 1);
+            AddPriviewCell(table, TotalLCP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalTOP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalMisoP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalVan.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalRTP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalBFT.ToString("0.00"), 1);
+            AddPriviewCell(table, (TotalLCP + TotalMisoP + TotalTOP + TotalVan + TotalP + TotalRTP + TotalBFT).ToString("0.00"), 1);
+
+            AddHeader(table, "Staff/Volunteers", 12, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
+            AddPriviewCell(table, "Numb", 1);
+            AddPriviewCell(table, "Name", 3);
+            AddPriviewCell(table, "A", 1);
+            AddPriviewCell(table, "LC", 1);
+            AddPriviewCell(table, "L$", 1);
+            AddPriviewCell(table, "TO$", 1);
+            AddPriviewCell(table, "Miso$", 1);
+            AddPriviewCell(table, "P$", 1);
+            AddPriviewCell(table, "Van", 1);
+            AddPriviewCell(table, "RT", 1);
+            AddPriviewCell(table, "BFT", 1);
+            AddPriviewCell(table, "Total", 1);
+
+            Counter = 0;
+            TotalLC = 0;
+            TotalLCP = 0;
+            TotalTOP = 0;
+            TotalMisoP = 0;
+            TotalVan = 0;
+            TotalP = 0;
+            TotalRTP = 0;
+            TotalBFT = 0;
+            TotalT = 0;
+            foreach (DataRow Row in tDayDataSet.Days)
+            {
+                if (ProfileProvider.GetCategory((int)Row["ProfileId"]) != 1)
+                {
+                    AddPriviewCell(table, Counter.ToString(), 1);
+                    AddPriviewCell(table, ProfileProvider.GetName((int)Row["ProfileId"]), 3);
+                    AddValueCell(table, (bool)Row["Attendance"], true, 1);
+                    AddValueCell(table, (bool)Row["Lunch"], true, 1);
+                    if ((bool)Row["Lunch"]) { TotalLC++; }
+                    AddPriviewCell(table, Row["LunchPrice"].ToString(), 1);
+                    TotalLCP += Convert.ToDouble(Row["LunchPrice"]);
+                    AddPriviewCell(table, Row["TakeOutPrice"].ToString(), 1);
+                    TotalTOP += Convert.ToDouble(Row["TakeOutPrice"]);
+                    AddPriviewCell(table, Row["MiscellaneousPrice"].ToString(), 1);
+                    TotalMisoP += Convert.ToDouble(Row["MiscellaneousPrice"]);
+                    if (ProfileProvider.GetCategory((int)Row["ProfileId"]) == 1)
+                    {
+                        AddPriviewCell(table, Row["ProgramPrice"].ToString(), 1);
+                        TotalP += Convert.ToDouble(Row["ProgramPrice"]);
+                        AddPriviewCell(table, Row["VanPrice"].ToString(), 1);
+                        TotalVan += Convert.ToDouble(Row["VanPrice"]);
+                        AddPriviewCell(table, Row["RoundTripPrice"].ToString(), 1);
+                        TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
+                        AddPriviewCell(table, Row["BookOfTickets"].ToString(), 1);
+                        TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
+                    }
+                    else
+                    {
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalP += Convert.ToDouble(Row["ProgramPrice"]);
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalVan += Convert.ToDouble(Row["VanPrice"]);
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
+                        AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+                        TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
+                    }
+                    
+                    AddPriviewCell(table, Row["Total"].ToString(), 1);
+                    Counter++;
+                }
+                
+            }
+            AddPriviewCell(table, "", 1);
+            AddPriviewCell(table, "Total:", 3);
+            AddPriviewCell(table, Counter.ToString(), 1);
+            AddPriviewCell(table, TotalLC.ToString(), 1);
+            AddPriviewCell(table, TotalLCP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalTOP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalMisoP.ToString("0.00"), 1);
+            AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+            AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+            AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+            AddPriviewCell(table, "", 1, new BaseColor(Color.WhiteSmoke));
+            AddPriviewCell(table, (TotalLCP + TotalMisoP + TotalTOP + TotalVan + TotalP + TotalRTP + TotalBFT).ToString("0.00"), 1);
+
+            //********************
+            TotalLC = 0;
+            TotalLCP = 0;
+            TotalTOP = 0;
+            TotalMisoP = 0;
+            TotalVan = 0;
+            TotalP = 0;
+            TotalRTP = 0;
+            TotalBFT = 0;
+            TotalT = 0;
+            foreach (DataRow Row in tDayDataSet.Days)
+            {
+                    if ((bool)Row["Lunch"]) { TotalLC++; }
+                    TotalLCP += Convert.ToDouble(Row["LunchPrice"]);
+                    TotalTOP += Convert.ToDouble(Row["TakeOutPrice"]);
+                    TotalMisoP += Convert.ToDouble(Row["MiscellaneousPrice"]);
+                    if (ProfileProvider.GetCategory((int)Row["ProfileId"]) == 1)
+                    {
+                        TotalP += Convert.ToDouble(Row["ProgramPrice"]);
+                        TotalVan += Convert.ToDouble(Row["VanPrice"]);
+                        TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
+                        TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
+                    }
+                    else
+                    {
+                        TotalP += Convert.ToDouble(Row["ProgramPrice"]);
+                        TotalVan += Convert.ToDouble(Row["VanPrice"]);
+                        TotalRTP += Convert.ToDouble(Row["RoundTripPrice"]);
+                        TotalBFT += Convert.ToDouble(Row["BookOfTickets"]);
+                    }
+            }
+
+
+            //******************
+            TotalT += TotalLCP + TotalMisoP + TotalTOP + TotalVan + TotalP + TotalRTP + TotalBFT;
+            AddPriviewCell(table, "", 1);
+            AddPriviewCell(table, "GrandTotal:", 3);
             AddPriviewCell(table, tDayDataSet.Days.Rows.Count.ToString(), 1);
             AddPriviewCell(table, TotalLC.ToString(), 1);
-            AddPriviewCell(table, TotalLCP.ToString(), 1);
-            AddPriviewCell(table, TotalTOP.ToString(), 1);
-            AddPriviewCell(table, TotalMisoP.ToString(), 1);
-            AddPriviewCell(table, TotalP.ToString(), 1);
-            AddPriviewCell(table, TotalVan.ToString(), 1);
-            AddPriviewCell(table, TotalRTP.ToString(), 1);
-            AddPriviewCell(table, TotalBFT.ToString(), 1);
-            AddPriviewCell(table, TotalT.ToString(), 1);
+            AddPriviewCell(table, TotalLCP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalTOP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalMisoP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalVan.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalRTP.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalBFT.ToString("0.00"), 1);
+            AddPriviewCell(table, TotalT.ToString("0.00"), 1);
             Doc.Add(table);
             Doc.Close();
             Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Attendance_" + _CurrentDay.Date.Day.ToString() + ".pdf");
@@ -424,25 +571,45 @@ namespace TDay
 
             PdfWriter.GetInstance(Doc, FS);
             Doc.Open();
-            PdfPTable table = new PdfPTable(20);
-            table.HorizontalAlignment = Element.ALIGN_LEFT;
-            table.WidthPercentage = 100;
+            PdfPTable table;
+            if (Day == "Master")
+            {
+                table = new PdfPTable(20);
+                table.HorizontalAlignment = Element.ALIGN_LEFT;
+                table.WidthPercentage = 100;
 
-            AddHeader(table, "Transportation", 20, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
-            AddHeader(table, Day, 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
-           transportationTableAdapter.Fill(tDayDataSet.Transportation);
-            AddPriviewCell(table, "Numb", 1);
-            AddPriviewCell(table, "Name", 4);
-            AddPriviewCell(table, "Category", 2);
-            AddPriviewCell(table, "Address", 4);
-            AddPriviewCell(table, "Phone", 2);
-            AddPriviewCell(table, "HD#", 2);
-            AddPriviewCell(table, "Mon", 1);
-            AddPriviewCell(table, "Tue", 1);
-            AddPriviewCell(table, "Wed", 1);
-            AddPriviewCell(table, "Thu", 1);
-            AddPriviewCell(table, "Fri", 1);
-            //AddPriviewCell(table, "Comment", 1);
+                AddHeader(table, "Transportation", 20, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
+                AddHeader(table, Day, 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
+                transportationTableAdapter.Fill(tDayDataSet.Transportation);
+                AddPriviewCell(table, "Numb", 1);
+                AddPriviewCell(table, "Name", 4);
+                AddPriviewCell(table, "Category", 2);
+                AddPriviewCell(table, "Address", 4);
+                AddPriviewCell(table, "Phone", 2);
+                AddPriviewCell(table, "HD#", 2);
+                AddPriviewCell(table, "Mon", 1);
+                AddPriviewCell(table, "Tue", 1);
+                AddPriviewCell(table, "Wed", 1);
+                AddPriviewCell(table, "Thu", 1);
+                AddPriviewCell(table, "Fri", 1);
+                //AddPriviewCell(table, "Comment", 1);
+            }
+            else
+            {
+                table = new PdfPTable(15);
+                table.HorizontalAlignment = Element.ALIGN_LEFT;
+                table.WidthPercentage = 100;
+
+                AddHeader(table, "Transportation", 20, new BaseColor(Color.DimGray), new BaseColor(Color.WhiteSmoke));
+                AddHeader(table, Day, 16, new BaseColor(Color.DimGray), new BaseColor(Color.White));
+                transportationTableAdapter.Fill(tDayDataSet.Transportation);
+                AddPriviewCell(table, "Numb", 1);
+                AddPriviewCell(table, "Name", 4);
+                AddPriviewCell(table, "Category", 2);
+                AddPriviewCell(table, "Address", 4);
+                AddPriviewCell(table, "Phone", 2);
+                AddPriviewCell(table, "HD#", 2);
+            }
             int Counter = 1;
             foreach (DataRow Row in tDayDataSet.Transportation)
             {
@@ -472,11 +639,6 @@ namespace TDay
                             AddPriviewCell(table, Row["Adress"].ToString(), 4);
                             AddPriviewCell(table, Row["Phone"].ToString(), 2);
                             AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
-                            AddValueCell(table, (bool)Row["Monday"], true, 1);
-                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
-                            AddValueCell(table, (bool)Row["Friday"], true, 1);
                             Counter++;
                         }
                         break;
@@ -489,11 +651,6 @@ namespace TDay
                             AddPriviewCell(table, Row["Adress"].ToString(), 4);
                             AddPriviewCell(table, Row["Phone"].ToString(), 2);
                             AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
-                            AddValueCell(table, (bool)Row["Monday"], true, 1);
-                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
-                            AddValueCell(table, (bool)Row["Friday"], true, 1);
                             Counter++;
                         }
                         break;
@@ -506,11 +663,6 @@ namespace TDay
                             AddPriviewCell(table, Row["Adress"].ToString(), 4);
                             AddPriviewCell(table, Row["Phone"].ToString(), 2);
                             AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
-                            AddValueCell(table, (bool)Row["Monday"], true, 1);
-                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
-                            AddValueCell(table, (bool)Row["Friday"], true, 1);
                             Counter++;
                         }
                         break;
@@ -523,11 +675,6 @@ namespace TDay
                             AddPriviewCell(table, Row["Adress"].ToString(), 4);
                             AddPriviewCell(table, Row["Phone"].ToString(), 2);
                             AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
-                            AddValueCell(table, (bool)Row["Monday"], true, 1);
-                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
-                            AddValueCell(table, (bool)Row["Friday"], true, 1);
                             Counter++;
                         }
                         break;
@@ -540,11 +687,6 @@ namespace TDay
                             AddPriviewCell(table, Row["Adress"].ToString(), 4);
                             AddPriviewCell(table, Row["Phone"].ToString(), 2);
                             AddPriviewCell(table, Row["HandyDARTNumber"].ToString(), 2);
-                            AddValueCell(table, (bool)Row["Monday"], true, 1);
-                            AddValueCell(table, (bool)Row["Tuesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Wednesday"], true, 1);
-                            AddValueCell(table, (bool)Row["Thursday"], true, 1);
-                            AddValueCell(table, (bool)Row["Friday"], true, 1);
                             Counter++;
                         }
                         break;
@@ -682,7 +824,7 @@ namespace TDay
                 pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
                 pricell.Colspan = 1;
                 tableFooster.AddCell(pricell);
-                pricell = new PdfPCell(new Phrase(Item.Paid.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.UNDERLINE, new BaseColor(Color.DimGray))));
+                pricell = new PdfPCell(new Phrase(Item.Paid.ToString()+"$", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.UNDERLINE, new BaseColor(Color.DimGray))));
                 pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
                 pricell.HorizontalAlignment = Element.ALIGN_CENTER;
                 pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -727,7 +869,7 @@ namespace TDay
                 pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
                 pricell.Colspan = 1;
                 tableFooster.AddCell(pricell);
-                pricell = new PdfPCell(new Phrase("___________", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricell = new PdfPCell(new Phrase("___________$", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
                 pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
                 pricell.HorizontalAlignment = Element.ALIGN_CENTER;
                 pricell.Colspan = 1;
@@ -759,7 +901,7 @@ namespace TDay
             tableFooster.AddCell(pricellnew);
             if (Item.Paid > 0)
             {
-                pricellnew = new PdfPCell(new Phrase(Item.PaidDate.ToShortDateString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+                pricellnew = new PdfPCell(new Phrase(Item.PaidDate.ToShortDateString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.UNDERLINE, new BaseColor(Color.DimGray))));
                 pricellnew.Border = iTextSharp.text.Rectangle.NO_BORDER;
                 pricellnew.HorizontalAlignment = Element.ALIGN_CENTER;
                 pricellnew.VerticalAlignment = Element.ALIGN_MIDDLE;
@@ -793,6 +935,69 @@ namespace TDay
             Doc.Add(tableFooster);
             Doc.Close();
             Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Bill_" + ItemId.ToString() + ".pdf");
+        }
+
+        public static void PrintEnvelope(int ProfileId, EnvelopeSize Size, string Sender, string Reciver)
+        {
+            try
+            {
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Report_" + ProfileId.ToString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Report_" + ProfileId.ToString() + ".pdf"); }
+            }
+            catch (IOException)
+            {
+                string Proc = GetFileProcessName("Report_" + ProfileId.ToString() + ".pdf");
+                if (File.Exists(System.Windows.Forms.Application.UserAppDataPath + @"\Report_" + ProfileId.ToString() + ".pdf")) { File.Delete(System.Windows.Forms.Application.UserAppDataPath + @"\Report_" + ProfileId.ToString() + ".pdf"); }
+            }
+            FileStream FS = new FileStream(System.Windows.Forms.Application.UserAppDataPath + @"\Report_" + ProfileId.ToString() + ".pdf", FileMode.CreateNew);
+            var Doc = new iTextSharp.text.Document(GetEnvelopeSize(Size),20,20,20,20);
+            PdfWriter.GetInstance(Doc, FS);
+            Doc.Open();
+            PdfPTable table = new PdfPTable(5);
+            table.WidthPercentage = 100;
+            PdfPCell pricell = new PdfPCell(new Phrase(Sender, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, int.Parse(Math.Round(Doc.PageSize.Width/41,0).ToString()), iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.HorizontalAlignment = Element.ALIGN_LEFT;
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.SpaceCharRatio = 4;
+            pricell.PaddingBottom = 3;
+            pricell.Colspan = 2;
+            pricell.FixedHeight = ((Doc.PageSize.Height-40) / 10)*3;
+            table.AddCell(pricell);
+            pricell = new PdfPCell(new Phrase("", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.PaddingBottom = 3;
+            pricell.Colspan = 3;
+            table.AddCell(pricell);
+            //*******************************Пустой блок
+            pricell = new PdfPCell(new Phrase("", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, int.Parse(Math.Round(Doc.PageSize.Width / 41, 0).ToString()), iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.HorizontalAlignment = Element.ALIGN_LEFT;
+            pricell.VerticalAlignment = Element.ALIGN_TOP;
+            pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            pricell.PaddingBottom = 3;
+            pricell.Colspan = 5;
+            pricell.FixedHeight = ((Doc.PageSize.Height-40) / 10)*4-5;
+            table.AddCell(pricell);
+            //*******************************
+            pricell = new PdfPCell(new Phrase("", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+            pricell.HorizontalAlignment = Element.ALIGN_RIGHT;
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.PaddingBottom = 3;
+            pricell.Colspan = 3;
+            table.AddCell(pricell);
+            pricell = new PdfPCell(new Phrase(Reciver, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, int.Parse(Math.Round(Doc.PageSize.Width / 41, 0).ToString()), iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.HorizontalAlignment = Element.ALIGN_LEFT;
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.PaddingBottom = 3;
+            pricell.SpaceCharRatio = 4;
+            pricell.Colspan = 2;
+            pricell.FixedHeight = ((Doc.PageSize.Height-40) / 10)*3;
+            table.AddCell(pricell);
+
+            Doc.Add(table);
+            Doc.Close();
+            Process.Start(System.Windows.Forms.Application.UserAppDataPath + @"\Report_" + ProfileId.ToString() + ".pdf");
         }
 
 
@@ -840,6 +1045,16 @@ namespace TDay
             PdfPCell pricell = new PdfPCell(new Phrase(Text, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
             pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
             pricell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pricell.PaddingBottom = 3;
+            pricell.Colspan = Colspan;
+            _Table.AddCell(pricell);
+        }
+        private static void AddPriviewCell(PdfPTable _Table, string Text, int Colspan,BaseColor BackColor)
+        {
+            PdfPCell pricell = new PdfPCell(new Phrase(Text, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.DimGray))));
+            pricell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            pricell.HorizontalAlignment = Element.ALIGN_CENTER;
+            pricell.BackgroundColor = BackColor;
             pricell.PaddingBottom = 3;
             pricell.Colspan = Colspan;
             _Table.AddCell(pricell);
@@ -1161,6 +1376,40 @@ namespace TDay
                 }
             return null;
         }
+
+        public enum EnvelopeSize
+        {
+            Env10,
+            EnvLS,
+            EnvTY,
+            EnvBD1,
+            EnvBD2
+        }
+
+        public static iTextSharp.text.Rectangle GetEnvelopeSize(EnvelopeSize Size)
+        {
+            iTextSharp.text.Rectangle _Rec = new iTextSharp.text.Rectangle(100,100);
+            switch (Size)
+            {
+                case EnvelopeSize.Env10:
+                    _Rec = new iTextSharp.text.Rectangle(684, 297);
+                    break;
+                case EnvelopeSize.EnvLS:
+                    _Rec = new iTextSharp.text.Rectangle(792, 612);
+                    break;
+                case EnvelopeSize.EnvTY:
+                    _Rec = new iTextSharp.text.Rectangle(414, 288);
+                    break;
+                case EnvelopeSize.EnvBD1:
+                    _Rec = new iTextSharp.text.Rectangle(522, 369);
+                    break;
+                case EnvelopeSize.EnvBD2:
+                    _Rec = new iTextSharp.text.Rectangle(486, 333);
+                    break;
+            }
+            return _Rec;
+        }
+
 
     }
 

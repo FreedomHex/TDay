@@ -52,8 +52,6 @@ D:\Projects\TDay\TDay\obj\x86\Debug\TDay.AddProfile.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Auth.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.MainFrame.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Properties.Resources.resources
-D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
-D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Conn.resources
 D:\Projects\TDay\TDay\bin\Debug\itextsharp.dll
 D:\Projects\TDay\TDay\bin\Debug\DataBase\Tday.sdf
@@ -64,3 +62,6 @@ D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.write.1.tlog
 D:\Projects\TDay\TDay\bin\Debug\app.config
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Users.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.UsersAdd.resources
+D:\Projects\TDay\TDay\obj\x86\Debug\TDay.PrintEnv.resources
+D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog

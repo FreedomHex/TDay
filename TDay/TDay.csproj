@@ -96,6 +96,12 @@
     <Compile Include="Conn.Designer.cs">
       <DependentUpon>Conn.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintEnv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintEnv.Designer.cs">
+      <DependentUpon>PrintEnv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Providers\Enums.cs" />
     <Compile Include="Providers\AuthProvider.cs" />
     <Compile Include="MainFrame.cs">
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintEnv.resx">
+      <DependentUpon>PrintEnv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -254,6 +263,7 @@
     <Content Include="DataBase\Tday.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Mail.png" />
     <None Include="Resources\Save.png" />
     <None Include="Resources\Calendar.png" />
     <None Include="Resources\User.png" />

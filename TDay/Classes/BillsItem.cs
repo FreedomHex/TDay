@@ -49,6 +49,7 @@ namespace TDay
         {
             billsTableAdapter.Fill(tDayDataSet.Bills);
             DataRow _Item = tDayDataSet.Bills.FindByBillId(ItemId);
+            
             Date = DateTime.Now.Date;
             BillId = ItemId;
             ProfileIdBills = (int)_Item["ProfileId"];
@@ -57,8 +58,8 @@ namespace TDay
             PaidDate = (DateTime)_Item["PaidDate"];
             PaidType = (string) _Item["PaidType"];
             Profile = new Profile((int)_Item["ProfileId"]);
+            PreviousBillPaid = GetPreviousBillPaid((int)_Item["ProfileId"], Bill.GetFirstMonthDay((DateTime)_Item["Date"]), Bill.GetLastMonthDay((DateTime)_Item["Date"]));
             PreviousBillTotal = (decimal)_Item["PreviousBillTotal"];
-            PreviousBillPaid = (decimal)_Item["PreviousBillPaid"];
             PreviousBillPaidDate = (DateTime)_Item["PreviousBillPaidDate"];
             _Item["BillTotal"] = BillTotal;
             billsTableAdapter.Update(tDayDataSet);

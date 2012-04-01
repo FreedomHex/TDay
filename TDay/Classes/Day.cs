@@ -27,30 +27,27 @@ namespace TDay
             IsCreated = CheckCreated();
             if (!IsCreated)
             {
-                if (Date == DateTime.Now.Date)
-                {
-                    attendanceTableAdapter.Fill(tDayDataSet.Attendance);
+                 attendanceTableAdapter.Fill(tDayDataSet.Attendance);
                     foreach (DataRow Row in tDayDataSet.Attendance)
                     {
-                        if (DateTime.Now.DayOfWeek != DayOfWeek.Saturday && DateTime.Now.DayOfWeek != DayOfWeek.Sunday)
+                        if (Date.DayOfWeek != DayOfWeek.Saturday && Date.DayOfWeek != DayOfWeek.Sunday)
                         {
-                            if ((bool)Row[DateTime.Now.DayOfWeek.ToString()] == true && (int)Row["ProfileId"] > 0 && !ProfileProvider.GetDelStatus((int)Row["ProfileId"]))
+                            if ((bool)Row[Date.DayOfWeek.ToString()] == true && (int)Row["ProfileId"] > 0 && !ProfileProvider.GetDelStatus((int)Row["ProfileId"]))
                             {
                                 DayItem Item = new DayItem((int)Row["ProfileId"]);
                                 InsertItem(Item);
                             }
                         }
                     }
-                }
             }
         }
-        private bool CheckCreated()
+        public bool CheckCreated()
         {
             bool _IsCreate = false;
             daysTableAdapter.Fill(tDayDataSet.Days,Date);
             foreach (DataRow Row in tDayDataSet.Days)
             {
-                if ((DateTime)Row["Date"] == DateTime.Now.Date)
+                if ((DateTime)Row["Date"] == Date)
                 {
                     _IsCreate = true;
                     break;
@@ -80,10 +77,11 @@ namespace TDay
         public void ChangeDate(DateTime _Date)
         {
             this.Date = _Date;
+            IsCreated = CheckCreated();
         }
         public void InsertItem(DayItem Item)
         {
-            daysTableAdapter.Insert(Date, Item.ProfileId, Item.Lunch, Item.LunchPrice, Item.TakeOutPrice,Item.ProgramPrice,Item.MiscellaneousPrice, Item.VanPrice, Item.RoundTripPrice, Item.BookOfTickets, Item.Comments, Item.Attendance,Item.Total);
+            daysTableAdapter.Insert(Date, Item.ProfileId, Item.Lunch, Item.LunchPrice, Item.TakeOutPrice,Item.ProgramPrice,Item.MiscellaneousPrice, Item.VanPrice, Item.RoundTripPrice, Item.BookOfTickets, Item.Comments, Item.Attendance,Item.Total,ProfileProvider.GetCategory(Item.ProfileId));
         }
 
     }

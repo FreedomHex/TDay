@@ -73,11 +73,13 @@ namespace TDay
                 case 4:
                     tabControl1.SelectedTab = Board_Member;
                     textBox_BorOccupation.Visible = true;
+                    textBox_BorBirth.Visible = true;
                     label60.Visible = true;
                     break;
                 case 5:
                     tabControl1.SelectedTab = Board_Member;
                     textBox_BorOccupation.Visible = false;
+                    textBox_BorBirth.Visible = false;
                     label60.Visible = false;
                     break;
 

@@ -36,7 +36,14 @@ namespace TDay
         {
             servicesTableAdapter.Fill(tDayDataSet.Services);
             profilesTableAdapter.Fill(tDayDataSet.Profiles);
-            LunchRow = tDayDataSet.Services.FindByServiceId(1); //Не расширяемая ссылка на Сервис
+            if (ProfileProvider.GetCategory(ProfileUID) == 1)
+            {
+                LunchRow = tDayDataSet.Services.FindByServiceId(1); //Не расширяемая ссылка на Сервис
+            }
+            else
+            {
+                LunchRow = tDayDataSet.Services.FindByServiceId(4);
+            }
             RTRow = tDayDataSet.Services.FindByServiceId(2);
             PrRow = tDayDataSet.Services.FindByServiceId(3);
             WeekDay = (int) DateTime.Now.DayOfWeek;
@@ -153,6 +160,14 @@ namespace TDay
             Comments = Row["Comments"].ToString();
             DayId = (int)Row["DayId"];
             this.Date = Date;
+            if (ProfileProvider.GetCategory((int)Row["ProfileId"]) == 1)
+            {
+                LunchRow = tDayDataSet.Services.FindByServiceId(1); //Не расширяемая ссылка на Сервис
+            }
+            else
+            {
+                LunchRow = tDayDataSet.Services.FindByServiceId(4);
+            }
         }
         public decimal GetLunchPrice()
         {
