@@ -720,18 +720,27 @@ namespace TDay
             AddPriviewCell(table, TDay.Properties.Settings.Default.PlantString,5);
             AddPriviewCell(table, String.Format("For Services of  {0:MMMM} - {0:yyyy}",Item.Date), 5);
             AddPriviewCell(table, Item.Profile.Name + "\n" + Item.Profile.Adress.Addres + "\n" + Item.Profile.Adress.City + "\n" + Item.Profile.Adress.PostalCode, 2,4, Element.ALIGN_LEFT);
-            if (Item.PreviousBillTotal > Item.PreviousBillPaid)
+            if (Item.PreviousBillPaid==0)
             {
-                AddPriviewCell(table, "Balance Forward \nOverdue \nNew Charges", 1);
+                AddPriviewCell(table, "Balance Forward \nOverdue \nNew Charges", 1, 3, Element.ALIGN_LEFT);
             }
             else
             {
                 AddPriviewCell(table, "Balance Forward \nPayments/Credits\nNew Charges", 1,3,Element.ALIGN_LEFT);
             }
-            AddPriviewCell(table, Item.PreviousBillPaidDate.ToShortDateString(), 1,3,Element.ALIGN_CENTER);
-            AddPriviewCell(table, Item.PreviousBillTotal.ToString()+"\n"+Item.PreviousBillPaid.ToString()+"\n"+Item.BillTotal.ToString(), 2,3,Element.ALIGN_CENTER);
+           
+            if (Item.PreviousBillPaid == 0)
+            {
+                AddPriviewCell(table, "", 1, 3, Element.ALIGN_CENTER);
+                AddPriviewCell(table, Item.PreviousBillTotal.ToString() + "\n" + Item.PreviousBillTotal.ToString() + "\n" + Item.BillTotal.ToString(), 2, 3, Element.ALIGN_CENTER);
+            }
+            else
+            {
+                AddPriviewCell(table, Item.PreviousBillPaidDate.ToShortDateString(), 1, 3, Element.ALIGN_CENTER);
+                AddPriviewCell(table, Item.PreviousBillTotal.ToString() + "\n" + Item.PreviousBillPaid.ToString() + "\n" + Item.BillTotal.ToString(), 2, 3, Element.ALIGN_CENTER);
+            }
             AddPriviewCell(table, "Balance:", 2,1,Element.ALIGN_LEFT);
-            AddPriviewCell(table, (Item.PreviousBillTotal-Item.PreviousBillPaid+Item.BillTotal).ToString(), 1, 1, Element.ALIGN_CENTER);
+            AddPriviewCell(table, (Item.PreviousBillTotal-Item.PreviousBillPaid+Item.BillTotal).ToString(), 1, 2, Element.ALIGN_CENTER);
             Doc.Add(table);
             int TableColums = 0;
             TDayDataSet TempSet = new TDayDataSet();

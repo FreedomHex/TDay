@@ -8,9 +8,6 @@
     <Setting Name="CurrentVersion" Type="System.String" Scope="User">
       <Value Profile="(Default)">0.1.0.4</Value>
     </Setting>
-    <Setting Name="DebugMode" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="TDayConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -25,6 +22,9 @@
 Vancouver, BC
 V5M 2Y4
 Phone and Fax: 604-430-1441</Value>
+    </Setting>
+    <Setting Name="DebugMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

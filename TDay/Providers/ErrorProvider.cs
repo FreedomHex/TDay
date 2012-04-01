@@ -13,7 +13,7 @@ namespace TDay
         {
             if (TDay.Properties.Settings.Default.DebugMode)
             {
-                DirectoryInfo LogDirectory = new DirectoryInfo(Application.CommonAppDataPath+@"\Logs");
+                DirectoryInfo LogDirectory = new DirectoryInfo(Application.CommonAppDataPath + @"\Logs");
                 if (!LogDirectory.Exists)
                 {
                     LogDirectory.Create();
@@ -30,7 +30,7 @@ namespace TDay
                     FileStream FS = new FileStream(Application.CommonAppDataPath + "\\Logs\\" + "TDay_" + DateTime.Now.Date.ToShortDateString() + ".log", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                     StreamWriter SW = new StreamWriter(FS);
                     SW.WriteLine("DebugMode ON ***************************************************************");
-                    SW.WriteLine("Date:"+DateTime.Now);
+                    SW.WriteLine("Date:" + DateTime.Now);
                     SW.WriteLine("****************************************************************************");
                     SW.Close();
                     FS.Close();
@@ -44,7 +44,7 @@ namespace TDay
             {
                 FileStream FS = new FileStream(Application.CommonAppDataPath + "\\Logs\\" + "TDay_" + DateTime.Now.Date.ToShortDateString() + ".log", FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 StreamWriter SW = new StreamWriter(FS);
-                SW.WriteLine("Error:"+exType.ToString());
+                SW.WriteLine("Error:" + exType.ToString());
                 SW.WriteLine("Message:" + ex.Message);
                 SW.WriteLine("Source:" + ex.Source);
                 SW.WriteLine("Data:" + ex.Data);

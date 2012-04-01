@@ -117,6 +117,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Session.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="TDayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,9 +166,7 @@
     <EmbeddedResource Include="UsersAdd.resx">
       <DependentUpon>UsersAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

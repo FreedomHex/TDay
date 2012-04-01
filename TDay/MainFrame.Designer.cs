@@ -44,17 +44,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -402,8 +402,34 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.Transportation = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transportationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.transportationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.profileIdDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoryDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.handyDARTNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mondayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tuesdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.wednesdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.thursdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fridayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.commentsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transportationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transportationBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
@@ -506,6 +532,7 @@
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.toolStrip13 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.transportationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -523,33 +550,6 @@
             this.daysTableAdapter = new TDay.TDayDataSetTableAdapters.DaysTableAdapter();
             this.transportationTableAdapter = new TDay.TDayDataSetTableAdapters.TransportationTableAdapter();
             this.billsTableAdapter = new TDay.TDayDataSetTableAdapters.BillsTableAdapter();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transportationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.transportationBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.profileIdDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.categoryDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.handyDARTNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mondayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tuesdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.wednesdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.thursdayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fridayDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.commentsDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transportationIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -621,8 +621,10 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource2)).BeginInit();
             this.Bills.SuspendLayout();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
@@ -657,14 +659,12 @@
             this.groupBox22.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.toolStrip13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).BeginInit();
             this.toolStrip4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -4834,6 +4834,154 @@
             this.splitContainer3.SplitterDistance = 617;
             this.splitContainer3.TabIndex = 0;
             // 
+            // dataGridView9
+            // 
+            this.dataGridView9.AllowUserToAddRows = false;
+            this.dataGridView9.AllowUserToDeleteRows = false;
+            this.dataGridView9.AutoGenerateColumns = false;
+            this.dataGridView9.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView9.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewComboBoxColumn3,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewCheckBoxColumn3,
+            this.dataGridViewCheckBoxColumn4,
+            this.dataGridViewCheckBoxColumn5,
+            this.dataGridViewCheckBoxColumn6,
+            this.dataGridViewCheckBoxColumn7,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19});
+            this.dataGridView9.DataSource = this.transportationBindingSource1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView9.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dataGridView9.EnableHeadersVisualStyles = false;
+            this.dataGridView9.Location = new System.Drawing.Point(1, 314);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.ReadOnly = true;
+            this.dataGridView9.RowHeadersVisible = false;
+            this.dataGridView9.Size = new System.Drawing.Size(1089, 300);
+            this.dataGridView9.TabIndex = 2;
+            // 
+            // dataGridViewComboBoxColumn3
+            // 
+            this.dataGridViewComboBoxColumn3.DataPropertyName = "ProfileId";
+            this.dataGridViewComboBoxColumn3.DataSource = this.profilesBindingSource;
+            this.dataGridViewComboBoxColumn3.DisplayMember = "Name";
+            this.dataGridViewComboBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewComboBoxColumn3.HeaderText = "Name";
+            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
+            this.dataGridViewComboBoxColumn3.ReadOnly = true;
+            this.dataGridViewComboBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn3.ValueMember = "ProfileId";
+            this.dataGridViewComboBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Category";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Adress";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Phone";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Phone";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "HandyDARTNumber";
+            this.dataGridViewTextBoxColumn17.HeaderText = "HD#";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Monday";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Mon";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn3.Width = 50;
+            // 
+            // dataGridViewCheckBoxColumn4
+            // 
+            this.dataGridViewCheckBoxColumn4.DataPropertyName = "Tuesday";
+            this.dataGridViewCheckBoxColumn4.HeaderText = "Tue";
+            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            this.dataGridViewCheckBoxColumn4.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn4.Width = 50;
+            // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            this.dataGridViewCheckBoxColumn5.DataPropertyName = "Wednesday";
+            this.dataGridViewCheckBoxColumn5.HeaderText = "Wed";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            this.dataGridViewCheckBoxColumn5.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn5.Width = 50;
+            // 
+            // dataGridViewCheckBoxColumn6
+            // 
+            this.dataGridViewCheckBoxColumn6.DataPropertyName = "Thursday";
+            this.dataGridViewCheckBoxColumn6.HeaderText = "Thu";
+            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
+            this.dataGridViewCheckBoxColumn6.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn6.Width = 50;
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.DataPropertyName = "Friday";
+            this.dataGridViewCheckBoxColumn7.HeaderText = "Fri";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn7.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "Comments";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Comments";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "TransportationId";
+            this.dataGridViewTextBoxColumn19.HeaderText = "TransportationId";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Visible = false;
+            // 
+            // transportationBindingSource1
+            // 
+            this.transportationBindingSource1.DataMember = "Transportation";
+            this.transportationBindingSource1.DataSource = this.tDayDataSet;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
@@ -4842,7 +4990,7 @@
             this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -4865,7 +5013,7 @@
             this.dataGridView4.DataSource = this.transportationBindingSource2;
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle19.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -4879,10 +5027,110 @@
             this.dataGridView4.Size = new System.Drawing.Size(1089, 308);
             this.dataGridView4.TabIndex = 1;
             // 
-            // transportationBindingSource
+            // profileIdDataGridViewTextBoxColumn3
             // 
-            this.transportationBindingSource.DataMember = "Transportation";
-            this.transportationBindingSource.DataSource = this.tDayDataSet;
+            this.profileIdDataGridViewTextBoxColumn3.DataPropertyName = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn3.DataSource = this.profilesBindingSource;
+            this.profileIdDataGridViewTextBoxColumn3.DisplayMember = "Name";
+            this.profileIdDataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.profileIdDataGridViewTextBoxColumn3.HeaderText = "Name";
+            this.profileIdDataGridViewTextBoxColumn3.Name = "profileIdDataGridViewTextBoxColumn3";
+            this.profileIdDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.profileIdDataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.profileIdDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.profileIdDataGridViewTextBoxColumn3.ValueMember = "ProfileId";
+            this.profileIdDataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // categoryDataGridViewTextBoxColumn2
+            // 
+            this.categoryDataGridViewTextBoxColumn2.DataPropertyName = "Category";
+            this.categoryDataGridViewTextBoxColumn2.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn2.Name = "categoryDataGridViewTextBoxColumn2";
+            this.categoryDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // Adress
+            // 
+            this.Adress.DataPropertyName = "Adress";
+            this.Adress.HeaderText = "Address";
+            this.Adress.Name = "Adress";
+            this.Adress.ReadOnly = true;
+            this.Adress.Width = 200;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            // 
+            // handyDARTNumberDataGridViewTextBoxColumn
+            // 
+            this.handyDARTNumberDataGridViewTextBoxColumn.DataPropertyName = "HandyDARTNumber";
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.handyDARTNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            this.handyDARTNumberDataGridViewTextBoxColumn.HeaderText = "HD#";
+            this.handyDARTNumberDataGridViewTextBoxColumn.Name = "handyDARTNumberDataGridViewTextBoxColumn";
+            this.handyDARTNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mondayDataGridViewCheckBoxColumn
+            // 
+            this.mondayDataGridViewCheckBoxColumn.DataPropertyName = "Monday";
+            this.mondayDataGridViewCheckBoxColumn.HeaderText = "Mon";
+            this.mondayDataGridViewCheckBoxColumn.Name = "mondayDataGridViewCheckBoxColumn";
+            this.mondayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.mondayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // tuesdayDataGridViewCheckBoxColumn
+            // 
+            this.tuesdayDataGridViewCheckBoxColumn.DataPropertyName = "Tuesday";
+            this.tuesdayDataGridViewCheckBoxColumn.HeaderText = "Tue";
+            this.tuesdayDataGridViewCheckBoxColumn.Name = "tuesdayDataGridViewCheckBoxColumn";
+            this.tuesdayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.tuesdayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // wednesdayDataGridViewCheckBoxColumn
+            // 
+            this.wednesdayDataGridViewCheckBoxColumn.DataPropertyName = "Wednesday";
+            this.wednesdayDataGridViewCheckBoxColumn.HeaderText = "Wed";
+            this.wednesdayDataGridViewCheckBoxColumn.Name = "wednesdayDataGridViewCheckBoxColumn";
+            this.wednesdayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.wednesdayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // thursdayDataGridViewCheckBoxColumn
+            // 
+            this.thursdayDataGridViewCheckBoxColumn.DataPropertyName = "Thursday";
+            this.thursdayDataGridViewCheckBoxColumn.HeaderText = "Thu";
+            this.thursdayDataGridViewCheckBoxColumn.Name = "thursdayDataGridViewCheckBoxColumn";
+            this.thursdayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.thursdayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // fridayDataGridViewCheckBoxColumn
+            // 
+            this.fridayDataGridViewCheckBoxColumn.DataPropertyName = "Friday";
+            this.fridayDataGridViewCheckBoxColumn.HeaderText = "Fri";
+            this.fridayDataGridViewCheckBoxColumn.Name = "fridayDataGridViewCheckBoxColumn";
+            this.fridayDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.fridayDataGridViewCheckBoxColumn.Width = 50;
+            // 
+            // commentsDataGridViewTextBoxColumn1
+            // 
+            this.commentsDataGridViewTextBoxColumn1.DataPropertyName = "Comments";
+            this.commentsDataGridViewTextBoxColumn1.HeaderText = "Comments";
+            this.commentsDataGridViewTextBoxColumn1.Name = "commentsDataGridViewTextBoxColumn1";
+            this.commentsDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // transportationIdDataGridViewTextBoxColumn
+            // 
+            this.transportationIdDataGridViewTextBoxColumn.DataPropertyName = "TransportationId";
+            this.transportationIdDataGridViewTextBoxColumn.HeaderText = "TransportationId";
+            this.transportationIdDataGridViewTextBoxColumn.Name = "transportationIdDataGridViewTextBoxColumn";
+            this.transportationIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transportationIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // transportationBindingSource2
+            // 
+            this.transportationBindingSource2.DataMember = "Transportation";
+            this.transportationBindingSource2.DataSource = this.tDayDataSet;
             // 
             // button18
             // 
@@ -6152,6 +6400,11 @@
             this.toolStripButton15.Text = "Delete Bill";
             this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
             // 
+            // transportationBindingSource
+            // 
+            this.transportationBindingSource.DataMember = "Transportation";
+            this.transportationBindingSource.DataSource = this.tDayDataSet;
+            // 
             // toolStrip4
             // 
             this.toolStrip4.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -6284,259 +6537,6 @@
             // 
             this.billsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView9
-            // 
-            this.dataGridView9.AllowUserToAddRows = false;
-            this.dataGridView9.AllowUserToDeleteRows = false;
-            this.dataGridView9.AutoGenerateColumns = false;
-            this.dataGridView9.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView9.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewComboBoxColumn3,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewCheckBoxColumn3,
-            this.dataGridViewCheckBoxColumn4,
-            this.dataGridViewCheckBoxColumn5,
-            this.dataGridViewCheckBoxColumn6,
-            this.dataGridViewCheckBoxColumn7,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
-            this.dataGridView9.DataSource = this.transportationBindingSource1;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Elephant", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView9.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dataGridView9.EnableHeadersVisualStyles = false;
-            this.dataGridView9.Location = new System.Drawing.Point(1, 314);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.ReadOnly = true;
-            this.dataGridView9.RowHeadersVisible = false;
-            this.dataGridView9.Size = new System.Drawing.Size(1089, 300);
-            this.dataGridView9.TabIndex = 2;
-            // 
-            // dataGridViewComboBoxColumn3
-            // 
-            this.dataGridViewComboBoxColumn3.DataPropertyName = "ProfileId";
-            this.dataGridViewComboBoxColumn3.DataSource = this.profilesBindingSource;
-            this.dataGridViewComboBoxColumn3.DisplayMember = "Name";
-            this.dataGridViewComboBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewComboBoxColumn3.HeaderText = "Name";
-            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
-            this.dataGridViewComboBoxColumn3.ReadOnly = true;
-            this.dataGridViewComboBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewComboBoxColumn3.ValueMember = "ProfileId";
-            this.dataGridViewComboBoxColumn3.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Category";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Category";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Adress";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Address";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Phone";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Phone";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "HandyDARTNumber";
-            this.dataGridViewTextBoxColumn17.HeaderText = "HD#";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Monday";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Mon";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn3.Width = 50;
-            // 
-            // dataGridViewCheckBoxColumn4
-            // 
-            this.dataGridViewCheckBoxColumn4.DataPropertyName = "Tuesday";
-            this.dataGridViewCheckBoxColumn4.HeaderText = "Tue";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            this.dataGridViewCheckBoxColumn4.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn4.Width = 50;
-            // 
-            // dataGridViewCheckBoxColumn5
-            // 
-            this.dataGridViewCheckBoxColumn5.DataPropertyName = "Wednesday";
-            this.dataGridViewCheckBoxColumn5.HeaderText = "Wed";
-            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
-            this.dataGridViewCheckBoxColumn5.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn5.Width = 50;
-            // 
-            // dataGridViewCheckBoxColumn6
-            // 
-            this.dataGridViewCheckBoxColumn6.DataPropertyName = "Thursday";
-            this.dataGridViewCheckBoxColumn6.HeaderText = "Thu";
-            this.dataGridViewCheckBoxColumn6.Name = "dataGridViewCheckBoxColumn6";
-            this.dataGridViewCheckBoxColumn6.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn6.Width = 50;
-            // 
-            // dataGridViewCheckBoxColumn7
-            // 
-            this.dataGridViewCheckBoxColumn7.DataPropertyName = "Friday";
-            this.dataGridViewCheckBoxColumn7.HeaderText = "Fri";
-            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
-            this.dataGridViewCheckBoxColumn7.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn7.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Comments";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Comments";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "TransportationId";
-            this.dataGridViewTextBoxColumn19.HeaderText = "TransportationId";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Visible = false;
-            // 
-            // transportationBindingSource1
-            // 
-            this.transportationBindingSource1.DataMember = "Transportation";
-            this.transportationBindingSource1.DataSource = this.tDayDataSet;
-            // 
-            // transportationBindingSource2
-            // 
-            this.transportationBindingSource2.DataMember = "Transportation";
-            this.transportationBindingSource2.DataSource = this.tDayDataSet;
-            // 
-            // profileIdDataGridViewTextBoxColumn3
-            // 
-            this.profileIdDataGridViewTextBoxColumn3.DataPropertyName = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn3.DataSource = this.profilesBindingSource;
-            this.profileIdDataGridViewTextBoxColumn3.DisplayMember = "Name";
-            this.profileIdDataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.profileIdDataGridViewTextBoxColumn3.HeaderText = "Name";
-            this.profileIdDataGridViewTextBoxColumn3.Name = "profileIdDataGridViewTextBoxColumn3";
-            this.profileIdDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.profileIdDataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.profileIdDataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.profileIdDataGridViewTextBoxColumn3.ValueMember = "ProfileId";
-            this.profileIdDataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // categoryDataGridViewTextBoxColumn2
-            // 
-            this.categoryDataGridViewTextBoxColumn2.DataPropertyName = "Category";
-            this.categoryDataGridViewTextBoxColumn2.HeaderText = "Category";
-            this.categoryDataGridViewTextBoxColumn2.Name = "categoryDataGridViewTextBoxColumn2";
-            this.categoryDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // Adress
-            // 
-            this.Adress.DataPropertyName = "Adress";
-            this.Adress.HeaderText = "Address";
-            this.Adress.Name = "Adress";
-            this.Adress.ReadOnly = true;
-            this.Adress.Width = 200;
-            // 
-            // Phone
-            // 
-            this.Phone.DataPropertyName = "Phone";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            // 
-            // handyDARTNumberDataGridViewTextBoxColumn
-            // 
-            this.handyDARTNumberDataGridViewTextBoxColumn.DataPropertyName = "HandyDARTNumber";
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.handyDARTNumberDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
-            this.handyDARTNumberDataGridViewTextBoxColumn.HeaderText = "HD#";
-            this.handyDARTNumberDataGridViewTextBoxColumn.Name = "handyDARTNumberDataGridViewTextBoxColumn";
-            this.handyDARTNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mondayDataGridViewCheckBoxColumn
-            // 
-            this.mondayDataGridViewCheckBoxColumn.DataPropertyName = "Monday";
-            this.mondayDataGridViewCheckBoxColumn.HeaderText = "Mon";
-            this.mondayDataGridViewCheckBoxColumn.Name = "mondayDataGridViewCheckBoxColumn";
-            this.mondayDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.mondayDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // tuesdayDataGridViewCheckBoxColumn
-            // 
-            this.tuesdayDataGridViewCheckBoxColumn.DataPropertyName = "Tuesday";
-            this.tuesdayDataGridViewCheckBoxColumn.HeaderText = "Tue";
-            this.tuesdayDataGridViewCheckBoxColumn.Name = "tuesdayDataGridViewCheckBoxColumn";
-            this.tuesdayDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.tuesdayDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // wednesdayDataGridViewCheckBoxColumn
-            // 
-            this.wednesdayDataGridViewCheckBoxColumn.DataPropertyName = "Wednesday";
-            this.wednesdayDataGridViewCheckBoxColumn.HeaderText = "Wed";
-            this.wednesdayDataGridViewCheckBoxColumn.Name = "wednesdayDataGridViewCheckBoxColumn";
-            this.wednesdayDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.wednesdayDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // thursdayDataGridViewCheckBoxColumn
-            // 
-            this.thursdayDataGridViewCheckBoxColumn.DataPropertyName = "Thursday";
-            this.thursdayDataGridViewCheckBoxColumn.HeaderText = "Thu";
-            this.thursdayDataGridViewCheckBoxColumn.Name = "thursdayDataGridViewCheckBoxColumn";
-            this.thursdayDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.thursdayDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // fridayDataGridViewCheckBoxColumn
-            // 
-            this.fridayDataGridViewCheckBoxColumn.DataPropertyName = "Friday";
-            this.fridayDataGridViewCheckBoxColumn.HeaderText = "Fri";
-            this.fridayDataGridViewCheckBoxColumn.Name = "fridayDataGridViewCheckBoxColumn";
-            this.fridayDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.fridayDataGridViewCheckBoxColumn.Width = 50;
-            // 
-            // commentsDataGridViewTextBoxColumn1
-            // 
-            this.commentsDataGridViewTextBoxColumn1.DataPropertyName = "Comments";
-            this.commentsDataGridViewTextBoxColumn1.HeaderText = "Comments";
-            this.commentsDataGridViewTextBoxColumn1.Name = "commentsDataGridViewTextBoxColumn1";
-            this.commentsDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // transportationIdDataGridViewTextBoxColumn
-            // 
-            this.transportationIdDataGridViewTextBoxColumn.DataPropertyName = "TransportationId";
-            this.transportationIdDataGridViewTextBoxColumn.HeaderText = "TransportationId";
-            this.transportationIdDataGridViewTextBoxColumn.Name = "transportationIdDataGridViewTextBoxColumn";
-            this.transportationIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.transportationIdDataGridViewTextBoxColumn.Visible = false;
-            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6666,8 +6666,10 @@
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource2)).EndInit();
             this.Bills.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
@@ -6722,6 +6724,7 @@
             this.groupBox17.ResumeLayout(false);
             this.toolStrip13.ResumeLayout(false);
             this.toolStrip13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource)).EndInit();
             this.toolStrip4.ResumeLayout(false);
             this.toolStrip4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddProfileErrorProvider)).EndInit();
@@ -6729,9 +6732,6 @@
             this.toolStrip11.ResumeLayout(false);
             this.toolStrip11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.daysBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportationBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

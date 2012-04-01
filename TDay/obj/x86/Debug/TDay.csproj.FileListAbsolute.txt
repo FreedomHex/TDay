@@ -42,7 +42,6 @@ F:\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 F:\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
 D:\ПРОЕКТЫ\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 D:\ПРОЕКТЫ\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
-D:\Projects\TDay\TDay\bin\Debug\TDay.exe.config
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.exe
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.pdb
 D:\Projects\TDay\TDay\bin\Debug\TDay.exe
@@ -57,11 +56,9 @@ D:\Projects\TDay\TDay\bin\Debug\itextsharp.dll
 D:\Projects\TDay\TDay\bin\Debug\DataBase\Tday.sdf
 D:\Projects\TDay\TDay\bin\Debug\System.Data.SqlServerCe.dll
 D:\Projects\TDay\TDay\bin\Debug\RU\System.Data.SqlServerCe.resources.dll
-D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.read.1.tlog
-D:\Projects\TDay\TDay\obj\x86\Debug\ResGen.write.1.tlog
-D:\Projects\TDay\TDay\bin\Debug\app.config
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.Users.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.UsersAdd.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\TDay.PrintEnv.resources
 D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
 D:\Projects\TDay\TDay\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+D:\Projects\TDay\TDay\bin\Debug\TDay.exe.config
